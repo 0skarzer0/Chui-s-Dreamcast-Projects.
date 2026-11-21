@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SAY">
+    <param name="message" type="STRING">Mensaje a mostrar en la consola</param>    
+    <abstract>Muestra un mensaje en la consola de DEBUG</abstract>
+    <description>
+	<p>
+	    Esta función muestra en la consola (ALT+C en modo de compilación 
+	    para DEBUG) una línea con el texto indicado. En ciertas versiones
+	    de Fenix, la línea se muestra también en la consola del sistema
+	    donde fuese ejecutado el intérprete.
+	</p>
+	<p>
+	    La principal utilidad de esta función es escribir "chivatos",
+	    pequeñas inserciones de código que muestran en momentos clave
+	    el estado de variables importantes, o simplemente informan
+	    acerca de la ejecución de un trozo de código. Esto permite
+	    obtener información útil sobre el desarrollo del programa,
+	    de cara a detectar la causa de bugs molestos.
+	</p>
+    </description>    
+</function>

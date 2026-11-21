@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PUT_SCREEN">
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico a dibujar </param>
+    <abstract> Dibuja un gráfico en el fondo de pantalla </abstract>
+    <description>
+	<p>
+	    Esta función dibuja un gráfico en el fondo de pantalla, en el
+	    centro justo de la misma. Su uso habitual es emplearla con
+	    un gráfico lo bastante grande como para ocupar toda la
+	    pantalla. De esta forma es conveniente tener una serie de
+	    gráficos de fondo representando pantallas o niveles, y
+	    dibujarlos mediante esta función. Para técnicas más
+	    sofisticadas, pueden usarse funciones como <a href="PUT"/>
+	    o <a href="XPUT"/>.
+	</p>
+    </description>
+    <see href="XPUT"/>
+    <see href="PUT"/>
+</function>

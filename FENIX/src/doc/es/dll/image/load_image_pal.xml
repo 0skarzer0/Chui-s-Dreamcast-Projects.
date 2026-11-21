@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_IMAGE_PAL">
+<retval/>
+<param name="fichero" type="STRING"> Nombre de un fichero de imagen </param>
+<abstract> Recupera la paleta de una imagen de disco 
+	detectando automáticamente su tipo mediante SDL_image.DLL
+</abstract>
+<description>
+    <p>
+	Esta función recupera de disco la paleta contenida por una
+	imagen de 8 bits en cualquiera de los formatos soportados
+	por LOAD_IMAGE.
+    </p>
+    <p> 
+	La función LOAD_IMAGE cargará automáticamente la paleta del
+	primer gráfico de 8 bits que se recupere en el programa. Sin
+	embargo, para programas que trabajan con más de una paleta
+	de colores, es necesario utilizar LOAD_IMAGE_PAL para
+	recuperar la paleta de colores o las imagenes de 8 bits
+	no se mostrarán correctamente.
+    </p>
+    <p>
+	La función soporta cualquier formato reconocido por LOAD_IMAGE
+	(siempre que las imágenes sean de 8 bits y con paleta de colores).
+    </p>
+</description>
+<note>
+    <p>
+	Si la imagen utiliza una paleta de menos de 256 colores, sólo
+	los primeros colores (0 - n) de la paleta actual serán modificados.
+    </p>
+</note>
+<see href="LOAD_PAL"/>
+<see href="LOAD_IMAGE"/>
+</function>
+

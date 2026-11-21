@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="IS_PLAYING_MPEG">
+    <retval/>
+    <param name="vídeo"> Identificador del vídeo </param>
+    <abstract> Devuelve 1 si un vídeo aún no ha acabado </abstract>
+    <description>
+	<p>
+	    Devuelve 1 si un vídeo todavía continúa reproduciéndose,
+	    y 0 si ya ha terminado. Observa que si un vídeo se
+	    reproduce contínuamente (opción activable con
+	    <a href="DLL/MPEG/LOOP_MPEG"/>), nunca termina.
+	</p>
+    </description>
+    <see name="LOAD_MPEG" href="DLL/MPEG/LOAD_MPEG"/>
+    <see name="LOOP_MPEG" href="DLL/MPEG/LOOP_MPEG"/>
+    <see name="MPEG_CURRENT_TIME" href="DLL/MPEG/MPEG_CURRENT_TIME"/>
+</function>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GUI_POINTER">
+    <retval>
+	Código del puntero de ratón actual
+    </retval>
+    <param name="puntero" optional="YES"> Nuevo valor del puntero </param>
+    <abstract> Modifica u obtiene el puntero del ratón del GUI </abstract>
+    <description>
+	<p>
+	    Esta DLL proporciona una serie de punteros de ratón
+	    estándares. Esta función permite escoger el puntero por
+	    defecto, que aparecerá siempre en lugar de la flecha blanca.
+	    Si se especifica, el nuevo código puede ser cualquiera
+	    de los siguientes (constantes definidas en GUI.INC):
+	    <ul>
+		<li> POINTER_ARROW </li>
+		<li> POINTER_RESIZEH </li>
+		<li> POINTER_RESIZEV </li>
+		<li> POINTER_RESIZENW </li>
+		<li> POINTER_RESIZENE </li>
+		<li> POINTER_CROSS </li>
+		<li> POINTER_IBEAM </li>
+		<li> POINTER_RESIZEH2 </li>
+		<li> POINTER_HAND </li>
+		<li> POINTER_DRAGOBJECT </li>
+		<li> POINTER_ARROWCOPY </li>
+		<li> POINTER_BADDROP </li>
+	    </ul>
+	</p>
+    </description>
+</function>

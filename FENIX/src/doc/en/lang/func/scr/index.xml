@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="CLEAR_SCREEN" />
+<fnc href="GET_PIXEL" />
+<fnc href="PUT" />
+<fnc href="PUT_PIXEL" />
+<fnc href="PUT_SCREEN" />
+<fnc href="XPUT" />
+</INDEX>

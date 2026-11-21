@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="IMAGE_VIEW_SET">
+<retval/>
+<param name="control"> Identificador de un control de imagen </param>
+<param name="librería"> Número de librería FPG </param>
+<param name="gráfico"> Número de gráfico dentro de la librería </param>
+<abstract> Cambia la imagen de un control de imagen </abstract>
+<description>
+    <p>
+	Dado un control de imagen, cambia la imagen que visualiza.
+	El zoom o fondo utilizado por el control no será modificado.
+    </p>
+</description>
+<see name="IMAGE" href="DLL/GUI/IMAGE"/>
+<see name="IMAGE_VIEW" href="DLL/GUI/IMAGE_VIEW"/>
+</function>

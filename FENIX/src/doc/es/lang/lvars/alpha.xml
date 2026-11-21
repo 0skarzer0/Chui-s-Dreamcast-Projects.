@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="ALPHA">
+    <abstract>Indica la transparencia del gráfico del proceso</abstract>    
+	<description>
+	<p>
+		Contiene un valor entre 0 y 255 para indicar el grado de transparencia 
+		que tiene el gráfico.
+	</p>	
+    </description>
+    <see type="var" name="ALPHA_STEPS" href="GVARS/ALPHA_STEPS"/>
+</variable>

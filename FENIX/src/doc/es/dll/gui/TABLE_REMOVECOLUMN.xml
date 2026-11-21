@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_REMOVECOLUMN">
+<retval />
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="nombre" type="STRING"> Nombre de la columna </param>
+<abstract> Quita una columna de una tabla </abstract>
+<description>
+    <p>
+	Elimina una columna de una tabla. El segundo parámetro es el
+	nombre de la tabla, pero opcionalmente también puede usarse
+	un número de índice, con 0 para la columna más a la izquierda.
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+<see name="TABLE_ADDCOLUMN" href="DLL/GUI/TABLE_ADDCOLUMN"/>
+</function>

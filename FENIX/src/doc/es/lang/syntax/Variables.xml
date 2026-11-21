@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="Variables">
+	<syntax> 
+		[ tipo ] <i>nombre</i> [ dimensiones ] [ <b>=</b> valor ] ; 
+	</syntax>
+	<abstract> Una variable es un dato que dispone de un tipo y un nombre </abstract>
+    <description>
+		<p>
+			Cada dato concreto en un programa es una <b>variable</b>,
+			que se diferencia de una <b>constante</b> en que su contenido
+			puede ser modificado en todo momento y no sólo consultado.
+		</p>
+		<p>
+			Fenix conoce una variedad de <a href="Tipos de dato"/>. La
+			variable puede contener, según su tipo de dato, un número
+			entero, un número con decimales, un texto, o incluso una
+			tabla o un conjunto de otros datos diferentes.
+		</p>
+		<p>
+			Una variable se declara siempre con la misma sintaxis:
+			primero, se escribe el tipo de dato (por ejemplo,
+			<a href="INT"/> o <a href="STRING"/> y, a continuación,
+			el nombre de la variable. Después del nombre se puede
+			declarar la variable como un array (ver más adelante)
+			indicando sus dimensiones, o bien inicializar la
+			variable con un contenido por defecto. Ambas
+			posibilidades son opcionales. Por último, la declaración
+			de la variable termina siempre con un punto y coma.
+		</p>
+		<p>
+			El tipo de variable es opcional: es válido declarar una
+			variable simplemente escribiendo su nombre. En ese caso,
+			el tipo de variable se asume como <a href="INT"/>
+			(variable que puede contener un número entero).
+		</p>
+		<p>
+			El nombre de una variable es un identificador. Los
+			<a href="identificadores"/> en Fenix son una palabra
+			que empieza por una letra o bien por el signo _ y que
+			puede contener únicamente letras, números o el signo _.
+			No importa si el identificador se escribe en mayúsculas o
+			minúsculas, aunque si se hacen servir acentos o caracteres
+			internacionales, el identificador debe escribirse siempre
+			con los mismos acentos o caracteres. No es posible usar
+			como nombre de variable una palabra clave que identifica
+			una sentencia o directiva del lenguaje.
+			Los siguientes
+			identificadores son válidos:
+			<pre> Contador31 <br/> _valor_ <br/> i </pre>
+			Sin embargo, los siguientes identificadores no son válidos:
+			<pre> 80v <br/> una variable <br/> while </pre>
+		</p>
+		<h3> Arrays </h3>
+		<p>
+			Un array es un vector de datos. En lugar de contener un
+			sólo dato del tipo especificado, como las variables normales,
+			el array contiene un número predeterminado de datos de ese
+			mismo tipo.
+		</p>
+		<p>
+			El array es la forma básica de hacer tablas de datos.
+			Cuando tienes que guardar listas de información, como
+			por ejemplo una tabla de records o información sobre
+			una serie de casillas de un mapa, el array es la forma
+			más sencilla de hacerlo.
+		</p>
+		<p>
+			Los elementos de un array son accedidos mediante un
+			único nombre y un número de índice que distingue
+			uno de los datos del array de otro. El índice
+			empieza siempre en cero.
+			Para declarar un array, escribe la declaración de la
+			variable de la forma normal pero, justo a continuación
+			del nombre, escribe entre corchetes [ ] el número
+			máximo de índice que puede aparecer en el array.
+			Por ejemplo, la siguiente declaración:
+			<pre> <a href="INT"/> Valores[9]; </pre>
+			sirve para crear una lista de diez números enteros,
+			cuyos índices van desde 0 hasta 9.
+		</p>
+		<p>
+			En el interior de tu programa, haces referencia al
+			array escribiendo su nombre. Sin embargo, esto accede
+			sólo a su primer elemento, como si fuera una variable
+			normal (el elemento de índice 0). Para poder hacer
+			referencia al resto, usa la misma sintaxis para
+			indicar su índice: variable[índice]. Dentro del código
+			puedes usar cualquier expresión para indicar el índice.
+			Habitualmente se usan bucles con variables como
+			contador para realizar operaciones con todos o con
+			una sección de los elementos de un array.
+		</p>
+		<h3> Arrays multidimensionales </h3>
+		<p>
+			Los arrays vistos hasta ahora son listas, pero
+			también es posible crear arrays que sean tablas
+			añadiendo nuevas dimensiones con la misma sintaxis.
+			Por ejemplo, la siguiente declaración:
+			<pre> <a href="INT"/> Valores[9][9]; </pre>
+			crea una tabla de 10 x 10 números enteros, con un
+			índice para las filas (de 0 a 9) y otro para las
+			columnas (también de 0 a 9).
+		</p>
+		<p>
+			Para acceder a un elemento de un array multidimensional,
+			usa la misma sintaxis que para declararlo. 
+			Por ejemplo, Valores[4][5] hace
+			referencia a un número aproximadamente hacia el centro
+			de la tabla anterior.
+		</p>
+		<p>
+			Puedes entender que un array multidimensional es un
+			"array de arrays": cada entrada del array contiene
+			a su vez otro array. En realidad, puedes añadir más
+			de dos dimensiones, hasta un límite de unas cinco
+			dimensiones (en función del tipo de dato usado),
+			aunque rara vez tendrás necesidad de hacer arrays
+			tan complejos. Además, cada nueva dimensión multiplica
+			el número de elementos presentes (y la memoria ocupada
+			por el array) de forma considerable.
+		</p>
+		<h3> Estructuras </h3>
+		<p>
+		</p>
+		<h3> Inicialización de variables </h3>
+		<p>
+		</p>
+    </description>
+</section>

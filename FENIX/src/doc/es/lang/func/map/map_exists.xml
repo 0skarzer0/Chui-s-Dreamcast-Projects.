@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_EXISTS">
+    <retval/>
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <abstract> Devuelve 1 si un gráfico existe </abstract>
+    <description>
+	<p>
+	    Esta función devuelve 1 si un gráfico dado existe
+	    dentro de la librería indicada. Dado que sólo puede
+	    haber 1000 gráficos en una librería, con códigos
+	    de 0 a 999, es posible usar esta función dentro de
+	    un bucle para ennumerar todos los gráficos que
+	    existan dentro de una librería FPG.
+	</p>
+    </description>
+    <see href="LOAD_FPG"/>
+    <see href="NEW_FPG"/>
+</function>

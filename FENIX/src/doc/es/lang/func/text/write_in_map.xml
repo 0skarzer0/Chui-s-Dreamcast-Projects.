@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WRITE_IN_MAP">
+    <retval> Identificador del nuevo gráfico </retval>
+    <param name="fuente"> Tipo de letra </param>
+    <param name="texto" type="STRING"> Texto a dibujar </param>
+    <param name="alineación"> Tipo de alineación </param>
+    <abstract> Crea un gráfico que contenga un texto </abstract>
+    <description>
+	<p>
+	    Crea un nuevo gráfico en memoria, de la misma manera
+	    que la función <a href="NEW_MAP"/>. El gráfico contendrá
+	    el texto especificado como parámetro, en el tipo de letra
+	    indicado, y tendrá el tamaño justo para contener todas
+	    las letras sin desperdiciar espacio. Formará parte
+	    de la librería del sistema, de código 0.
+	</p>
+	<p>
+	    El parámetro de alineación indica el valor que será
+	    tomado por el centro del nuevo gráfico (punto de
+	    control cero), y puede ser
+	    uno de los siguientes valores:
+	    <ul>
+		<li> 0: el punto ocupará la esquina superior izquierda
+		    del gráfico </li>
+		<li> 1: el punto ocupará el centro de la primera fila </li>
+		<li> 2: el punto ocupará la esquina superior derecha </li>
+		<li> 3: el punto ocupará el centro de la primera columna </li>
+		<li> 4: el punto ocupará el centro exacto del gráfico </li>
+		<li> 5: el punto ocupará el centro de la última columna </li>
+		<li> 6: el punto ocupará la esquina inferior izquierda </li>
+		<li> 7: el punto ocupará el centro de la fila inferior </li>
+		<li> 8: el punto ocupará la esquina inferior derecha </li>
+	    </ul>
+	</p>
+	<p>
+	    El nuevo gráfico tendrá la misma profundidad de color
+	    que el tipo de letra, y pixels transparentes al igual
+	    que los propios caracteres de la fuente. La mayor utilidad
+	    de esta función consiste en poder dibujar textos con
+	    la misma variedad de efectos que los gráficos normales
+	    (escalado, transparencias, espejo, etc).
+	</p>
+	<p>
+	    Si no se desea usar el gráfico por más tiempo, es
+	    recomendable liberar la memoria ocupada por el mismo
+	    mediante la función <a href="UNLOAD_MAP"/>.
+	</p>
+    </description>
+    <see name="WRITE" href="TEXT/WRITE"/>
+    <see name="WRITE_VAR" href="TEXT/WRITE_VAR"/>
+    <see name="WRITE_IN_MAP" href="TEXT/WRITE_IN_MAP"/>
+    <see name="DELETE_TEXT" href="TEXT/DELETE_TEXT"/>
+    <see name="MOVE_TEXT" href="TEXT/MOVE_TEXT"/>
+</function>

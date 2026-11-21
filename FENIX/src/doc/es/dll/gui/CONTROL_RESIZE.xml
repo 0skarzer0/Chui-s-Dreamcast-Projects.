@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CONTROL_RESIZE">
+<retval/>
+<param name="control"> Identificador de un control </param>
+<param name="ancho"> Nuevo ancho del control, en pixels </param>
+<param name="alto"> Nuevo alto del control, en pixels </param>
+<abstract> Cambia el tamaño de un control </abstract>
+<description>
+    <p>
+	Cambia el tamaño de un control en una ventana. Es posible
+	redimensionar incluso un control que no sea redimensionable
+	de por sí, aunque en la mayoría de los casos eso no
+	permitirá obtener el resultado deseado.
+	Sin embargo, no es posible ampliar o reducir un control
+	más allá de los límites de tamaño mínimo o máximo que
+	él mismo imponga.
+    </p>
+    <p>
+	Esta función no desplaza otros controles por la ventana ni
+	hace ningún otro tipo de operación sofisticada, por lo que
+	es muy probable que se acabe con controles que se superpongan
+	si no se tiene cuidado. Además, al contrario que la función
+	<a name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>,
+	esta función no ajusta el tamaño de la ventana para que quepa
+	el control redimensionado.
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FPG_ADD">
+    <retval/>
+    <param name="library"> Code of the library to modify </param>
+    <param name="graph"> Code for the new graph, interval 0-999 </param>
+    <param name="source-library"> Code of the source library </param>
+    <param name="source-graph"> Code of the original graph </param>
+    <abstract> Add a new graph to FPG (Library Graphics File) on memory </abstract>
+    <description>
+	<p>
+	    This function allows to modify a FPG library on memory,
+	    adding a new graph from other graph which is on memory.
+	</p>
+	<p>
+	    The destiny library must be the code of a FPG library
+	    obtained by the functions <a href="LOAD_FPG"/> or 
+		<a href="FPG_NEW"/>.
+	    The source library must be the code of other library on
+		on memory, although it can identify the own destiny library
+	    (to do copies of graphs within the same one) or the 0 library, 
+	    to can specify graphs obtained with functions like <a href="NEW_MAP"/>.
+	</p>
+	<p>
+	    FPG_ADD create a copy of the original graph, which it is
+	    valid and accessible. If there is a graph with the same
+	    code in the destiny library, this will be eliminated of
+	    memory and replaced by the new graph.
+	</p>
+	<p>
+	    The major utility of this function is create new libraries
+	    of graphs to save after with <a href="SAVE_FPG"/>. Other
+		functions allow to modify the parameters in memory of the
+	    graphs added to the library, like <a href="MAP_SET_NAME"/>.
+	</p>
+    </description>
+    <note>
+	All graphs added to the same library must have the same
+	depth of colour (1, 8 or 16 bits). Add a graph to a 
+	library	when there is a graph of other type will return
+	an error.
+    </note>
+    <see href="SAVE_FPG"/>
+    <see href="FPG_NEW"/>
+    <see href="MAP_SET_NAME"/>
+    <see href="GRAPHIC_SET"/>
+</function>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SIGNAL">
+    <retval/>
+    <param name="proceso"> Identificador de un proceso </param>
+	<param name="señal"> Tipo de señal a enviar al proceso</param>
+    </param>
+    <abstract> Cambia el estado de un proceso o grupo de procesos</abstract>
+    <description>
+	<p>
+	    Esta función cambia el estado de un proceso o, si recibe como
+	    parámetro una de las constantes acabadas en _TREE, de un
+	    proceso y de todos sus hijos y descendientes.
+	</p>
+	<p>
+		La señal puede ser una de las siguientes constantes predefinidas:
+		<ul>
+			<li>S_KILL</li>
+			<li>S_WAKEUP</li>
+			<li>S_SLEEP</li>
+			<li>S_FREEZE</li>
+			<li>S_KILL_TREE</li>
+			<li>S_WAKEUP_TREE</li>
+			<li>S_SLEEP_TREE</li>
+			<li>S_FREEZE_TREE</li>
+		</ul>
+	</p>
+	<p>
+	    Existen cuatro posibles estados para un proceso:
+	    <ul>
+		<li> WAKEUP: el estado por defecto. El proceso se ejecuta
+		    normalmente cada frame, y si su variable <a href="GRAPH"/>
+		    contiene algún valor, se dibuja un gráfico en pantalla
+		    en las coordenadas especificadas por sus variables
+		    locales <a href="X"/> e <a href="Y"/>.
+		</li>
+		<li> FREEZE: el proceso está detenido, de manera que su
+		    código no se ejecuta cada frame, Sin embargo, su gráfico
+		    sí que se dibuja normalmente.
+		</li>
+		<li> SLEEP: el proceso está durmiente. Su código no se ejecuta,
+		    ni tampoco se dibuja su gráfico en pantalla.
+		</li>
+		<li> KILL: el proceso está marcado para morir. Si este
+		    frame todavía no se ha ejecutado, no se ejecutará ni
+		    se mostrará en pantalla. Antes de comenzar el siguiente
+		    frame, la memoria ocupada por el proceso será liberada
+		    y el proceso desaparecerá de la lista interna.
+		</li>
+	    </ul>
+	</p>
+	<p>
+	    La función SIGNAL puede cambiar en cualquier momento el estado
+		de un proceso o de sus hijos. Sin embargo, los cambios no 
+		surgen efecto hasta <b>justo antes de dibujar el frame
+			actual</b>. Así, un proceso que se mate a sí mismo al ejecutar
+		esta función, no morirá realmente hasta que no llegue el momento
+		de dibujar el próximo frame (en el cual ya no aparecerá).
+	</p>
+    </description>
+    <see href="GET_ID"/>
+</function>

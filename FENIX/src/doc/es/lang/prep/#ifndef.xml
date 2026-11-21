@@ -1,0 +1,282 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 Transitional//EN"
+"http://www.w3.org/TR/REC-html40/loose.dtd">
+<html><head>
+<!-- ViewCVS -- http://viewcvs.sourceforge.net/
+by Greg Stein -- mailto:gstein@lyra.org
+-->
+<title>Fenix/doc/es/lang/prep</title>
+</head>
+<body text="#000000" bgcolor="#ffffff">
+<table width="100%" border=0 cellspacing=0 cellpadding=0>
+<tr>
+<td rowspan=2><h1>Fenix/doc/es/lang/prep</h1></td>
+</tr>
+<tr>
+<td align=right><h3><b><a target="_blank"
+href="/*docroot*/help_dirview.html">ViewCVS and CVS Help</a></b></h3></td>
+</tr>
+</table>
+
+<p><a name="dirlist"></a></p>
+
+<table>
+<tr><td>Current directory:</td><td><b><a href="/#dirlist">[Fenix]</a> / <a href="/Fenix/#dirlist">Fenix</a> / <a href="/Fenix/doc/#dirlist">doc</a> / <a href="/Fenix/doc/es/#dirlist">es</a> / <a href="/Fenix/doc/es/lang/#dirlist">lang</a> / prep</b></td></tr>
+
+
+
+<tr><td>Files shown:</td><td><b>5</b></td></tr>
+
+</table>
+
+<hr noshade>
+
+<table width="100%" border=0 cellspacing=1 cellpadding=2>
+<tr>
+
+
+<th align=left bgcolor="#88ff88"
+colspan=2
+>File</th>
+
+
+<th align=left bgcolor="#cccccc"
+><a href="./?sortby=rev"#dirlist>Rev.</a></th>
+
+
+<th align=left bgcolor="#cccccc"
+><a href="./?sortby=date#dirlist">Age</a></th>
+
+
+<th align=left bgcolor="#cccccc"
+><a href="./?sortby=author#dirlist">Author</a></th>
+
+
+<th align=left bgcolor="#cccccc"
+><a href="./?sortby=log#dirlist">Last log entry</a></th>
+
+
+</tr>
+
+<tr bgcolor="#ffffff">
+
+
+
+<td><a name="#define.xml" href="%23define.xml">
+<img src="/icons/small/text.gif" alt="(file)" border=0
+width=16 height=16>
+#define.xml
+</a>
+
+</td>
+
+<td width="1%"><a href="%23define.xml?graph=1.1"><img
+src="/*docroot*/images/cvsgraph_16x16.png"
+alt="(graph)" width=16 height=16 border=0>
+</a></td>
+
+<td>&nbsp;
+<a href="%23define.xml?rev=1.1&content-type=text/vnd.viewcvs-markup">
+<b>1.1</b>
+</a>
+
+</td>
+<td>&nbsp;2 years</td>
+
+<td>&nbsp;jlceb</td>
+
+
+<td>&nbsp;XML de funciones movidos a lang/func</td>
+
+
+
+
+</tr>
+
+<tr bgcolor="#ccccee">
+
+
+
+<td><a name="#if.xml" href="%23if.xml">
+<img src="/icons/small/text.gif" alt="(file)" border=0
+width=16 height=16>
+#if.xml
+</a>
+
+</td>
+
+<td width="1%"><a href="%23if.xml?graph=1.1"><img
+src="/*docroot*/images/cvsgraph_16x16.png"
+alt="(graph)" width=16 height=16 border=0>
+</a></td>
+
+<td>&nbsp;
+<a href="%23if.xml?rev=1.1&content-type=text/vnd.viewcvs-markup">
+<b>1.1</b>
+</a>
+
+</td>
+<td>&nbsp;2 years</td>
+
+<td>&nbsp;jlceb</td>
+
+
+<td>&nbsp;XML de funciones movidos a lang/func</td>
+
+
+
+
+</tr>
+
+<tr bgcolor="#ffffff">
+
+
+
+<td><a name="#ifdef.xml" href="%23ifdef.xml">
+<img src="/icons/small/text.gif" alt="(file)" border=0
+width=16 height=16>
+#ifdef.xml
+</a>
+
+</td>
+
+<td width="1%"><a href="%23ifdef.xml?graph=1.1"><img
+src="/*docroot*/images/cvsgraph_16x16.png"
+alt="(graph)" width=16 height=16 border=0>
+</a></td>
+
+<td>&nbsp;
+<a href="%23ifdef.xml?rev=1.1&content-type=text/vnd.viewcvs-markup">
+<b>1.1</b>
+</a>
+
+</td>
+<td>&nbsp;2 years</td>
+
+<td>&nbsp;jlceb</td>
+
+
+<td>&nbsp;XML de funciones movidos a lang/func</td>
+
+
+
+
+</tr>
+
+<tr bgcolor="#ccccee">
+
+
+
+<td><a name="#ifndef.xml" href="%23ifndef.xml">
+<img src="/icons/small/text.gif" alt="(file)" border=0
+width=16 height=16>
+#ifndef.xml
+</a>
+
+</td>
+
+<td width="1%"><a href="%23ifndef.xml?graph=1.1"><img
+src="/*docroot*/images/cvsgraph_16x16.png"
+alt="(graph)" width=16 height=16 border=0>
+</a></td>
+
+<td>&nbsp;
+<a href="%23ifndef.xml?rev=1.1&content-type=text/vnd.viewcvs-markup">
+<b>1.1</b>
+</a>
+
+</td>
+<td>&nbsp;2 years</td>
+
+<td>&nbsp;jlceb</td>
+
+
+<td>&nbsp;XML de funciones movidos a lang/func</td>
+
+
+
+
+</tr>
+
+<tr bgcolor="#ffffff">
+
+
+
+<td><a name="index.xml" href="index.xml">
+<img src="/icons/small/text.gif" alt="(file)" border=0
+width=16 height=16>
+index.xml
+</a>
+
+</td>
+
+<td width="1%"><a href="index.xml?graph=1.1"><img
+src="/*docroot*/images/cvsgraph_16x16.png"
+alt="(graph)" width=16 height=16 border=0>
+</a></td>
+
+<td>&nbsp;
+<a href="index.xml?rev=1.1&content-type=text/vnd.viewcvs-markup">
+<b>1.1</b>
+</a>
+
+</td>
+<td>&nbsp;2 years</td>
+
+<td>&nbsp;jlceb</td>
+
+
+<td>&nbsp;Añadidos índices a la documentación</td>
+
+
+
+
+</tr>
+
+</table>
+
+
+
+
+<hr size=1 noshade>
+
+<table><tr><td>
+<form method=GET action="./">
+
+<table>
+
+<tr>
+<td>Show files using tag:</td>
+<td>
+<select name=only_with_tag onchange="submit()">
+
+<option value="">- Non-branch tags -</option>
+
+
+<option>MAIN</option>
+
+
+
+<option>HEAD</option>
+
+
+</select></td>
+</tr>
+
+
+<tr><td>&nbsp;</td><td><input type="submit" value="Show"></td></tr>
+</table>
+</form>
+</td>
+
+</tr></table>
+
+
+
+
+<hr noshade>
+<table width="100%" border=0 cellpadding=0 cellspacing=0><tr>
+<td align=right>
+Powered by<a href="http://viewcvs.sourceforge.net/">ViewCVS 0.9.2</a>
+</td></tr></table>
+</body></html>
+

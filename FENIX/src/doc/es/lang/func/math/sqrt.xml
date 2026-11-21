@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SQRT">
+    <retval/>
+    <param name="número" type="FLOAT"> Número en coma flotante </param>
+    <abstract> Devuelve la raíz cuadrada de un número </abstract>
+    <description>
+	<p>
+	    Esta función devuelve la raíz cuadrada de un número
+	    especificado como parámetro.
+	</p>
+    </description>
+</function>

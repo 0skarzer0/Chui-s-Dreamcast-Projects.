@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="ELSEIF">
+	<syntax> 
+		<b>IF</b>  <b>(</b> expresión <b>)</b>
+			<blockquote>
+				<a href="Sentencias"/> <br/>
+				...
+			</blockquote>
+		<b>ELSEIF</b> <b>(</b> expresión <b>)</b>
+			<blockquote>
+				<a href="Sentencias"/> <br/>
+				...
+			</blockquote>
+		<b>ELSE</b>
+			<blockquote>
+				<a href="Sentencias"/> <br/>
+				...
+			</blockquote>
+		<b>END</b>
+	</syntax>
+	<abstract> Ejecuta secciones de código condicionalmente </abstract>
+    <description>
+		<p>
+			Esta sentencia permite ejecutar código condicionalmente.
+			Al llegar a la sentencia IF, la expresión entre paréntesis
+			se evalúa numéricamente y, si resulta cierta, el bloque
+			de código a continuación se ejecuta. Una vez acabado,
+			o si la expresión resultó falsa, la ejecución continúa
+			normalmente a partir de la siguiente sentencia.
+		</p>
+		<p>
+			La sentencia IF permite partir el bloque de código en dos
+			o más secciones. Si se incluye una cláusula ELSE en mitad
+			del código, el bloque se divide en dos trozos y la parte
+			posterior al ELSE se ejecuta sí y sólo si la expresión
+			original resultó ser false.
+		</p>
+		<p>
+			Además, el bloque anterior al ELSE puede dividirse a su
+			vez por varias cláusulas ELSEIF. Como su nombre indica,
+			estas cláusulas introducen una nueva condición y el código
+			a continuación de las mismas se ejecutará en lugar de
+			los demás si la expresión del IF fue falsa pero la
+			expresada a continuación es correcta.
+		</p>
+		<h3> Orden de evaluación </h3>
+		<p>
+			Una cadena de IF/ELSEIF se ejecuta secuencialmente: primero
+			se comprueba la expresión del primer IF. Si resulta cierta,
+			se ejecuta su código y tras él se continúa después del END.
+			Sólo si resulta falsa se procede a comprobar la 
+			expresión del segundo ELSEIF. Con esta segunda expresión se repite la misma
+			operación: si resulta cierta, se ejecuta el código a
+			continuación inmediatamente y nunca se evalúa cualquier
+			ELSEIF posterior.
+		</p>
+		<p>
+			Es importante tener en cuenta este orden de evaluación si
+			las expresiones a evaluar tienen efectos secundarios
+			(por ejemplo, se llama a funciones que modifican variables
+			globales o se utiliza en ella operadores como ++)
+		</p>
+    </description>
+</section>

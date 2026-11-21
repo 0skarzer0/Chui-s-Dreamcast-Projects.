@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SAVE_FNT">
+    <param name="fuente"> Número de tipo de letra </param>
+    <param name="fichero" type="STRING"> Nombre de fichero </param>
+    <abstract> Graba en disco un tipo de letra FNT </abstract>
+    <description>
+	<p>
+	    Crea o sobreescribe un fichero en disco, con el nombre
+	    especificado, que contenga un tipo de letra actualmente
+	    ubicado en memoria. Este tipo de letra habrá sido recuperado
+	    de disco previamente por la función <a href="LOAD_FNT"/>
+	    u otra equivalente. Se guardará cualquier cambio efectuado
+	    en memoria al tipo de letra con funciones como 
+	    <a href="SET_GLYPH"/>. Además, el fichero se guardará
+	    en formato comprimido.
+	</p>
+    </description>
+    <see href="LOAD_FNT"/>
+    <see href="GET_GLYPH"/>
+    <see href="SET_GLYPH"/>
+</function>

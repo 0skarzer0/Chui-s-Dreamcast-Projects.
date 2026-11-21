@@ -1,0 +1,182 @@
+
+body 
+{ 
+	font-family:	"verdana"; 
+	font-size: 	14px; 
+	background: 	white; 
+	color: 		black; 
+	margin:		0px;
+	margin-bottom:	20px ;
+}
+p,dl,h4,h5,li
+{
+	margin-left:	50px ;
+	margin-right:	25px ;
+}
+ul.noindent
+{
+	margin-left:	0 ;
+}
+
+table
+{
+	background:	#900000 ;
+	color:		white ;
+	padding:	0px;
+	margin:		0px ;
+}
+.header
+{
+	border:		1pt solid black ;
+}
+th
+{
+	background:	#800000 ;
+	border-bottom:	1px solid white ;
+	padding:	6px ;
+	font-family:	"verdana"; 
+	font-size: 	14px; 
+	color:		white;
+	margin:		0px ;
+}
+td
+{
+	margin:		0px ;
+	padding-left:	20px ;
+	padding-right:	20px ;
+	vertical-align:	top ;
+	font-family:	"verdana"; 
+	font-size: 	13px; 
+}
+
+a:link
+{
+	color: 		#800000; 
+	text-decoration:none; 
+	font-weight: 	bold; 
+}
+a:active
+{
+	color:		#C06000
+	text-decoration:none; 
+	font-weight: 	bold; 
+}
+a:visited
+{
+	color: 		#C00000; 
+	text-decoration:none; 
+	font-weight: 	bold; 
+}
+a:hover 
+{ 
+	text-decoration:underline; 
+	font-weight: 	bold; 
+}
+
+dl.list
+{
+	padding:	8px ;
+	margin-left:	65px ;
+	margin-bottom:	15px ;
+	top:		-25px ;
+	position:	relative ;
+}
+dt
+{
+	background:	#C02020 ;
+	background:	#C02020 ;
+	padding:	4px ;
+	width:		150px ;
+	font-weight:	bold ;
+	color:		white ;
+	font-color:	white ;
+}
+dt.indice
+{
+	background:	white ;
+	padding:	0px ;
+}
+dt.list
+{
+	background:	none;
+	padding:	4px ;
+	width:		160px ;
+	font-weight:	bold ;
+	color:		black ;
+}
+dd
+{
+	position: 	relative ;
+	left:		150px ;
+	top:		-25px ;
+	padding:	4px ;
+	margin-bottom:	-15px ;
+	margin-right:	150px ;
+}
+dd.list
+{
+	left:		130px ;
+	margin-right:	130px ;
+}
+
+h1
+{
+	background:	#D02000 ;
+	padding:	8px ;
+	color:		white ;
+	font-weight:	bold ;
+	font-family:	"Arial Black" ;
+	margin-top:	0 ;
+	font-size:	32pt ;
+	text-align:	center ;
+	padding-bottom:	4pt ;
+	margin-bottom:	18pt ;
+	position:	relative ;
+	left:		-30px ;
+	width:		102% ;
+	border-bottom:	solid #605022 3px ;
+}
+
+h4
+{
+	border-bottom:	1px solid black ;
+	padding:	4px ;
+	margin-left:	25px ;
+	margin-right:	25px ;
+}
+
+h3
+{
+	background:	#D02000 ;
+	padding:	8px ;
+	color:		white ;
+	font-weight:	bold ;
+	font-family:	"Arial" ;
+	font-size:	18px ;
+	border-bottom:	1px solid black ;
+	margin-top:	0 ;
+}
+
+li
+{
+	margin-top:	15px ;
+	margin-bottom:	15px ;
+}
+
+pre
+{
+	background:	#F0F0E0 ;
+	color:		black ;
+	border:		double #A00000 3px ;
+	margin-left:	50px ;
+	margin-right:	50px ;
+	padding:	10px ;
+	font-size:	11pt;
+	font-family:	"Courier New";
+}
+
+b
+{
+	font-size:	14px ;
+}
+

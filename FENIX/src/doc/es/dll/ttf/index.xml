@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+
+<index name="dll/ttf">
+    <abstract> DLL para cargar y mostrar fuentes Truetype </abstract>
+    <description>
+	<p>
+	    Esta DLL permite utilizar fuentes Truetype en tus programas.
+	    Las fuentes truetype son fuentes escalables: a partir de un
+	    único fichero es posible dibujar la fuente a cualquier tamaño,
+	    ya que el fichero contiene información acerca de los contornos
+	    de cada carácter, en lugar de una representación en mapa de
+	    bits de los mismos.
+	</p>
+	<p>
+	    La DLL usa la librería freetype para crear una copia de la
+	    fuente en el tamaño deseado en memoria. A continuación,
+	    la fuente puede usarse normamente con cualquier función
+	    de dibujo de textos, como puede ser <a href="WRITE"/>.
+	</p>
+    </description>
+</index>
+
+

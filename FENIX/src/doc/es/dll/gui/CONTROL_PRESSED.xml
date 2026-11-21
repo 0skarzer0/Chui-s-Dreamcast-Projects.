@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CONTROL_PRESSED">
+    <retval type="INT">
+	1 si el usuario hizo click sobre el control recientemente 
+    </retval>
+    <param name="control"> Identificador de un control cualquiera </param>
+    <param name="botón"> Número de botón </param>
+    <abstract> 
+	Comprueba si el usuario hizo clic recientemente sobre el control 
+    </abstract>
+    <description>
+	<p>
+	    Cada vez que el usuario hace click sobre un control cualquiera,
+	    se activa un flag interno en el control. Esta función devuelve
+	    el flag correspondiente al botón deseado y lo pone a 0, de
+	    manera que en posteriores llamadas sólo devolverá 1 si el
+	    usuario ha vuelto a hacer click sobre el control.
+	</p>
+	<p>
+	    Esta función se ha diseñado para ejecutarse cada frame, como
+	    medio para detectar si el usuario interactúa contra algún control.
+	</p>
+    </description>
+    <see name="CONTROL_DOUBLECLICK" href="DLL/GUI/CONTROL_DOUBLECLICK"/>
+    <see name="CONTROL_CHANGED" href="DLL/GUI/CONTROL_CHANGED"/>
+</function>

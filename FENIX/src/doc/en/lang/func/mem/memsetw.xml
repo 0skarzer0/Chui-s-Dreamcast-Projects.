@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MEMSETW">
+    <param name="mem" type="POINTER"> Pointer to a memory zone </param>
+    <param name="value" type="WORD"> Value to assign to all bytes of that zone </param>
+    <param name="words" type="INT"> Size in words (1 word = 2 bytes) of the memory zone </param>
+    <abstract> It fills a memory zone of size WORDS located in MEM with VALUE </abstract>
+    <description>
+	<p>
+		This advanced function fills a memory zone of size WORDS from
+		value indicated by VALUE. This function is useful to modify graphs 
+		of 16 bits with a colour returned by <a name="RGB" href="EN/COL/RGB" /> using 
+		<a href="EN/MAP/MAP_BUFFER" name="MAP_BUFFER" />. We must know that the total size 
+		in bytes of the zone, which is filled, is WORDS * 2 because the size of each WORD 
+		is of 2 BYTES.  
+	</p>
+    </description>
+    <see name="ALLOC" href="EN/MEM/ALLOC"/>
+    <see name="MEMSET" href="EN/MEM/MEMSET"/>
+    <see name="MAP_BUFFER" href="EN/MAP/MAP_BUFFER"/>
+    <see name="RGB" href="EN/COL/RGB"/>
+</function>

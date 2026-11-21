@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="FADE_MUSIC_IN" />
+<fnc href="FADE_MUSIC_OFF" />
+<fnc href="IS_PLAYING_SONG" />
+<fnc href="LOAD_SONG" />
+<fnc href="PAUSE_SONG" />
+<fnc href="PLAY_SONG" />
+<fnc href="RESUME_SONG" />
+<fnc href="SET_SONG_VOLUME" />
+<fnc href="STOP_SONG" />
+<fnc href="UNLOAD_SONG" />
+</INDEX>

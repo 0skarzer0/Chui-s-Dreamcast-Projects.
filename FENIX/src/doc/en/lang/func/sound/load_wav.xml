@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_WAV">
+    <retval/>
+    <param name="archive" type="STRING"> Name of WAV archive </param>
+    <abstract> It recovers of disk a sound effect archive </abstract>
+    <description>
+	<p>
+	    This function loads an archive in WAV format of disk
+	    and puts on memory to play it by the function <a href="PLAY_WAV"/>.
+	    The value that the function returns is an entire number
+	    that represent the resort on memory, or -1 if it was not 
+		possible to load the archive or if it was not a valid format.
+	</p>
+	<p>
+	    If you do not want to use more the sound effect, you
+	    can unload it of memory using the function <a href="UNLOAD_WAV"/>.
+	</p>
+    </description>
+    <see href="PLAY_WAV"/>
+    <see href="UNLOAD_WAV"/>
+</function>

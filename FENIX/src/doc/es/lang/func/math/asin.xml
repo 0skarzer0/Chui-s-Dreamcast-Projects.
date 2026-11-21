@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ASIN">
+    <retval/>
+    <param name="número" type="FLOAT"> Valor entre -1.0 y 1.0 </param>
+    <abstract> Devuelve el arcoseno de un valor </abstract>
+    <description>
+	<p>
+	    Devuelve un ángulo en milésimas de grado, entre 0 y -90000,
+	    cuyo seno equivale al valor indicado como parámetro.
+	</p>
+    </description>
+    <see href="MATH/SIN" name="SIN"/>
+</function>

@@ -1,0 +1,73 @@
+#
+# Makefile for Cygwin in -mno-cygwin mode. This builds a DLL that is
+# independent of Cygwin DLL and only depends on MS CRTDLL runtime.
+#
+# If you want to use Mingw32 gcc, then use the makeit.bat file instead.
+#
+CC = gcc
+
+DEBUG = -g -O2
+CFLAGS = $(DEBUG) -Iinclude/fenix -Iinclude/sdl -Iinclude/zlib -DWIN32
+
+DLLWRAP = dllwrap
+
+#
+# Various targets to build.
+#
+DLL_NAME = agua.dll
+DLL_EXP_DEF = fenixdll.def
+
+all: $(DLL_NAME)
+
+#
+# sources, objects, etc.
+#
+SRCS  = $(wildcard *.c)
+OBJS := $(OBJS:.c=.o)
+
+#
+# DLL related variables. These are used when building the DLL. See later.
+#
+
+# This is where you pass linker flags, such as library search path, alternate
+# entry point, etc. The -s flag strips the final DLL.
+DLL_LDFLAGS = -s
+# any extra libraries that your DLL may depend on.
+DLL_LDLIBS =
+
+#
+# your sources etc that go into the DLL.
+#
+DLL_SRCS = agua.c
+DLL_OBJS = agua.o
+
+###
+#
+# Making DLL
+#
+###
+
+#
+# Note that we let dllwrap create both the DEF and IMPORT library in
+# one shot. No need to run dlltool anymore.
+#
+DLLWRAP_FLAGS = --no-export-all --def $(DLL_EXP_DEF) \
+	--target=i386-mingw32 -mno-cygwin \
+	--driver-name $(CC)
+
+$(DLL_NAME) $(DLL_EXP_DEF): $(DLL_OBJS)
+	$(DLLWRAP) $(DLLWRAP_FLAGS) -o $(DLL_NAME) \
+	  $(DLL_OBJS) $(DLL_LDFLAGS) $(DLL_LDLIBS)
+
+#
+# dependencies.
+#
+
+agua.o: agua.c
+
+.c.o:
+	$(CC) -c $(CFLAGS) -o $@ $<
+
+clean:
+	-rm -f $(OBJS) $(DLL_OBJS) $(DLL_NAME) $(DLL_EXP_DEF)
+

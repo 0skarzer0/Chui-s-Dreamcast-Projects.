@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="FULL_SCREEN">
+    <abstract>It adjusts if the program is executed in window mode or full screen</abstract>
+    <description>
+	<p>
+	    This variable indicates if the program is executed in window mode or full screen. To 
+	    indicate window mode, we must indicate that his value is FALSE (or the value 0), 
+		for full screen the value of this variable must be TRUE
+	    (or a value different from 0). The default value is TRUE.
+	</p>
+	<p>
+		The value of this variable must be indicated before calling the function
+		<a href="INIT/SET_MODE" name="SET_MODE"/>.	    
+	</p>
+    </description>
+    <note>
+    <p>
+    	If you want to change for example: a program from full screen to window mode you must 
+    	to assign the correct value to this variable and then call again to <a href="INIT/SET_MODE" name="SET_MODE"/>.
+    </p>
+    </note>
+    <see href="INIT/SET_MODE" name="SET_MODE"/>
+</variable>

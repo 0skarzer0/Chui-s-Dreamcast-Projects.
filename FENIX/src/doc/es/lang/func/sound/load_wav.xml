@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_WAV">
+    <retval/>
+    <param name="fichero" type="STRING"> Nombre del fichero WAV </param>
+    <abstract> Recupera de disco un fichero de efecto de sonido </abstract>
+    <description>
+	<p>
+	    Esta función carga un fichero en formato WAV de disco
+	    y lo almacena en memoria para reproducirlo en el
+	    futuro mediante la función <a href="PLAY_WAV"/>.
+	    El valor que devuelve la función es un número
+	    entero que representa el recurso en memoria, o -1
+	    si no fue posible cargar el fichero o no estaba
+	    en un formato correcto.
+	</p>
+	<p>
+	    Si no se desea utilizar por más tiempo, puede
+	    descargarse de memoria el efecto de sonido
+	    empleando la función <a href="UNLOAD_WAV"/>.
+	</p>
+    </description>
+    <see href="PLAY_WAV"/>
+    <see href="UNLOAD_WAV"/>
+</function>

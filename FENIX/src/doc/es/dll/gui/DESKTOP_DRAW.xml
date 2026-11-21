@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DESKTOP_DRAW">
+<retval/>
+<param name="librería"> Número de librería FPG </param>
+<param name="gráfico"> Número de gráfico dentro de la librería </param>
+<abstract> Dibuja el escritorio completo en un gráfico </abstract>
+<description>
+    <p>
+	Dibuja el escritorio en un gráfico proporcionado por el
+	usuario, en su estado actual en cuanto a número y
+	posicionamiento de ventanas. El gráfico deberá ser de un tamaño igual al
+	modo gráfico actual en pantalla, ya que el escritorio
+	se ajusta siempre a dicho tamaño.
+    </p>
+    <p>
+	No es necesario llamar a esta función en ningún caso,
+	ya que una vez activado el escritorio con
+	<a href="DLL/GUI/GUI_SHOW" name="GUI_SHOW"/>, éste
+	será dibujado automáticamente cada frame.
+    </p>
+</description>
+<see name="GUI_SHOW" href="DLL/GUI/GUI_SHOW"/>
+<see name="GUI_HIDE" href="DLL/GUI/GUI_HIDE"/>
+</function>

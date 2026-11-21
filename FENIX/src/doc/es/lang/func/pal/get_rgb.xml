@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_RGB">
+    <retval/>
+    <param name="color"> Un color de 16 bits </param>
+    <param name="r" type="POINTER"> Variable tipo INT que contendrá la componente roja </param>
+    <param name="g" type="POINTER"> Variable tipo INT que contendrá la componente verde </param>
+    <param name="b" type="POINTER"> Variable tipo INT que contendrá la componente azul </param>
+    <abstract> Devuelve las componentes de un color de 16 bits </abstract>
+    <description>
+	<p>
+	    Esta función permite obtener las componentes de un color de 16 bits,
+	    obtenido mediante la función <a name="RGB" href="PAL/RGB" /> o bien leído de los
+	    pixels de un gráfico mediante una función como <a name="MAP_GET_PIXEL" href="PAL/MAP_GET_PIXEL" />.
+	</p>
+	<p>
+	    Las componentes contendrán valores entre 0 y 255. Sin embargo,
+	    debido a la diferencia de precisión entre modos gráficos y
+	    tarjetas gráficas, no es posible determinar de antemano cual
+	    es el valor exacto que se obtendrá. Por ejemplo, incluso un
+	    color blanco puro seguramente obtendrá valores como 242
+	    o 248 en sus componentes, en lugar de 255 como sería de esperar.
+	    Hay que tener en cuenta que para almacenar los 256 valores
+	    posibles serían necesarios 8 bits de precisión. Sin embargo,
+	    en un modo de 15 ó 16 bits sólo habrán 5 ó 6 bits de
+	    precisión disponibles por cada componente.
+	</p>
+	<p>
+		El mismo pixel del mismo gráfico puede devolver valores de
+		componentes diferentes en ordenadores distintos. Es importante
+		no comparar los valores devueltos por GET_RGB con ningún
+		valor constante. Sin embargo, se consideran válidos los
+		siguientes usos con los valores devueltos por GET_RGB:
+		<br/><br/>
+			Comprobar que una componente está a cero (== 0).
+		     Este valor se considera seguro. Es posible
+		     comprobar que un color sea el negro puro
+		     observando si sus tres componentes valen cero.<br/>
+		<br/> Comparar componentes de dos valores obtenidos mediante RGB, MAP_GET_PIXEL,
+		     u otra función que trabaje con colores de 16 bits,
+		     durante la misma ejecución del programa.<br/>
+		<br/> Comparar valores de forma aproximada (por
+		     ejemplo, comparar si una componente tiene
+		     un valor mayor a 128) cuando no sea importante
+		     obtener un resultado exacto ni el mismo en
+		     todos los ordenadores.<br/>
+			</p>
+    </description>
+    <note>
+        Es importante inicializar el modo gráfico de 16 bits antes de
+        llamar a esta función o realizar ninguna otra operación con
+        colores de 16 bits.
+    </note>
+    <see name="MAP_GET_PIXEL" href="PAL/MAP_GET_PIXEL"/>
+    <see name="RGB" href="PAL/RGB"/>
+    <see name="SET_MODE" href="PAL/SET_MODE"/>
+</function>

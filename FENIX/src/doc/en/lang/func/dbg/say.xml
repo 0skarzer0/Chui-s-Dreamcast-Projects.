@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SAY">
+    <param name="message" type="STRING">Message to show in console</param>    
+    <abstract>It shows a message in the DEBUG console</abstract>
+    <description>
+	<p>
+		This function shows in the console (ALT+C in compilation mode
+		for DEBUG) a line with the indicated text.
+	</p>
+	</description>    
+</function>

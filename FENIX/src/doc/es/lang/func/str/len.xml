@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LEN">
+    <retval> Número de caracteres </retval>
+    <param name="cadena"> Cadena </param>
+    <abstract> Devuelve la longitud de una cadena </abstract>
+    <description>
+	<p>
+	    Devuelve el número de caracteres (la longitud)
+	    de una cadena dada.
+	</p>
+    </description>
+<see href="STR/SUBSTR" name="SUBSTR"/>
+<see href="STR/STRREV" name="STRREV"/>
+<see href="STR/FIND" name="FIND"/>
+</function>

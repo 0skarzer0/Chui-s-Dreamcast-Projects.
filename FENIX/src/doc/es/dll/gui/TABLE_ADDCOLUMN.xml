@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_ADDCOLUMN">
+<retval />
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="nombre" type="STRING"> Nombre de la columna </param>
+<param name="datos" type="VAR" optional="YES"> Array de STRING con datos </param>
+<abstract> Añade una columna a una tabla, opcionalmente con datos </abstract>
+<description>
+    <p>
+	Añade una columna a una tabla, al final de las existentes
+	(si las hay). Opcionalmente, es posible poblar la tabla
+	de datos incluyendo como tercer parámetro el nombre de un
+	array de cadenas (STRING). Si no se dispone de datos aún,
+	basta con no especificar este parámetro.
+    </p>
+    <p>
+	Como alternativa a añadir los datos cuando se crea cada columna,
+	una tabla puede poblarse mediante la función
+	<a href="DLL/GUI/TABLE_ADDLINE" name="TABLE_ADDLINE"/>.
+    </p>
+    <p>
+	Es posible utilizar esta función para crear un array de
+	gráficos en lugar de cadenas. Para ello, basta con indicar
+	como tercer parámetro el nombre de un array de enteros (INT)
+	en lugar de un array de STRING.
+    </p>	
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+<see name="TABLE_REMOVECOLUMN" href="DLL/GUI/TABLE_REMOVECOLUMN"/>
+</function>

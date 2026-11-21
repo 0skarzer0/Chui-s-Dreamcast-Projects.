@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<var href="ALPHA" />
+<var href="ANGLE" />
+<var href="BIGBRO" />
+<var href="CTYPE" />
+<var href="CFLAGS" />
+<var href="FATHER" />
+<var href="FILE" />
+<var href="FLAGS" />
+<var href="GRAPH" />
+<var href="PRIORITY" />
+<var href="REGION" />
+<var href="RESOLUTION" />
+<var href="SIZE" />
+<var href="SON" />
+<var href="SMALLBRO" />
+<var href="X" />
+<var href="XGRAPH" />
+<var href="Y" />
+<var href="Z" />
+</INDEX>

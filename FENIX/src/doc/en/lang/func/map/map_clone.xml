@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_CLONE">
+    <retval/>
+    <param name="libray"> Number of FPG library</param>
+    <param name="graph"> Number of graph inside of library </param>
+    <abstract> It creates a copy of a graph </abstract>
+    <description>
+	<p>
+	    This function creates a copy on memory of an any graph.
+	    The new graph will be in the library 0, and Fenix will
+	    assign a new avaliable number for it.
+	    The returned value of this function will be the number of the new 
+	    graph, and it must be saved to can use in any graph operation.
+	</p>
+	<p>
+	    The library 0 or the system library is not limited to 999 graphs,
+	    so that it is not possible that this function returns an error if
+	    there is not any avaliable number.
+	</p>
+	<p>
+	    If you want to create a new graph inside the FPG library but
+	    it is not the system library, then it is recommended to use
+	    the function <a href="FPG_ADD"/>.
+	</p>
+    </description>
+    <see href="FPG_ADD"/>
+    <see href="NEW_MAP"/>
+</function>

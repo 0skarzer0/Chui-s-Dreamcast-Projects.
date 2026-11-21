@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FADE_MUSIC_IN">
+    <param name="music"> Identifier of the music </param>
+    <param name="repeats"> Number of repeats </param>
+    <param name="miliseconds"> Time to reboot the music in miliseconds </param>
+    <abstract> Play music raising the volume from 0 gradually </abstract>
+    <description>
+	<p>
+	    This function is equivalent to <a href="PLAY_SONG"/>, but
+	    the music does not begin to play to high volume but that 
+		from silence, and it goes raising the volume gradually,
+		until in a while indicated in the parameter <i>miliseconds</i>, 
+		the volume is full.
+	</p>
+	<p>
+	    The second parameter indicates the number of times that
+	    must repeat the reproduction. We can use 0 for not to 
+		repeat it, or -1 for repeat it all time until it stops 
+		with <a href="STOP_SONG"/>.
+	    This function is specially useful for playing sound
+		effects followed of this type (for example, 
+	    environmental sound) instead of music.
+	</p>
+    </description>
+    <see href="PLAY_SONG"/>
+    <see href="STOP_SONG"/>
+    <see href="UNLOAD_SONG"/>
+    <see href="IS_PLAYING_SONG"/>
+    <see href="FADE_SONG_OFF"/>
+</function>

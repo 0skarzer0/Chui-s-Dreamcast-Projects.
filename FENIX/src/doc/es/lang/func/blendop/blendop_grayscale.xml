@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="BLENDOP_GRAYSCALE">
+    <retval/>
+    <param name="BLENDOP"> Identificador de una tabla BLENDOP </param>
+    <param name="METODO"> Método a aplicar (1, 2 ó 3) </param>
+    <abstract> Aplica conversión a escala de grises a una tabla blendop </abstract>
+    <description>
+	<p>
+	    Dada una tabla blendop creada con <a href="BLENDOP_NEW"/>, esta
+	    función aplica una fórmula al gráfico original que convierte todos
+	    los colores en su equivalente en escala de grises. Para realizar
+	    esta operación se soportan tres métodos de conversión diferentes:
+	    <ul>
+		<li> 
+		    1: Luminancia. El color resultante tiene una intensidad de
+		    0.3*R + 0.59*G + 0.11*B. Normalmente, este es el método
+		    que ofrece una mayor nitidez en imágenes fotográficas.
+		</li>
+		<li> 
+		    2: Desaturación. El color resultante es la media de las tres
+		    componentes R, G y B. Recomendable para gráficos oscuros o
+		    coloreados a mano con cierta variedad de color.
+		</li>
+		<li>
+		    3: Máximo. El color resultante es el máximo entre las tres
+		    componentes. Recomendable para gráficos de líneas con
+		    pocos colores de diferencias marcadas.
+		</li>
+	</p>
+	<p>
+	    Esta es una función lenta, que no es recomendable llamar periódicamente
+	    en el programa, al igual que ocurre con la mayoría de funciones BLENDOP.
+	</p>
+    </description>
+    <see name="BLENDOP_NEW"/>
+    <see name="BLENDOP_IDENTITY" />
+    <see name="BLENDOP_TRANSLUCENCY" />
+    <see name="BLENDOP_TINT" />
+    <see name="BLENDOP_INTENSITY" />
+    <see name="BLENDOP_SWAP" />
+    <see name="BLENDOP_ASSIGN" />
+    <see name="BLENDOP_APPLY" />
+</function>

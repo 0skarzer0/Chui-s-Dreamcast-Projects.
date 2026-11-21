@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="BUTTON">
+<retval type="INT">Identificador del control creado</retval>
+<param name="texto" type="STRING"> Texto del botón </param>
+<param name="proceso" optional="YES"> Tipo del proceso a crear </param>
+<abstract> Crea un botón </abstract>
+<description>
+    <p>
+	Crea un botón, un control que contiene un texto y el usuario
+	puede pulsar para ejecutar una acción determinada. Es posible
+	especificar, como segundo parámetro, un tipo de proceso
+	empleando el operador TYPE. El botón creará un proceso de
+	este tipo cada vez que sea pulsado y lo ejecutará inmediatamente.
+	Este proceso no deberá recibir parámetros.
+    </p>
+    <p>
+	Si no se desea crear una multitud de procesos, uno por cada
+	botón creado, una alternativa es usar la función
+	<a href="DLL/GUI/BUTTON_PRESSED" name="BUTTON_PRESSED"/>
+	en un bucle con FRAME, para comprobar si el usuario lo pulsa.
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+<see name="BUTTON_PRESSED" href="DLL/GUI/BUTTON_PRESSED"/>
+</function>

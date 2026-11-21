@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MPEG_TOTAL_TIME">
+    <retval/>
+    <param name="vídeo"> Identificador del vídeo </param>
+    <abstract> Devuelve la duración total de un vídeo en centésimas de segundo </abstract>
+    <description>
+	<p>
+	    Devuelve la duración de un vídeo en centésimas de segundo.
+	    Observa que esta medida del tiempo es compatible
+	    con la variable <a href="TIMER"/>.
+	</p>
+    </description>
+    <see name="LOAD_MPEG" href="DLL/MPEG/LOAD_MPEG"/>
+    <see name="MPEG_CURRENT_TIME" href="DLL/MPEG/MPEG_CURRENT_TIME"/>
+</function>

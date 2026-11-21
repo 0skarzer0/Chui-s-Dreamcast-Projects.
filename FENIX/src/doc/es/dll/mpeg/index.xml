@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+
+<index name="dll/mpeg">
+    <abstract> DLL para cargar y mostrar videos MPEG </abstract>
+    <description>
+	<p>
+	    Esta DLL permite mostrar videos MPEG en tus juegos. Los
+	    videos MPEG guardan información sin paleta, por lo que
+	    pueden ser más útiles que los videos FLI para juegos
+	    en 16 bits. Sin embargo, sólo es posible usarlos en
+	    modo de 16 bits.
+	</p>
+	<p>
+	    El funcionamiento de esta librería es diferente a la
+	    de los FLI. Una vez recuperado un video con
+	    <a href="LOAD_MPEG"/>, debe reproducirse mediante
+	    <a href="PLAY_MPEG"/>, pero esta función crea un gráfico en memoria de la
+	    misma forma que funciones como <a href="NEW_MAP"/>.
+	    Ese gráfico puede usarse luego en un proceso para
+	    mostrar el video de forma actualizada cada frame.
+	    Este funcionamiento proporciona un método flexible
+	    de poder emplear tus videos.
+	</p>
+	<p>
+	    Sin embargo, un video MPEG consume considerables
+	    recursos en su reproducción. La reproducción de un
+	    video a resolución o frames por segundo elevados
+	    puede suponer un descenso del rendimiento en
+	    determinados ordenadores.
+	</p>
+    </description>
+</index>
+
+
+

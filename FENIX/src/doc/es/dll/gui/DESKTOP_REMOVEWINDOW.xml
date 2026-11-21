@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DESKTOP_REMOVEWINDOW">
+<retval/>
+<param name="ventana"> Identificador de la ventana </param>
+<abstract> Quita una ventana del escritorio </abstract>
+<description>
+    <p>
+	Elimina una ventana del escritorio, si está presente. La ventana no
+	se visualizará por más tiempo, ni en pantalla, ni en cualquier barra
+	de tareas. Sin embargo, los recursos en memoria de la ventana siguen
+	existiendo, por lo que sigue siendo válido manipularla con cualquiera
+	de las funciones disponibles para ello (por ejemplo, añadiendo nuevos
+	controles, o cambiando su tamaño). La mayor utilidad de usar esta
+	función en lugar de <a href="DLL/GUI/WINDOW_DESTROY" name="WINDOW_DESTROY"/>
+	estriba en que, en caso de necesitar volver a mostrar la ventana, no es
+	necesario volver a crearla y puede volver a aparecer de forma inmediata.
+    </p>
+</description>
+<see name="WINDOW_DESTROY" href="DLL/GUI/WINDOW_DESTROY"/>
+</function>

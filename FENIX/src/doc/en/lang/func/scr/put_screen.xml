@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PUT_SCREEN">
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph to draw </param>
+    <abstract> It draws a graph in the background of screen </abstract>
+    <description>
+	<p>
+	    This function draws a graph in the background of screen, in the 
+	    center of the screen. Normally, it is used with a graph that has the
+	    size of the screen. For that it is good to have a graphs of background
+	    representing screens or levels, and to draw them using this function.
+	    For better techniques, it can be used functions like <a href="PUT"/>
+	    or <a href="XPUT"/>.
+	</p>
+    </description>
+    <see href="XPUT"/>
+    <see href="PUT"/>
+</function>

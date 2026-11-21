@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FADE_OFF">
+    <retval/>
+    <abstract> Restaura una transición de color </abstract>
+    <description>
+	<p>
+	    Esta función es parecida a ejecutar una orden FADE(0,0,0,16).
+	    Sin embargo, a diferencia de la orden FADE, que vuelve inmediatamente,
+	    esta función espera a que el fundido al negro termine antes de volver.
+	    Mientras dure este fundido al negro especial, todos los procesos estarán
+	    detenidos así como cualquier tipo de proceso interno, incluyendo la
+	    actualización de variables globales. La función tardará aproximadamente
+	    unos cuatro frames en terminar.
+	</p>
+    </description>
+    <see name="FADE" href="PAL/FADE"/>
+    <see name="FADE_ON" href="PAL/FADE_ON"/>
+</function>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MEMSET">
+    <param name="mem" type="POINTER"> Puntero a una zona de memoria </param>
+    <param name="valor" type="BYTE"> Valor que se desea asignar a todos los bytes de esa zona </param>
+    <param name="bytes" type="INT"> Tamaño en bytes de la zona de memoria </param>
+    <abstract> Rellena una zona de memoria de tamaño BYTES situado en MEM con VALOR </abstract>
+    <description>
+	<p>
+		Esta función avanzada rellena una zona de memoria de tamaño BYTES a partir de 
+		del valor indicado por VALOR.  Su mayor utilidad consiste en rellenar bloques de 
+		memória dinámica reservados por <a href="MEM/ALLOC" name="ALLOC" />, aunque también 
+		puede ser muy util para modificar gráficos de 8 bits en combinación con 
+		<a href="MAP/MAP_BUFFER" name="MAP_BUFFER" />.  
+	</p>
+    </description>
+    <see name="ALLOC" href="MEM/ALLOC"/>
+    <see name="MEMSETW" href="MEM/MEMSETW"/>
+    <see name="MAP_BUFFER" href="MAP/MAP_BUFFER"/>
+</function>

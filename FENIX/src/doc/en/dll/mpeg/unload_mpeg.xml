@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="UNLOAD_MPEG">
+    <retval/>
+    <param name="video"> Identifier of vídeo </param>
+    <abstract> It deletes the memory occupied by a video </abstract>
+    <description>
+	<p>
+	    This function deletes of memory the necessary information
+	    to reproduce a MPEG video loaded previously with <a href="LOAD_MPEG"/>.
+	    If the video is playing, you must stop it with <a href="STOP_MPEG"/> to
+		use this function.
+	</p>
+    </description>
+    <see href="dll/mpeg/LOAD_MPEG" name="LOAD_MPEG"/>
+    <see href="dll/mpeg/STOP_MPEG" name="STOP_MPEG"/>
+</function>

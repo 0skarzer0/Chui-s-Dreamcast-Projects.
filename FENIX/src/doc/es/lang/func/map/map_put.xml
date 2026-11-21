@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_PUT">
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico de destino dentro de la librería </param>
+    <param name="gráfico-origen"> Número de gráfico a dibujar dentro de la librería </param>
+    <param name="x"> Coordenada horizontal </param>
+    <param name="y"> Coordenada vertical </param>
+    <abstract> Dibuja un gráfico dentro de otro </abstract>
+    <description>
+	<p>
+	    Esta función dibuja un gráfico directamente sobre otro, utilizando
+	    unas coordenadas dentro del gráfico de destino, como si este fuese
+	    el fondo de pantalla.
+	</p>
+	<p>
+	    Una limitación de esta función es que ambos gráficos deben perteneces
+	    a la misma librería. Habitualmente los gráficos de destino suelen
+	    ser gráficos temporales creados por <a href="NEW_MAP"/>, por lo que
+	    puede usarse como gráfico de origen una copia <a href="MAP_CLONE"/>
+	    de un gráfico de cualquier librería para paliar la limitación.
+	</p>
+	<p>
+	    El punto especificado con los parámetros equivaldrá al lugar donde
+	    se dibuje el centro del gráfico a dibujar.
+	</p>
+    </description>
+    <see href="MAP_XPUT"/>
+    <see href="NEW_MAP"/>
+    <see href="MAP_CLONE"/>
+</function>

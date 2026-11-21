@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="X">
+    <abstract>Position X of the process</abstract>    
+	<description>
+	<p>
+		This position X is relative to the type of coordinates indicated by 
+		the variable <a href="LVARS/CTYPE" name="CTYPE" type="VAR" />. Changing 
+		the value of this variale, the graph of process will be drawn in the position
+		indicated in the next frame.
+	</p>
+	<p>
+		By default the value for this coordinate is in pixels, where 0,0 corresponds 
+		to the top left corner of the destiny zone. To use coordinates with 
+		with smaller units must be indicated the factor of reduction using the variable 
+		<a type="var" name="RESOLUTION" href="LVARS/RESOLUTION" />. Automatically it will be rounded
+		the values of fractions of pixel before drawing the graph on screen.
+	</p>
+	<p>
+		The indicated coordinate X is the one of the control post 0 of the
+		graph or in its defect to its geometric center.
+	</p>
+    </description>
+    <see type="var" name="Y" href="LVARS/Y" />
+    <see type="var" name="Z" href="LVARS/Z" />
+    <see type="var" name="CTYPE" href="LVARS/CTYPE" />
+    <see type="var" name="RESOLUTION" href="LVARS/RESOLUTION" />
+</variable>

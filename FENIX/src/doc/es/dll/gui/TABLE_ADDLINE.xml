@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_ADDLINE">
+<retval />
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="datos" type="..."> Datos de cada columna </param>
+<abstract> Añade una fila a una tabla, con datos </abstract>
+<description>
+    <p>
+	Esta función recibe un número variable de parámetros, de 2 a 17,
+	ya que a partir del segundo parámetro espera recibir un parámetro
+	por cada columna que tenga la tabla.
+	Añade una fila al final de la misma, con los datos tal
+	como son recibidos como parámetro.
+    </p>
+    <p>
+	Como alternativa a añadir los datos, es posible rellenar la tabla
+	cuando se crea cada columna, mediante la función
+	<a href="DLL/GUI/TABLE_ADDCOLUMN" name="TABLE_ADDCOLUMN"/>.
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+</function>

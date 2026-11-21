@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MOVE_EXPLOSION">
+    <abstract> Avanza un frame una explosión </abstract>
+    <description>
+	<p>
+	    Avanza un frame una explosión en curso.
+	</p>
+	<p>
+		Esta función avanza un frame una explosión que
+		esté en curso creada mediante <a href="DLL/EXPLOSION/EXPLOSION" name="EXPLOSION"/>.
+		En caso de que la explosión haya llegado a su final
+		o no existe ninguna se retornará un -1.
+	</p>
+    </description>
+    <see href="DLL/EXPLOSION/EXPLOSION" name="EXPLOSION"/>
+</function>

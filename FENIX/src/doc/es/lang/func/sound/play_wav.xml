@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PLAY_WAV">
+    <retval/>
+    <param name="wav"> Identificador del sonido devuelto por LOAD_WAV </param>
+    <param name="repeticiones"> Número de repeticiones </param>
+    <abstract> Reproduce un efecto de sonido </abstract>
+    <description>
+	<p>
+	    Reproduce un efecto de sonido recuperado previamente de disco
+	    mediante la función <a href="LOAD_WAV"/>.  Es posible reproducir
+	    varias veces un mismo efecto de forma simultánea. Esta función
+	    devuelve un identificador del <i>canal</i> de sonido empleado para
+	    reproducir el efecto de sonido. Existen 16 canales de sonido
+	    disponibles para efectos, y esta función puede elegir cualquiera de
+	    ellos que esté libre.  En caso de reproducir una gran cantidad de
+	    efectos de sonido simultáneamente, es posible que en un momento
+	    dado hayan ya 16 sonidos activos, en cuyo caso el nuevo sonido no
+	    será reproducido y esta función devolverá -1.
+	</p>
+	<p>
+	    El identificador de canal devuelto por esta función
+	    puede usarse con <a href="IS_PLAYING_WAV"/>,
+	    <a href="SET_WAV_VOLUME"/>, y demás funciones de sonido.
+	</p>
+	<p>
+	    El efecto de sonido puede reproducirse una sola vez,
+	    si se pasa como parámetro de repeticiones 0 ó 1,
+	    el número concreto de repeticiones indicado, o
+	    bien indefinidamente si este parámetro es -1.
+	    Hay que tener en cuenta que si el sonido se reproduce
+	    indefinidamente, el canal quedará ocupado hasta que
+	    el sonido se detenga con <a href="STOP_WAV"/>.
+	</p>
+    </description>
+    <see href="STOP_WAV"/>
+    <see href="IS_PLAYING_WAV"/>
+    <see href="SET_WAV_VOLUME"/>
+    <see href="SET_PANNING"/>
+    <see href="SET_POSITION"/>
+    <see href="SET_DISTANCE"/>
+    <see href="REVERSE_STEREO"/>
+</function>

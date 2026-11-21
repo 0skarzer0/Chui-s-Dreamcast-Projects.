@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="FOCUS_STATUS">
+	<abstract> Se pone a 1 cuando la aplicación está en primer plano </abstract>
+    <description>
+	<p>
+		Cuando el juego funciona en una ventana y ésta está en primer
+		plano, este valor se pone a 1 automáticamente. En cambio, cuando
+		la aplicación está en segundo plano o minimizada, este valor
+		se pone a 0.
+	</p>
+	<p>
+		Para que un juego esté bien integrado en el sistema operativo, 
+		se recomienda consultar esta variable cada frame y poner el
+		juego en pausa cuando no está a 1, especialmente para los
+		juegos que disponen de la opción de funcionar en una ventana.
+	</p>
+    </description>
+</variable>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="LOOP">
+	<syntax> 
+		<b>LOOP</b> 
+		<blockquote>
+			<a href="Sentencias" /> <br/>
+			...
+		</blockquote>
+		<b>END</b>
+	</syntax>
+	<abstract> Sentencia de bucle infinito </abstract>
+    <description>
+		<p>
+			Esta sentencia permite crear un bucle, es decir
+			de código que se ejecuta repetidamente una y otra vez.
+		</p>
+		<p>
+			En un principio, el bucle se ejecuta infinitamente, sin que
+			haya ninguna condición de salida. Sin embargo, es posible
+			salir del bucle (pasando a ejecutarse la primera sentencia
+			después del END) con la sentencia <a href="BREAK"/>.
+		</p>
+		<p>
+			La mayor utilidad de un bucle infinito de este tipo consiste
+			en ejecutar la sentencia <a href="FRAME"/> en su interior,
+			creando de esta manera un proceso que permanece en pantalla
+			(probablemente cambiando de posición según el código contenido
+			en el bucle antes del FRAME) hasta que se mata con la
+			función <a href="SIGNAL"/> u otro método equivalente.
+		</p>
+    </description>
+	<see href="FOR"/>
+	<see href="FROM"/>
+	<see href="BREAK"/>
+	<see href="WHILE"/>
+	<see href="REPEAT"/>
+	<see href="CONTINUE"/>
+</section>

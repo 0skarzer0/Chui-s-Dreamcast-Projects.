@@ -1,0 +1,82 @@
+TARGET=fxi
+
+KOS_CFLAGS+= -I$(KOS_BASE)/addons/include/ -I$(KOS_BASE)/addons/include/SDL  -Iinclude -I../inc -I../../include -I../src  -DDREAMCAST -DTARGET_DREAMCAST -DTARGET_DC -DTARGET_LINUX -DTARGET_linux -DLINUX -DFSL -DDATA_PREFIX="/cd/exec/" -DFILE_SEPARATOR="/" -DNO_CONSOLE -DNO_PROFILER -DNO_USE_TV_FILTER
+
+KOS_CFLAGS+=-DVERTICAL_SCROLL
+KOS_CFLAGS+=-DNO_DESC
+
+KOS_LDFLAGS+= -Wl,--no-check-sections
+
+all: $(TARGET).bin
+
+include $(KOS_BASE)/Makefile.rules
+
+.CFILES	=	dcmain.c \
+		../src/main.c \
+		../src/dcbr.c \
+		../src/instance.c \
+		../src/strings.c \
+		../src/i_main.c \
+		../src/i_debug.c \
+		../src/i_func.c \
+		../src/i_saveload.c \
+		../src/g_main.c \
+		../src/g_maps.c \
+		../src/g_blit.c \
+		../src/g_texts.c \
+		../src/g_pal.c \
+		../src/g_draw.c \
+		../src/g_systexts.c \
+		../src/g_console.c \
+		../src/g_scroll.c \
+		../src/g_flic.c \
+		../src/g_mode7.c \
+		../src/img_png.c \
+		../src/img_pcx.c \
+		../src/sound.c \
+		../src/pathfind.c \
+		../src/fnc_exports.c \
+		../src/g_conversion.c \
+		../src/g_font.c \
+		../src/g_fpg.c \
+		../src/g_blendop.c \
+		../src/g_profiler.c \
+		../src/f_joystick.c \
+		../src/f_cd.c \
+		../src/fpl.c \
+		../src/fbm.c \
+		../src/fgc.c \
+		../src/f_sort.c \
+		../src/i_copy.c \
+		../src/f_bgload.c \
+		../../common/files.c \
+		../../common/xctype.c \
+		../../common/dirs.c \
+		../../common/regex.c \
+
+#OBJS =		$(.CFILES:.c=.o) romdisk.o
+OBJS =		$(.CFILES:.c=.o)
+
+
+clean:
+	rm -f $(OBJS) $(TARGET).elf $(TARGET).bin romdisk.o romdisk.img ../bin/example.iso
+
+$(TARGET).elf: $(OBJS)
+	$(KOS_CC) $(KOS_CFLAGS) $(KOS_LDFLAGS) -o $(TARGET).elf $(KOS_START) \
+	$(OBJS) -lpng_128 -lz_123 -lSDL_mixer_126 -lSDL_image_124 -lSDL_129 $(OBJEXTRA) -lm -lstdc++ $(KOS_LIBS) 
+
+romdisk.o: romdisk.img
+	$(KOS_BASE)/utils/bin2o/bin2o romdisk.img romdisk romdisk.o
+
+romdisk.img:
+	$(KOS_GENROMFS) -f romdisk.img -d ../bin/data -v
+
+$(TARGET).bin: $(TARGET).elf
+	$(KOS_OBJCOPY) -R .stack -O binary $(TARGET).elf $(TARGET).bin
+
+../bin/example.iso: ../bin/exec
+	mkisofs -joliet-long -l -o ../bin/example.iso -graft-points /exec/=../bin/exec/
+
+run: $(TARGET).elf ../bin/example.iso
+	$(KOS_LOADER) $(TARGET).elf -i ../bin/example.iso
+

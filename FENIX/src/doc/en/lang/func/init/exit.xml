@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="EXIT">
+    <param name="text"> Text to show </param>
+    <param name="leap"> Return code of the application </param>
+    <abstract> It finalizes the game inmediatly </abstract>
+    <description>
+	<p>
+	    This function finalizes the execution of the program inmediatly.
+	    The parameter <i>text</i> allows to specify a free text
+	    to show which could visualize on screen depending of the platform
+	    (it is not guaranteed). The return code of the application has
+	    utility in some operating systems, and it is a entire number that
+		can be checked for the programs that execute other programs.
+	</p>
+    </description>
+</function>

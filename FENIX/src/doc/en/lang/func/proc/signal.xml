@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SIGNAL">
+    <retval/>
+    <param name="process"> Identifier of a process </param>
+    <param name="signal"> Type of signal to send to a process. It can be
+	one of the following predefined constants:
+	<ul>
+	    <li>S_KILL</li>
+	    <li>S_WAKEUP</li>
+	    <li>S_SLEEP</li>
+	    <li>S_FREEZE</li>
+	    <li>S_KILL_TREE</li>
+	    <li>S_WAKEUP_TREE</li>
+	    <li>S_SLEEP_TREE</li>
+	    <li>S_FREEZE_TREE</li>
+	</ul>
+    </param>
+    <abstract> It changes the state of a process or group of processes</abstract>
+    <description>
+	<p>
+	    This function changes the state of a process, or if this function recives
+	    like parameter one of the constants finished in _TREE, of a process
+	    and all its sons and descending.
+	</p>
+	<p>
+	    There are four possible states for a process:
+	    <ul>
+		<li> WAKEUP: the state by default. The process is executed normally
+		    each frame, and if his variable <a href="GRAPH"/>
+		    has any value, it is drawn a graph in screen in the coordinates
+		    specified by its local variables <a href="X"/> and <a href="Y"/>.
+		</li>
+		<li> FREEZE: the process is stopped, his code is not executed
+		    each frame. However, his graph is drawn normally.
+		</li>
+		<li> SLEEP: the process is sleeping. His code is not executed,
+		    but his graph is not drawn in screen.
+		</li>
+		<li> KILL: the process is dead. If this frame has still not 
+			been executed, will not be executed nor will be in screen.
+			Before starting the next frame, the process will not occupy 
+			memory and it will disappear of the internal list.
+		</li>
+	    </ul>
+	</p>
+	<p>
+	    The function SIGNAL can change in any moment the state
+	    of a process or of its sons. The changes do not affect to the current
+	    process until his execution arrives to the setence
+	    FRAME. In the same way, the father process (and the rest of predecessors)
+		will not be affected by the changes until sentence FRAME.
+	</p>
+    </description>
+    <see href="GET_ID"/>
+</function>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_GET">
+<retval/>
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="ancho"> Ancho de celda en pixels </param>
+<param name="alto"> Ancho de celda en pixels </param>
+<param name="títulos" type="STRING"> Nombre de la columna de títulos </param>
+<param name="gráficos" type="STRING"> Nombre de la columna de gráficos </param>
+<abstract> Activa el modo de previsualización de una tabla </abstract>
+<description>
+    <p>
+	El modo de previsualización es semejante al modo de
+	"vista previa" de los exploradores de ficheros. Esta función
+	activa este modo en la tabla dada, de manera que la tabla, en
+	lugar de ofrecer la información en formato tabular, se
+	limitará a ofrecer un rectángulo o celda de las dimensiones
+	especificadas, por cada elemento de la tabla.
+	El usuario seguirá teniendo la facilidad de escoger un
+	elemento con la ayuda del ratón, pero se pierden las
+	facilidades opcionales de edición de columnas de la tabla.
+    </p>
+    <p>
+	Para que el modo de previsualización funcione, es preciso pasar
+	a esta función el nombre de dos columnas: una de ellas contendrá
+	los títulos que aparecerán bajo cada gráfico y la otra, los
+	gráficos en sí. Esta segunda columna debe haber sido activada
+	como columna de gráficos creándola con la función
+	<a href="TABLE_ADDCOLUMN_BITMAPS"/>.
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+<see name="TABLE_NORMALMODE" href="DLL/GUI/TABLE_NORMALMODE"/>
+</function>

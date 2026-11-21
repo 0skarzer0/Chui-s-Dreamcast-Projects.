@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GUI_DRAGDESTINATION">
+    <retval>
+	Identificador del control de destino
+    </retval>
+    <abstract> Comprueba el destino de una operación de drag&amp;drop </abstract>
+    <description>
+	<p>
+	    Esta función permite comprobar qué control recibirá el
+	    destino de una operación de drag&amp;drop. Sólo es válido
+	    llamarla cuando se ha comprobado que existe alguna en
+	    curso mediante la función <a href="GUI_DRAGGING"/>.
+	    El valor devuelto será el identificador del control que
+	    haya bajo el ratón en este momento, o bien la constante
+	    especial DRAG_ATDESKTOP (definida en GUI.INC) para indicar
+	    que el usuario está arrastrando un objeto al escritorio.
+	    Si bajo el cursor no hay ningún control, esta función
+	    devolverá 0.
+	</p>
+    </description>
+    <see href="GUI_DRAGTYPE"/>
+    <see href="GUI_DRAGGING"/>
+    <see href="GUI_ACCEPTDRAG"/>
+</function>

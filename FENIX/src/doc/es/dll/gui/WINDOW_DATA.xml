@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW_DATA">
+<retval type="STRING"> Nuevo (o antiguo) dato extra de ventana </retval>
+<param name="ventana"> Identificador de la ventana </param>
+<param name="type" optional="YES" type="STRING"> Nuevo dato extra de ventana </param>
+<abstract> Permite obtener o cambiar datos extra asociados a una ventana </abstract>
+<description>
+    <p>
+	Esta función permite asignar una cadena de "datos adicionales" a
+	una ventana. Al igual que el tipo de ventana, el objetivo de
+	esta cadena es ofrecer al usuario la facilidad de almacenar
+	información útil por cada ventana.
+    </p>
+    <p>
+	Si no se especifica el segundo parámetro, la función simplemente
+	devuelve los datos actuales asociados a la ventana, sin cambiar nada.
+	Si en cambio se especificase un dato, éste sustituiría al valor
+	actual asociado a la ventana.
+    </p>
+</description>
+<see name="WINDOW_TYPE" href="DLL/GUI/WINDOW_TYPE"/>
+</function>

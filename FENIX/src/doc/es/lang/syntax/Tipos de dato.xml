@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="Tipos de dato">
+	<syntax> 
+		Tipos de dato
+	</syntax>
+	<abstract> Tipos de dato disponibles para variables </abstract>
+    <description>
+		<p>
+			Fenix soporta tipos de dato simples (contienen un dato
+			concreto, como un número o cadena) y datos compuestos,
+			datos que a su vez contienen una serie de datos simples.
+		</p>
+		<h3> Datos numéricos </h3>
+		<p>
+			Fenix incluye una variedad de tipos de dato para almacenar
+			datos numéricos. Normalmente un programa contiene gran
+			cantidad de datos de este tipo, así que es de importancia
+			vital escoger el tipo de dato adecuado según la cantidad
+			de memoria que deba ocupar cada dato y la precisión necesaria:
+		</p>
+		<dl>
+			<dt> <a href="INT"/> </dt>
+			<dd> 
+				Número entero de 32 bits con signo. Admite un número
+				entre -2147483648 y 2147483647 aproximadamente.
+			</dd>
+			<dt> <a href="DWORD"/> </dt>
+			<dd>
+				Número entero de 32 bits sin signo. Admite un número
+				entre 0 y 4294967296.
+			</dd>
+			<dt> <a href="SHORT"/> </dt>
+			<dd>
+				Número entero de 16 bits con signo. Admite un número
+				entre -32767 y 32768.
+			</dd>
+			<dt> <a href="WORD"/> </dt>
+			<dd>
+				Número entero de 16 bits sin signo. Admite un número
+				entre 0 y 65535.
+			</dd>
+			<dt> <a href="BYTE"/> </dt>
+			<dd>
+				Número entero de 8 bits sin signo. Admite un número
+				entre 0 y 255.
+			</dd>
+			<dt> <a href="FLOAT"/> </dt>
+			<dd>
+				Número en coma flotante de 32 bits. Admite cualquier
+				número, incluyendo decimales, aunque con poca precisión
+				(sólo se conservan los dígitos más significativos).
+			</dd>
+		</dl>
+		<p>
+			Normalmente usarás el tipo INT para la mayoría de ocasiones.
+			Sin embargo, puedes usar SHORT para guardar tablas con una
+			cantidad elevada de números que sabes que no serán muy
+			grandes, ya que ahorras la mitad de memoria. BYTE es ideal
+			para guardar valores de color, ya que el rango típico
+			es entre 0 y 255 para ello.
+		</p>
+		<p>
+			Los tipos de dato enteros tienen un rango limitador: cuando
+			sumas o restas una cantidad que provoca que el número salga
+			fuera del rango que admiten, los bits más significativos del
+			nuevo número se pierden, lo que provoca que el número "de la
+			vuelta": si a una variable WORD que contiene 65535 le sumas
+			1, el valor resultante es 0 en lugar de 65536, ya que
+			65536 queda fuera del rango admitido por los tipos WORD.
+		</p>
+		<h3> <a href="SIGNED"/> y <a href="UNSIGNED"/> </h3>
+		<p>
+			Todos los datos de tipo entero vistos en el apartado anterior
+			(todos salvo FLOAT) permiten especificar como prefijo
+			SIGNED o UNSIGNED para obtener versiones de los mismos
+			con o sin signo. Esto equivale a usar un tipo de dato entero
+			del mismo número de bits pero con la salvedad del signo.
+			Por ejemplo, UNSIGNED INT equivale exactamente a DWORD.
+			La única variante de este tipo que no tiene una palabra
+			clave como alias es SIGNED BYTE, un entero de 8 bits
+			que puede contener un número entre 127 y -128.
+		</p>
+		<p>
+			Un número entero sin signo dispone de un rango más grande
+			y puede ser además útil en casos en los que es preciso que
+			en un cálculo nunca aparezcan valores negativos, incluso
+			por error de fuera de rango.
+		</p>
+		<h3> Textos </h3>
+		<p>
+			Fenix conoce dos tipos de dato especializados en almacenar
+			textos:
+		</p>
+		<dl>
+			<dt> <a href="CHAR"/> </dt>
+			<dd>
+				Contiene un único carácter (una letra, signo, espacio
+				o carácter especial de control). Es posible realizar
+				operaciones numéricas con un carácter o asignar su
+				valor a una variable de tipo entero, con lo que se
+				extrae el valor ASCII del carácter.
+			</dd>
+			<dt> <a href="STRING"/> </dt>
+			<dd>
+				Contiene una cadena de texto (una serie de varios
+				caracteres que puede también estar vacía) de ancho
+				variable, potencialmente ilimitada.
+			</dd>
+		</dl>
+		<p>
+			Un dato de tipo CHAR ocupa 8 bits (hay 256 posibles
+			caracteres diferentes reconocidos por Fenix, normalmente
+			usando el juego de caracteres ISO8859-1, similar al
+			estándar de Windows). Un tipo de dato STRING ocupa una
+			cantidad de memoria variable y se almacena de forma
+			independiente a los datos de tu programa: en la posición
+			donde se declara (por ejemplo, en la zona de datos
+			global o en el interior de una estructura) sólo se
+			almacena un identificador de carácter interno.
+		</p>
+		<p>
+			Puedes realizar operaciones típicas con cadenas, como
+			concatenarlas usando el operador +, acceder a un 
+			carácter de su interior como si de un array se
+			tratase, o modificarlas mediante la librería de
+			funciones de cadena disponible en Fenix.
+		</p>
+		<h3> Punteros (<a href="POINTER"/>)</h3>
+		<h3> Arrays </h3>
+		<h3> Estructuras (<a href="STRUCT"/>) </h3>
+		<h3> Tipos definidos por el usuario (<a href="TYPE"/>) </h3>
+    </description>
+</section>

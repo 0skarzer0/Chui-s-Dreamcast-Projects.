@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="REALLOC">
+    <retval type="POINTER"/>
+    <param name="mem" type="POINTER"> Pointer to a memory zone reserved in a previous calling of <a name="ALLOC" href="MEM/ALLOC" /> </param>
+    <param name="bytes" type="INT"> Size in bytes of the memory zone reserved </param>
+    <abstract> It increases or reduces the reserved space of a memory block </abstract>
+    <description>
+	<p>
+	  REALLOC increases or reduces the reserved space of a memory block. The function receives 
+	  two parameters: the first must be the pointer returned by <a name="ALLOC" href="MEM/ALLOC" /> 
+	  once time reserved the block, the second will be the new size that must have the memory block.
+	</p>
+	<p>
+	  REALLOC can change the location of the memory block if it was necessary. REALLOC will return 
+	  a pointer at the beginning of the new memory block, which must be used instead of the previous pointer
+	  returned by ALLOC, that it will not be valid.
+	</p>
+	<p>
+	  All data of the original block will be stored in the new block, but the part of the data, which can not be stored,
+	  will not be stored in that block, and if the new size is higher, then the additional memory zone can hold random
+	  values or previous values used before, so it is responsability of the programmer to initialize that zone with the
+	  correct values.
+	</p>
+    </description>
+    <see name="ALLOC" href="MEM/ALLOC"/>
+    <see name="FREE" href="MEM/FREE"/>
+</function>

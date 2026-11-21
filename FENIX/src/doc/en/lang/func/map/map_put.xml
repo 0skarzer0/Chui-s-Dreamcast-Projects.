@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_PUT">
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of destiny graph inside of library </param>
+    <param name="source-graph"> Number of graph to draw inside of library </param>
+    <param name="x"> Horizontal coordinate</param>
+    <param name="y"> Vertical coordinate </param>
+    <abstract> It draws a graph inside other </abstract>
+    <description>
+	<p>
+	    This function draws a graph directly over other, using
+	    a coordinates inside of destiny graph, as if it is the
+	    background of screen.
+	</p>
+	<p>
+	    A limitation of this function is that both graphs must be in the
+	    same library. Habitually the destiny graphs are temporal graphs
+	    created by <a href="NEW_MAP"/>, so that it can be use like
+	    source graph a copy <a href="MAP_CLONE"/> of a graph of any library
+	    to ignore this limitation.
+	</p>
+	<p>
+	    The point specified with the parameters will be equivalent to the zone where
+	    is drawn the center of the graph to draw.
+	</p>
+    </description>
+    <see href="MAP_XPUT"/>
+    <see href="NEW_MAP"/>
+    <see href="MAP_CLONE"/>
+</function>

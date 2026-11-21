@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="PROGRAM">
+	<syntax> 
+		PROGRAM <i>nombre</i> ; 
+	</syntax>
+	<param name="nombre" type="">
+		Nombre del programa
+	</param>
+	<abstract> Establece el nombre del programa </abstract>
+    <description>
+		<p>
+			Esta directiva especial es opcional y debe aparecer siempre
+			(si lo hace) al principio del programa, antes de cualquier
+			sección o directiva. Sólo se admite antes de ella el uso de
+			<a href="comentarios"/> o de directivas del
+			<a href="preprocesador"/>.
+		</p>
+		<p>
+			El nombre del programa es un identificador sencillo o bien
+			una cadena entre comillas. Este nombre aparece en el sistema
+			operativo como descripción más completa que el nombre del
+			fichero (por ejemplo, como título de la ventana en Windows).
+		</p>
+    </description>
+</section>

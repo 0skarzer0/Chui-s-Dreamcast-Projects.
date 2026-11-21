@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="EXIT_STATUS">
+	<abstract> Se pone a 1 cuando el usuario trata de cerrar la aplicación </abstract>
+    <description>
+	<p>
+		Cuando el usuario trata de cerrar la aplicación desde el sistema
+		operativo (por ejemplo, si el juego se ejecuta en una ventana,
+		pulsa el botón de cerrar de su barra de título) esta variable
+		se pondrá a 1. Su valor normal y original es 0.
+	</p>
+	<p>
+		Para que un juego funcione correctamente y esté bien integrado
+		en el sistema operativo, se recomienda consultar esta variable
+		con un proceso y salir del juego (por ejemplo mediante la
+		función <a href="EXIT"/> cuando esta variable valga 1.
+		La consulta debe realizarse <b>cada frame</b>, pues no se
+		garantiza que la variable siga valiendo 1 en frames posteriores
+		al intento de cerrar la aplicación.
+	</p>
+    </description>
+</variable>

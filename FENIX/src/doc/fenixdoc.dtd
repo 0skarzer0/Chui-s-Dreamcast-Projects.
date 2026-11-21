@@ -1,0 +1,95 @@
+<!-- Function reference DTD -->
+<!-- NOTE: version identifyers run for MAJOR.MINOR.REVISION.PATCH -> #0-9.#0-9.#0-9.[a-z] -->
+<!-- NOTE: datatypes default to INT -->
+
+<!-- MACROS -->
+<!ENTITY % DATATYPE 	"INT | BYTE | DWORD | FLOAT | STRING | CHAR | POINTER">
+<!ENTITY % FONT		"B | I">
+<!ENTITY % TEXT		"#PCDATA | A | IMG | BR | CONST | %FONT;">
+<!ENTITY % VERSIONDEP 	"RETVAL | PARAM | ABSTRACT | SAMPLE | NOTE | SEE | KEYWORD">
+
+<!-- ROOT ELEMENT -->
+<!ELEMENT FUNCTION (RETVAL*,PARAM+,ABSTRACT+,DESCRIPTION+,SAMPLE*,NOTE*,SEE*,KEYWORD*)>
+<!ATTLIST FUNCTION NAME ID #REQUIRED>
+
+<!-- General elements -->
+<!ELEMENT BR EMPTY>
+<!ELEMENT P (%TEXT;)*>
+<!ELEMENT B (%TEXT;)*>
+<!ELEMENT I (%TEXT;)*>
+<!ELEMENT A (%TEXT;)*>
+<!ATTLIST A 
+	NAME CDATA #IMPLIED
+	HREF CDATA #REQUIRED	
+	>	
+<!ELEMENT IMG EMPTY>
+<!ATTLIST IMG
+        SRC CDATA #REQUIRED
+        ALT CDATA #IMPLIED
+        ALIGN (top|middle|bottom) #IMPLIED        
+        >
+<!-- ENTITY CONFORMANCE -->		
+<!ENTITY lt     "&#38;#60;">
+<!ENTITY gt     "&#62;">
+<!ENTITY amp    "&#38;#38;">
+<!ENTITY apos   "&#39;">
+<!ENTITY quot   "&#34;">
+
+
+<!-- Function protoype -->
+<!-- RETVAL: Return value... multiple entry if needed for version changes -->
+<!ELEMENT RETVAL EMPTY>
+<!ATTLIST RETVAL 
+	VERSION (ANY|CDATA) "ANY"
+	TYPE (%DATATYPE;) "INT">
+
+<!-- PARAM: Parameter... a parameter definition -->
+<!ELEMENT PARAM (%TEXT; | P )*>
+<!ATTLIST PARAM 
+	VERSION (ANY|CDATA) "ANY"
+	TYPE (%DATATYPE;) "INT"
+	OPTIONAL (YES|NO) "NO"
+	NAME CDATA #REQUIRED
+	>
+
+<!-- CONST: used for predefined param values -->
+<!ELEMENT CONST EMPTY>
+<!ATTLIST CONST 
+	NAME  CDATA #REQUIRED
+	VALUE CDATA #REQUIRED
+	>
+
+<!-- Abstract section -->
+<!-- NOTE: Being a mixed content must be defined * -->
+<!ELEMENT ABSTRACT (%TEXT; | P)*>
+<!ATTLIST ABSTRACT VERSION (ANY|CDATA) "ANY">
+
+<!-- Description section -->
+<!ELEMENT DESCRIPTION (%TEXT; | P)*>
+<!ATTLIST DESCRIPTION VERSION (ANY|CDATA) "ANY">
+
+<!-- Sample code -->
+<!ELEMENT SAMPLE EMPTY>
+<!ATTLIST SAMPLE 
+	VERSION (ANY|CDATA) "ANY"	
+	FILE CDATA #REQUIRED
+	>
+
+<!-- Notes -->
+<!ELEMENT NOTE (%TEXT; | P)*>
+<!ATTLIST NOTE VERSION (ANY|CDATA) "ANY">	
+
+<!-- See Also -->
+<!ELEMENT SEE EMPTY>
+<!ATTLIST SEE
+	VERSION (ANY|CDATA) "ANY"	
+	HREF CDATA #REQUIRED
+	NAME CDATA #REQUIRED
+	>
+		
+<!-- Keywords -->
+<!ELEMENT KEYWORD EMPTY>
+<!ATTLIST KEYWORD  
+	VERSION (ANY|CDATA) "ANY"	
+	WORD CDATA #REQUIRED
+	>

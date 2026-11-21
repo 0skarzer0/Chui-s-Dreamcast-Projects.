@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="FATHER">
+    <abstract>Identificador del proceso padre</abstract>    
+	<description>
+	<p>
+		Este identificador referencia al proceso que creó el proceso actual.  Usando este identificador 
+		se puden referenciar las variables de ese proceso, por ejemplo father.graph o father.x.
+	</p>
+	<p>
+		Si el proceso padre muere antes que este proceso el valor de father será 0.
+	</p>
+    </description>
+    <see type="var" name="SON" href="LVARS/SON" />
+    <see type="var" name="BIGBRO" href="LVARS/BIGBRO" />
+    <see type="var" name="SMALLBRO" href="LVARS/SMALLBRO" />
+</variable>

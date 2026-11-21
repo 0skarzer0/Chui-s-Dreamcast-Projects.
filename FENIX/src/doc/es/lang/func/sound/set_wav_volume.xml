@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_WAV_VOLUME">
+    <retval/>
+    <param name="canal"> Identificador del efecto devuelto por LOAD_WAV </param>
+    <param name="volumen"> Nuevo volumen, de 0 a 128 </param>
+    <abstract> Especifica el nuevo volumen de sonido para el efecto indicado </abstract>
+    <description>
+	<p>
+	    Cambia el volumen de un efecto de sonido cargado
+	    anteriormente mediante <a href="LOAD_WAV"/>, entre
+	    0 (silencio) y 128 (volumen original del efecto).
+	</p>
+	<p>
+	   	El volumen final de reproducción del efecto será este modificado por 
+	   	el valor de volumen de reproducción asignadoi al canal por el que esté.
+	</p>
+    </description>
+    <see href="SET_CHANNEL_VOLUME"/>
+    <see href="PLAY_WAV"/>
+    <see href="STOP_WAV"/>
+    <see href="PAUSE_WAV"/>
+</function>

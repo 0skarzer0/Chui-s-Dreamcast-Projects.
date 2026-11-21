@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DESKTOP_REMOVEPOPUP">
+<retval/>
+<param name="control"> Identificador del control a eliminar </param>
+<abstract> Quita de pantalla un control "popup" y lo destruye </abstract>
+<description>
+    <p>
+	Esta función elimina un control "popup" que haya sido mostrado previamente
+	mediante la función <a href="DLL/GUI/DESKTOP_ADDPOPUP" name="DESKTOP_ADDPOPUP" />.
+	El control será destruído, y sus recursos de memoria liberados.
+    </p>
+    <p>
+	Es seguro llamar a esta función con un control que tal vez ya haya sido
+	destruído automáticamente (por ejemplo, si el usuario hizo clic sobre
+	otra ventana). En este caso, la función no tendrá ningún efecto.
+    </p>
+    <p>
+	Si se llama a esta función con el número 0 como identificador de control,
+	todos los controles popup que haya presentes serán eliminados.
+    </p>
+    <p>
+	Normalmente esta función se llama cuando el usuario ya ha realizado cualquier
+	tipo de elección con el control popup y éste no es útil por más tiempo.
+	Algunos controles, como las listas o los menús, se eliminan automáticamente
+	cuando el usuario escoge una opción y no es necesario llamar a esta función.
+    </p>
+</description>
+<see href="DLL/GUI/DESKTOP_ADDPOPUP" name="DESKTOP_ADDPOPUP"/>
+</function>

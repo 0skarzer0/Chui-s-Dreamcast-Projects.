@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="VSCROLLBAR">
+<retval type="INT">Identificador del control creado</retval>
+<param name="alto"> Alto en pixels del control </param>
+<param name="posición" type="POINTER"> Puntero a la estructura con datos de posición de la barra </param>
+<param name="estilo" optional="YES"> Estilo del control </param>
+<abstract> Crea una barra de desplazamiento vertical </abstract>
+<description>
+    <p>
+	Crea una barra de desplazamiento vertical. La barra de
+	desplazamiento puede tener el mismo aspecto que las que
+	aparecen automáticamente al redimensionar algunas ventanas,
+	pero es posible personalizarlo con diversas opciones.
+    </p>
+    <p>
+	El segundo parámetro es un puntero a una estructura
+	de tipo ScrollBarInfo, definida en GUI.INC, y que
+	cuenta con los siguientes campos:
+	<ul>
+	    <li> INT Min: valor mínimo de posición. </li>
+	    <li> INT Max: valor máximo de posición. </li>
+	    <li> INT SingleStep: valor mínimo de incremento,
+		efectivo cuando el usuario arrastra el control
+		o hace clic en los botones laterales de la barra. </li>
+	    <li> INT PageStep: valor de incremento ampliado,
+		efectivo cuando el usuario hace clic en la zona
+		de la barra encima o debajo del control. </li>
+	    <li> INT Pos: posición actual de la barra (un valor
+		cualquiera entre Min y Max. </li>
+	</ul>
+	Cuando el usuario actúe sobre el control, éste actualizará
+	automáticamente el valor de Pos, pero nunca modificará
+	el resto.
+    </p>
+    <p>
+	El tercer parámetro, opcional, permite personalizar el
+	estilo de la barra de desplazamiento. Es una suma de
+	cero o más de las siguientes constantes predefinidas
+	en GUI.INC:
+	<ul>
+	    <li> SCROLLBAR_BUTTONS: el control tiene dos botones,
+		superior e inferior, con flechas. </li>
+	    <li> SCROLLBAR_FRAME: el control tiene un recuadro
+		dibujado a su alrededor, y un fondo. </li>
+	    <li> SCROLLBAR_FOCUSABLE: el usuario puede hacer
+		foco en la barra de desplazamiento y cambiar su
+		valor con las teclas de cursor. </li>
+	    <li> SCROLLBAR_FIXED: la barra de desplazamiento
+		debe preservar siempre el valor de MinStep,
+		siendo imposible marcar posiciones intermedias.
+		Además, la barra de desplazamiento tendrá un
+		aspecto alternativo, para marcar más claramente
+		las diferencias con una barra normal. </li>
+	</ul>
+	El estilo por defecto, si no se especifica ninguno, es
+	SCROLLBAR_BUTTONS + SCROLLBAR_FRAME.
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

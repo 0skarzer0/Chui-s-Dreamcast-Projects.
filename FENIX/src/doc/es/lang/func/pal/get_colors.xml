@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_COLORS">
+    <retval/>
+    <param name="primer"> Número del primer color de paleta a leer </param>
+    <param name="numero"> Número de colores a cambiar </param>
+    <param name="color" type="POINTER"> Puntero a un array de bytes a rellenar </param>
+    <abstract> Recupera los valores actuales de la paleta de colores </abstract>
+    <description>
+	<p>
+	    Permite obtener los valores actuales de la paleta de colores del sistema.
+	    La paleta de colores contiene 256 entradas de tres bytes cada una e incluye los
+	    componentes rojo, verde y azul (en ese orden) de cada uno de los 256 colores
+	    disponibles en un modo de 8 bits.
+	</p>
+	<p>
+	    Todos los gráficos de 8 bits están representados por un byte por cada pixel.
+	    Cada byte representa un índice dentro de la paleta de colores, donde se encuentra
+	    el color real que se verá en pantalla al mostrarse dicho pixel. Esta función
+	    permite leer los valores actuales de la paleta, es decir, el aspecto real que
+	    cada uno de los 256 colores de pixel posibles presenta en pantalla.
+	</p>
+	<p>
+	    Para usar esta función, es preciso crear en algún lugar de memoria un array 
+	    de bytes con tres bytes por cada color que desee leerse. Seguidamente basta con 
+	    llamar a esta función especificando el número del
+	    primer color a obtener (0 para el primer color de la paleta), el número total
+	    de colores a leer (de 1 a 256), y la dirección de memoria del array,
+	    empleando el operador &amp;. A continuación basta con leer las componentes de
+	    este array para averiguar el valor de cada uno de los colores: un valor 0
+	    indica ausencia de componente, y 255 intensidad máxima. Los tres primeros
+	    bytes del array contendrán las componentes RGB del primer color solicitado,
+	    los tres siguientes bytes los del segundo, y así sucesivamente.
+	</p>
+    </description>
+    <note>
+    Puede ser más cómodo usar una estructura o un tipo de dato definido por el
+    usuario para representar las componentes de los colores. Es válido usar una
+    estructura con 256 elementos, cada uno de ellos con tres variables tipo byte,
+    en lugar de un array de 768 bytes, por ejemplo.
+    </note>
+    <see name="SET_COLORS" href="PAL/SET_COLORS"/>
+</function>

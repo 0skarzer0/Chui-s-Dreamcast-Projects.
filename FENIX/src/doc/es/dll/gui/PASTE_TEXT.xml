@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PASTE_TEXT">
+    <retval type="STRING">
+	Texto contenido en el portapapeles o una cadena en blanco
+	si el portapapeles está vacío
+    </retval>
+    <abstract> 
+	Recupera el texto que pudiese haber en el portapapeles
+    </abstract>
+    <description>
+	<p>
+	    Recupera el contenido del portapapeles del sistema operativo o,
+	    si no está soportado en esta versión de Fenix, de un
+	    buffer interno del programa (que en este caso, será siempre
+	    el último texto guardado allí con <a name="COPY_TEXT"/>.
+	</p>
+    </description>
+    <see name="COPY_TEXT"/>
+    <see name="PASTE_GRAPH"/>
+</function>

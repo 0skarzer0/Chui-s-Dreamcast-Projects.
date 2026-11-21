@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PUT">
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico a dibujar </param>
+    <param name="x"> Coordenada horizontal </param>
+    <param name="y"> Coordenada vertical </param>
+    <abstract> Dibuja un gráfico en el fondo de pantalla </abstract>
+    <description>
+	<p>
+	    Esta función dibuja un gráfico en el fondo de pantalla, en las
+	    coordenadas especificadas como parámetro.
+	    El punto especificado equivaldrá al lugar donde
+	    se dibuje el centro del gráfico.
+	</p>
+	<p>
+	    Esta función es útil especialmente para "preparar"
+	    pantallas o niveles a partir de bloques gráficos.
+	</p>
+    </description>
+    <see href="XPUT"/>
+    <see href="MAP_PUT"/>
+</function>

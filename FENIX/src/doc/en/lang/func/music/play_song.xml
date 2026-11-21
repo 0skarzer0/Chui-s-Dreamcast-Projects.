@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PLAY_SONG">
+    <retval/>
+    <param name="music"> Identifier of the music </param>
+    <param name="repeats"> Number of repeats </param>
+    <abstract> It starts the reproduction of music </abstract>
+    <description>
+	<p>
+	    It starts the reproduction of an archive of music
+	    recovered with the function <a href="LOAD_SONG"/>.
+	    According to the type of archive, only it is possible to
+	    reproduce an archive of music at the same time, so that
+	    any music, which was playing, before it must stop by
+		the function <a href="STOP_SONG"/>.
+	</p>
+	<p>
+	    The second parameter indicates the number of times that
+	    must repeat the reproduction. It can be used 0 not to repeat it, 
+	    or -1 to repeat all time until it is stopped by <a href="STOP_SONG"/>.
+	</p>
+    </description>
+    <see href="STOP_SONG"/>
+    <see href="LOAD_SONG"/>
+</function>

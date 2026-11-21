@@ -1,0 +1,204 @@
+* Muy importante
++ Importante
+- Menos importante
+
+-------
+Worklog
+-------
+
+Dom 08-06-03
+
++ INPUTLINE: Ignorar pulsación de ALT+Letra 
+- INPUTLINE: Ctrl+C, Ctrl+X, Ctrl+V y portapapeles
++ MENU: Permitir ejecutar hooks al activar opciones
++ TABLE/LIST: "clipping" a nivel de columna 
+- TABLE/LIST: Funcionalidad addline 
++ BUTTON: Responder a la letra precedida por &
+- TOOLBAR: Alineación izquierda/derecha/centro
+- TOOLBAR: Capturar ALT+Letra globalmente y lanzar el menú correspondiente
+
+Lun 09-06-03
+
++ Drop-down control (usando pop-up control)
++ General: CONTROL_INFO (WIDTH, HEIGHT, etc)
+- Menu shadow (like a window)
++ WINDOW: Ventanas modales
++ Message Box (en el propio Fenix; ver GUI.INC)
+- CONTROL_RESIZE
++ MENU: Navegación por teclado (letra -> buscar & u opción que empiece)
+- TOOLBAR/MENU: navegación con teclado izquierda/derecha (!)
++ TABLE/LIST: TABLE_REMOVELINE(S), TABLE_MOVELINE(S), TABLE_SELECT[ED]
+
+Mar 10-06-03
+
+- TABLE/LIST: columna bitmap (array de ints para bitmap_get en lugar de strings)
++ TABLE/LIST: opción de hacer click en columnas
++ TABLE/LIST: opción de ordenar el contenido automáticamente o al hacer ese clic
+- Tooltips (no son controles)
+
+Lun 16-06-03
+
+- TABLE/LIST: modo "preview" para mostrar miniaturas
+- WINDOW: guardar datos definidos por el usuario (¿una cadena? ¿un entero?)
+- WINDOW: "Window type string" libre, para el usuario
+
+Mar 17-06-03
+
+- TABLE/LIST: adaptar ancho de columnas al control automáticamente
+- Iconos de herramientas generales (para ventana FPG)
+- Ventana FPG con visor de MAP y cuadro de diálogo de opciones (parcial)
+- TOOL: two state buttons (checkbox o radio)
+- General: Permitir detectar doble-clic (así como otras acciones diversas)
+
+Mie 18-06-03
+
+- Drag & Drop support
+
+Jue 19-06-03
+
+- TABLE/LIST: Soporte de selecciones múltiples en modo normal
+- TABLE/LIST: tecla -> lleva a la entrada siguiente que empiece por ella
+
+Vie 20-06-03
+
+- FPG: Reconvertido el TEST.PRG en un FPG.PRG con la IMAGE.DLL
+- Opciones adicionales al FPG (carga de MAPs, borrar múltiples, etc)
+
+Jue 03-07-03
+
+- Soporte clipboard (COPY_TEXT/GRAPH, PASTE_TEXT/GRAPH) a falta de
+  puntos de control y datos adicionales del mapa
+
+Lun 07-07-03
+
+- Esqueleto de editor gráfico
+
+Mar 08-07-03
+
+- Edición de puntos de control en editor gráfico (integrado en utilidad FPG)
+
+Lun 21-07-03
+
+- Menú principal adaptable al tipo de ventana actual
+
+---------
+POR HACER
+---------
+
+
+Bugs:
+
+- INPUTLINE: Revisar mays dcha + movimiento del cursor
+- WINDOW: Requiere test intensivo del algoritmo de redimensionamiento
+- El profiler mete datos imposibles cuando se ejecuta el TEST.PRG
+- DROPDOWN: Queda pulsado en ocasiones tras hacer la selección
+- MENU: saltar las opciones deshabilitadas al desplazar los cursores
+- Falta poder redimensionar ventanas por la izquierda
+- Revisión general de ENTER/LEAVE, parece que falle ej. botones de sistema
+
+Features de la utilidad FPG:
+
+- Propiedades de múltiples ficheros dentro de un FPG
+- Portapapeles: copiar, cortar y pegar gráficos (simple y múltiples)
+- Opción de cargar la paleta de un gráfico nuevo o mezclarla con la actual
+- Menú contextual en mapas dentro de un FPG (¿duplicar, borrar...?)
+
+Features de la GUI.DLL:
+
+- Soporte de portapapeles gráfico, para poder copiar y pegar bitmaps
+- TABLE/LIST: redimensionamiento de columna no debe mover scroll vertical
+- TABLE/LIST: revisión general del modo preview, especialmente con multiselect
+- WINDOW: menú contextual con opciones de abrir/cerrar/maximizar/etc
++ WINDOW: al redimensionar, evitar colisión entre controles
+- MENU: Gráficos a la izquierda de las opciones
+- MENU: Teclas de acceso rápido a la derecha de las opciones
+- MENU: MENU_RENAME, MENU_REMOVE, MENU_MOVE
+- General: los procesos lanzados por BUTTON, MENU_ACTION, etc, deberían
+	recibir algún parámetro (texto del botón/acción, id del control, etc)
+- Opciones generales para no dibujar sombras p.ej.
+- WINDOW: mover foco al principio tras HIDE/SHOW (?)
+- INPUTLINE: Undo
+
+Desplazadas hasta nuevas versiones:
+
+- TABLE/LIST: columnas ocultables
+- TABLE/LIST: menú contextual para mostrar/ocultar columnas
+- TABLE/LIST: columnas unidas (para poder hacer bitmap + texto en 1 columna)
+- TABLE/LIST: columnas editables (usar un INPUT embebido?)
+- General: permitir añadir señales a los controles (onchange, onclick, etc)
+- Multipage (pseudo-contenedor) para ofrecer varias vistas o similar)
+- Barras de scroll de tipo "fixed"
+
+Gráficos:
+
+- Iconos para cada fichero
+- Iconos para cuadros de mensaje
+- Iconos para herramientas (añadir, borrar, herramientas de edición bitmap...)
+
+Cuadros de diálogo:
+
+- Selección de color (paleta/grid)
+
+Nuevos controles:
+
+- Progress bar
+- Split view
+- Spin Buttons
+- Combo boxes (usar container con un input + un tool)
+- Tree Control (usar una extensión de TABLE)
+- Directory List (TABLE o TREE)
+- Editor multi-línea
+- Color grid
+
+Future features:
+
+- Ventanas con caching de contenido en un bitmap
+- Ventanas translúcidas realmente (gr_text_put con alpha!)
+- Navegación por teclas de cursor además de TAB/SHIFT-TAB
+- Icono de ventana
+- Dibujo de controles temificable con rutinas made in the user
+- Controles deshabilitados (checkboxes, botones, inputs...)
+
+------------------------------------------------------------------------
+Descripción del funcionamiento del nuevo algoritmo de redimensionamiento
+------------------------------------------------------------------------
+
+La idea básica consiste en la creación de líneas de tensión. Una línea
+de tensión une dos controles cercanos, o bien un control con uno de los
+bordes de la ventana, de manera que establece una relación de distancia
+inamovible.
+
+Las líneas de tensión crean una relación de dependencia, de manera
+que se establecen series de líneas. Por ejemplo, una línea fuerza un
+control a unirse al borde inferior de la ventana, pero otra línea
+fuerza al control a no separarse de otro control, el cual a su vez
+está unido al borde superior de la ventana. Al desplazar el borde
+inferior, las líneas deben permanecer estáticas, por lo que al menos
+uno de estos dos controles debe variar de tamaño. La rutina debe ser
+lo bastante inteligente como para distribuir el cambio de tamaño
+entre ambos controles de forma óptima.
+
+El funcionamiento en líneas generales del algoritmo de redimensionado 
+de una ventana es:
+
+- Buscar todas las líneas en contacto con el borde desplazado
+
+- Por cada línea encontrada, establecer una serie de líneas entre
+  los controles relacionados. Por cada control del que parten
+  dos o más líneas adicionales, crear una nueva serie entera.
+
+- Por cada control, crear un array de valores con el tamaño
+  asignado actualmente.
+
+- Ordenar las series por orden de prioridad. Las series con más
+  limitaciones de tamaño entre los controles van primero.
+
+- Por cada serie, repartir el valor de desplazamiento total entre
+  los controles redimensionados. Si un control ya tiene un valor
+  elegido de tamaño, dividir lo que queda entre resto.
+
+- Recorrer cada serie desplazando los controles que aparecen
+  en ella a sus nuevas posiciones.
+
+Actualmente las series de líneas (paths) no se ordenan, sino que el
+programa coge una cualquiera.

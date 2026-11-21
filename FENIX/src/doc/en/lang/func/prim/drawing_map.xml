@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DRAWING_MAP">
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph to draw </param>
+    <abstract> Select the destiny graph of the primitive graphs </abstract>
+    <description>
+	<p>
+	    This function allows to select the graph where the primitive graphs
+	    will be drawn (all functions that begin by DRAW_...). 
+		It is not valid to call any of these functions if not it is selected after
+		a background like destiny. The graph (0, 0) represents the background of screen.
+	</p>
+    </description>
+    <see href="PRIM/DRAWING_COLOR" name="DRAWING_COLOR"/>
+    <see href="PRIM/DRAW_LINE" name="DRAW_LINE"/>
+    <see href="PRIM/DRAW_BOX" name="DRAW_BOX"/>
+    <see href="PRIM/DRAW_RECT" name="DRAW_RECT"/>
+    <see href="PRIM/DRAW_CIRCLE" name="DRAW_CIRCLE"/>
+    <see href="PRIM/DRAW_FCIRCLE" name="DRAW_FCIRCLE"/>
+</function>

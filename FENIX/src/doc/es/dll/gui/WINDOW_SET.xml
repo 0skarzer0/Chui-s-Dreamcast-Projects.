@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW_SET">
+<retval/>
+<param name="ventana"> Identificador de la ventana </param>
+<param name="tipo"> Tipo de parámetro </param>
+<param name="valor"> Nuevo valor para el parámetro </param>
+<abstract> Permite cambiar ciertos parámetros internos de una ventana </abstract>
+<description>
+    <p>
+	Esta función permite alterar el aspecto o funcionalidad de
+	una ventana, en tiempo de ejecución. El segundo parámetro debe
+	ser una de las siguientes constantes predefinidas en GUI.INC:
+	<ul>
+	    <li> WINDOW_ONTOP: Con un valor de TRUE en este parámetro,
+		la ventana permanecerá siempre por encima del resto,
+		incluso de la que tenga el foco del ratón. </li>
+	    <li> WINDOW_MOVEABLE: Por defecto este parámetro es TRUE,
+		pero con un valor de FALSE el usuario no podrá desplazar
+		la ventana, que quedará bloqueada en el sitio. </li>
+	    <li> WINDOW_STYLE: Asignar un valor a este parámetro permite
+		modificar el estilo de la ventana en tiempo de ejecución.
+		Mira la función <a href="DLL/GUI/WINDOW" name="WINDOW"/>
+		para obtener una lista de los estilos de ventana disponibles. </li>
+	</ul>
+    </p>
+</description>
+<see name="WINDOW" href="DLL/GUI/WINDOW"/>
+</function>

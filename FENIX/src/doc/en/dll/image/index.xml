@@ -1,0 +1,17 @@
+<?xml version='1.0'?>
+<!DOCTYPE fenixidx SYSTEM "../../index.dtd">
+<INDEX>
+<PARENT href="dll" name="DLL" />
+<FNC href="is_bmp" />
+<FNC href="is_gif" />
+<FNC href="is_jpg" />
+<FNC href="is_lbm" />
+<FNC href="is_pcx" />
+<FNC href="is_png" />
+<FNC href="is_pnm" />
+<FNC href="is_tif" />
+<FNC href="is_xcf" />
+<FNC href="is_xpm" />
+<FNC href="load_image" />
+<FNC href="load_image_pal" />
+</INDEX>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FORMAT">
+    <retval type="STRING"> Cadena resultante </retval>
+    <param name="valor" type="FLOAT"> Valor a convertir </param>
+    <param name="decimales" optional="YES"> Número de decimales </param>
+    <abstract> Convierte un número a cadena, con separador de miles </abstract>
+    <description>
+	<p>
+	    Convierte un número a cadena, empleando un separador
+	    de miles y, opcionalmente, con un número fijo de
+	    posiciones decimales. Si no se especifica el segundo
+	    parámetro, la función usará un número adecuado de
+	    decimales para representar el número (que pueden ser 0,
+	    por lo que se devolverá la cadena sin punto decimal).
+	</p>
+    </description>
+<see href="STR/ATOI" name="ATOI"/>
+<see href="STR/ITOA" name="ITOA"/>
+<see href="STR/FTOA" name="FTOA"/>
+</function>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DRAWING_Z">
+    <param name="z"> Valor de profundidad, indicativo del orden de dibujo </param>
+    <abstract> Activa el modo persistente en las funciones de dibujo de
+    primitivas y escoge el nivel de profundidad a utilizar </abstract>
+    <description>
+	<p>
+	    Por defecto, las funciones de dibujo actúan sobre el fondo de
+	    pantalla o el gráfico especificado en la última llamada a
+	    la función <a href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>.
+	    Sin embargo, una llamada a esta función activará un modo de
+	    funcionamiento alternativo, en el cual las primitivas gráficas
+	    (dibujadas con las funciones que empiezan por DRAW) persisten
+	    en pantalla, siendo redibujadas cada frame.
+	</p>
+	<p>
+		Al igual que un proceso, estas primitivas gráficas se dibujan
+		con una coordenada Z determinada, que permite que hayan procesos
+		dibujados por encima o debajo de ellas. Esta función, además
+		de activar este modo, permite escoger la coordenada Z que se
+		aplicará a las primitivas gráficas dibujadas después de llamarla.
+	</p>
+	<p>
+	    Para poder dibujar objetos con distinta coordenada Z, cada objeto
+	    recuerda la coordenada Z elegida en el momento en que fue creado.
+	    Es posible, por lo tanto, hacer varias llamadas a DRAWING_Z entre
+	    llamadas a funciones de dibujo para poder cambiar el valor de
+	    coordenada Z con la que ir creando nuevos objetos.
+	</p>
+	<p>
+	    Los objetos creados con primitivas gráficas pueden manipularse
+	    mediante las funciones <a href="PRIM/MOVE_DRAW" name="MOVE_DRAW"/>
+	    y <a href="PRIM/DELETE_DRAW" name="DELETE_DRAW"/>.
+	</p>
+	<p>
+	    Para desactivar este modo y volver a hacer dibujos directamente
+	    sobre el fondo de pantalla u otro gráfico, es preciso llamar
+	    a la función <a href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>.
+	</p>
+    </description>
+    <see href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>
+    <see href="PRIM/DRAW_BOX" name="DRAW_BOX"/>
+    <see href="PRIM/DRAW_CIRCLE" name="DRAW_CIRCLE"/>
+    <see href="PRIM/DRAW_FCIRCLE" name="DRAW_FCIRCLE"/>
+    <see href="PRIM/DRAW_LINE" name="DRAW_LINE"/>
+    <see href="PRIM/DRAW_CURVE" name="DRAW_CURVE"/>
+    <see href="PRIM/DRAW_RECT" name="DRAW_RECT"/>
+</function>

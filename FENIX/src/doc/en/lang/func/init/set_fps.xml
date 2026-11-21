@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_FPS">
+    <param name="fps"> Value of <i>frames per second</i>.</param>
+    <param name="leap"> Maximum number of frames that Fenix can 
+	<i>jump</i> (not to draw) so that the speed of game gets
+	the value of fps specified. </param>
+    <abstract> It establishes the speed of game </abstract>
+    <description>
+	<p>
+	    This function establishes the number of frames that must be completed
+	    and visualized per second. If this function is not used, the number of
+	    per second by default is 25.
+	</p>
+	<p>
+	    Although your game will be executed in a variety of computers, 
+		faster than others, are desirable that the game works at the 
+		same speed in all of them. In order to obtain this effect, 
+		Fenix uses an internal limit of frames per second that you can choose with this function.
+		When a computer is very fast and can execute all the processes and draw
+		the screen in less time of the necessary one, Fenix will make a pause after 
+		the drawing so that drawn the total number of frames in a second is not 
+		superior to the established one at the most.
+		However, when a computer is too slow and he is not able to show that number of 
+		frames in a second, Fenix will let draw some of them although yes it will 
+		execute the processes. This has the effect of which the animation is more abrupt, 
+		but in return the calculations of position and movement will be such that in a faster computer.
+		Se te permite establecer un límite al número de frames consecutivos que Fenix puede saltarse: ese es el significado
+	    del segundo parámetro de esta función. Normally 1 or 2
+	    is enough, and a high value can make that the game can not be played.
+	    If you want to use a value 0, so that the game slows down in slower computers, 
+		but the animation never is more abrupt.
+	</p>
+	<p>
+	    It is advised to choose an amount of frames per second that the run time of frame is 
+		splitter of 60, since many monitors show by defect that number of images per second. 
+		To establish a superior number usually is to squander the resources of the computer, 
+		since the monitor will not be able to show these images, nor the user to distinguish them.
+	</p>
+	<p>
+	    If you use this function with this parameters: SET_FPS(0,0), 
+	    Fenix will run your game at top speed that the computer can. 
+		This is useful to obtain a benchmark of your game in a computer.
+	</p>
+    </description>
+    <note>
+	Of course, not all the computers are configured to a refreshment frequency of
+	60Hz, specially in graph modes of low resolution that you will use in Fenix. 
+	However it is a minimum value, and in any case few people can <i>distinguish</i> 60 images per second or more.
+    </note>
+</function>

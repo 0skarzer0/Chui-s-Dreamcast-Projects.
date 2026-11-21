@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PAUSE_MPEG">
+    <param name="vídeo"> Identificador del vídeo </param>
+    <abstract> Detiene la reproducción de un MPEG temporalmente </abstract>
+    <description>
+	<p>
+	    Detiene la reproducción de un MPEG, de manera
+	    que la próxima llamada a PLAY_MPEG con el
+	    mismo vídeo inicie la reproducción desde el
+	    punto donde se dejó en pausa.
+	</p>
+    </description>
+    <see name="LOAD_MPEG" href="DLL/MPEG/LOAD_MPEG"/>
+    <see name="PLAY_MPEG" href="DLL/MPEG/PLAY_MPEG"/>
+    <see name="STOP_MPEG" href="DLL/MPEG/STOP_MPEG"/>
+</function>

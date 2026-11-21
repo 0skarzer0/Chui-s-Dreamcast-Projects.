@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ADVANCE">
+<retval/>
+<param name="number"> Entire number </param>
+<abstract> It moves the current process according to his angle </abstract>
+<description>
+    <p>
+	This function moves the current process in the direction
+	specified for his variable <a href="ANGLE"/> the number
+	of units indicated like parameter.
+    </p>
+    <p>
+	We must consider that the movement is in entire units, 
+	and so it has limitations of precision. A movement of
+	1 or 2 units can not reflect the differences among
+	angles, so it will not efective. If we want to move a
+	process in arbitrary angles and only a few pixels, it
+	will be necessary to use the variable <a href="RESOLUTION"/> so
+	that the coordinates of the graph come expressed in
+	smaller units than a pixel, how it happens default.
+    </p>
+</description>
+<see href="XADVANCE"/>
+<see href="ANGLE"/>
+<see href="RESOLUTION"/>
+<see href="GET_ANGLE"/>
+<see href="FGET_ANGLE"/>
+</function>

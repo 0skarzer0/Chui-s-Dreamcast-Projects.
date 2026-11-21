@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="STOP_WAV">
+    <retval/>
+    <param name="channel"> Number of channel returned by PLAY_WAV </param>
+    <abstract> It stops the reproduction of a sound effect </abstract>
+    <description>
+	<p>
+	    It stops the reproduction of any sound which is active
+	    through of a determined channel. If you want to know that
+	    channel corresponds to a concrete sound effect, you must
+	    save the value returned by <a href="PLAY_WAV"/>.
+	</p>
+    </description>
+    <see href="PLAY_WAV"/>
+    <see href="IS_PLAYING_WAV"/>
+</function>

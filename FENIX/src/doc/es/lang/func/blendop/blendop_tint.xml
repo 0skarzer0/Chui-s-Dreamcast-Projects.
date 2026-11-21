@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="BLENDOP_TINT">
+    <retval/>
+    <param name="BLENDOP"> Identificador de una tabla BLENDOP </param>
+    <param name="CANTIDAD"> Porcentaje relativo al nuevo color (0.0 a 1.0) </param>
+    <param name="R"> Componente Roja del color (de 0 a 255) </param>
+    <param name="G"> Componente Verde del color (de 0 a 255) </param>
+    <param name="B"> Componente Azul del color (de 0 a 255) </param>
+    <abstract> Aplica un color a una tabla blendop </abstract>
+    <description>
+	<p>
+	    Dada una tabla blendop creada con <a href="BLENDOP_NEW"/>, esta
+	    función realiza una mezcla entre el color cuyas componentes recibe
+	    como parámetros, y los colores del gráfico (todo ello en el
+	    gráfico origen de la operación). El valor de cantidad especificado
+	    como segundo parámetro indica la cantidad del nuevo color que se
+	    fusionará en cada pixel. El resultado será que cada color del
+	    gráfico se transforma según la fórmula (CANTIDAD * NUEVO + (1.0 - CANTIDAD) * VIEJO).
+	<p>
+	    Esta es una función lenta, que no es recomendable llamar periódicamente
+	    en el programa, al igual que ocurre con la mayoría de funciones BLENDOP.
+	</p>
+    </description>
+    <see name="BLENDOP_NEW"/>
+    <see name="BLENDOP_IDENTITY" />
+    <see name="BLENDOP_TRANSLUCENCY" />
+    <see name="BLENDOP_INTENSITY" />
+    <see name="BLENDOP_GRAYSCALE" />
+    <see name="BLENDOP_SWAP" />
+    <see name="BLENDOP_ASSIGN" />
+    <see name="BLENDOP_APPLY" />
+</function>

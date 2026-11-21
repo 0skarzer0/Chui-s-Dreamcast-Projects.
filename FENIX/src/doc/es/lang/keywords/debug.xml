@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="DEBUG">
+	<syntax> 
+		<b>DEBUG</b> ; 
+	</syntax>
+	<abstract> Sentencia de depurado de carácter general </abstract>
+    <description>
+		<p>
+			Esta sentencia no tiene propósito alguno actualmente,
+			salvo el de introducir en el código una instrucción
+			especial que en el futuro forzará la ejecución del
+			<i>debugger</i> integrado.
+		</p>
+    </description>
+	<see href="SAY"/>
+</section>

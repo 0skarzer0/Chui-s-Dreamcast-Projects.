@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_JOY_POSITION">
+    <retval/>
+    <param name="número"> Número de eje (0 para el X, 1 para el Y) </param>
+    <abstract> Devuelve la posición de un eje del joystick </abstract>
+    <description>
+	<p>
+	    Devuelve la posición (0 si está centrado, un número
+	    entre -255 y 255 en caso contrario) de un eje del
+	    joystick seleccionado con <a name="SELECT_JOY" href="JOY/SELECT_JOY"/>.
+	</p>
+    </description>
+    <see name="SELECT_JOY" href="JOY/SELECT_JOY"/>
+    <see name="GET_JOY_BUTTON" href="JOY/GET_JOY_BUTTON"/>
+</function>

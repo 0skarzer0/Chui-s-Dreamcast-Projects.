@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FPG_NEW">
+    <retval> Código de la nueva librería FPG </retval>
+    <abstract> Crea una nueva librería FPG en memoria </abstract>
+    <description>
+		<p>
+			Esta función crea en memoria una nueva librería FPG y devuelve
+			su código numérico de librería. A partir de entonces, es
+			posible añadir nuevos gráficos a esta librería mediante
+			la función <a href="FPG_ADD"/>, y grabarla posteriormente
+			a disco con <a href="SAVE_FPG"/>.
+		</p>
+	</description>
+    <note>
+		Todos los gráficos añadidos a una misma librería deben tener
+		la misma profundidad de color (1, 8 o 16 bits). Añadir un
+		gráfico a una librería cuando ya hay en la misma algún
+		gráfico de otro tipo se considera una condición de error.
+    </note>
+    <see href="FPG_ADD"/>
+    <see href="SAVE_FPG"/>
+    <see href="UNLOAD_FPG"/>
+</function>

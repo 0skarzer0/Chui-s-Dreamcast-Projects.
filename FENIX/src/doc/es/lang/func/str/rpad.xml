@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="RPAD">
+    <retval type="STRING"> Cadena resultante </retval>
+    <param name="cadena" type="STRING"> Cadena original </param>
+    <param name="tamaño"> Tamaño deseado </param>
+    <abstract> Expande una cadena añadiendo espacios a la derecha </abstract>
+    <description>
+	<p>
+	    Esta función devuelve una cadena creada tras añadir
+	    espacios (carácter 32: " ") al final de la cadena original,
+	    hasta conseguir que alcance una longitud igual a la
+	    especificada como segundo parámetro.
+	</p>
+	<p>
+	    Si la cadena original tiene un tamaño igual o superior al
+	    especificado, esta función devuelve la cadena original sin
+	    ningún cambio. Si se desea forzar el límite de tamaño,
+	    truncando la cadena original, puede usarse la función
+	    <a href="STR/SUBSTR" name="SUBSTR"/>.
+	</p>
+    </description>
+<see href="STR/LPAD" name="LPAD"/>
+</function>

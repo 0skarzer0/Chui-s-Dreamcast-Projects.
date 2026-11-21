@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="INCLUDE">
+	<syntax> 
+		<b>INCLUDE</b> "<i>fichero</i>"
+	</syntax>
+	<param name="fichero" type="STRING">
+		Nombre de fichero a incluir
+	</param>
+	<abstract> Inserta un fichero de código fuente en mitad de otro </abstract>
+    <description>
+		<p>
+			Esta directiva hace que el compilador lea el contenido
+			de otro fichero (cuyo nombre se indica entre comillas justo
+			después de la palabra INCLUDE) en la posición donde se
+			encuentra la directiva. El fichero incluído puede tener
+			cualquier extensión, pero se recomienda <b>.INC</b>.
+		</p>
+		<p>
+			Puede usarse en cualquier lugar del fichero, pero se
+			recomienda utilizarla fuera de cualquier sección como
+			norma general.
+		</p>
+		<p>
+			Para dividir un programa extenso en varios ficheros, la
+			forma recomendada de trabajar es crear varios ficheros .INC,
+			cada uno de ellos con varios procesos relacionados,
+			y secciones <a href="GLOBAL"/> o <a href="LOCAL"/> con
+			las variables que utilicen. El fichero principal del
+			juego constará de una serie de INCLUDE con todos estos
+			ficheros secundarios, y el proceso principal. Dado que
+			las secciones de datos pueden aparecer varias veces
+			en un programa, es posible dividirlas entre varios ficheros.
+		</p>
+    </description>
+</section>

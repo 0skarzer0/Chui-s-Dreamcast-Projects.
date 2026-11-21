@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_REMOVELINES">
+<retval />
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="primera"> Número de la primera fila (empezando en 0) </param>
+<param name="número"> Número de filas a eliminar </param>
+<abstract> Quita una serie de filas de una tabla </abstract>
+<description>
+    <p>
+	Quita una serie de filas de una tabla. Si se especifica
+	como número de filas 0, elimina todas las filas desde
+	la indicada, hasta el final de la tabla, ambas inclusive.
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+<see name="TABLE_ADDLINE" href="DLL/GUI/TABLE_ADDLINE"/>
+</function>

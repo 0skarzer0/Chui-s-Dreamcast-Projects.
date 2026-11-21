@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_TEXT_COLOR">
+    <retval/>    
+    <abstract> Devuelve el color con que se escribirán los textos. </abstract>
+    <description>
+	<p>
+	    Esta función nos devolverá el valor de color con que se escribirán los 
+	    textos dibujados con <a name="WRITE" href="TEXT/WRITE"/> y derivados.  En 
+	    el caso de 8 bits devuelve un índice de la paleta, mientras que en 
+	    16 bits devuelve un entero para el RGB que puede descomponerse en 
+	    sus componentes usando <a name="GET_RGB" href="COLOR/GET_RGB"/>.
+	</p>
+	</description>
+    <see name="SET_TEXT_COLOR" href="TEXT/SET_TEXT_COLOR"/>
+    <see name="WRITE" href="TEXT/WRITE"/>
+    <see name="WRITE_INT" href="TEXT/WRITE_INT"/>
+    <see name="WRITE_FLOAT" href="TEXT/WRITE_FLOAT"/>
+    <see name="WRITE_STRING" href="TEXT/WRITE_STRING"/>
+    <see name="WRITE_VAR" href="TEXT/WRITE_VAR"/>
+    <see name="WRITE_IN_MAP" href="TEXT/WRITE_IN_MAP"/>
+</function>

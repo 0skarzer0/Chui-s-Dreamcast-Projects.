@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CONTROL_FOCUS">
+<retval/>
+<param name="control"> Identificador de un control </param>
+<abstract> Asigna el foco de entrada a un control </abstract>
+<description>
+    <p>
+	Asigna el foco de entrada a un control. Para que esto
+	funcione, el control debe pertenecer a una ventana que
+	esté en el escritorio y además sea la que actualmente
+	tenga el foco. Si esto no fuera así, pero el control
+	pertenece a una ventana, esta función marca el control
+	para que este adquiera el foco preferentemente cuando
+	la ventana sea visible y adquiera el foco.
+    </p>
+</description>
+<see name="WINDOW_FOCUS" href="DLL/GUI/WINDOW_FOCUS"/>
+</function>

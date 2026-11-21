@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_REAL_POINT">
+    <retval> 1 si el punto está definido, 0 en caso contrario </retval>
+    <param name="número"> Número de punto de control (0 es el centro) </param>
+    <param type="INT POINTER" name="x"> Offset de una variable de tipo entero (INT)
+	que pasará a contener la coordenada horizontal del punto </param>
+    <param type="INT POINTER" name="y"> Offset de una variable de tipo entero (INT)
+	que pasará a contener la coordenada vertical del punto </param>
+    <abstract> Permite obtener la posición en pantalla de un punto de control </abstract>
+    <description>
+	<p>
+	    Esta función permite obtener la posición en pantalla de un
+	    punto de control del gráfico contenido por el proceso actual,
+	    teniendo en cuenta las variables que indican el aspecto
+	    o posición del gráfico, como <a type="var" name="X" href="LVARS/X"/>, <a name="Y" type="var" href="LVARS/Y"/>
+	    o <a type="var" name="ANGLE" href="LVARS/ANGLE"/>.
+	</p>
+	<p>
+	    Las variables cuyo <b>offset</b> recibe esta función pasarán
+	    a contener las coordenadas del punto de control sobre la pantalla.
+	</p>
+    </description>
+    <see name="GET_POINT" href="MAP/GET_POINT"/>
+    <see href="MAP/SET_POINT" name="SET_POINT"/>
+</function>

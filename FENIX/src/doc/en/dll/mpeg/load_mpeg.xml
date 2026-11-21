@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_MPEG">
+    <retval/>
+    <param name="archive" type="STRING"> Name of archive </param>
+    <param name="video"> 1 to activate the reproduction of video </param>
+    <param name="audio"> 1 to activate the reproduction of audio </param>
+    <abstract> It recovers of disk an archive of video </abstract>
+    <description>
+	<p>
+	    It opens a MPEG archive in disk, to reproduce
+	    it with <a href="dll/mpeg/PLAY_MPEG" name="PLAY_MPEG"/> later.
+	</p>
+	<p>
+	    This function returns an entire number that identifies to the
+	    video, or -1 if the archive is not in MPEG format or happens
+	    another error.
+	    You can use the returned number to reproduce the music by
+	    the function <a href="dll/mpeg/PLAY_MPEG" name="PLAY_MPEG"/>.
+	</p>
+	<p>
+	    The additional parameters allows to activate or
+	    deactivate the reproduction of video and audio,
+	    respectively. You can use it to reproduce a video
+	    where only one of both elements is interesting.
+	</p>
+    </description>
+    <see href="dll/mpeg/PLAY_MPEG" name="PLAY_MPEG"/>
+    <see href="dll/mpeg/STOP_MPEG" name="STOP_MPEG"/>
+    <see href="dll/mpeg/UNLOAD_MPEG" name="UNLOAD_MPEG"/>
+</function>

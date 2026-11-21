@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DESKTOP_NEXTWINDOW">
+<retval type="INT"> Identificador de la siguiente ventana, ó 0 si era la última </retval>
+<param name="ventana"> Identificador de una ventana </param>
+<abstract> Dada una ventana, devuelve la siguiente </abstract>
+<description>
+    <p>
+	Devuelve la siguiente ventana, en la lista de ventanas presentes
+	en el escritorio. Usando la función
+	<a href="DLL/GUI/DESKTOP_BOTTOMWINDOW" name="DESKTOP_BOTTOMWINDOW"/>
+	junto con esta, es posible recorrer todas las ventanas presentes
+	en el escritorio. Esta función devuelve 0 si no hay más ventanas
+	después de la presente.
+    </p>
+    <p>
+	Las ventanas se devuelven por orden de visibilidad. La última
+	ventana devuelta es la que actualmente tiene el foco de entrada,
+	la misma que devuelve la función
+	<a href="DLL/GUI/DESKTOP_TOPWINDOW" name="DESKTOP_TOPWINDOW"/>.
+    </p>
+</description>
+</function>

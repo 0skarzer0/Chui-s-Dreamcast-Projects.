@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SPLIT">
+    <retval> Número de elementos </retval>
+    <param name="expresión" type="STRING"> Expresión regular </param>
+    <param name="cadena" type="STRING"> Cadena original </param>
+    <param name="array" type="STRING POINTER"> Array para guardar los resultados </param>
+    <param name="tamaño"> Número de elementos en el array </param>
+    <abstract> Divide una cadena en partes </abstract>
+    <description>
+	<p>
+	    A partir de una expresión regular, esta función divide
+	    la cadena original en partes. Para ello debe recibir un
+	    puntero a un array de STRINGs, y un número máximo de
+	    elementos, que será la longitud del array en sí.
+	    Por ejemplo, si la cadena
+	    original es "12/04/1980" y la expresión regular es "/",
+	    la función guarda las cadenas "12", "04" y "1980" en
+	    las tres primeras posiciones del array y devuelve 3.
+	</p>
+	<p>
+	    Es importante notar que la cadena con los separadores
+	    es una expresión regular. Es posible por ejemplo poner
+	    clases de caracteres, por ejemplo, así que la cadena "[/- ]"
+	    dividiría la cadena allí donde hubiera un
+	    caracter "/", un caracter "-", o bien un espacio.
+	    El uso de expresiones regulares es un concepto avanzado
+	    en sí mismo, se recomienda consultar la función
+	    <a href="STR/REGEX" name="REGEX"/>
+	    para obtener más información.
+	</p>
+    </description>
+<see href="STR/REGEX" name="REGEX"/>
+</function>

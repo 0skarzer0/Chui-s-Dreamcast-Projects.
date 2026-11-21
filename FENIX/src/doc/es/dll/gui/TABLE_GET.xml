@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_GET">
+<retval type="STRING"> Contenido de la celda referenciada </retval>
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="fila"> Número de fila (0 para la primera) </param>
+<param name="nombre" type="STRING"> Nombre de la columna </param>
+<abstract> Devuelve el valor de una celda en una tabla </abstract>
+<description>
+    <p>
+	Dada una tabla, un número de fila, y un nombre o índice
+	de columna, esta función devuelve el contenido de la
+	celda correspondiente, o una cadena en blanco en caso
+	de que algún parámetro esté fuera de rango o bien la
+	celda misma estuviera vacía.
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+</function>

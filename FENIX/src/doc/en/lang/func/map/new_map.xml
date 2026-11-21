@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="NEW_MAP">
+    <retval/>
+    <param name="width"> Width in pixels of the new graph </param>
+    <param name="height"> Height in pixels of the new graph </param>
+    <param name="depth"> Depth of colour (in bits per pixel: 1, 8 or 16) </param>
+    <abstract> It creates a new graph on memory </abstract>
+    <description>
+	<p>
+	    This function creates a new graph with the size and number of bits
+	    per pixel of colour determined. The graph is created inside of
+	    the library 0, and it is assigned any avaliable number,
+	    which has not been used for other graph.
+	</p>
+	<p>
+	    The depth of colour has the next meaning:
+	    <ul>
+		<li> A graph of 1 bit per pixel has not information of colour.
+		    The pixels to 0 represent transparent pixels, and the bits to 1
+		    will be drawn using the colour chosen by the function <a href="DRAWING_COLOR"/>. 
+		</li>
+		<li> A graph of 8 bits per pixel has 256 avaliable values for each
+		    pixel. Each value represents an index in a general table of colours, 
+		    the palette of colours, which affects to all graphs of 8 bits. 
+		</li>
+		<li> A grpah of 16 bits holds information of the components: red, 
+		    green and blue of each pixel, so that is independent of any
+		    palette of colours. The exact codification of that components
+		    inside of the 16 bits depends of the video card, so that
+		    only it is valid to create and to use graphs of 16 bits if
+		    before it has been set a graph mode of 16 bits. </li>
+	    </ul>
+	</p>
+	<p>
+	    The new graph is created with all pixels to 0 (they are
+	    transparents).
+	</p>
+    </description>
+    <see href="MAP_CLONE"/>
+</function>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MENU">
+<retval type="INT">Identificador del menú creado</retval>
+<abstract> Crea un nuevo menú </abstract>
+<description>
+    <p>
+	Crea un menú de opciones. Un menú de opciones no es un control,
+	sino simplemente una lista de opciones en memoria. El menú puede
+	usarse para crear distintos tipos de controles que en efecto
+	muestran el menú en pantalla, como por ejemplo una barra
+	de menús (<a href="DLL/GUI/TOOLBAR" name="TOOLBAR"/>) o
+	un menú pop-up (<a href="DLL/GUI/POPUP_MENU" name="POPUP_MENU"/>).
+    </p>
+    <p>
+	El menú creado por esta función está inicialmente vacío. Es
+	preciso llenarlo de opciones mediante las funciones
+	<a href="DLL/GUI/MENU_ACTION" name="MENU_ACTION" />,
+	<a href="DLL/GUI/MENU_SEPARATOR" name="MENU_SEPARATOR" />,
+	<a href="DLL/GUI/MENU_TOGGLE" name="MENU_TOGGLE" />,
+	<a href="DLL/GUI/MENU_RADIO" name="MENU_RADIO" /> o
+	<a href="DLL/GUI/MENU_SUBMENU" name="MENU_SUBMENU" />.
+    </p>
+    <p>
+	El identificador devuelto por esta función debe utilizarse a la
+	hora de crear el control que lo contiene, así como en cada
+	una de las funciones anteriormente descritas.
+    </p>
+</description>
+<see href="DLL/GUI/MENU_ACTION" name="MENU_ACTION" />
+<see href="DLL/GUI/MENU_TOGGLE" name="MENU_TOGGLE" />
+<see href="DLL/GUI/MENU_SEPARATOR" name="MENU_SEPARATOR" />
+<see href="DLL/GUI/MENU_RADIO" name="MENU_RADIO" />
+</function>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FCLOSE">
+    <retval/>
+    <param name="fichero"> Identificador de fichero devuelto por FOPEN </param>
+    <abstract> Cierra un fichero abierto </abstract>
+    <description>
+	<p>
+	    Esta función cierra un fichero abierto previamente por
+	    <a href="FOPEN"/>. Todos los ficheros abiertos deben cerrarse
+	    una vez acabadas las operaciones de lectura o escritura deseadas,
+	    ya que existe un límite al número de ficheros abiertos
+	    simultáneamente, en función del sistema operativo.
+	</p>
+    </description>
+    <see name="FOPEN"/>
+    <see name="FREAD"/>
+    <see name="FWRITE"/>
+    <see name="FSEEK"/>
+    <see name="FILE_EXISTS"/>
+</function>

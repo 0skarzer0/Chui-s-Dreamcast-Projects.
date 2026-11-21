@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_BUFFER">
+    <retval type="POINTER"> Puntero al buffer de pixels del gráfico </retval>
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <abstract> Devuelve un puntero al buffer del gráfico </abstract>
+    <description>
+	<p>
+	    Esta función avanzada devuelve un POINTER al buffer del gráfico que 
+	    se especifica, esto es, un puntero a la zona de memoria donde se guardan 
+	    los pixels reales que forman la imagen.  Los gráficos cargados con funciones 
+	    de tipo LOAD_xxx o los creados con <a name="MAP_NEW" href="MAP/MAP_NEW"/> 
+	    pertenecen a la libreria 0.
+	</p>
+	<p>
+	    El puntero devuelto es un puntero a BYTE para gráficos de 8 bits y un 
+	    puntro a WORD para gráficos de 16 bits.	Cualquier manipulación del 
+	    contenido de esta zona de memoria afecta directamente al contenido de 
+	    la imágen.
+	</p>
+	<p>
+	    Algunos usos interesantes de esta función, junto con <a name="MEMSET" href="MEM/MEMSET" /> 
+	    o <a href="MEM/MEMSETW" name="MEMSETW" />, permiten realizar efectos visuales 
+	    interesantes como borrados o rellenados con bandas de color.
+	</p>
+    </description>
+    <see href="MAP/MAP_NEW" name="MAP_NEW" />
+    <see href="MEM/MEMSET" name="MEMSET" />
+    <see href="MEM/MEMSETW" name="MEMSETW" />    
+</function>

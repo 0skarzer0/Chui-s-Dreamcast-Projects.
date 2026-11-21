@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GRAPHIC_SET">
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <param name="tipo"> Tipo de característica a cambiar. Puede ser:
+	<const name="G_CENTER_X"> Coordenada horizontal del centro </const>
+	<const name="G_CENTER_Y"> Coordenada vertical del centro </const>
+	<const name="G_ANIMATION_STEP"> Frame actual de la animación </const>
+	<const name="G_ANIMATION_SPEED"> Velocidad actual de la animación </const>
+    </param>
+    <param name="valor"> Nuevo valor a asignar a la característica </param>
+    <abstract> Permite cambiar una característica de un gráfico </abstract>
+    <description>
+	<p>
+	    Esta función permite acceder en tiempo de ejecución a
+	    determinadas características de un gráfico, especialmente
+	    de su animación. Puede usarse para escoger un frame concreto
+	    en los gráficos animados, o cambiar la velocidad de su
+	    animación, en milisegundos. Por ejemplo, una velocidad
+	    de 0 detiene la animación del gráfico.
+	</p>
+	<p>
+	    Las animaciones de los gráficos MAP son automáticas, e
+	    independientes de los frames por segundo establecidos
+	    por la función <a href="SET_FPS"/>.
+	</p>
+    </description>
+    <see href="GRAPHIC_INFO"/>
+    <see href="LOAD_MAP"/>
+</function>

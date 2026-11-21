@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PASTE_GRAPH">
+    <retval>
+	Código del nuevo gráfico creado
+    </retval>
+    <abstract> 
+	Recupera el gráfico que pudiese haber en el portapapeles
+    </abstract>
+    <description>
+	<p>
+	    Recupera el contenido del portapapeles del sistema operativo o,
+	    si no está soportado en esta versión de Fenix, de un
+	    buffer interno del programa (que en este caso, será siempre
+	    el último texto guardado allí con <a name="COPY_GRAPH"/>.
+	    El gráfico creado será nuevo y perteneciente a la librería
+	    0: realizar múltiples llamadas a esta función creará nuevas
+	    copias del gráfico cada vez, de la misma forma que si se
+	    hubiese hecho <a name="CLONE_MAP"/> con el gráfico original.
+	</p>
+	<p>
+	    Es recomendable liberar usando <a name="UNLOAD_MAP"/> la memoria
+	    ocupada por este nuevo gráfico si sólo se va a usar temporalmente.
+	</p>
+    </description>
+    <see name="COPY_GRAPH"/>
+    <see name="PASTE_TEXT"/>
+</function>

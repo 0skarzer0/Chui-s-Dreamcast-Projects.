@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MKDIR">
+    <retval/>
+    <param name="directorio" type="STRING"> Nuevo directorio </param>
+    <abstract> Crea un nuevo directorio a partir del directorio actual </abstract>
+    <description>
+	<p>
+	    Esta función crea el directorio indicado por el parámetro <b>directorio</b> en el 
+	    directorio actual.  Devuelve 0 si ha tenido éxito y -1 en caso 
+	    de no poderse efectuar la creación del nuevo directorio, por ejemplo si 
+	    el directorio ya existiese.
+	</p>
+	<p>
+		También se puede especificar la ruta completa en el parámetro y el directorio 
+		será creado utilizando la ruta completa en lugar de crearse a partir del 
+		directorio actual.  Las rutas pueden indicarse usando el separador de directorios <b>/</b> o <b>\</b>
+		indiferentemente.
+	</p>
+	<p>
+		Un directorio no podrá crearsi si existe un fichero, recurso o directorio con el mismo 
+		nombre o si la ruta especificada es incorrecta.  En los sistemas que así lo permitan, no se 
+		podrán crear directorios en la ruta indicada si no se tienen los permisos 
+		adecuados.
+	</p>
+    </description>
+    <see href="FILE/CD" name="CD"/>
+    <see href="FILE/RMDIR" name="RMDIR"/>
+</function>

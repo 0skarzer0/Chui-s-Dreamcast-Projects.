@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+
+<index name="lang/keywords">
+	<abstract> Palabras clave </abstract>
+    <description>
+	<p>
+		Esta sección describe todas las palabras clave del lenguaje,
+		incluyendo todas las sentencias y directivas del lenguaje.
+	</p>
+    </description>
+</index>
+
+

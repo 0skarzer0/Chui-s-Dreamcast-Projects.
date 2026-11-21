@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PLAY_MPEG">
+    <retval/>
+    <param name="vídeo"> Identificador del vídeo </param>
+    <abstract> Inicia la reproducción de un vídeo </abstract>
+    <description>
+	<p>
+	    Esta función empieza a reproducir un vídeo MPEG.
+	    El vídeo no se muestra en pantalla automáticamente.
+	    Lo que hace esta función, en cambio, es devolver
+	    el código de un gráfico perteneciente a la
+	    librería 0 que representa en todo momento el
+	    frame actual del video.
+	</p>
+	<p>
+	    Para mostrar el video en pantalla, la forma
+	    recomendada es asignar el código devuelto
+	    por PLAY_MPEG a la variable <a href="GRAPH"/>
+	    de un proceso. Las coordenadas <a href="X"/> e
+	    <a href="Y"/> del proceso identificarán entonces
+	    la posición del video en pantalla, a partir de
+	    su centro.
+	</p>
+	<p>
+	    Puedes usar el gráfico normalmente en todo tipo
+	    de operaciones. Por ejemplo, puedes usar la variable
+	    <a href="FLAGS"/> para mostrar un video invertido,
+	    o transparente, o cambiarlo de tamaño con <a href="SIZE"/>.
+	    Puedes usar también este gráfico en operaciones de
+	    dibujo como <a href="MAP_PUT"/> o <a href="MAP_XPUT"/>,
+	    pero ten en cuenta que en ese caso sólo accedes al
+	    último frame. El contenido del gráfico se reescribe
+	    contínuamente, por lo que no es posible modificarlo
+	    directamente (por ejemplo, para añadir un subtítulo).
+	    Si quieres llevar a cabo este tipo de operaciones,
+	    tendrás que dibujar los elementos adicionales en
+	    pantalla, con una coordenada <a href="Z"/> superior,
+	    o bien copiar cada frame a otro gráfico antes de operar.
+	</p>
+    </description>
+    <note>
+	No se permite la reproducción de video MPEG en modo de
+	8 bits (256 colores).
+    </note>
+    <see name="LOAD_MPEG" href="DLL/MPEG/LOAD_MPEG"/>
+    <see name="STOP_MPEG" href="DLL/MPEG/STOP_MPEG"/>
+    <see name="PAUSE_MPEG" href="DLL/MPEG/PAUSE_MPEG"/>
+</function>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="UNSIGNED">
+	<syntax> 
+		<b>UNSIGNED</b> ( <a href="SHORT"/> | <a href="INT"/> ) <i>nombre-variable</i> ; 
+	</syntax>
+	<abstract> Modifica un tipo de dato entero forzando a que no admita signo </abstract>
+    <description>
+		<p>
+			Puesto como prefijo a un tipo de dato entero
+			(SHORT o INT) esta palabra clave modifica el
+			tipo de dato cambiándolo por su equivalente sin signo.
+			Por ejemplo, UNSIGNED <a href="SHORT"/> equivale a <a href="WORD"/>.
+		</p>
+    </description>
+	<see href="Tipos de dato"/>
+</section>

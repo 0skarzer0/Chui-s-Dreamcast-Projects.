@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="dll" name="DLL"/>
+<fnc HREF="IS_PLAYING_MPEG" />
+<fnc HREF="LOAD_MPEG" />
+<fnc HREF="LOOP_MPEG" />
+<fnc HREF="MPEG_CURRENT_TIME" />
+<fnc HREF="MPEG_FILTER" />
+<fnc HREF="MPEG_TOTAL_TIME" />
+<fnc HREF="PAUSE_MPEG" />
+<fnc HREF="PLAY_MPEG" />
+<fnc HREF="REWIND_MPEG" />
+<fnc HREF="SET_MPEG_VOLUME" />
+<fnc HREF="STOP_MPEG" />
+<fnc HREF="UNLOAD_MPEG" />
+</INDEX>

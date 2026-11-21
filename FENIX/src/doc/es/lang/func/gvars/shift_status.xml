@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="SHIFT_STATUS">
+	<abstract> Almacena el estado de las teclas de control </abstract>
+    <description>
+	<p>
+	    Esta variable contiene el estado de las diferentes teclas de control
+	    (CTRL, SHIFT, ALT) en función de los siguientes campos de bit:
+	    <ul>
+		<li> 1: SHIFT izquierdo </li>
+		<li> 2: SHIFT derecho </li>
+		<li> 4: CONTROL (cualquiera de ellos) </li>
+		<li> 8: ALT (cualquiera de ellos) </li>
+	    </ul>
+	</p>
+	<p>
+	    El bit correspondiente estará a 1 si la tecla está pulsada.
+	    Para comprobar el estado de una tecla de control en concreto,
+	    puede usarse el operador AND (&amp;) con uno de los valores anteriores
+	    o con una combinación de los mismos. Por ejemplo, la expresión
+	    ((SHIFT_STATUS &amp; 3) != 0) es cierta sólo si en ese momento
+	    está pulsada cualquiera de las teclas de mayúsculas.
+	</p>
+    </description>
+    <see type="var" href="GVARS/ASCII" name="ASCII"/>
+    <see type="var" href="GVARS/SCAN_CODE" name="SCAN_CODE"/>
+</variable>

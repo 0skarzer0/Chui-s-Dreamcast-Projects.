@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="BLENDOP_ASSIGN">
+    <retval/>
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <param name="BLENDOP"> Identificador de una tabla BLENDOP </param>
+    <abstract> Asigna una tabla blendop a un gráfico </abstract>
+    <description>
+	<p>
+	    Dada una tabla blendop creada con <a href="BLENDOP_NEW"/>, esta
+	    función la asigna a un gráfico. Cualquier dibujo posterior del
+	    gráfico en pantalla, que no sea en un proceso que contenga su
+	    propia tabla blendop en la variable local <a href="BLENDOP"/>,
+	    utilizará la tabla blendop para dibujarlo.
+	</p>
+	<p>
+	    Si se especifica 0 como identificador blendop, cualquier tabla
+	    blendop asignada al gráfico dejará de usarse. No es válido
+	    liberar una tabla blendop de memoria (con <a href="BLENDOP_FREE"/>)
+	    cuando aún existan gráficos que la tengan asignada.
+	</p>
+    </description>
+    <see name="BLENDOP_NEW"/>
+    <see name="BLENDOP_IDENTITY" />
+    <see name="BLENDOP_TRANSLUCENCY" />
+    <see name="BLENDOP_TINT" />
+    <see name="BLENDOP_INTENSITY" />
+    <see name="BLENDOP_GRAYSCALE" />
+    <see name="BLENDOP_SWAP" />
+    <see name="BLENDOP_APPLY" />
+</function>

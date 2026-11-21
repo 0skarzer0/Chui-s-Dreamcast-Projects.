@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DROPDOWN_ADDLINE">
+<retval/>
+<param name="control"> Identificador de un control DROPDOWN </param>
+<param name="opción" type="STRING"> Texto de una opción a añadir a la lista </param>
+<abstract> Añade una opción a un desplegable </abstract>
+<description>
+    <p>
+	Añade una opción a la lista de opciones que el desplegable
+	muestra al hacer clic sobre el mismo. El primer parámetro debe ser
+	un identificador de control devuelto por la función
+	<a href="DLL/GUI/DROPDOWN" name="DROPDOWN"/>.
+    </p>
+</description>
+<see name="DROPDOWN" href="DLL/GUI/DROPDOWN"/>
+</function>

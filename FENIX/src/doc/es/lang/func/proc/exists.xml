@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="EXISTS">
+    <param name="id"> Identificador de un proceso, o bien un
+	tipo de proceso obtenido mediante la instrucción <a href="TYPE"/>. </param>
+    <abstract> Comprueba si un proceso determinado está en ejecución </abstract>
+    <description>
+	<p>
+	    Esta función devuelve 1 (cierto) si el proceso cuyo identificador
+	    recibe como parámetro sigue en ejecución (esto es, no ha sido
+	    eliminado de memoria, ni marcado para matar mediante una función como
+	    <a href="SIGNAL"/>. Es posible pasarle como parámetro un tipo
+	    de proceso obtenido mediante la instrucción <a href="TYPE"/>,
+	    en cuyo caso devolverá 1 si hay en memoria al menos un proceso
+	    del tipo indicado. En caso de no encontrar ningún proceso,
+	    EXISTS devolverá 0.
+	</p>
+    </description>
+    <see href="GET_ID"/>
+</function>

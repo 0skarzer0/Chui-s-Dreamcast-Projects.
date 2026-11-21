@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MOVE_TEXT">
+    <retval/>
+    <param name="texto"> Identificador del texto o 0 para todos </param>
+    <param name="x"> Nueva coordenada horizontal </param>
+    <param name="y"> Nueva coordenada vertical </param>
+    <abstract> Mueve un texto dibujado mediante WRITE </abstract>
+    <description>
+	<p>
+	    Esta función cambia la posición en pantalla de un texto
+	    dibujado mediante
+	    <a href="WRITE"/> u otra función equivalente. El significado
+	    exacto de las nuevas coordenadas depende de la alineación
+	    del texto, tal como se dibujó originalmente.
+	    Esta función es útil para hacer efectos tales como
+	    un scroll vertical de créditos o similar.
+	</p>
+    </description>
+    <see href="DELETE_TEXT"/>
+    <see href="WRITE"/>
+</function>

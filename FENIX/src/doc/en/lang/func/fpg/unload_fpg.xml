@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="UNLOAD_FPG">
+    <param name="libray"> Number of FPG library </param>
+    <abstract> It unloads the memory occupied by a FPG library </abstract>
+    <description>
+	<p>
+	    It unloads the memory occupied by a FPG library and all graphs that the
+	    library contains. The library can have been created
+	    by <a href="FPG_NEW"/>, or recovered of disk
+	    by <a href="LOAD_FPG"/>.
+	</p>
+	<p>
+	    Any change made by functions like <a href="FPG_ADD"/>
+	    or <a href="UNLOAD_MAP"/>, or any change made independently
+	    to graphs inside of library, it will be lost if before calling
+	    to this function, the archive has not been saved in disk by 
+	    <a href="SAVE_FPG"/>.
+	</p>
+    </description>
+    <see href="LOAD_FPG"/>
+    <see href="NEW_FPG"/>
+    <see href="SAVE_FPG"/>
+</function>

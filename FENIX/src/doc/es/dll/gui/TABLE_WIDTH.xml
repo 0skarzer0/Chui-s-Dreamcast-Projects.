@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_WIDTH">
+<retval> Ancho de la columna </retval>
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="nombre" optional="YES" type="STRING"> Nombre de la columna </param>
+<param name="nombre" optional="YES"> Nuevo ancho </param>
+<abstract> Permite obtener o cambiar el ancho de una columna, o de toda una tabla </abstract>
+<description>
+    <p>
+	Esta función dispone de tres formas diferentes de uso.
+	<ul>
+	    <li> Si es llamada con un sólo parámetro, devuelve
+		el ancho en pixels que ocupan todas las columnas de la misma. </li>
+	    <li> Si se le pasa como segundo parámetro una columna de una tabla 
+		(por su nombre, u opcionalmente por su número de índice, con 0
+		para la columna más a la izquierda), devuelve sólo el ancho en
+		pixels de dicha columna. </li>
+
+	    <li> Además, si se le pasa un tercer parámetro opcional, cambiará
+		el tamaño de dicha columna al nuevo tamaño especificado por el
+		usuario en este parámetro. </li>
+	</ul>
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+</function>

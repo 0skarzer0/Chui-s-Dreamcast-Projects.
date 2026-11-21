@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SAVE_MAP">
+    <param name="library"> Code of the FPG library </param>
+    <param name="graph"> Number of graph </param>
+    <param name="archive" type="STRING"> Name of the archive </param>
+    <abstract> It saves a graph in disk, in MAP format </abstract>
+    <description>
+	<p>
+	    This function saves any graph in disk in MAP format
+	    This graph can be in any FPG library, or has been created
+	    on memory with functions like <a href="NEW_MAP"/> o <a href="MAP_CLONE"/>.
+	</p>
+	<p>
+	    Any change made in the graph, as for example, changes
+	    in the control points, or changes in the content with
+	    functions like <a href="MAP_PUT"/> or
+	    <a href="DRAWING_MAP"/>, will be stored in the archive.
+	</p>
+    </description>
+    <note>
+	The archives created with SAVE_MAP can not be recovered
+	from DIV Games Studio.
+    </note>
+    <see href="GRAPHIC_SET"/>
+    <see href="SET_CENTER"/>
+    <see href="MAP_SET_NAME"/>
+    <see href="MAP_CLONE"/>
+    <see href="NEW_MAP"/>
+</function>

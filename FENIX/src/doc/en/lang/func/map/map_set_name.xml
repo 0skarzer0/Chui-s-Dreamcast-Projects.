@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_SET_NAME">
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph inside of library </param>
+    <param name="name" type="STRING"> New name of graph </param>
+    <abstract> It changes the name of a graph </abstract>
+    <description>
+	<p>
+	    All graph has a name which can have up to 32 characters, that
+	    can be recovered by this function, or be changed by <a href="MAP_NAME"/>.
+		This name is specially useful when a graph is inside of a FPG library,
+	    because this graph has two identifiers: a number and his name that allow
+	    to distinguish it of other graph which is also inside of the FPG library.
+	</p>
+    </description>
+    <see href="MAP_NAME"/>
+</function>

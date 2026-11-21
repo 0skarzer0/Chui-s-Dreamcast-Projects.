@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="TEXT_Z">
+    <abstract>Profundidad de escritura de los textos</abstract>
+    <description>
+	<p>
+		Esta variable indica a que profundidad (coordenada Z) se 
+		escribiran los textos usando funciones del tipo <a href="TEXT/WRITE" name="WRITE"/> 
+		y similares.
+	</p>
+    </description>
+    <see href="TEXT/WRITE" name="WRITE"/>
+</variable>

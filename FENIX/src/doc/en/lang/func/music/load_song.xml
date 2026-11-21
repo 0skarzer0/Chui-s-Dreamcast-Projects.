@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_SONG">
+    <retval/>
+    <param name="archive" type="STRING"> Name of archive </param>
+    <abstract> It recovers of disk any music archive </abstract>
+    <description>
+	<p>
+	    Open a music archive from disk, to play after with <a href="PLAY_SONG"/>.
+	    Actually the supported formats are the following:
+	    <ul>
+		<li> <b>OGG Vorbis (.ogg)</b>: Recommended for his excelent
+		    quality. An archive .ogg holds a digital recording of
+		    sound, high compressed. If you want to use recorded music,
+		    this is the best format. </li>
+		<li> <b>MIDI (.mid)</b>: Recommended for the low size that it
+		    takes in disk. An archive .mid only holds a representation of
+		    the notes that form the music, and the soundcard will have
+		    the reproduction of the instruments. If you want to 
+		    create games that it takes low size in disk, it is the 
+			best format. </li>
+		<li> <b>Modules (.xm, .it, .s3m, .mod)</b>: This modules hold a representation 
+		    of the notes that form the music and the digital instruments used. 
+		    It is an intermediate format to both, it has a medium quality and size. </li>
+		<li> <b>WAV (.wav)</b>: WAV archives hold a digital recording but
+		    take high size in disk. Use it only if you want to play environmental 
+			or background sound instead of music. </li>
+	    </ul>
+	</p>
+	<p>
+	    This function returns an entire number that identifies the music,
+	    or -1 if the music archive is not a valid format.
+	    You can use the returned value to play music by the function <a href="PLAY_SONG"/>.
+	</p>
+    </description>
+    <see href="PLAY_SONG"/>
+    <see href="STOP_SONG"/>
+    <see href="UNLOAD_SONG"/>
+</function>

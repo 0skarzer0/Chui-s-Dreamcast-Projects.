@@ -1,0 +1,38 @@
+# Microsoft Developer Studio Generated Dependency File, included by agua.mak
+
+.\agua.c : \
+	".\include\fenix\files_st.h"\
+	".\include\fenix\flic_st.h"\
+	".\include\fenix\fxdll.h"\
+	".\include\fenix\grlib_st.h"\
+	".\include\fenix\i_procdef_st.h"\
+	".\include\fenix\instance_st.h"\
+	".\include\fenix\offsets.h"\
+	".\include\fenix\pslang.h"\
+	".\include\fenix\typedef_st.h"\
+	".\include\fenix\xctype_st.h"\
+	".\include\sdl\begin_code.h"\
+	".\include\sdl\close_code.h"\
+	".\include\sdl\sdl.h"\
+	".\include\sdl\sdl_active.h"\
+	".\include\sdl\sdl_audio.h"\
+	".\include\sdl\sdl_byteorder.h"\
+	".\include\sdl\sdl_cdrom.h"\
+	".\include\sdl\sdl_error.h"\
+	".\include\sdl\sdl_events.h"\
+	".\include\sdl\sdl_getenv.h"\
+	".\include\sdl\sdl_joystick.h"\
+	".\include\sdl\sdl_keyboard.h"\
+	".\include\sdl\sdl_keysym.h"\
+	".\include\sdl\sdl_main.h"\
+	".\include\sdl\sdl_mouse.h"\
+	".\include\sdl\sdl_mutex.h"\
+	".\include\sdl\sdl_quit.h"\
+	".\include\sdl\sdl_rwops.h"\
+	".\include\sdl\sdl_timer.h"\
+	".\include\sdl\sdl_types.h"\
+	".\include\sdl\sdl_version.h"\
+	".\include\sdl\sdl_video.h"\
+	".\include\zlib\zconf.h"\
+	".\include\zlib\zlib.h"\
+	

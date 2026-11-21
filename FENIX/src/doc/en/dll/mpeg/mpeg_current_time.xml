@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MPEG_CURRENT_TIME">
+    <retval/>
+    <param name="video"> Identifier of video </param>
+    <abstract> It returns the position of a video in hundredth of second </abstract>
+    <description>
+	<p>
+	    It returns the current moment of reproduction of a video,
+	    measured in hundredth of second from the beginning of the 
+		same one. You can use this function to control when a video
+	    is in some important moment.
+	    The time used by this function is compatible with the variable <a href="TIMER"/>.
+	</p>
+    </description>
+    <see href="dll/mpeg/LOAD_MPEG" name="LOAD_MPEG"/>
+    <see href="dll/mpeg/MPEG_TOTAL_TIME" name="MPEG_TOTAL_TIME"/>
+</function>

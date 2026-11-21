@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PALETTE_PANEL">
+<retval type="INT">Identificador del control creado</retval>
+<param name="ancho"> Ancho en pixels del control </param>
+<param name="alto"> Alto en pixels del control </param>
+<param name="variable" type="POINTER" optional="YES"> Variable INT con el número de color seleccionado </param>
+<abstract> Crea un control de paleta </abstract>
+<description>
+    <p>
+	Crea un control de paleta, que muestra los 256 colores de la
+	paleta de colores actual.
+    </p>
+    <p>
+	Por defecto este es un control estático con el que no es
+	posible interactuar, como una etiqueta de texto 
+	<a href="DLL/GUI/LABEL" name="LABEL"/> o una imagen
+	<a href="DLL/GUI/IMAGE" name="IMAGE"/>. Sin embargo,
+	si se especifica el tercer parámetro con la dirección
+	de una variable de tipo INT pasada mediante el operador
+	&amp;, entonces el control permite elegir un color
+	concreto dentro de los 256, y modifica el contenido de
+	la variable según el usuario haga clic en otro color.
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

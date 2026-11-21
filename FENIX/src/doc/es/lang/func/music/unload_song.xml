@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="UNLOAD_SONG">
+    <retval/>
+    <param name="música"> Identificador de la música </param>
+    <abstract> Libera la memoria ocupada por una música </abstract>
+    <description>
+	<p>
+	    Libera la memoria ocupada por una música cargada
+	    en memoria con <a name="LOAD_SONG" href="MUSIC/LOAD_SONG"/>. Antes
+	    es necesario, si se está reproduciendo, detener
+	    la reproducción de la música con <a name="STOP_SONG" href="MUSIC/STOP_SONG"/>.
+	</p>
+    </description>
+    <see name="STOP_SONG" href="MUSIC/STOP_SONG"/>
+    <see name="LOAD_SONG" href="MUSIC/LOAD_SONG"/>
+</function>

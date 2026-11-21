@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="EXIT" />
+<fnc href="SET_FPS" />
+<fnc href="SET_ICON" />
+<fnc href="SET_MODE" />
+<fnc href="SET_TITLE" />
+</INDEX>

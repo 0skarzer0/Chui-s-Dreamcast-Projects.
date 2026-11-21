@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="FILE">
+    <abstract>Identificador de la librería gráfica</abstract>    
+	<description>
+	<p>
+		Este identificador referencia un fichero FPG anteriormente cargado 
+		con la instrucción <a href="FPG/LOAD_FPG" name="LOAD_FPG"/> o en su 
+		defecto la librería gráfica de sistema, identificada con el número 0 y 
+		que es en la que se crean los gráficos nuevos (por ejemplo creados con 
+		<a href="MAP/NEW_MAP" name="NEW_MAP"/> O <a href="MAP/MAP_CLONE" name="MAP_CLONE"/>.
+	</p>
+	<p>
+		El valor de la variable local <a href="LVARS/GRAPH" name="GRAPH"/> indica 
+		qué grafico dentro del fichero FPG usará el proceso.
+	</p>
+    </description>
+    <see type="var" name="GRAPH" href="LVARS/GRAPH" />
+    <see name="LOAD_FPG" href="FPG/LOAD_FPG" />
+</variable>

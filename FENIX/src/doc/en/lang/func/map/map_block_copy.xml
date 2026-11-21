@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_BLOCK_COPY">
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of destiny graph inside of library </param>
+    <param name="destiny-x"> Horizontal destiny coordinate </param>
+    <param name="destiny-y"> Vertical destiny coordinate </param>
+    <param name="source-graph"> Number of source graph inside of library </param>
+    <param name="source-x"> Horizontal coordinate inside of source graph </param>
+    <param name="source-y"> Vertical coordinate inside of source graph </param>
+    <param name="width"> Width in pixels of block to copy </param>
+    <param name="height"> Height in pixels of block to copy </param>
+    <param name="flags"> Value of flags </param>
+    <abstract> It copies a section of a graph inside of other </abstract>
+    <description>
+	<p>
+	    This function copies a section of a graphn delimited by a source coordinates 
+	    (for the top left corner of the zone), a width and a height, to a destiny graph 
+	    possibly in other coordinates. By the value of flags indicated it is possible
+	    to determine if the transparent pixels in the source graph are ignored (flags 0)
+	    or are copied too (flags 128).
+	</p>
+	<p>
+	    The only limitation is that both must be in the same library. If you want to
+		make the operation with graphs in different libraries, you have to create a copy
+	    of one of the two graphs by <a href="FPG_ADD"/> or <a href="MAP_CLONE"/>.
+	</p>
+    </description>
+    <see href="FPG_ADD"/>
+    <see href="MAP_CLONE"/>
+</function>

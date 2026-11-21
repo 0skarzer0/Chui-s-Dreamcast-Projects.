@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="FRAME">
+	<syntax> 
+		<b>FRAME</b> [ porcentaje ]; 
+	</syntax>
+	<param name="porcentaje" optional="yes">
+		Indica la cantidad, en porcentaje, del proceso de un frame 
+		que ha sido completado por el proceso actual
+	</param>
+	<abstract> Mantiene el proceso actual en background hasta 
+		  el siguiente frame o parte del mismo </abstract>
+    <description>
+		<p>
+			La sentencia FRAME es el eje de funcionamiento de Fenix.
+			Cuando se encuentra en un proceso, inmediatamente se
+			detiene su ejecución y se vuelve al proceso padre,
+			devolviéndole un valor entero que identifica
+			al proceso actual y es igual al contenido de la
+			variable local ID.
+		</p>
+		<p>
+			Sin embargo, el proceso no es destruído, sino que
+			queda residente en memoria. Cuando haya transcurrido
+			un frame, el proceso seguirá ejecutándose a partir
+			de la sentencia siguiente a FRAME, hasta que encuentre
+			una nueva instrucción FRAME o el proceso acabe.
+		</p>
+		<p>
+			Un proceso puede acabar por llegar a la instrucción
+			<a href="RETURN"/> o simplemente por no quedar más
+			sentencias de código y no haber ningún bucle activo.
+			En estos casos el proceso es destruído y no queda en
+			memoria rastro de su presencia o antiguas variables.
+			En cambio, un proceso que ha llegado a FRAME se mantiene
+			en memoria.
+		</p>
+		<p>
+			Si el proceso tiene en sus variable local <a href="GRAPH"/>
+			el código de un gráfico válido, este gráfico será mostrado
+			en las coordenadas y condiciones indicadas por el resto
+			de variables locales del proceso (<a href="X"/>, <a href="Y"/>,
+			<a href="ANGLE"/>, etc). La mayor parte de objetos y sprites
+			de un juego estarán creados mediante un proceso con un bucle 
+			conteniendo una sentencia FRAME
+			que actualiza la posición frame a frame según un código
+			dentro del bucle que gestiona su comportamiento.
+		</p>
+		<h3> Frames parciales </h3>
+		<p>
+			La sentencia FRAME admite un parámetro opcional, que indica
+			la cantidad (en porcentaje) de frame que ha sido procesada
+			por el proceso. Esto tiene la utilidad de hacer procesos cuyo
+			código se ejecuta varias veces por frame o una vez cada
+			varios frames. Por ejemplo, una sentencia FRAME 50 provoca
+			que el proceso se vuelva a ejecutar una segunda vez dentro
+			del mismo frame (después de que se hayan acabado de ejecutar
+			todos los demás procesos normales).
+		</p>
+		<p>
+			En cambio, una sentencia tipo FRAME 500 provocará que el
+			proceso en cuestión espere 5 frames antes de seguir
+			ejecutándose. Puedes conseguir con ello eventos que
+			tardan un tiempo en ejecutarse, o bien diseñar procesos
+			que hacen operaciones más intensivas (por ejemplo, código
+			de IA) y que no necesitan ejecutarse contínuamente.
+		</p>
+		<p>
+			El funcionamiento real del porcentaje especificado por
+			FRAME viene a ser el siguiente:
+			<ul>
+				<li> 
+					Todos los procesos cuentan con una variable
+					indicando el "porcentaje ejecutado" del frame
+					actual, e inicialmente vale 0.
+				</li>
+				<li>
+					Al principio del frame, todos los procesos
+					que tienen un porcentaje ejecutado menor a 100
+					se ejecutan por orden de prioridad, hasta
+					llegar a la próxima instrucción FRAME. El
+					porcentaje especificado en esa instrucción
+					que lo detiene, se suma al total ejecutado
+					hasta el momento.
+				</li>
+				<li>
+					Cuando todos los procesos se han ejecutado,
+					se vuelve a ejecutar el paso anterior, por lo
+					que los procesos que hayan ejecutado FRAME con
+					un porcentaje inferior a 100 volverán a
+					ejecutarse.
+				</li>
+				<li>
+					Cuando ya no quedan procesos con un porcentaje
+					ejecutado inferior a 100, el frame ha terminado.
+					Se dibuja la pantalla en el estado actual de
+					cada proceso y se realizan los procesos externos
+					(actualización de temporizadores, gestión de
+					dispositivos de entrada, etc).
+				</li>
+				<li>
+					Finalmente, se le resta 100 a todos los
+					porcentajes completados de cada proceso y
+					se vuelve al paso 2.
+				</li>
+			</ul>
+		</p>
+		<p>
+			Este sistema explica, por ejemplo, que un proceso puede
+			dejar un residuo de frame completado para el siguiente.
+			Si un proceso usa un porcentaje de frame tal que la
+			división de 100 no da exacta, no se ejecutará el mismo
+			número de veces cada frame.
+		</p>
+    </description>
+</section>

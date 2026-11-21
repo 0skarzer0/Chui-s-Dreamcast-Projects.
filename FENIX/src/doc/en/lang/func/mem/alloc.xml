@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ALLOC">
+    <retval type="POINTER" />
+    <param name="bytes" type="INT"> Size in bytes of the memory zone to reserve </param>
+    <abstract> Reserve of dynamic memory </abstract>
+    <description>
+	<p>
+	  It reserves a memory zone and returns a pointer to the same one. This is a advanced
+	  function, so that it is good to know the concept of POINTER before using it. That memory zone
+	  can have random data or rest of a previous use and it is responsability of the programmer 
+	  to initialize it.	
+	</p>
+	<p>
+	  The pointer returned by ALLOC can be assigned to any variable of type 
+	  POINTER, e.g. byte pointer or int pointer. It is recommended to save the pointer in 
+	  a global variable and to access to the memory using the operator [] in the  
+	  program.
+	</p>
+	<p>
+	  If you can not reserve the given memory, alloc generates an error in runtime,
+	  however it is not often to happen, because the operating system can use
+	  the free space of hard disk to create swap memory to solve it.
+	</p>
+	<p>
+	  The number of elements that will have in the new reserved memory zone will be equivalent
+	  to the total size divided by the size of each element for the type of pointer used.  
+	  To reserve space for 1000 bytes we need 1000 bytes, but to reserve space for
+	  1000 ints we need to reserve 4000 bytes, 1000 * 4 bytes, that is the value returned
+	  by sizeof(int).  
+	</p>
+	<p>
+	  The pointer returned by alloc must be saved it so it is necessary use it 
+	  with the function <a name="FREE" href="MEM/FREE" />, to can use again the used memory.
+	</p>
+    </description>
+    <see name="FREE" href="MEM/FREE"/>
+    <see name="REALLOC" href="MEM/REALLOC"/>
+</function>

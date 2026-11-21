@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MOVE_DRAW">
+    <param name="objeto"> Identificador del objeto a mover </param>
+    <param name="x"> Nueva coordenada horizontal </param>
+    <param name="y"> Nueva coordenada vertical </param>
+    <abstract> Mueve un objeto gráfico dibujado con una de
+    las funciones de primitivas gráficas </abstract>
+    <description>
+	<p>
+		Mueve un objeto creado con una de las funciones de
+		primitivas (utilizan todas el prefijo DRAW_) cuando se
+		crearon después de una llamada a <a href="PRIM/DRAWING_Z" name="DRAWING_Z"/>.
+		Las coordenadas especificadas hacen referencia al primero
+		de los puntos utilizados para dibujar una línea o curva,
+		o bien al centro del círculo. El objeto no será deformado,
+		sólo desplazado: en una línea, el segundo punto será
+		desplazado en la misma magnitud que el primero.
+	</p>
+    </description>
+    <see href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>
+    <see href="PRIM/DRAWING_Z" name="DRAWING_Z"/>
+    <see href="PRIM/DRAW_BOX" name="DRAW_BOX"/>
+    <see href="PRIM/DRAW_CIRCLE" name="DRAW_CIRCLE"/>
+    <see href="PRIM/DRAW_FCIRCLE" name="DRAW_FCIRCLE"/>
+    <see href="PRIM/DRAW_LINE" name="DRAW_LINE"/>
+    <see href="PRIM/DRAW_CURVE" name="DRAW_CURVE"/>
+    <see href="PRIM/DRAW_RECT" name="DRAW_RECT"/>
+</function>

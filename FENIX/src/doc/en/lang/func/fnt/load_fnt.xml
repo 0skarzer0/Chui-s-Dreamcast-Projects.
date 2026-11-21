@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_FNT">
+    <retval/>
+    <param name="archive" type="STRING"> Name of archive </param>
+    <abstract> It recovers of disk any type of FNT font </abstract>
+    <description>
+	<p>
+	    This function recovers any type of letter of disk from an archive
+	    in binary format FNT, own of Fenix.
+	    That archives hold non-sizable fonts where each character is a graph
+	    of 2, 256 or 65536 colours. The FNT of 8 bits (256 colours) hold the palette
+	    of colours used by the archive.
+	</p>
+	<p>
+	    LOAD_FNT returns an entire number that identifies to the font
+	    on memory. It can be used that code to write text with functions 
+	    like <a href="WRITE"/>.
+	</p>
+	<p>
+	    LOAD_FNT can recover any type of letter in format
+	    FNT of DIV Games Studio.
+	</p>
+    </description>
+    <see href="WRITE"/>
+    <see href="WRITE_VAR"/>
+    <see href="WRITE_IN_MAP"/>
+    <see href="LOAD_BDF"/>
+    <see href="TEXT_COLOR"/>
+</function>

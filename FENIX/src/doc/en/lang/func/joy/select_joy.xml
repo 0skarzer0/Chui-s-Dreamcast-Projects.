@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SELECT_JOY">
+    <retval/>
+    <param name="number"> Number of joystick </param>
+    <abstract> It allows to select a joystick </abstract>
+    <description>
+	<p>
+	    It selects a joystick to use the functions 
+		<a href="joy/GET_JOY_BUTTON" name="GET_JOY_BUTTON"/> and
+	    <a href="joy/GET_JOY_POSITION" name="GET_JOY_POSITION"/>. By default, the
+	    first joystick (joystick 0) is selected.
+	</p>
+	<p>
+	    This function always returns the total number of
+	    avaliable joysticks in the system. If it returns
+	    the parameter -1 like number of joystick, it will not
+	    change the number of joystick selected, so that you can
+	    use SELECT_JOY(-1) to obtain the total number of
+	    joysticks without changing the current selection.
+	</p>
+    </description>
+    <see href="joy/GET_JOY_BUTTON" name="GET_JOY_BUTTON"/>
+    <see href="joy/GET_JOY_POSITION" name="GET_JOY_POSITION"/>
+</function>

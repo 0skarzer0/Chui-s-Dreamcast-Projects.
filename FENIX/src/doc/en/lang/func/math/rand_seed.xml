@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="RAND_SEED">
+    <retval/>
+    <param name="number"> New number of seed for RAND </param>
+    <abstract> It changes the seed which allows to generate the random numbers
+	returned by the function RAND </abstract>
+    <description>
+	<p> 
+	    At begin of the program, a random seed is selected (based on the hour of the day).
+		If you want to generate a random seed again, it is possible to use the function <a href="TIME"/>.
+	</p>
+    </description>
+    <see href="math/RAND" name="RAND"/>
+    <see href="TIME"/>
+</function>

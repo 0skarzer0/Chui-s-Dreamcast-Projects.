@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CONTROL_CHANGED">
+    <retval type="INT">
+	1 si el usuario modificó el control recientemente 
+    </retval>
+    <param name="control"> Identificador de un control cualquiera </param>
+    <abstract> 
+	Comprueba si el usuario modificó recientemente el contenido del control
+    </abstract>
+    <description>
+	<p>
+	    Cada vez que el usuario hace modificaciones sobre un control,
+	    se activa un flag interno en el mismo. 
+	    Esta función devuelve el flag y lo pone de nuevo a 0, de
+	    manera que en posteriores llamadas sólo devolverá 1 si el
+	    usuario ha vuelto a hacer algún cambio sobre el control.
+	</p>
+	<p>
+	    Esta función se ha diseñado para ejecutarse cada frame, como
+	    medio para detectar si el usuario hace doble click en el control.
+	</p>
+	<p>
+	    Actualmente se detectan los siguientes cambios:
+	    <ul>
+		<li> 
+		    En tablas, una modificación de la selección (línea
+		    o líneas seleccionadas) con ratón o teclado.
+		</li>
+		<li> 
+		    En un control de input, un cambio a su contenido
+		    escribiendo texto adicional o borrando caracteres.
+		</li>
+		<li>
+		    En una caja de chequeo, poner o quitar la marca
+		    usando el ratón o teclado.
+		</li>
+		<li>
+		    En un botón de radio, poner la marca usando ratón
+		    o teclado.
+		</li>
+	    </ul>
+	</p>
+    </description>
+    <see name="CONTROL_PRESSED" href="DLL/GUI/CONTROL_PRESSED"/>
+</function>

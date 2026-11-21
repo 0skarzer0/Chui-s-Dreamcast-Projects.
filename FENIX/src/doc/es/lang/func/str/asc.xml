@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ASC">
+    <retval> Código de caracter </retval>
+    <param name="cadena" type="STRING"> Cadena con el carácter </param>
+    <abstract> Devuelve el código ASCII de un carácter </abstract>
+    <description>
+	<p>
+	    Esta función devuelve el código ASCII (un número entre 0 y 255)
+	    que corresponde al primer carácter de la cadena especificada
+	    como parámetro. Por ejemplo, ASC("A") devuelve 64.
+	</p>
+    </description>
+<see href="STR/CHR" name="CHR"/>
+</function>

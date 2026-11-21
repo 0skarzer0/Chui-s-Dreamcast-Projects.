@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="ABS" />
+<fnc href="ACOS" />
+<fnc href="ASIN" />
+<fnc href="ATAN" />
+<fnc href="COS" />
+<fnc href="POW" />
+<fnc href="RAND" />
+<fnc href="RAND_SEED" />
+<fnc href="SIN" />
+<fnc href="SQRT" />
+<fnc href="TAN" />
+</INDEX>

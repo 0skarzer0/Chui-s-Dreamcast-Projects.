@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="IMAGE_VIEW">
+<retval type="INT">Identificador del control creado</retval>
+<param name="librería"> Número de librería FPG </param>
+<param name="gráfico"> Número de gráfico dentro de la librería </param>
+<param name="zoom"> Valor inicial de zoom en porcentaje </param>
+<param name="fondo"> Tipo de fondo </param>
+<abstract> Crea un control de imagen redimensionable </abstract>
+<description>
+    <p>
+	Crea un control de imagen que puede ser cambiado de tamaño
+	por el usuario, a diferencia del control estático
+	que puede crearse con <a href="DLL/GUI/IMAGE" name="IMAGE"/>.
+    </p>
+    <p>
+	Opcionalmente, es posible especificar un porcentaje inicial
+	de zoom distinto del porcentaje por defecto de 100%. Este
+	parámetro indica no sólo el tamaño inicial de la imagen,
+	sino también como se comportará ésta cuando el usuario redimensione
+	el control. Hay tres posibilidades:
+
+	<ul>
+	    <li> Zoom 0 o parámetro no especificado: el control
+		inicialmente muestra la imagen a su tamaño original,
+		pero cuando el usuario cambie el tamaño del control,
+		la imagen se redimensionará para que ocupe el máximo
+		espacio posible dentro del mismo, sin deformarla
+		en cuanto a su relación de aspecto. </li>
+	    <li> Zoom positivo: el control se muestra con la imagen
+		a este porcentaje de tamaño. Cuando el usuario cambie
+		el tamaño del control, la imagen se centrará sobre
+		el espacio disponible, sin cambiar de tamaño. </li>
+	    <li> Zoom negativo: el control se muestra con la imagen
+		al porcentaje de tamaño indicado, en positivo (-50 = 50%).
+		La imagen cambiará de tamaño junto al control. A
+		diferencia del estado original, además, la imagen
+		será deformada si es necesario.
+	    </li>
+	</ul>
+    </p>
+    <p>
+	Es posible indicar como cuarto parámetro una de las siguientes
+	constantes, predefinidas en GUI.INC, que indicará qué clase
+	de fondo dibujar debajo de la imagen:
+	<ul>
+	    <li> IMAGEVIEW_BLACK: El fondo es negro. </li>
+	    <li> IMAGEVIEW_GRAY: El fondo es un color gris al 50%. </li>
+	    <li> IMAGEVIEW_CHESSBOARD: El fondo se dibuja a partir de
+		cuadros de grises alternantes, como un tablero de ajedrez,
+		que no cambian de tamaño aunque lo haga la imagen. </li>
+	    <li> IMAGEVIEW_WINDOW: El fondo es del mismo color que
+		la ventana. Esta es la opción por defecto. </li>
+	    <li> IMAGEVIEW_TRANSPARENT: El fondo es transparente. Bajo
+		él pueden verse las ventanas que haya debajo de la
+		actual, o el escritorio si no hay ninguna. Este tipo de
+		fondo supone un cierto impacto al rendimiento. </li>
+	</ul>
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

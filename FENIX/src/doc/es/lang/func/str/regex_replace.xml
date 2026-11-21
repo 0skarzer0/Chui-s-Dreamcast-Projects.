@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="REGEX_REPLACE">
+    <retval type="STRING"> Cadena resultante con todos los cambios </retval>
+    <param name="expresión"> Expresión regular </param>
+    <param name="cambia"> Cadena con el nuevo texto </param>
+    <param name="cadena"> Cadena original </param>
+    <abstract> Busca una expresión regular dentro de una cadena, y
+	sustituye cada coincidencia por el nuevo texto indicado </abstract>
+    <description>
+	<p>
+	    Dada una expresión regular, comprueba si la cadena dada
+	    la cumple en algún punto, y sustituye lo encontrado
+	    por el nuevo texto indicado como tercer parámetro.
+	    Devuelve la cadena resultante (no se modifica la original).
+	</p>
+	<p>
+	    Este nuevo texto es una cadena corriente, con la salvedad
+	    de que es posible usar la secuencia "\0", "\1", etc,
+	    hasta "\9", para sustituir por las secciones entre
+	    paréntesis de la expresión regular original, tal cual
+	    se encontraron en cada posición.
+	</p>
+	<p>
+	    Para ver qué es una expresión regular y qué metacaracteres
+	    son admitidos, consulta la documentación de la función
+	    <a href="STR/REGEX" name="REGEX"/>.
+	</p>
+    </description>
+    <see href="STR/REGEX" name="REGEX"/>
+</function>

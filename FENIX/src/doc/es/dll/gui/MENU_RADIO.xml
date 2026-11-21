@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MENU_RADIO">
+<retval/>
+<param name="menu"> Identificador del menú </param>
+<param name="texto">Texto de la opción</param>
+<param name="variable" type="POINTER">Puntero a la variable INT</param>
+<param name="valor"> Cuando la variable contenga este valor,
+	 la opción se considerará seleccionada </param>
+<abstract> Añade una opción (con marca de chequeo) a un menú </abstract>
+<description>
+    <p>
+	Añade una opción al menú indicado. El segundo parámetro
+	indica el nombre de la opción. El tercero es la dirección
+	de memoria de una variable INT, obtenida mediante el uso
+	del operador &amp;. Cuando esta variable contenga un el
+	valor especificado como cuarto parámetro,
+	se dibujará una marca de chequeo al lado de la opción.
+	Cuando el usuario haga clic sobre la opción, este valor
+	será asignado a la variable.
+	El menú debe haber sido
+	creado con la función <a href="DLL/GUI/MENU" name="MENU"/>.
+    </p>
+</description>
+<see href="DLL/GUI/MENU_ACTION" name="MENU_ACTION" />
+<see href="DLL/GUI/MENU_TOGGLE" name="MENU_TOGGLE" />
+<see href="DLL/GUI/MENU_SUBMENU" name="MENU_SUBMENU" />
+<see href="DLL/GUI/MENU_SEPARATOR" name="MENU_SEPARATOR" />
+</function>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_POINT">
+    <retval/>
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph inside of the library </param>
+    <param name="number"> Number of point of control (0 is the center) </param>
+    <param name="x"> Offset of a variable of entire type (INT)
+	which will have the horizontal coordinate of the point </param>
+    <param name="y"> Offset of a variable of entire type (INT)
+	which will have the vertical coordinate of the point </param>
+    <abstract> It allows to obtain a point of control of a graph </abstract>
+    <description>
+	<p>
+	    Any graph can contain a indetermined number of points of control
+	    where the point of control 0 is the center of the graph,
+	    and the rest is avaliable for the user.
+	    This function allows to know a point of control of any graph.
+	    If the number of the point of control specified is out of range,
+	    the function returns -1 and the variables x and y will not be
+	    modified.
+	    But if the point of control is, but it is not defined, x and y 
+	    will have the value -1.
+	    In the rest of cases, x and y will have the coordinates of the point
+	    of control, then (0, 0) will represent the pixel located in the top
+	    left corner of the graph, and the coordinates will increase towards 
+	    up an right.
+	</p>
+    </description>
+    <see href="SET_POINT"/>
+    <see href="GET_REAL_POINT"/>
+</function>

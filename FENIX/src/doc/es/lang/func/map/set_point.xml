@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_POINT">
+    <retval/>
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <param name="número"> Número de punto de control (0 a 999) </param>
+    <param name="x"> Nuevo valor para la coordenada horizontal del punto </param>
+    <param name="y"> Nuevo valor para la coordenada vertical del punto </param>
+    <abstract> Permite cambiar un punto de control de un gráfico </abstract>
+    <description>
+	<p>
+	    Un gráfico cualquiera puede contener hasta 999 puntos de control de
+	    los cuales el punto de control 0
+	    representa el centro del gráfico, y el resto están disponibles
+	    para el usuario. Mediante esta función puede asignarse
+	    un punto de control cualquiera del gráfico: si el gráfico no
+	    contenía puntos de control, o no contenía puntos de control
+	    suficientes, se añadirán los necesarios. Por ejemplo, si un
+	    gráfico no dispone de puntos de control y mediante esta
+	    función se añade el punto de control 20, los puntos de
+	    control 0 a 19 serán rellenados con el valor indefinido (-1, -1).
+	</p>
+    </description>
+    <see href="SET_CENTER"/>
+    <see href="GET_POINT"/>
+</function>

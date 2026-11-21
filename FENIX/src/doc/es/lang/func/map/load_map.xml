@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_MAP">
+    <retval/>
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <abstract> Recupera de disco un gráfico MAP </abstract>
+    <description>
+	<p>
+	    Esta función recupera un gráfico MAP desde disco. El 
+	    MAP es un formato propio de Fenix que permite almacenar
+	    gráficos de 1, 8 o 16 bits por pixel en formato
+	    comprimido, con pixels transparentes, y opcionalmente
+	    con una animación. Además, los gráficos de 8 bits incluyen
+	    la paleta de colores en el propio fichero MAP.
+	</p>
+	<p>
+	    LOAD_MAP devuelve un número entero que identifica al
+	    gráfico MAP. Es posible utilizar a partir de entonces
+	    este valor con cualquier función que admita un
+	    gráfico como parámetro, indicando el código 0 de
+	    librería, o asignar el número a la variable 
+	    <a href="GRAPH"/>.
+	</p>
+    </description>
+    <note>
+	Sólo es posible visualizar gráficos de 16 bits si el modo
+	gráfico actual es de 16 bits. En cambio, es posible visualizar
+	gráficos de 8 bits en el modo de 16 bits.
+    </note>
+    <note>
+	Sólo hay una paleta de colores activa en todo momento. Usa
+	sólo gráficos de 8 bits que compartan la misma paleta de colores.
+	Fenix usará automáticamente la paleta de colores del primer
+	gráfico en recuperar de disco e ignorará la paleta de los demás.
+	Incluso en modo de 16 bits existe una paleta de colores
+	(si bien en ese modo la paleta sólo afecta a gráficos de 16 bits).
+    </note>
+    <see href="LOAD_PNG"/>
+    <see href="LOAD_PCX"/>
+    <see href="UNLOAD_MAP"/>
+</function>

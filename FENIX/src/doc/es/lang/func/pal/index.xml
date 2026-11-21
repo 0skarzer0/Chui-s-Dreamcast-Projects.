@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="CONVERT_PALETTE" />
+<fnc href="FADE" />
+<fnc href="FADE_OFF" />
+<fnc href="FADE_ON" />
+<fnc href="FIND_COLOR" />
+<fnc href="GET_COLORS" />
+<fnc href="GET_RGB" />
+<fnc href="LOAD_PAL" />
+<fnc href="RGB" />
+<fnc href="ROLL_PALETTE" />
+<fnc href="SET_COLORS" />
+</INDEX>

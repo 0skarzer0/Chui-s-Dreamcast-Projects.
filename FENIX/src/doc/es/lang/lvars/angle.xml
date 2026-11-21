@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="ANGLE">
+    <abstract>Especifica el ángulo de visualización en milésimas de grado</abstract>    
+	<description>
+	<p>
+		Este ángulo es el que utiliza el intérprete para rotar el gráfico del
+		proceso antes de dibujarlo en pantalla. Un valor de 90000 rotará el gráfico 
+		90º a la izquierda.  Su valor por defecto es 0 (sin rotar).
+	</p>
+	<p>
+		Opcionalmente se puede combinar con el uso de <a name="XGRAPH" type="var" href="LVARS/XGRAPH" /> 
+		para que el gráfico del proceso cambie en función del ángulo de visualización.
+	</p>
+    </description>
+    <see type="var" name="XGRAPH" href="LVARS/XGRAPH" />
+</variable>

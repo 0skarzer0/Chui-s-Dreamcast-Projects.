@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SAVE_FPG">
+    <retval/>
+    <param name="librería"> Código de la librería a guardar </param>
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <abstract> Guarda en disco una librería FPG </abstract>
+    <description>
+	<p>
+	    Esta función crea o sobreescribe un fichero en disco
+	    en formato FPG, con el contenido de una librería
+	    FPG en memoria que puede haberse creado con la
+	    función <a href="FPG_NEW"/>, o recuperado de disco
+	    mediante <a href="LOAD_FPG"/>. Los cambios realizados
+	    en memoria con funciones como <a href="FPG_ADD"/>
+	    o <a href="UNLOAD_MAP"/> no afectan al fichero original
+	    en disco, así que es preciso utilizar esta función
+	    para sobreescribirlo si así se desea.
+	</p>
+    </description>
+    <note>
+	Los ficheros creados con SAVE_FPG no pueden recuperarse
+	desde DIV Games Studio.
+    </note>
+    <see href="FPG_NEW"/>
+    <see href="FPG_ADD"/>
+    <see href="UNLOAD_MAP"/>
+</function>

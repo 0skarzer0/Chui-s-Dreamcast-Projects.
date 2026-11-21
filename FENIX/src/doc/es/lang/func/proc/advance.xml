@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ADVANCE">
+<retval/>
+<param name="número"> Número entero </param>
+<abstract> Desplaza el proceso actual según su ángulo</abstract>
+<description>
+    <p>
+	Esta función desplaza el proceso actual en la dirección
+	especificada por su variable <a type="var" name="ANGLE" href="LVARS/ANGLE"/> 
+	el número de unidades indicado como parámetro.
+    </p>
+    <p>
+	Hay que tener en cuenta que el desplazamiento se hace en
+	unidades entras, y por lo tanto tiene limitaciones de
+	precisión. Un desplazamiento de 1 ó 2 unidades no puede
+	reflejar las diferencias entre ángulos, por lo que no
+	será efectivo. Si se desea desplazar un proceso en
+	ángulos arbitrarios y sólo unos pocos pixels, será
+	preciso utilizar la variable <a type="var" name="RESOLUTION" href="LVARS/RESOLUTION"/> para
+	que las coordenadas del gráfico vengan expresadas en
+	unidades más pequeñas que un pixel, como ocurre por defecto.
+    </p>
+</description>
+<see name="XADVANCE" href="PROC/XADVANCE"/>
+<see type="VAR" name="ANGLE" href="LVARS/ANGLE"/>
+<see type="VAR" name="RESOLUTION" href="LVARS/RESOLUTION"/>
+<see name="GET_ANGLE" href="PROC/GET_ANGLE"/>
+<see name="FGET_ANGLE" href="PROC/FGET_ANGLE"/>
+</function>

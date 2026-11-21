@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_CHANGE">
+    <retval/>
+    <param name="tabla"> Identificador devuelto por TABLE </param>
+    <param name="fila"> Número de fila (0 para la primera) </param>
+    <param name="nombre" type="STRING"> Nombre de la columna </param>
+    <param name="valor" type="STRING"> Nuevo valor a asignar </param>
+    <abstract> Devuelve el valor de una celda en una tabla </abstract>
+    <description>
+	<p>
+	    Dada una tabla, un número de fila, y un nombre o índice
+	    de columna, esta función permite modificar el contenido de la
+	    celda correspondiente, cambiándolo por la cadena que se
+	    le pase como parámetro. Si la columna en cuestión es una
+	    columna de gráficos, este valor se interpreta como número
+	    entero, e identifica el gráfico en cuestión.
+	</p>
+    </description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+<see name="TABLE_ADDCOLUMN" href="DLL/GUI/TABLE_ADDCOLUMN"/>
+<see name="TABLE_ADDCOLUMN_BITMAPS" href="DLL/GUI/TABLE_ADDCOLUMN_BITMAPS"/>
+</function>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_PANNING">
+    <param name="canal"> Número de canal devuelto por PLAY_WAV </param>
+    <param name="izquierdo"> Volumen izquierdo (0-255) </param>
+    <param name="derecho"> Volumen derecho (0-255) </param>
+    <abstract> Cambia el balance de un canal </abstract>
+    <description>
+	<p>
+	    Esta función permite cambiar el posicionamiento
+	    izquierdo/derecho en stereo de un sonido, simplemente
+	    ajustando el volumen de cada uno de los dos subcanales.
+	    Si se desea dejar el sonido tal cual estaba en un
+	    principio, basta con hacer un SET_PANNING(255,255).
+	</p>
+    </description>
+    <see href="PLAY_WAV"/>
+    <see href="IS_PLAYING_WAV"/>
+</function>

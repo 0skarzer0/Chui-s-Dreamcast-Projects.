@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="MOUSE_STATUS">
+	<abstract> Se pone a 1 cuando el ratón está sobre la ventana </abstract>
+    <description>
+	<p>
+		En aplicaciones que se ejecutan en ventana (ver <a href="SET_MODE"/>),
+		esta variable se pone automáticamente a 1 cuando el ratón entra
+		dentro de los límites de la ventana, y a 0 cuando sale de ella.
+	</p>
+	<p>
+		Este valor no tiene utilidad si la aplicación se ejecuta en modo
+		de ventana modal (usando el parámetro MODE_MODAL en la llamada
+		a SET_MODE) y tiene el foco de entrada.
+	</p>
+    </description>
+</variable>

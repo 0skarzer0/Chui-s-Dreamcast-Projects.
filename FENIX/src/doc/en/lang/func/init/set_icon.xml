@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_ICON">
+    <param name="libray"> Library tha contains the graph </param>
+    <param name="graph"> Code of graph </param>
+    <abstract> It uses a graph like icon for the game window </abstract>
+    <description>
+	<p>
+	    This function allows to select the icon of game window,
+	    when the game is not running to full screen. It is necessary to call
+	    to this function before calling to <a href="INIT/SET_MODE" name="SET_MODE"/>, because
+	    that is the function that will create and show the window.
+	    Remember that SET_MODE initializes in a beginning the game to
+	    full screen: to initializes the game window, it is necessary
+	    to change the value of the variable <a href="FULL_SCREEN"/>
+	    before calling to <a href="INIT/SET_MODE" name="SET_MODE"/>.
+	</p>
+	<p>
+	    For this function, you must use a graph of 32x32 pixels.
+	    The graph can be to 8 or 16 bits of colour, and you must
+	    not delete this graph of memory using functions like
+	    <a href="UNLOAD_MAP"/> or <a href="UNLOAD_FPG"/>.
+	</p>
+	<p>
+	    It is not possible to change the icon of a window that is running,
+	    but you can call again to <a href="INIT/SET_MODE" name="SET_MODE"/> to active
+	    the changes.
+	</p>
+    </description>
+    <see href="FULL_SCREEN"/>
+    <see href="INIT/SET_MODE" name="SET_MODE"/>
+    <see href="INIT/SET_TITLE" name="SET_TITLE"/>
+</function>

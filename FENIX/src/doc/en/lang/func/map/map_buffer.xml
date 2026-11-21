@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_BUFFER">
+    <retval type="POINTER" />
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph inside of library </param>
+    <abstract> It returns a pointer to graph buffer </abstract>
+    <description>
+	<p>
+	    This advanced function returns a POINTER to graph buffer which is specified,
+	    that is, a pointer to the zone of memory where are save the real pixels which
+	    make the image. The graphs loaded with functions like LOAD_xxx or the created with <a name="NEW_MAP" href="EN/MAP/NEW_MAP"/> 
+	    are in the library 0.
+	</p>
+	<p>
+		The returned pointer is a pointer to BYTE for graphs of 8 bits and a pointer
+		to WORD for graphs of 16 bits. Any manipulation of the content of this zone of
+		memory affects directly to the content of the image.
+	</p>
+	<p>
+	    Some practises with that function and with <a name="MEMSET" href="EN/MEM/MEMSET" /> 
+	    or <a href="EN/MEM/MEMSETW" name="MEMSETW" />, allow to make visual effects 
+	    like erased or refilled with colours.
+	</p>
+    </description>
+    <see href="EN/MAP/NEW_MAP" name="NEW_MAP" />
+    <see href="EN/MEM/MEMSET" name="MEMSET" />
+    <see href="EN/MEM/MEMSETW" name="MEMSETW" />    
+</function>

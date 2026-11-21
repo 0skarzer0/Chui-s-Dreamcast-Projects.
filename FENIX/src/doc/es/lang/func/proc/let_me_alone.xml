@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LET_ME_ALONE">
+    <abstract> Mata todos los procesos activos </abstract>
+    <description>
+	<p>
+	    Esta función mata todos los procesos activos, excepto el actual.
+	    Es muy útil para salir del juego y volver a algún tipo de menú, 
+	    lo cual normalmente implicaría matar cuidadosamente gran
+	    cantidad de procesos.
+	</p>
+	<p>
+	    Las limitaciones de la función <a href="SIGNAL"/> también
+	    se aplican a LET_ME_ALONE.
+	</p>
+    </description>
+    <see href="SIGNAL"/>
+</function>

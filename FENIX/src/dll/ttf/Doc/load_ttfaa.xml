@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_TTFAA">
+<retval/>
+<param name="fichero" type="STRING"> Nombre del fichero TTF </param>
+<param name="tamaño"> Tamaño (altura en pixels) deseado </param>
+<param name="profundidad"> Profundidad de color (debe ser 8 ó 16) </param>
+<param name="color"> Color escogido para el texto </param>
+<param name="fondo"> Color escogido para el fondo </param>
+<abstract> Recupera un tipo de letra Truetype del disco, creando una
+    fuente interna a partir del tamaño deseado, con anti-alias
+</abstract>
+<description>
+    <p>
+	Esta función recupera de disco un tipo de letra Truetype y crea
+	internamente los bitmaps de todos los caracteres en el juego
+	de caracteres estándar (ISO-8859-1). La función devuelve un
+	identificador de fuente (o tipo de letra) que puede utilizarse
+	en las llamadas a funciones como <a href="WRITE"/> o
+	<a href="WRITE_IN_MAP"/>.
+    </p>
+    <p>
+	El tamaño indicado es un valor meramente orientativo. Existirán
+	caracteres cuyo tamaño final sea ligeramente superior al indicado.
+	Además, el tamaño final del caracter depende del tipo de letra,
+	aunque a un mismo tamaño varios tipos de letra deben tener
+	un aspecto comparable.
+    </p>
+    <p>
+	Esta función crea una fuente a color, utilizando el parámetro
+	<i>color</i> para dibujar los caracteres. La profundidad de
+	color puede ser de 8 ó 16 bits, en función del parámetro
+	<i>profundidad</i>, y afecta a los bitmaps de todos los
+	caracteres.
+    </p>
+    <p> 
+	Tanto el parámetro "color" como el parámetro "fondo" indican
+	colores cuyo significado depende del modo de vídeo actual.
+	En modo de vídeo de 8 bits, los dos parámetros indicarán un
+	color de la paleta (de 0 a 255). En modo de 16 bits, son
+	códigos de color de 0 a 65535 cuyo significado varía según
+	el ordenador. Se recomienda usar la función <a href="RGB"/>
+	para obtener ambos parámetros. Este modo de funcionamiento
+	es equivalente al resto de funciones que requieren colores
+	como parámetros, como por ejemplo <a href="TEXT_COLOR"/>
+	o <a href="DRAWING_COLOR"/>.
+    </p>
+    <p>
+	En ambos casos, los bordes de la fuente serán degradados
+	mediante una técnica llamada "antialiasing", utilizando
+	el color especificado en el parámetro <i>fondo</i>. Esta
+	técnica mejora notablemente el aspecto de la fuente, siempre
+	que se dibuje el texto encima de una superficie donde
+	prevalezca el color indicado como fondo. Si no es el caso,
+	puede usarse <a href="LOAD_TTF"/> para crear una fuente
+	sin antialias, o crear varias versiones de la misma fuente
+	usando varios colores de fondo distintos (con un coste
+	importante en memoria).
+    </p>
+    <p>
+	Si se desea, es posible guardar la fuente resultante con la
+	función SAVE_FNT. Un fichero FNT es mucho más rápido de cargar
+	que una fuente TTF, pero sólo contiene la fuente final (los
+	bitmaps de cada caracter), mientras el fichero TTF contiene
+	información para dibujar texto a cualquier resolución y tamaño.
+    </p>
+</description>
+<note>
+    <p>
+	Tanto LOAD_TTF como LOAD_TTFA guardan información sobre el último
+	fichero TTF recuperado en memoria, lo cual les permite acelerar
+	las siguientes llamadas a la función que se hagan con la misma
+	fuente (siempre que estas llamadas sean consecutivas). Esto
+	puede ocurrir a menudo, por ejemplo si se desea utilizar un
+	tipo de letra Truetype a varios tamaños. Sin embargo, se recomienda
+	usar ficheros TTF reducidos en tamaño, o al menos recuperar en
+	último lugar el fichero TTF más pequeño.
+    </p>
+</note>
+<see href="LOAD_TTF"/>
+<see href="WRITE"/>
+<see href="WRITE_IN_MAP"/>
+<see href="SAVE_FNT"/>
+<see href="TEXT_COLOR"/>
+</function>
+

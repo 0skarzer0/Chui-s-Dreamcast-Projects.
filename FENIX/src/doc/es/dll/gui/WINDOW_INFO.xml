@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW_INFO">
+    <retval>
+	Valor del parámetro requerido
+    </retval>
+    <param name="ventana"> Identificador de la ventana </param>
+    <param name="tipo"> Tipo de información requerida </param>
+    <abstract> 
+	Devuelve información numérica sobre una ventana
+    </abstract>
+    <description>
+	<p>
+	    Permite obtener información acerca de una ventana,
+	    en función del parámetro "tipo", que puede obtener
+	    cualquiera de los siguientes valores
+	    (constantes definidas en GUI.INC):
+	    <ul>
+		<li> WINDOW_WIDTH: Ancho en pixels de la ventana </li>
+		<li> WINDOW_HEIGHT: Alto en pixels de la ventana,
+		    sin contar el alto de la barra de título (si hay) </li>
+		<li> WINDOW_CAPTION: Alto en pixels de la barra de título </li>
+		<li> WINDOW_ALPHA: Valor de transparencia de la ventana </li>
+		<li> WINDOW_ONTOP: Valor del flag "siempre visible" </li>
+		<li> WINDOW_MOVEABLE: Valor del flag "desplazable por el
+		    usuario" (si es 0, el usuario no puede mover la ventana) </li>
+		<li> WINDOW_MODAL: 1 si la ventana es modal </li>
+	    </ul>
+	</p>
+	<p>
+	    La mayoría de los parámetros pueden modificarse con
+	    <a name="WINDOW_SET"/>.
+	</p>
+    </description>
+    <see name="WINDOW" href="DLL/GUI/WINDOW"/>
+    <see name="WINDOW_SET" href="DLL/GUI/WINDOW_SET"/>
+</function>

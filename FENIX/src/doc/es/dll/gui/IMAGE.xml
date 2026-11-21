@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="IMAGE">
+<retval type="INT">Identificador del control creado</retval>
+<param name="librería"> Número de librería FPG </param>
+<param name="gráfico"> Número de gráfico dentro de la librería </param>
+<abstract> Crea un control de imagen estática </abstract>
+<description>
+    <p>
+	Crea un control de imagen. Este control contiene la imagen
+	que se especifica como parámetros a la función, y es
+	estático (no puede ampliarse de tamaño, ni interactuar
+	con él). Úsalo para decorar tus ventanas y cuadros de diálogo.
+    </p>
+    <p>
+	El tamaño del control será exactamente el mismo que el
+	de la imagen, que debe existir ya en el momento de crearlo.
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

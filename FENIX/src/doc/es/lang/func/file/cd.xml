@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CD">
+    <retval type="STRING"/>
+    <abstract> Recupera el nombre del directorio actual </abstract>
+    <description>
+	<p>
+	    Esta función nos devuelve el nombre del directorio actual.  Este será 
+	    el directorio donde actuarán por defecto todas las operaciones con ficheros
+	    como pueden ser <a href="FILE/FOPEN" name="FOPEN"/> o <a href="FILE/SAVE" name="SAVE"/>.
+	</p>
+    </description>
+    <see name="CHDIR" href="FILE/CHDIR"/>
+</function>

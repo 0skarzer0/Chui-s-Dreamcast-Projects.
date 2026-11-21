@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_TTF">
+<retval/>
+<param name="fichero" type="STRING"> Nombre del fichero TTF </param>
+<param name="tamaño"> Tamaño (altura en pixels) deseado </param>
+<abstract> Recupera un tipo de letra Truetype del disco, creando una
+    fuente interna a partir del tamaño deseado
+</abstract>
+<description>
+    <p>
+	Esta función recupera de disco un tipo de letra Truetype y crea
+	internamente los bitmaps de todos los caracteres en el juego
+	de caracteres estándar (ISO-8859-1). La función devuelve un
+	identificador de fuente (o tipo de letra) que puede utilizarse
+	en las llamadas a funciones como <a href="WRITE"/> o <a href="WRITE_IN_MAP"/>.
+    </p>
+    <p>
+	El tamaño indicado es un valor meramente orientativo. Existirán
+	caracteres cuyo tamaño final sea ligeramente superior al indicado.
+	Además, el tamaño final del caracter depende del tipo de letra,
+	aunque a un mismo tamaño varios tipos de letra deben tener
+	un aspecto comparable.
+    </p>
+    <p>
+	Esta función crea una fuente a dos colores, donde cada pixel
+	puede estar activado o desactivado. En un principio el color
+	elegido para dibujar texto es el blanco, pero puede escogerse
+	cualquier otro color usando la función <a href="TEXT_COLOR"/>.
+    </p>
+    <p>
+	Si se desea, es posible guardar la fuente resultante con la
+	función SAVE_FNT. Un fichero FNT es mucho más rápido de cargar
+	que una fuente TTF, pero sólo contiene la fuente final (los
+	bitmaps de cada caracter), mientras el fichero TTF contiene
+	información para dibujar texto a cualquier resolución y tamaño.
+    </p>
+</description>
+<note>
+    <p>
+	Tanto LOAD_TTF como LOAD_TTFA guardan información sobre el último
+	fichero TTF recuperado en memoria, lo cual les permite acelerar
+	las siguientes llamadas a la función que se hagan con la misma
+	funete (siempre que estas llamadas sean consecutivas). Esto
+	puede ocurrir a menudo, por ejemplo si se desea utilizar un
+	tipo de letra Truetype a varios tamaños. Sin embargo, se recomiendo
+	usar ficheros TTF reducidos en tamaño, o al menos recuperar en
+	último lugar el fichero TTF más pequeño.
+    </p>
+</note>
+<see href="DLL/TTF/LOAD_TTFAA" name="LOAD_TTFAA"/>
+<see href="WRITE"/>
+<see href="WRITE_IN_MAP"/>
+<see href="SAVE_FNT"/>
+<see href="TEXT_COLOR"/>
+</function>
+

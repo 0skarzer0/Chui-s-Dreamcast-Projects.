@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="ASC" />
+<fnc href="ATOF" />
+<fnc href="ATOI" />
+<fnc href="CHR" />
+<fnc href="FIND" />
+<fnc href="FORMAT" />
+<fnc href="FTOA" />
+<fnc href="ITOA" />
+<fnc href="JOIN" />
+<fnc href="LCASE" />
+<fnc href="LEN" />
+<fnc href="REGEX" />
+<fnc href="REGEX_REPLACE" />
+<fnc href="SPLIT" />
+<fnc href="STRCASECMP" />
+<fnc href="STRREV" />
+<fnc href="SUBSTR" />
+<fnc href="TRIM" />
+<fnc href="UCASE" />
+</INDEX>

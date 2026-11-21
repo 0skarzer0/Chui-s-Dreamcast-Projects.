@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FGET_ANGLE">
+    <retval/>
+    <param name="x1"> X coordinate of the first point </param>
+    <param name="y1"> Y coordinate of the first point </param>
+    <param name="x2"> X coordinate of the second point </param>
+    <param name="y2"> Y coordinate of the second point </param>
+    <abstract> Calculate the angle formed by the line between
+    two spots </abstract>
+    <description>
+	<p>
+	    This function returns, in thousandth of degree, the angle formed by
+	    the line betweem two specified spots, and the axis X (horizontal) of
+	    coordinates.
+	</p>
+	<p>
+	    With that function we can, easily, to orient the angle of a process
+	    so that it will be always "watching" towards a concrete place (like
+	    it can be other process). The easiest application can be a process
+	    that "persecutes" to other simply using FGET_ANGLE and ADVANCE.
+	</p>
+    </description>
+    <see href="GET_ANGLE"/>
+    <see href="ADVANCE"/>
+</function>

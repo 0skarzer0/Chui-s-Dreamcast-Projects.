@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_BLOCK_COPY">
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico de destino dentro de la librería </param>
+    <param name="x-destino"> Coordenada horizontal de destino </param>
+    <param name="y-destino"> Coordenada vertical de destino </param>
+    <param name="gráfico-origen"> Número de gráfico de origen dentro de la librería </param>
+    <param name="x-origen"> Coordenada horizontal dentro del gráfico de origen </param>
+    <param name="y-origen"> Coordenada vertical dentro del gráfico de origen </param>
+    <param name="ancho"> Ancho en pixels del bloque a copiar </param>
+    <param name="alto"> Alto en pixels del bloque a copiar </param>
+    <param name="flags"> Valor de flags </param>
+    <abstract> Copia una sección de un gráfico dentro de otro </abstract>
+    <description>
+	<p>
+	    Esta función copia una sección de un gráfico delimitada por unas
+	    coordenadas de origen (para la esquina superior izquierda de la zona),
+	    un ancho y un alto, a un gráfico de destino, posiblemente en otras
+	    coordenadas. Gracias al valor de flags indicado es posible determinar
+	    si los pixels transparentes en el gráfico de origen se ignoran (flags 0)
+	    o se copian también (flags 128).
+	</p>
+	<p>
+	    La única limitación es que ambos gráficos deben formar parte de la misma
+	    librería. Si se desea realizar la operación con gráficos en librerías
+	    diferentes, la alternativa es crear una copia de uno de los dos
+	    gráficos mediante <a href="FPG_ADD"/> o <a href="MAP_CLONE"/>.
+	</p>
+    </description>
+    <see href="FPG_ADD"/>
+    <see href="MAP_CLONE"/>
+</function>

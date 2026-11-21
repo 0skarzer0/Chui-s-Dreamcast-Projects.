@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SAVE_PNG">
+    <param name="librería"> Código de la librería FPG </param>
+    <param name="gráfico"> Número del gráfico </param>
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <abstract> Guarda en disco un gráfico, en formato PNG </abstract>
+    <description>
+	<p>
+	    Esta función guarda en disco un gráfico cualquiera en
+	    formato PNG. Este gráfico puede formar parte de una
+	    librería FPG cualquiera, o haber sido creado en memoria
+	    con funciones como <a href="NEW_MAP"/> o <a href="MAP_CLONE"/>.
+	</p>
+	<p>
+	    Los ficheros PNG no soportan información extendida como
+	    por ejemplo el centro, los puntos de control o las animaciones.
+	</p>
+    </description>
+    <note>
+	El gráfico PNG será de 8 o 32 bits en función del grafico original (8 o 16 bits respectivamente).
+    </note>
+    <see href="SAVE_MAP"/>
+    <see href="MAP_CLONE"/>
+    <see href="NEW_MAP"/>
+</function>

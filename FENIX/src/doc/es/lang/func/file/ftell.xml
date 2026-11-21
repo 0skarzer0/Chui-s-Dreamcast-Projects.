@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FTELL">
+    <retval> Posición de lectura/escritura, en número de bytes
+    	desde el comienzo del fichero (empezando en 0) </retval>
+    <param name="fichero"> Identificador de fichero devuelto por FOPEN </param>
+    <abstract> Devuelve la posición actual de lectura/escritura de un fichero </abstract>
+    <description>
+	<p>
+	    Esta función devuelve la posición del puntero de lectura/escritura
+	    de un fichero abierto con la función <a href="FOPEN"/>,
+	    siempre respecto al origen del fichero (0 para indicar el comienzo).
+	</p>
+    </description>
+    <see name="FOPEN"/>
+    <see name="FSEEK"/>
+</function>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="POW">
+    <retval/>
+    <param name="número" type="FLOAT"> Número en coma flotante </param>
+    <param name="potencia" type="FLOAT"> Potencia a la que se desea elevar </param>
+    <abstract> Devuelve el resultado de elevar un número a una potencia </abstract>
+    <description>
+	<p>
+	    Esta función devuelve el resultado de elevar un número
+	    a una potencia dada. Por ejemplo, el resultado de
+	    POW(2,3) es 8 (2*2*2).
+	</p>
+    </description>
+</function>

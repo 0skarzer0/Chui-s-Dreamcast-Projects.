@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_IMAGE">
+<retval/>
+<param name="fichero" type="STRING"> Nombre del fichero a recuperar </param>
+<abstract> Recupera una imagen de disco detectando automáticamente su tipo,
+    utilizando SDL_image.DLL
+</abstract>
+<description>
+    <p>
+	Esta función recupera de disco una imagen detectando automáticamente
+	su formato, y crea un gráfico en memoria que puede ser utilizado
+	en las operaciones habituales.  La función devuelve un identificador
+	entero que representa al gráfico cargado, que se importa como
+	perteneciente a la librería 0. Por ejemplo, 
+	PUT_SCREEN (0, LOAD_IMAGE("x.jpg")) pondría como fondo de pantalla
+	la imagen cargada a partir del fichero x.jpg. Si se desea liberar
+	la memoria ocupada por un gráfico recuperado con esta función,
+	puede hacerse utilizando la función <a href="UNLOAD_MAP"/>.
+    </p>
+    <p> La función soporta actualmente los siguientes formatos:
+	<ul>
+	    <li> JPEG </li>
+	    <li> PNG </li>
+	    <li> PCX </li>
+	    <li> GIF </li>
+	    <li> BMP </li>
+	    <li> TIFF </li>
+	    <li> LBM </li>
+	    <li> XPM </li>
+	    <li> XCF </li>
+	    <li> PNM </li>
+	</ul>
+    </p>
+    <p>
+	Las imágenes de 8 bits serán importadas como imágenes de 8 bits,
+	aunque la paleta de colores de la imagen será recuperada sólo en
+	el caso de que esta sea la primera imagen en cargarse en el
+	programa. 
+	El resto de formatos de color serán convertidos internamente a 16 bits.
+    </p>
+    <p>
+	Esta función no soporta animaciones GIF.
+    </p>
+    <p>
+	Las transparencias en la imagen serán importadas para gráficos de 16 o
+	32 bits con canal alfa (tal como soporta el formato PNG) de manera que
+	los pixels con una transparencia de 128 o más serán importados como
+	transparentes en el gráfico resultante.
+    </p>
+</description>
+<note>
+    <p>
+	Actualmente, existe un problema de compatibilidad con las
+	funciones de carga de PNG. Se recomienda utilizar la función
+	incorporada en la librería gráfica estandar LOAD_PNG para
+	recuperar estas imágenes.
+    </p>
+</note>
+<see href="LOAD_MAP"/>
+<see href="LOAD_PNG"/>
+<see href="LOAD_PCX"/>
+<see href="UNLOAD_MAP"/>
+<see href="SAVE_MAP"/>
+</function>
+

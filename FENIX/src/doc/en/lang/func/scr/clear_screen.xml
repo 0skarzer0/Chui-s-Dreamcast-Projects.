@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CLEAR_SCREEN">
+    <abstract> Clean the background of screen </abstract>
+    <description>
+	<p>
+	    This function cleans the background of screen. It is
+		important to use this function instead of other posibilities
+	    (like use <a href="MAP_CLEAR"/> of the background),
+	    because Fenix will know that there is not any background
+		and then it will use a quicker version of the routine that
+	    begins to write frames.
+	</p>
+    </description>
+    <see href="PUT"/>
+    <see href="PUT_SCREEN"/>
+    <see href="XPUT"/>
+</function>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="LOCAL">
+	<syntax> 
+		<b>LOCAL</b> <blockquote> <a href="Variables" /> <br/> ... </blockquote> <b>END</b>
+	</syntax>
+	<abstract> Declara las variables de alcance local </abstract>
+    <description>
+		<p>
+			Esta sección contiene declaraciones de <a href="variables"/>
+			que identifican los datos de alcance local. Todos los
+			procesos contienen una copia propia de todas las variables
+			locales. El valor de una variable local puede ser (y
+			seguramente será) diferente de un proceso a otro. Las
+			variables locales identifican <b>propiedades</b> de un
+			proceso, como su aspecto o posición en pantalla. Además,
+			las variables locales indican propiedades de
+			<b>utilidad general</b> para todos los procesos y no
+			sólo para procesos de uno u otro tipo.
+		</p>
+		<p>
+			Todos los procesos, independientemente de que las usen
+			o no, reservarán espacio para todas las variables
+			locales y las inicializarán. Es conveniente que limites
+			al máximo el número de variables locales. Si una variable
+			sólo es útil dentro de un proceso o unos pocos y no es
+			necesario consultar su valor desde otros procesos,
+			usa una variable privada en su lugar.
+		</p>
+		<p>
+			Consulta la sección <a href="Variables"/> para obtener
+			más información acerca de la sintaxis a usar para declarar
+			una variable, y <a href="Tipos de dato"/> para saber
+			qué clases de variable hay disponibles.
+		</p>
+		<p>
+			Es posible que la sección LOCAL aparezca varias veces en
+			el mismo programa. Las variables locales declaradas en
+			las secciones siguientes son igualmente válidas y se añaden
+			a las declaradas anteriormente. Sin embargo, una variable
+			debe declararse siempre antes de ser usada.
+		</p>
+    </description>
+</section>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_PIXEL">
+    <retval/>
+    <param name="x"> Coordenada horizontal </param>
+    <param name="y"> Coordenada vertical </param>
+    <abstract> Lee el valor de un pixel de un gráfico </abstract>
+    <description>
+	<p>
+	    Esta función recupera el color de un pixel determinado del fondo
+	    de la pantalla. Las coordenadas dadas crecen hacia abajo y a la derecha, y
+	    el punto (0, 0) representa la esquina superior izquierda de la pantalla.
+	</p>
+	<p>
+	    En el caso del modo gráfico de 256 colores (8 bits), el valor devuelto
+	    por esta función es un color de 0 a 255. En el caso del modo de
+	    16 bits, el valor devuelto es una codificación de las componentes
+	    del color que depende de la tarjeta de vídeo y el modo gráfico.
+	    Puede usarse <a href="GET_RGB"/> para obtener los valores
+	    aproximados de las componentes del color.
+	</p>
+	<p>
+	    Esta función equivale a MAP_GET_PIXEL (0, 0, x, y).
+	</p>
+    </description>
+    <note>
+	En ocasiones es posible usar un fondo de 8 bits en un juego que funcione
+	en modo de 16 bits. Normalmente, Fenix detecta cuando se da esta circunstancia.
+	Por ejemplo, un juego que usa <a href="PUT_SCREEN"/> con un mapa de 8 bits hace que
+	se cree en fondo de pantalla de 8 bits. Sin embargo, una vez se utilice una
+	función como <a href="PUT"/> con un gráfico de 16 bits, el fondo se crea
+	o se convierte a 16 bits y se mantiene así. Es importante tener en cuenta
+	esta circunstancia porque a veces GET_PIXEL puede devolver un valor de 0 a 255
+	insospechadamente, a pesar de estar funcionando en 16 bits. Si quieres estar
+	seguro de qué profundidad de color tiene el fondo de pantalla, utiliza
+	la función <a href="GRAPHIC_INFO"> con el mapa 0, 0 y el parámetro G_DEPTH.
+    </note>
+    <see href="FPG_ADD"/>
+    <see href="MAP_CLONE"/>
+    <see href="MAP_GET_PIXEL"/>
+    <see href="PUT_PIXEL"/>
+</function>

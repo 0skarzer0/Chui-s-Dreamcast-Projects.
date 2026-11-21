@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW_CONTROLS">
+    <retval>
+	Número de controles
+    </retval>
+    <param name="ventana"> Identificador de la ventana </param>
+    <abstract> 
+	Devuelve el número total de controles contenidos en una ventana
+    </abstract>
+    <description>
+	<p>
+	    Esta función permite obtener el número total de controles
+	    contenidos en una ventana existente, que
+	    hayan sido añadidos a la misma empleando la función
+	    <a href="WINDOW_ADDCONTROL"/>. 
+	</p>
+	<p>
+	    Esta información puede utilizarse para recorrer todos
+	    los controles usando <a href="WINDOW_CONTROL"/>.
+	</p>
+    </description>
+    <see name="WINDOW" href="DLL/GUI/WINDOW"/>
+    <see name="WINDOW_ADDCONTROL"/>
+    <see name="WINDOW_CONTROL"/>
+</function>

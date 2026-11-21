@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_PUT">
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph to draw </param>
+    <param name="x"> Horizontal coordinate </param>
+    <param name="y"> Vertical coordinate</param>
+    <abstract> It draws a graph in the background of screen </abstract>
+    <description>
+	<p>
+	    This function draws a graph in the background of screen, in the
+	    coordinates specified like parameter.
+	    The point specified will be equivalent to the zone where
+	    is drawn the center of graph.
+	</p>
+	<p>
+	    This function is specially useful "to prepare"
+	    screens or levels using blocks of graphs.
+	</p>
+    </description>
+    <see href="XPUT"/>
+    <see href="MAP_PUT"/>
+</function>

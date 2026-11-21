@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DEFINE_REGION">
+    <retval/>
+    <param name="region"> Número de región, de 0 a 31 </param>
+    <param name="x"> Coordenada horizontal de la esquina superior izquierda </param>
+    <param name="y"> Coordenada vertical de la esquina superior izquierda </param>
+    <param name="ancho"> Ancho en pixels de la región </param>
+    <param name="alto"> Alto en pixels de la región </param>
+    <abstract> Permite definir una región </abstract>
+    <description>
+	<p>
+	    Esta función permite definir los límites de una región. Existen
+	    32 regiones disponibles, de las cuales la región 0 corresponde
+	    siempre a la pantalla completa y no puede cambiarse.
+	</p>
+	<p>
+	    Una región es una zona de pantalla de interés especial. Las regiones
+	    son especialmente útiles en juegos en los que no toda la zona visible
+	    corresponde al área de juego: por ejemplo, una zona puede estar
+	    destinada al uso de marcadores. Las regiones se usan para:
+	    <ul>
+		<li> Definir el área ocupada por una región de scroll. </li>
+		<li> Definir un área de "clipping", de manera que los procesos
+		    que estén marcados como pertenecientes a la misma sean
+		    recortados por sus límites. </li>
+		<li> Definir una zona de pantalla donde nos interesará
+		    saber fácilmente cuándo un proceso entra o sale. </li>
+	    </ul>
+	</p>
+	<p>
+	    Esta función permite establecer los límites de una región.
+	    Las coordenadas se dan siempre en pixels, donde (0, 0) corresponde
+	    a la esquina superior izquierda de pantalla. Sin embargo, por sí
+	    mismo definir una región no tiene ningún efecto hasta que la
+	    región se utiliza. Puedes asignar el número de región a la
+	    variable <a type="var" name="REGION" href="LVARS/REGION"/> de un proceso, usarla con 
+	    <a href="START_SCROLL"/>, o emplear la función 
+	    <a name="OUT_REGION" href="REG/OUT_REGION"/> con la nueva región definida.
+	</p>
+    </description>
+    <see type="var" href="LVARS/REGION" name="REGION"/>
+    <see name="START_SCROLL"/>
+    <see name="OUT_REGION" href="REG/OUT_REGION"/>
+</function>

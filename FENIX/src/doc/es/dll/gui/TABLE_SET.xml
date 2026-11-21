@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_SET">
+<retval />
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="tipo"> Tipo de parámetro a modificar </param>
+<param name="valor"> Nuevo valor del parámetro </param>
+<abstract> Modifica parámetros y opciones de una tabla </abstract>
+<description>
+    <p>
+	Modifica ciertos parámetros de comportamiento o aspecto de
+	un control tipo tabla. El segundo parámetro puede ser uno
+	de los siguientes valores definidos en GUI.INC (todos ellos
+	salvo TABLE_CAPTION admiten únicamente como valor 0 ó 1):
+	<ul>
+	    <li> TABLE_CAPTION: permite establecer el alto, en pixels,
+		de la línea de título de la tabla. Un valor de 0
+		elimina la línea de título. Por defecto las tablas
+		tienen título. </li>
+	    <li> TABLE_RESIZABLE_COLUMNS: Si esta opción vale 1,
+		el usuario podrá cambiar de tamaño las columnas
+		de la tabla con la ayuda del ratón, lo cual
+		requiere que la barra de título esté visible. Por
+		defecto está a 1. </li>
+	    <li> TABLE_SORTABLE_COLUMNS: Si esta opción vale 1,
+		el usuario podrá ordenar la tabla haciendo clic
+		sobre el título de una columna. Por defecto está
+		activada. </li>
+	    <li> TABLE_MOVEABLE_COLUMNS: Si esta opción vale 1,
+		el usuario podrá desplazar las columnas a
+		izquierda o derecha con el ratón, cambiando
+		el orden en el que se muestra. Activada por defecto. </li>
+	</ul>
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+</function>

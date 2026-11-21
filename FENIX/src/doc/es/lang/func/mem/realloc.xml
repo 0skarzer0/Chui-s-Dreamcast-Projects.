@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="REALLOC">
+    <retval type="POINTER"/>
+    <param name="mem" type="POINTER"> Puntero a una zona de memoria reservada en una llamada anterior de <a name="ALLOC" href="MEM/ALLOC" /> </param>
+    <param name="bytes" type="INT"> Tamaño en bytes deseado para la zona de memoria </param>
+    <abstract> Amplía o reduce el espacio reservado de un bloque de memoria </abstract>
+    <description>
+	<p>
+	  REALLOC amplía o reduce el espacio reservado de un bloque de memoria.  Para ello recibe 
+	  dos parámetros: el primero debe ser el puntero devuelto por <a name="ALLOC" href="MEM/ALLOC" /> 
+	  al reservar el bloque, el segundo será el nuevo tamaño que debe tener el bloque de memoria.
+	</p>
+	<p>
+	  REALLOC puede cambiar la ubicación del bloque de memoria si fuese necesario.  REALLOC devolverá 
+	  un puntero al comienzo del nuevo bloque de memoria, que debe ser utilizado en lugar del que anteriormente 
+	  había devuelto ALLOC, que deja de ser válido.
+	</p>
+	<p>
+	  Los datos del bloque original que quepan en el nuevo bloque se mantendrán íntegramente, los que no quepan 
+	  se descartarán, siempre desde el final del bloque, y si el nuevo tamaño es mayor la zona de 
+	  memoria adicional puede contener valores aleatorios o procedentes de usos anteriores, siendo responsabilidad 
+	  del programador inicializarla con los valores adecuados.
+	</p>
+    </description>
+    <see name="ALLOC" href="MEM/ALLOC"/>
+    <see name="FREE" href="MEM/FREE"/>
+</function>

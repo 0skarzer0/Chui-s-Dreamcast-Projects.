@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_JOY_BUTTON">
+    <retval/>
+    <param name="number"> Number of button (the first is the 0) </param>
+    <abstract> It returns the state of pulsation of a button of the joystick </abstract>
+    <description>
+	<p>
+	    It returns the state (If it is not pressed 0, in oppositive case,
+	    it returns a number among 1 and 255) of a button of the
+	    joystick selected by <a href="joy/SELECT_JOY" name="SELECT_JOY"/>.
+	</p>
+    </description>
+    <see href="joy/SELECT_JOY" name="SELECT_JOY"/>
+    <see href="joy/GET_JOY_POSITION" name="GET_JOY_POSITION"/>
+</function>

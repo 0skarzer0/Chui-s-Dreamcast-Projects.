@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_PIXEL"> 
+    <retval/>
+    <param name="x"> Horizontal coordinate </param>
+    <param name="y"> Vertical coordinate </param>
+    <abstract> Read the value of a pixel of a graph </abstract>
+    <description>
+	<p>
+	    This function recovers the colour of a determined pixel of the background
+	    of the screen. The coordinates increase towards up and right, and the point
+	    (0, 0) represents the top left corner of the screen.
+	</p>
+	<p>
+	    In the case of the graph mode of 256 colours (8 bits), the value returned
+	    by this function is a colour among 0 and 255. In the case of the mode of
+	    16 bits, the value returned is a codification of the components of the
+	    colour which depends of the video card and the graph mode.
+	    It can use <a href="GET_RGB"/> to obtain the approximated values
+	    of the components of the colour.
+	</p>
+	<p>
+	    This function is equivalent to MAP_GET_PIXEL (0, 0, x, y).
+	</p>
+    </description>
+    <note>   
+	It is possible to use a background of 8 bits in a game that works in
+	mode of 16 bits. Normally, Fenix detects when it happens.
+	For example, a game that use <a href="PUT_SCREEN"/> with a map of 8 bits makes 
+	create in background of screen of 8 bits. However, once time we use a
+	function like <a href="PUT"/> with a graph of 16 bits, the background becomes
+	to 16 bits. It is important to know this because sometimes GET_PIXEL can return
+	a value among 0 and 255, although it is working in 16 bits. If you want to be secure
+	that the depth of colour has the background of screen, you should use the function
+	<a href="GRAPHIC_INFO"> with the map 0, 0 and the parameter G_DEPTH.
+    </note>    
+    <see href="FPG_ADD"/>
+    <see href="MAP_CLONE"/>
+    <see href="MAP_GET_PIXEL"/>
+    <see href="PUT_PIXEL"/>
+</function>    

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="EXPLOSION">
+    <retval/>
+    <param name="nubes" type="INT"> Numero de nubes de partículas que se crearán. </param>
+    <param name="tamaño" type="INT"> Tamaño máximo que alcanzará la nube. En pixels.</param>
+    <param name="frames" type="INT"> Número de Frames que generará la explosión. (1-20)</param>
+    <param name="blur" type="INT"> Numero de veces que se difuminará el gráfico (1-5).</param>
+    <param name="densidad" type="INT"> Densidad de las partículas en una nube.</param>
+    <param name="width" type="INT"> Anchura del mapa que se generará.</param>
+    <param name="height" type="INT"> Altura del mapa que se generará.</param>
+    <abstract> Genera una explosión con los parámetros indicados </abstract>
+    <description>
+	<p>
+	    Crea una explosión para posteriormente reproducirla mediante <a href="DLL/EXPLOSION/MOVE_EXPLOSION" name="MOVE_EXPLOSION"/>.
+	</p>
+	<p>
+	    Esta función devuelve un mapa de 8 bits donde se generará la explosión.
+	    Puede usarse esta función tanto en 8 como en 16 bits , pero el mapa devuelto
+	    será siempre de 8 y suará la paleta que tengamos guardada en memoria.
+	    En caso de que una explosión se haye en proceso o no se pueda crear una
+	    nueva devolverá un -1.
+	    
+	</p>
+    </description>
+    <see href="DLL/EXPLOSION/MOVE_EXPLOSION" name="MOVE_EXPLOSION"/>
+</function>

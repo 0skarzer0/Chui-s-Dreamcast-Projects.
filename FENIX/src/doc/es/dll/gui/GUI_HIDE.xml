@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GUI_HIDE">
+<retval/>
+<abstract> Desactiva la presentación de la interfaz de usuario </abstract>
+<description>
+    <p>
+	Esta función desactiva la presentación en pantalla de la interfaz de usuario,
+	por lo que a partir del frame siguiente no se mostrará en pantalla ninguna
+	ventana ni control, ni podrá el usuario interactuar con la interfaz de
+	usuario. Para volver a mostrarlo, es preciso llamar a la función
+	<a href="DLL/GUI/GUI_SHOW" name="GUI_SHOW"/>.
+    </p>
+</description>
+<see name="GUI_SHOW" href="DLL/GUI/GUI_SHOW"/>
+</function>

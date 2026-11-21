@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_PUT_PIXEL">
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <param name="x"> Coordenada horizontal </param>
+    <param name="y"> Coordenada vertical </param>
+    <param name="color"> Color a dibujar </param>
+    <abstract> Cambia el valor de un pixel de un gráfico </abstract>
+    <description>
+	<p>
+	    Esta función permite alterar el color de un pixel determinado dentro de un
+	    gráfico. Las coordenadas dadas crecen hacia abajo y a la derecha, y
+	    el punto (0, 0) representa la esquina superior izquierda del gráfico.
+	</p>
+	<p>
+	    En el caso de gráficos de 256 colores (8 bits), el valor de color
+	    debe ser un número de 0 a 255. En el caso de gráficos de
+	    16 bits, el valor es una codificación de las componentes
+	    del color que varía en función de la tarjeta de vídeo y el modo gráfico.
+	    Lo normal es usar la función <a href="RGB"/> para obtener la
+	    codificación de un color concreto, o bien usar un color obtenido
+	    por una función como <a href="MAP_GET_PIXEL"/>. El color 0, tanto
+	    en 8 como en 16 bits, representa un pixel transparente.
+	</p>
+    </description>
+    <see href="MAP_GET_PIXEL"/>
+</function>

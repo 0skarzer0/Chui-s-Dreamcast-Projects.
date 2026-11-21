@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FGETS">
+    <retval type="STRING"> Texto de la siguiente línea </retval>
+    <param name="fichero"> Identificador de un fichero abierto con FOPEN </param>
+    <abstract> Lee la siguiente línea de un fichero de texto </abstract>
+    <description>
+	<p>
+	    Esta función lee la siguiente línea de un fichero abierto
+	    en modo de lectura con <a name="FOPEN"/>. Sirve para
+	    procesar ficheros de texto, al contrario que
+	    <a name="FREAD"/>, que puede usarse para leer ficheros binarios.
+	    La línea se devuelve en una cadena, sin incluir el carácter
+	    o caracteres de final de línea.
+	</p>
+    </description>
+    <note>
+	Una línea que acaba con el carácter \ en el fichero original
+	será juntada con la siguiente, sin incluir dicho caracter,
+	pero incluyendo un caracter de salto de línea en su posición.
+	Esto permite almacenar y recuperar cadenas arbitrarias en disco,
+	incluso aunque contengan saltos de línea, empleando <a name="FPUTS"/>.
+    </note>
+    <see name="FOPEN"/>
+    <see name="FPUTS"/>
+</function>

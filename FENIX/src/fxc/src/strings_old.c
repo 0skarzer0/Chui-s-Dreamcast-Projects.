@@ -1,0 +1,173 @@
+/* Fenix - Compilador/intérprete de videojuegos
+ * Copyright (C) 1999 José Luis Cebrián Pagüe
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <assert.h>
+
+#include "fxc.h"
+
+/* ---------------------------------------------------------------------- */
+/* Gestor de cadenas                                                      */
+/* ---------------------------------------------------------------------- */
+
+#define STRING_MAX 1024
+
+char * string_mem = 0 ;
+int    string_allocated = 0 ;
+int    string_used = 0 ;
+
+int    string_offset[1024] ;
+int    string_count = 0 ;
+
+int    autoinclude = 0 ;
+
+void string_init ()
+{
+	string_mem = (char *) malloc (4096) ;
+	string_allocated = 4096 ;
+	string_used = 1 ;
+	string_count = 1 ;
+	string_offset[0] = 0 ;
+	string_mem[0] = 0 ;
+}
+
+void string_alloc (int bytes)
+{
+	string_mem = (char *) realloc (string_mem, string_allocated += bytes) ;
+	if (!string_mem)
+	{
+		fprintf (stdout, "string_alloc: sin memoria\n") ;
+		exit(1) ;
+	}
+}
+
+void string_dump ()
+{
+	int i ;
+	printf ("---- %d strings ----\n", string_count) ;
+	for (i = 0 ; i < string_count ; i++)
+		printf ("%4d: %s\n", i, string_mem + string_offset[i]) ;
+}
+
+int string_compile (const char * * source)
+{
+	char c = *(*source)++, conv ;
+	const char * ptr ;
+
+	if (string_count == STRING_MAX)
+	{
+		fprintf (stdout, "Demasiadas cadenas\n") ;
+		exit(1) ;
+	}
+
+	string_offset[string_count] = string_used ;
+
+	while (*(*source))
+	{
+		if (*(*source) == c)
+		{
+			(*source)++ ;
+			if (*(*source) == c) 
+			{
+				string_mem[string_used++] = c ;
+				(*source)++ ;
+			}
+			else
+			{
+				ptr = (*source) ;
+				while (ISSPACE(*ptr))
+				{
+					if (*ptr == '\n') line_count++ ;
+					ptr++ ;
+				}
+				if (*ptr != c) break ;
+				(*source) = ptr+1 ;
+				continue ;
+			}
+		}
+		else if (*(*source) == '^') 
+		{
+			string_mem[string_used++] = '\n' ;
+			(*source)++ ;
+		}
+		else if (*(*source) == '\n')
+		{
+			line_count++ ;
+			string_mem[string_used++] = '\n' ;
+
+			(*source)++ ;
+		}
+		else
+		{
+			conv = convert(*(*source)) ;
+			string_mem[string_used++] = conv ;
+
+			(*source)++ ;
+		}
+
+		if (string_used >= string_allocated)
+			string_alloc (1024) ;
+	}
+
+	string_mem[string_used++] = 0 ;
+	if (string_used >= string_allocated)
+		string_alloc (1024) ;
+
+	/* Hack: añade el posible fichero al DCB */
+
+	if (autoinclude)
+	if (strchr(string_mem + string_offset[string_count], '\\') ||
+	    strchr(string_mem + string_offset[string_count], '.'))
+	{
+		dcb_add_file (string_mem + string_offset[string_count]) ;
+	}
+
+	return string_count++ ;
+}
+
+const char * string_get (int code)
+{
+	assert (code < string_count && code >= 0) ;
+	return string_mem + string_offset[code] ;
+}
+
+void string_save (file * fp)
+{
+	file_write (fp, &string_count, 4) ;
+	file_write (fp, &string_allocated, 4) ;
+	file_write (fp, &string_offset, 4 * string_count) ;
+	if (string_used)
+	{
+		file_write (fp, string_mem, string_used) ;
+	}
+}
+
+void string_load (file * fp)
+{
+	file_read (fp, &string_count, 4) ;
+	file_read (fp, &string_used, 4) ;
+	file_read (fp, &string_offset, 4 * string_count) ;
+	if (string_used > string_allocated)
+	{
+		string_allocated = string_used ;
+		string_mem = (char *) realloc (string_mem, string_used) ;
+	}
+	file_read (fp, string_mem, string_used) ;
+}

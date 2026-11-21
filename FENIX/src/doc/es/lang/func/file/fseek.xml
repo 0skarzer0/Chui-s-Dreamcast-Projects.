@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FSEEK">
+    <retval> Nueva posición de lectura/escritura, en número de bytes
+    	desde el comienzo del fichero (empezando en 0) </retval>
+    <param name="fichero"> Identificador de fichero devuelto por FOPEN </param>
+    <param name="posición"> Nueva posición deseada </param>
+    <param name="desde"> Tipo de posición utilizada. Puede ser:
+	<const name="SEEK_SET" value="0"> A partir del comienzo del fichero </const>
+	<const name="SEEK_CUR" value="1"> A partir de la posición actual </const>
+	<const name="SEEK_END" value="2"> A partir del final del fichero </const>
+    </param>
+    <abstract> Mueve el puntero de lectura/escritura en un fichero </abstract>
+    <description>
+	<p>
+	    Esta función cambia la posición del puntero de lectura/escritura
+	    en un fichero abierto con la función <a href="FOPEN"/>. La
+	    nueva posición puede venir dada a partir del comienzo del fichero
+	    (un número mayor o igual a 0), a partir de la posición actual
+	    (un número positivo o negativo) o a partir del final del mismo
+	    (un número negativo o 0). En todo caso, la posición se ajustará
+	    en función del tamaño actual del fichero, y se devolverá la
+	    nueva posición real, siempre respecto al origen del fichero.
+	</p>
+    </description>
+    <note>
+	No es válido cambiar la posición de lectura/escritura en
+	ficheros comprimidos (abiertos con la opción O_ZREAD o O_ZWRITE).
+    </note>
+    <see name="FOPEN"/>
+    <see name="FREAD"/>
+    <see name="FWRITE"/>
+    <see name="FTELL"/>
+</function>

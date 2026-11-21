@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE">
+<retval type="INT">Identificador del control creado</retval>
+<param name="ancho"> Ancho del control en pixels </param>
+<param name="alto"> Alto del control en pixels </param>
+<abstract> Crea una tabla o lista </abstract>
+<description>
+    <p>
+	Crea un control de tabla o lista, inicialmente sin ninguna
+	columna. Es preciso, después de crearlo, llamar a funciones
+	como
+	<a href="DLL/GUI/TABLE_ADDCOLUMN" name="TABLE_ADDCOLUMN" />
+	o
+	<a href="DLL/GUI/TABLE_ADDLINE" name="TABLE_ADDLINE" />
+	para insertar columnas y datos en la tabla.
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

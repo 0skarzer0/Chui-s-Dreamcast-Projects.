@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_DISTX">
+    <retval/>
+    <param name="ángulo"> Ángulo en milésimas de grado (90000 = 90º) </param>
+    <param name="distancia"> Magnitud de distancia </param>
+    <abstract> Devuelve el ancho de un desplazamiento </abstract>
+    <description>
+	<p>
+	    Esta función devuelve, en las misma unidad que uses para
+	    la distancia, el ancho del rectángulo formado por la
+	    línea que recorre esa distancia. Usando esta función
+	    junto con <a href="GET_DISTY" /> puedes saber qué
+	    cantidades sumar a las coordenadas <a href="X"/> e
+	    <a href="Y"/> de un objeto para desplazarlo en
+	    la dirección que desees.
+	</p>
+    </description>
+    <see href="GET_DIST">
+    <see href="GET_DISTY">
+</function>

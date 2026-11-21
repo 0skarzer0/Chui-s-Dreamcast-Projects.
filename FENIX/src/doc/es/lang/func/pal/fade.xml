@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FADE">
+    <retval/>
+    <param name="r"> Cantidad de componente Rojo </param>
+    <param name="g"> Cantidad de componente Verde </param>
+    <param name="b"> Cantidad de componente Azul </param>
+    <param name="velocidad"> Velocidad </param>
+    <abstract> Activa una transición de colores automática </abstract>
+    <description>
+	<p>
+	    Esta función activa una transición de colores automática, que puede usarse
+	    para oscurecer la pantalla, hacer un fundido, o colorear su contenido.
+	    Llamar a la función simplemente activa ciertas variables internas y pone
+	    a 1 la variable global <a type="var" NAME="fading" href="GVARS/FADING" />. A partir de entonces, el motor
+	    gráfico se encargará automáticamente de colorear la pantalla cada frame.
+	</p>
+	<p>
+	    Los valores de componentes R, G y B recibidos por esta función se dan en
+	    porcentaje. Un porcentaje de 100% dejará un color sin modificar, mientras
+	    un porcentaje de 0% eliminará por completo la componente. También es
+	    posible especificar un valor por encima de 100. Se considera que un
+	    valor de 200 en una componente, debe poner al máximo la intensidad de
+	    la misma. Estos valores permiten hacer combinaciones flexibles, como
+	    por ejemplo un fundido al blanco (200,200,200) o bien aumentar la
+	    intensidad de color de una o varias componentes (150,150,100). Tal vez
+	    el valor más habitual sea el fundido al negro (0,0,0) o restaurar el
+	    estado normal de los colores (100,100,100).
+	</p>
+	<p>
+	    El valor de velocidad es un valor entero entre 1 y 64. Un valor de 64
+	    activaría los porcentajes de color indicados de forma inmediata en
+	    el próximo frame, mientras un valor de 1 iría modificando las componentes
+	    de forma sucesiva, de forma que alcanzarían los valores especificados
+	    como parámetro en aproximadamente unos 60 frames. Un valor intermedio
+	    permite realizar la transición más rápidamente.
+	</p>
+	<p>
+	    La variable global <a name="FADING"/> estará a 1 inmediatamente después de llamar a esta
+	    función. El motor gráfico la pondrá a 0 cuando la transición alcance
+	    los colores especificados como parámetro.
+	</p>
+    </description>
+    <note>
+	En modo de 8 bits, esta función modifica la paleta de colores de forma
+	interna (los valores recuperados por funciones como <a name="GET_COLORS"/>
+	seguirán siendo los mismos, pero en pantalla se verán modificados
+	cada frame de forma acorde a los parámetros utilizados). Esta es una
+	operación prácticamente instantánea. En cambio, en modo de 16 bits esta
+	función modifica efectivamente los valores de todos los pixels en pantalla,
+	realizando una costosa operación por cada uno de ellos. Esta operación
+	es muy lenta y representa un coste considerable en la tasa de frames por
+	segundo. Si se desea hacer un juego con efectos de colorización globales,
+	se recomienda usar modo de 8 bits o bien usar los efectos localmente en
+	una zona reducida de la pantalla mediante blendops. Si ello no fuera
+	posible, entonces es preferible escoger una resolución de pantalla
+	limitada para aumentar el rendimiento. Hay que tener en cuenta que, incluso
+	una vez acabada la transición, si las componentes finales de los colores
+	no son 100 para las tres, el motor gráfico seguirá modificando los pixels
+	de pantalla cada frame, por lo que el perjuicio al rendimiento no se
+	limitará al período que dure la transición y seguirá presente una vez acabada esta.
+    </note>
+    <see name="FADE_ON" href="PAL/FADE_ON"/>
+    <see name="FADE_OFF" href="PAL/FADE_OFF"/>
+    <see name="SET_COLORS" href="PAL/SET_COLORS"/>
+</function>

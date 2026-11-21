@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SAVE_PAL">
+    <retval/>
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <abstract> Guarda en disco una paleta de colores </abstract>
+    <description>
+	<p>
+	    Esta función guarda una paleta de colores en disco,
+	    en un nuevo fichero en formato PAL, que será creado
+	    con el nombre recibido como parámetro. Si ya existiese,
+	    el fichero será sobreescrito con la nueva información.
+	</p>
+    </description>
+    <see name="LOAD_PAL" href="MAP/LOAD_MAP"/>
+    <see name="SET_COLORS" href="PAL/SET_COLORS"/>
+    <see name="GET_COLORS" href="PAL/GET_COLORS"/>
+</function>

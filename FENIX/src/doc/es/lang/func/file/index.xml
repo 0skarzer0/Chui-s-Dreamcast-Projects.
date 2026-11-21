@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="CD" />
+<fnc href="CHDIR" />
+<fnc href="FCLOSE" />
+<fnc href="FEOF" />
+<fnc href="FGETS" />
+<fnc href="FILE" />
+<fnc href="FILE_EXISTS" />
+<fnc href="FLENGTH" />
+<fnc href="FOPEN" />
+<fnc href="FPUTS" />
+<fnc href="FREAD" />
+<fnc href="FSEEK" />
+<fnc href="FTELL" />
+<fnc href="FWRITE" />
+<fnc href="LOAD" />
+<fnc href="MKDIR" />
+<fnc href="RMDIR" />
+<fnc href="SAVE" />
+</INDEX>

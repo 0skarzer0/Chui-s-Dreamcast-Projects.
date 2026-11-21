@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="ANGLE">
+    <abstract>It specifies the angle of visualization in thousandth of degree.</abstract>    
+	<description>
+	<p>
+	This angle is the one that the interpreter uses to rotate the
+	graph of the process before drawing it in screen. A value of 90000
+	will rotate the graph 90º to the left. Its value by default is 0
+	(without rotating).
+	</p>
+	<p>
+	Optionally it can be combined with the use of <a name="XGRAPH" type="var" href="LVARS/XGRAPH" /> 
+	for that the graph of process changes according to the angle of visualization.
+	</p>
+    </description>
+    <see type="var" name="XGRAPH" href="LVARS/XGRAPH" />
+</variable>

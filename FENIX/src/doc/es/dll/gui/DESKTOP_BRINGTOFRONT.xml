@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DESKTOP_BRINGTOFRONT">
+    <retval/>
+    <param name="ventana"> Identificador de la ventana </param>
+    <abstract> Asigna el foco a una ventana </abstract>
+    <description>
+	<p>
+	    Asigna el foco de entrada a una ventana concreta, desplazándola
+	    hasta la cima de la lista actual de ventanas. Esta ventana
+	    será devuelta en cualquier llamada posterior por
+	    <a name="DESKTOP_TOPWINDOW"/> y será visualizada por encima
+	    de cualquier otra ventana existente (salvo ventanas con estilo
+	    DOCK o bien ventanas con el flag de siempre visible activado;
+	    véase <a name="WINDOW"/> o <a name="WINDOW_SET"/>).
+	</p>
+    </description>
+    <see name="DESKTOP_SENDTOBACK" href="DLL/GUI/DESKTOP_SENDTOBACK"/>
+</function>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="CONST">
+	<syntax> 
+		<b>CONST</b> 
+		<blockquote> 
+			<i>nombre</i> = <i>valor</i> ; <br/> 
+			<i>nombre</i> = <i>valor</i> ; <br/> 
+			... 
+		</blockquote> 
+		<b>END</b>
+	</syntax>
+	<abstract> Declara las constantes del programa </abstract>
+    <description>
+		<p>
+			Esta sección contiene declaraciones de constantes. Una
+			constante es parecida a una variable global, con importantes
+			diferencias:
+			<ul>
+				<li> 
+					Una constante no tiene tipo. Puede contener un
+					valor numérico (entero o con decimales) o bien
+					una <a href="cadenas de texto">cadena de texto</a> 
+					entre comillas. 
+				</li>
+				<li> 
+					Una constante no puede ser modificada. Su valor
+					es constante, por lo que permanecerá inalterable
+					a lo largo de todo el programa.
+				</li>
+			</ul>
+		</p>
+		<p>
+			Una constante es útil para almacenar al principio del
+			programa valores numéricos o textos. Por ejemplo, puedes
+			usar constantes para identificar todos los textos que
+			aparecerán en pantalla: si en el futuro quieres traducir
+			a otro idioma tu programa, será mucho más sencillo al
+			tener todos los textos localizados en el mismo sitio.
+			También puedes usar constantes para guardar valores
+			numéricos fijos y no tener que recordarlos cada vez,
+			como la magnitud de la fuerza de gravedad en tu juego.
+			Eso también te facilitará la tarea en el futuro si
+			quieres realizar ajustes a estos valores, ya que
+			bastará con modificar la sección CONST y el cambio
+			afectará a todo el programa.
+		</p>
+		<p>
+			Una constante se declara siempre indicando su nombre,
+			seguido del signo = y del valor al que hace referencia
+			(un número con decimales opcionales usando el punto decimal .
+			o bien una cadena de texto entre comillas); por último,
+			la declaración de una constante debe acabar en punto y coma.
+		</p>
+		<p>
+			Es posible usar una expresión como valor asignado a una
+			constante (es decir, un cálculo matemático empleando los
+			<a href="operadores"/> disponibles en Fenix) pero el
+			resultado debe ser constante, es decir, no es posible
+			usar variables, funciones del sistema o nombres de
+			procesos en la expresión.
+		</p>
+		<p>
+			El nombre de una constante es un identificador. Los
+			<a href="identificadores"/> en Fenix son una palabra
+			que empieza por una letra o bien por el signo _ y que
+			puede contener únicamente letras, números o el signo _.
+			No importa si el identificador se escribe en mayúsculas o
+			minúsculas, aunque si se hacen servir acentos o caracteres
+			internacionales, el identificador debe escribirse siempre
+			con los mismos acentos o caracteres. No es posible usar
+			como nombre de variable una palabra clave que identifica
+			una sentencia o directiva del lenguaje.
+		</p>
+		<p>
+			Cada vez que el identificador que se refiere a una constante
+			aparezca más adelante en el programa, será interpretado por
+			el compilador como si hubieses escrito en su lugar el
+			valor con el que se declara la constante en la sección CONST.
+			Es válido usar una constante en cualquier lugar donde se
+			pudiera usar el número o cadena de texto (incluyendo, por
+			ejemplo, inicialización de valores por defecto para
+			variables en otras secciones de datos, incluso más
+			adelante dentro de la misma sección CONST).
+		</p>
+		<p>
+			Es posible que la sección CONST aparezca varias veces en
+			el mismo programa. Las constantes declaradas en
+			las secciones siguientes son igualmente válidas y se añaden
+			a las declaradas anteriormente. Sin embargo, una constante
+			debe declararse siempre antes de ser usada.
+		</p>
+		<h3> Variables globales predefinidas </h3>
+		<p>
+			Además de las variables que declares en tu programa,
+			tienes disponibles una serie de <b>variables del sistema</b>
+			predefinidas a las que puedes acceder en todo momento.
+			Estas variables contienen información útil sobre el
+			entorno de ejecución de tu programa y otros datos
+			del sistema. Puedes acceder <a href="Variables globales">aquí</a>
+			a una lista y descripción de estas variables.
+		</p>
+    </description>
+</section>

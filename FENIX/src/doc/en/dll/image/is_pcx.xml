@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="IS_PCX">
+<retval/>
+<param name="archive" type="STRING"> Name of an archive </param>
+<abstract> It returns 1 if the archive is an image in PCX format </abstract>
+<description>
+    <p>
+	This function checks the format of an image in disk and returns
+	1 if the image is in PCX format or 0 in opposite case.
+    </p>
+</description>
+<see href="DLL/IMAGE/IS_BMP" name="IS_BMP"/>
+<see href="DLL/IMAGE/IS_GIF" name="IS_GIF"/>
+<see href="DLL/IMAGE/IS_JPG" name="IS_JPG"/>
+<see href="DLL/IMAGE/IS_LBM" name="IS_LBM"/>
+<see href="DLL/IMAGE/IS_PCX" name="IS_PCX"/>
+<see href="DLL/IMAGE/IS_PNG" name="IS_PNG"/>
+<see href="DLL/IMAGE/IS_PNM" name="IS_PNM"/>
+<see href="DLL/IMAGE/IS_TIF" name="IS_TIF"/>
+<see href="DLL/IMAGE/IS_XCF" name="IS_XCF"/>
+<see href="DLL/IMAGE/IS_XPM" name="IS_XPM"/>
+<see href="DLL/IMAGE/LOAD_IMAGE" name="LOAD_IMAGE"/>
+</function>
+

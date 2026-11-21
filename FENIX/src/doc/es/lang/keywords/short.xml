@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="SHORT">
+	<syntax> 
+		<b>SHORT</b> <i>nombre-variable</i> ; 
+	</syntax>
+	<abstract> Tipo de dato entero de 16 bits con signo </abstract>
+    <description>
+		<p>
+			Identifica una variable, parámetro o valor de retorno
+			numérico de 16 bits con signo. Una variable de este tipo
+			admite un valor entre -32768 y 32767 y no
+			permite decimales (una asignación de un número con
+			decimales provocará que éste sea redondeado hacia abajo).
+		</p>
+    </description>
+	<see href="Tipos de dato"/>
+</section>

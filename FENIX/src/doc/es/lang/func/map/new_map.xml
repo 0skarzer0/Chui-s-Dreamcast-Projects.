@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="NEW_MAP">
+    <retval/>
+    <param name="ancho"> Ancho en pixels del nuevo gráfico </param>
+    <param name="alto"> Alto en pixels del nuevo gráfico </param>
+    <param name="profundidad"> Profundidad de color (en bits por pixel: 1, 8 ó 16) </param>
+    <abstract> Crea un nuevo gráfico en memoria </abstract>
+    <description>
+	<p>
+	    Esta función crea un nuevo gráfico con el tamaño y número de bits
+	    por pixel de color especificados. El gráfico se crea dentro de 
+	    la librería 0, y se le asigna un número cualquiera disponible,
+	    que no haya sido usado por ningún otro gráfico anterior.
+	</p>
+	<p>
+	    La profundidad de color tiene el siguiente significado:
+	    <ul>
+		<li> Un gráfico de 1 bit por pixel no tiene información de color.
+		    Los pixels a 0 representan pixels transparentes, y los bits a 1
+		    serán dibujados usando el color escogido mediante la función
+		    <a href="DRAWING_COLOR"/>. </li>
+		<li> Un gráfico de 8 bits por pixel tiene 256 valores disponibles
+		    para cada pixel. Cada valor representa un índice en una tabla
+		    de colores general, la paleta de colores, que afecta a todos
+		    los gráficos de 8 bits. </li>
+		<li> Un gráfico de 16 bits contiene información de los componentes
+		    rojo, verde y azul de cada pixel, por lo que es independiente
+		    de ninguna paleta de colores. La codificación exacta de estas
+		    componentes dentro de los 16 bits depende de la tarjeta gráfica,
+		    por lo que sólo es válido crear y usar gráficos de 16 bits
+		    si primero se establece un modo gráfico de 16 bits. </li>
+	    </ul>
+	</p>
+	<p>
+	    El nuevo gráfico se crea con todos los pixels a 0 (es decir,
+	    transparentes).
+	</p>
+    </description>
+    <see href="MAP_CLONE"/>
+</function>

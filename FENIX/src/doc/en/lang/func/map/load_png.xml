@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_PNG">
+    <retval/>
+    <param name="archive" type="STRING"> Name of archive </param>
+    <abstract> It recovers of disk a PNG graph </abstract>
+    <description>
+	<p>
+	    This function recovers a PNG graph from disk. The
+	    PNG is a powerful graph format that supports
+	    a high compression without loss of data and
+	    a lot of other options.
+	</p>
+	<p>
+	    Among other things, a PNG graph supports different
+	    levels of transparency per pixel. However,
+	    Fenix only accepts two levels (a pixel is
+	    transparent, or it is not). This function recovers
+	    like transparent those pixels that have 50% or more
+	    of transparency in the PNG, and like opaque the rest.
+	</p>
+	<p>
+	    LOAD_PNG returns an entire number that identifies to PNG 
+	    graph. It is possible to use then this value with any function
+	    that allows a graph like parameter, indicating the code 0 of 
+	    library, or assing the numbert to variable <a href="GRAPH"/>.
+	</p>
+    </description>
+    <note>
+	It is only possible to visualize graphs of 16 bits if the current graph mode
+	is of 16 bits. But it is possible to visualize graphs of 8 bits in mode of
+	16 bits.
+    </note>
+    <note>
+	There is only an active palette of colours in all time. Use
+	only graphs of 8 bits that use the same palette of colours.
+	Fenix will use automatically the palette of colours of the first graph
+	recovered of disk and will ingore other palettes.
+	Even in mode of 16 bits exists a palette of colours	(but in these mode the 
+	palette only affects to graphs of 16 bits).
+    </note>
+    <see href="LOAD_PNG"/>
+    <see href="LOAD_MAP"/>
+    <see href="UNLOAD_MAP"/>
+</function>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="Sintaxis de un programa">
+	<syntax> 
+		[ <a href="PROGRAM" /> <i>nombre</i> ; ] <br/>
+		[ <a href="Declaraciones de datos" /> ] <br/>
+		[ <a href="Declaraciones de procesos" /> ] <br/>
+		  <a href="Proceso principal" />
+	</syntax>
+	<abstract> Un programa se compone de datos y procesos </abstract>
+    <description>
+		<p>
+			Un programa en Fenix se compone de varias secciones diferentes
+			que pueden aparecer en cualquier orden. Cada sección comienza
+			con una palabra clave que la identifica (como por ejemplo
+			<a href="GLOBAL"/> o <a href="PROCESS/"/>) y finaliza con la
+			palabra clave <b>END</b>. Entre sección y sección no puede
+			aparecer nada, salvo <a href="comentarios"/>, directivas
+			del <a href="preprocesador"/> (ambas cosas pueden aparecer
+			también en mitad de una sección) o la directiva especial
+			<a href="INCLUDE"/>.
+		</p>
+		<dl>
+			<dt> Datos </dt>
+			<dd> 
+				Un programa dispone, por una parte, de datos tales como
+				la puntuación, el número de vidas y cualquier otro tipo
+				de información susceptible de variar durante el juego.
+				Consulta <a href="Declaraciones de datos"/> para obtener más
+				información acerca de las secciones de datos disponibles en
+				Fenix y cómo escribirlas en tu programa.
+			 </dd>
+			 <dt> Código </dt>
+			 <dd> 
+				 Por otra parte, el código del programa se distribuye
+				 en procesos que indican el funcionamiento del juego:
+				 qué objetos aparecen en pantalla, y cómo deben reaccionar
+				 ante las acciones del jugador o entre ellos mismos.
+				 Consulta <a href="Declaraciones de procesos"/> para
+			 </dd>
+		</dl>
+		<p>
+			Se puede decir que los datos indican el <i>estado</i> del
+			juego, mientras el código muestra las <i>reglas</i> del mismo.
+		</p>
+		<p>
+			La única sección obligatoria en todo programa en Fenix es el
+			<a href="proceso principal" />. Este proceso contiene el código
+			que se ejecuta al principio del juego, cuando el usuario lo
+			inicia por primera vez. Normalmente el código del programa
+			se distribuye en otros procesos que contienen código especializado
+			en objetos concretos que aparecen en pantalla o en acciones
+			concretas (como por ejemplo, mostrar un menú de opciones). El
+			proceso principal se encarga de crear y ejecutar el resto de
+			procesos según sea necesario desde un principio.
+		</p>
+    </description>
+</section>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+
+<index name="dll">
+    <abstract> Referencia de DLLs del sistema </abstract>
+    <description>
+	<p>
+	    En esta sección se encuentra la ayuda de todas las DLLs
+	    oficiales. Una DLL es oficial si se incluye con la
+	    versión oficial de Fenix. El estatus de "oficial" de una
+	    DLL significa que se mantendrá actualizada con el resto
+	    de Fenix y se intentará mantener la compatibilidad con
+	    versiones antiguas de la DLL en futuras versiones de Fenix.
+	</p>
+    </description>
+</index>
+
+

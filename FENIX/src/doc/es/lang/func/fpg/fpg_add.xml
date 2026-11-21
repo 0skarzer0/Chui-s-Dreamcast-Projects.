@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FPG_ADD">
+    <retval/>
+    <param name="librería"> Código de la librería a modificar </param>
+    <param name="gráfico"> Código deseado para el nuevo gráfico, de 0 a 999 </param>
+    <param name="librería-origen"> Código de la librería origen </param>
+    <param name="gráfico-origen"> Código del gráfico original </param>
+    <abstract> Añade un nuevo gráfico a una librería de gráficos
+    	FPG en memoria </abstract>
+    <description>
+	<p>
+	    Esta función permite modificar una librería FPG en
+	    memoria, añadiendo un nuevo gráfico a partir de otro
+	    gráfico ya en memoria.
+	</p>
+	<p>
+	    La librería de destino debe ser el código de una
+	    librería FPG obtenido mediante las funciones 
+	    <a href="LOAD_FPG"/> o <a href="FPG_NEW"/>.
+	    La librería de origen debe ser el código de otra
+	    librería en memoria, aunque también puede identificar
+	    la propia librería de destino (para hacer copias de gráficos
+	    dentro de la misma) o bien la librería 0, para poder
+	    especificar gráficos obtenidos con funciones como
+	    <a href="NEW_MAP"/>.
+	</p>
+	<p>
+	    FPG_ADD crea una copia del gráfico original, que sigue
+	    siendo válido y accesible. Si ya hubiese un gráfico
+	    con el mismo código en la librería de destino, éste
+	    será eliminado de memoria y sustituído por el nuevo.
+	</p>
+	<p>
+	    La mayor utilidad de esta función es crear nuevas
+	    librerías de gráficos para guardarlas luego con
+	    <a href="SAVE_FPG"/>. Otras funciones permiten
+	    modificar los parámetros en memoria de los
+	    gráficos añadidos a la librería, como <a href="MAP_SET_NAME"/>.
+	</p>
+    </description>
+    <note>
+	Todos los gráficos añadidos a una misma librería deben tener
+	la misma profundidad de color (1, 8 o 16 bits). Añadir un
+	gráfico a una librería cuando ya hay en la misma algún
+	gráfico de otro tipo se considera una condición de error.
+    </note>
+    <see href="SAVE_FPG"/>
+    <see href="FPG_NEW"/>
+    <see href="MAP_SET_NAME"/>
+    <see href="GRAPHIC_SET"/>
+</function>

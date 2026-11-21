@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FGET_DIST">
+    <retval/>
+    <param name="x1"> Coordenada X del primer punto </param>
+    <param name="y1"> Coordenada Y del primer punto </param>
+    <param name="x2"> Coordenada X del segundo punto </param>
+    <param name="y2"> Coordenada Y del segundo punto </param>
+    <abstract> Devuelve la distancia entre dos puntos </abstract>
+    <description>
+	<p>
+	    Esta función devuelve, en las mismas unidades que vengan dados, 
+	    los puntos, la distancia entre ellos. Es una función 
+	    relativamente lenta, que devuelve un resultado exacto 
+	    empleando una raíz cuadrada.
+	</p>
+    </description>
+    <see href="GET_DIST">
+    <see href="GET_DISTX">
+    <see href="GET_DISTY">
+</function>

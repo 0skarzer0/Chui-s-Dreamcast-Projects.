@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GUI_DRAGGING">
+    <retval>
+	Estado actual de cualquier posible operación de drag&amp;drop
+    </retval>
+    <abstract> Comprueba si existe alguna operación de drag&amp;drop </abstract>
+    <description>
+	<p>
+	    Esta función permite comprobar si el usuario ha iniciado
+	    alguna operación de drag&amp;drop, consistente en arrastrar
+	    alguno de los controles donde esta operación está habilitada.
+	    El valor de retorno puede ser una de las siguientes
+	    constantes, definidas en GUI.INC:
+	    <ul>
+		<li> 
+		    DRAG_ACTIVE:
+		    El usuario está desplazando por el escritorio
+		    algún elemento. Es posible obtener información
+		    sobre el elemento concreto que está desplazando
+		    mediante la función <a href="GUI_DRAGTYPE"/>, 
+		    así como el lugar de destino de la operación, mediante
+		    <a href="GUI_DRAGDESTINATION"/>. Por defecto la
+		    acción de arrastrar <b>no se acepta</b> y es preciso
+		    llamar a la función <a href="GUI_ACCEPTDRAG"/> mientras
+		    GUI_DRAGGING devuelve este valor, para
+		    habilitar la acción de soltar.
+		</li>
+		<li>
+		    DRAG_DROPPED:
+		    La operación de soltar ha sido <b>aceptada</b> en
+		    este mismo frame. Un proceso debería actuar en
+		    consecuencia, examinando las funciones
+		    <a href="GUI_DRAGTYPE"/> y <a href="GUI_DRAGDESTINATION"/>
+		    para obrar en consecuencia. Este estado sólo puede
+		    alcanzarse si el usuario suelta el objeto que
+		    arrastra en el mismo frame en el que fue llamada
+		    <a href="GUI_ACCEPTDRAG"/>.
+		</li>
+		<li>
+		    DRAG_INACTIVE:
+		    No existe operación de arrastre en este momento.
+		</li>
+	    </ul>
+	</p>
+    </description>
+    <see href="GUI_DRAGTYPE"/>
+    <see href="GUI_DRAGDESTINATION"/>
+    <see href="GUI_ACCEPTDRAG"/>
+</function>

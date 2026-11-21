@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_REAL_POINT">
+    <retval/>
+    <param name="number"> Number of point of control (0 is the center) </param>
+    <param name="x"> Offset of a variable of entire type (INT)
+	which will have the horizontal coordinate of the point </param>
+    <param name="y"> Offset of a variable of entire type (INT)
+	which will have the vertical coordinate of the point </param>
+    <abstract> It allows to obtain the position in screen of a point of control </abstract>
+    <description>
+	<p>
+	    This function allows to obtain the position in screen of a
+	    point of control of a graph contained by the current process,
+	    considering the variables that indicate the aspect or position
+	    of the graph, like <a href="X"/>, <a href="Y"/>
+	    or <a href="ANGLE"/>.
+	</p>
+	<p>
+	    The variables whose <i>offset</i> receives this function will have
+	    the coordinates of the point of control over screen.
+	</p>
+    </description>
+    <see href="GET_POINT"/>
+    <see href="SET_POINT"/>
+</function>

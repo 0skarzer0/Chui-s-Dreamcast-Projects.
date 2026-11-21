@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="BLENDOP_APPLY">
+    <retval/>
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <param name="BLENDOP"> Identificador de una tabla BLENDOP </param>
+    <abstract> Aplica una tabla blendop a los pixels de un gráfico </abstract>
+    <description>
+	<p>
+	    Esta función modifica los pixels de un gráfico, aplicando las
+	    operaciones que la tabla de blendop indica que deben hacerse
+	    sobre el gráfico original. La transparencia se aplicará
+	    como oscurecimiento (mezclando el mapa con el negro).
+	</p>
+	<p>
+	    El gráfico quedará modificado en memoria sin necesidad de
+	    seguir manteniendo la tabla blendop en memoria y sin hacerle
+	    ninguna referencia a la misma.
+	</p>
+    </description>
+    <see name="BLENDOP_NEW"/>
+    <see name="BLENDOP_IDENTITY" />
+    <see name="BLENDOP_TRANSLUCENCY" />
+    <see name="BLENDOP_TINT" />
+    <see name="BLENDOP_INTENSITY" />
+    <see name="BLENDOP_GRAYSCALE" />
+    <see name="BLENDOP_SWAP" />
+    <see name="BLENDOP_ASSIGN" />
+</function>

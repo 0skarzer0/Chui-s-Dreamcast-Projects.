@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DESKTOP_ADDPOPUP">
+<retval/>
+<param name="ventana"> Identificador de la ventana origen </param>
+<param name="control"> Identificador del control a añadir </param>
+<param name="x"> Coordenada horizontal </param>
+<param name="y"> Coordenada vertical </param>
+<abstract> Muestra un control "popup" </abstract>
+<description>
+    <p>
+	Esta función muestra un control "popup" en las coordenadas especificadas.
+	Un control popup es un control especial que se muestra por encima de todas
+	las ventanas existentes. Su principal utilidad consiste en crear menús
+	de opciones o pequeños cuadros de aviso o "tooltips". El control popup
+	será destruído automáticamente cuando el usuario haga clic en alguna
+	ventana.
+    </p>
+    <p>
+	Es posible crear un control popup orientado a partir de una ventana. En
+	ese caso, el primer parámetro deberá ser el identificador de una ventana
+	existente, y las coordenadas se darán relativas a la esquina superior
+	izquierda de la ventana, como en el caso de un control interno a la misma.
+	Si se usa como ventana simplemente el número 0, el control popup se
+	considera general, y las coordenadas serán un punto en pantalla.
+    </p>
+    <p>
+	La utilidad más común de este control es crear un menú pop-up mediante
+	la función <a href="DLL/GUI/POPUP_MENU" name="POPUP_MENU"/> y mostrarlo
+	en la posición actual del ratón (ventana 0 y coordenadas MOUSE.X y MOUSE.Y).
+    </p>
+    <p>
+	Es importante recordar que el control será destruído automáticamente, es
+	decir, no es válido emplear el identificador de un control que ya haya
+	sido utilizado en una ventana o en un popup mostrado anteriormente. Hay
+	que crear un nuevo control cada vez que se desee mostrar un popup nuevo.
+    </p>
+</description>
+<see href="DLL/GUI/MENU" name="MENU"/>
+<see href="DLL/GUI/DESKTOP_REMOVEPOPUP" name="DESKTOP_REMOVEPOPUP"/>
+</function>

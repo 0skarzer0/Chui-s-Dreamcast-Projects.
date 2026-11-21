@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_AUTOEXPAND">
+<retval />
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="nombre" type="STRING"> Nombre de la columna </param>
+<abstract> Selecciona una columna como autoampliable </abstract>
+<description>
+    <p>
+	Dada una columna de una tabla (por su nombre, o opcionalmente por
+	su número de índice, con 0 para la columna más a la izquierda),
+	la convierte en autodimensionable. Una columna autodimensionable
+	no puede ser dimensionada por el usuario, pero se ajustará
+	automáticamente para intentar evitar la aparición de la barra
+	de scroll horizontal y ajustar la tabla sobre todo el ancho
+	del control. Es recomendable asignar esta propiedad a una o
+	varias columnas si la tabla va a formar parte de una ventana
+	redimensionable por el usuario.
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+</function>

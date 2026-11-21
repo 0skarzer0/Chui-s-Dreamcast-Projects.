@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ATOI">
+    <retval> Número resultante </retval>
+    <param name="cadena" type="STRING"> Cadena original </param>
+    <abstract> Convierte una cadena en número entero </abstract>
+    <description>
+	<p>
+	    Dada una cadena que contenga una serie de dígitos,
+	    devuelve el número entero que representan. Si la
+	    cadena contiene caracteres adicionales después de
+	    los dígitos, estos serán ignorados. Si la cadena
+	    comienza por caracteres que no corresponden a dígitos,
+	    la función no detectará el número y devolverá 0.
+	</p>
+    </description>
+<see href="STR/ATOF" name="ATOF"/>
+<see href="STR/ITOA" name="ITOA"/>
+<see href="STR/FTOA" name="FTOA"/>
+</function>

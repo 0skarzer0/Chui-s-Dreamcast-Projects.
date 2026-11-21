@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="EXISTS">
+    <param name="id"> Identifier of a process, or of a type
+	of process obtained by the instruction <a href="TYPE"/>. </param>
+    <abstract> Check if a determinated process is working </abstract>
+    <description>
+	<p>
+	    This function returns 1 (true) if the process identified by the 
+		parameter is still running (if it has not been eliminated of
+	    memory, nor marked for killing by a function like <a href="SIGNAL"/>. 
+		It is possible to use like parameter a type of process obtained 
+		by the instruction <a href="TYPE"/>, in which case it will 
+		return 1 if there is on memory at least a process of the indicated 
+		type. If there is not any process, EXISTS will be return 0.
+	</p>
+    </description>
+    <see href="GET_ID"/>
+</function>

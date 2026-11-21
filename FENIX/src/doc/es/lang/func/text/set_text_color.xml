@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_TEXT_COLOR">
+    <param name="color"> Número de color </param>
+    <abstract> Escoge el color con el que se dibujarán los textos
+	de funciones como <a href="TEXT/WRITE" name="WRITE"/>. </abstract>
+    <description>
+	<p>
+	    Esta función permite escoger el color de texto con el que
+	    se dibujarán los caracteres de los tipos de letra a dos
+	    colores. Los tipos de letra (fuentes) de 256 colores o de
+	    16 bits ya incluyen información de color y no se verán
+	    afectados por esta función. Los tipos de letra a dos
+	    colores pueden recuperarse mediante las funciones 
+	    <a href="FNT/LOAD_BDF" name="LOAD_BDF"/> o <a name="LOAD_FNT" href="FNT/LOAD_FNT"/>.
+	</p>
+	<p>
+	    Los textos dibujados con <a name="WRITE" href="TEXT/WRITE"/> y derivados
+	    recuerdan el color escogido en el momento que se llamaron,
+	    aunque dibujen su texto cada frame. Por lo tanto, es
+	    válido llamar a <b>TEXT_COLOR</b> antes de dibujar cada uno y poder
+	    mostrar en pantalla textos de varios colores simultáneamente.
+	</p>
+	<p>
+	    En el caso de gráficos de 256 colores (8 bits), el valor de color
+	    debe ser un número de 0 a 255. En el caso de gráficos de
+	    16 bits, el valor es una codificación de las componentes
+	    del color que varía en función de la tarjeta de vídeo y el modo gráfico.
+	    Lo normal es usar la función <a name="RGB" href="COLOR/RGB"/> para obtener la
+	    codificación de un color concreto, o bien usar un color obtenido
+	    por una función como <a name="MAP_GET_PIXEL" href="MAP/MAP_GET_PIXEL"/>. 
+	</p>
+    </description>
+    <see name="GET_TEXT_COLOR" href="TEXT/GET_TEXT_COLOR"/>
+    <see name="WRITE" href="TEXT/WRITE"/>
+    <see name="WRITE_INT" href="TEXT/WRITE_INT"/>
+    <see name="WRITE_FLOAT" href="TEXT/WRITE_FLOAT"/>
+    <see name="WRITE_STRING" href="TEXT/WRITE_STRING"/>
+    <see name="WRITE_VAR" href="TEXT/WRITE_VAR"/>
+    <see name="WRITE_IN_MAP" href="TEXT/WRITE_IN_MAP"/>
+</function>

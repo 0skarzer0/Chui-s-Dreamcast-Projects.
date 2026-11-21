@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TAN">
+    <retval/>
+    <param name="número" type="FLOAT"> Ángulo en milésimas de grado (90000 = 90º) </param>
+    <abstract> Devuelve la tangente de un ángulo </abstract>
+    <description>
+	<p>
+	    Esta función devuelve la tangente de un ángulo dado en milésimas
+	    de grado (la unidad estándar para especificar ángulos en Fenix).
+	    El resultado será un número en coma flotante.
+	</p>
+    </description>
+    <see href="MATH/ATAN" name="TAN"/>
+</function>

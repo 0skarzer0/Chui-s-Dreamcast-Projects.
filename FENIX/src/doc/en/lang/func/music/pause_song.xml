@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PAUSE_SONG">
+    <abstract> It stops temporarily the reproduction of music </abstract>
+    <description>
+	<p>
+	    It stops temporarily the reproduction of any archive of music,
+	    until it is continued later by the function <a href="RESUME_SONG"/>.
+	</p>
+	<p>
+	    This function stops the reproduction of music immediately.
+	    For a better efect, try to use the function <a href="FADE_MUSIC_OFF"/>.
+	</p>
+    </description>
+    <see href="FADE_MUSIC_OFF"/>
+    <see href="STOP_SONG"/>
+    <see href="PLAY_SONG"/>
+    <see href="LOAD_SONG"/>
+</function>

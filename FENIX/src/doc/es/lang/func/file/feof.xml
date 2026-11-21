@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FEOF">
+    <retval> 1 si se llegó al final del fichero </retval>
+    <param name="fichero"> Identificador de fichero devuelto por FOPEN </param>
+    <abstract> Comprueba si quedan datos por leer de un fichero </abstract>
+    <description>
+	<p>
+	    Esta función devuelve 1 si el puntero de lectura/escritura
+	    se encuentra al final
+	    de un fichero abierto con la función <a href="FOPEN"/>,
+	    o 0 en caso contrario. Puede usarse en un bucle que emplee
+	    <a href="FREAD"/> para leer datos de un fichero, hasta
+	    que ya no queden más en el mismo.
+	</p>
+    </description>
+    <see name="FOPEN"/>
+    <see name="FSEEK"/>
+    <see name="FTELL"/>
+    <see name="FREAD"/>
+</function>

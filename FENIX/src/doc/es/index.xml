@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+
+<index name="">
+    <abstract> Índice de la Referencia de Fenix </abstract>
+    <description>
+	<p>
+	    Bienvenido a la referencia provisional de Fenix. Este archivo
+	    contiene todos los textos de ayuda escritos por ahora. En el
+	    futuro, esto incluirá:
+	    <ul>
+		<li>
+		    Referencia del lenguaje: todas las palabras clave,
+		    sentencias, expresiones, operadores...
+		</li>
+		<li>
+		    Referencia de todas las funciones, variables y
+		    constantes predefinidas en el lenguaje
+		    (incluyendo DLLs oficiales)
+		</li>
+		<li>
+		    Ejemplos de uso de todas las funciones, así como
+		    algunos tutoriales o programas cortos ilustrativos.
+		</li>
+		<li>
+		    Ayuda sobre el uso del entorno de desarrollo oficial
+		    (el editor gráfico junto con los futuros editor de
+		    texto, depurador, profiler, etc)
+		</li>
+	    </ul>
+	</p>
+	<p>
+	    Por ahora están documentadas ya la mayoría de funciones
+	    del sistema y un buen número de variables. Para los
+	    interesados en usar el lenguaje en sí, pueden consultar
+	    mientras no esté escrita el resto de la documentación
+	    el manual en PDF de la versión 0.7, ya que se han dado
+	    pocos cambios desde entonces.
+	</p>
+    </description>
+</index>
+
+

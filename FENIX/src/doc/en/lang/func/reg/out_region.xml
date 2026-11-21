@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="OUT_REGION">
+    <retval/>
+    <param name="id"> Identifier of a process </param>
+    <param name="region"> Number of region, 0-31 </param>
+    <abstract> It returns 1 if a process is out of the region indicated </abstract>
+    <description>
+	<p>
+	    This function allows to check if a process has been drawn in or out
+	    of a region on screen. The region can be independent of any scroll region
+	    or trims defined for the process.
+	    In any case, the function returns 1 if the process is found completely
+	    out of the limits of the region, an 0 if any part or all process
+	    is in of the limits of the region.
+	</p>
+	<p>
+	    Before calling to this function, it is necessary to have established
+	    the limits of the region by <a href="reg/DEFINE_REGION" name="DEFINE_REGION"/>, if it is not
+	    used the region 0, that corresponds always to all screen and offers a form
+		simple if a process is out of screen.
+	</p>
+	<p>
+	    If you want to check if the current process is out of a region,
+	    use the instruction <a href="ID"/> to obtain his identifier.
+	</p>
+    </description>
+    <see href="reg/DEFINE_REGION" name="DEFINE_REGION"/>
+</function>

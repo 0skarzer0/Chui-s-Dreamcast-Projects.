@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PUT_PIXEL">
+    <param name="x"> Coordenada horizontal </param>
+    <param name="y"> Coordenada vertical </param>
+    <param name="color"> Color a dibujar </param>
+    <abstract> Cambia el valor de un pixel del fondo de pantalla </abstract>
+    <description>
+	<p>
+	    Esta función permite alterar el color de un pixel determinado del
+	    fondo de pantalla. Las coordenadas dadas crecen hacia abajo y a la derecha, y
+	    el punto (0, 0) representa la esquina superior izquierda de pantalla.
+	</p>
+	<p>
+	    En el caso del modo gráfico de 256 colores (8 bits), el valor de color
+	    debe ser un número de 0 a 255. En el caso de funcionar en modo gráfico de
+	    16 bits, el valor es una codificación de las componentes
+	    del color que varía en función de la tarjeta de vídeo y el modo gráfico.
+	    Lo normal es usar la función <a href="RGB"/> para obtener la
+	    codificación de un color concreto, o bien usar un color obtenido
+	    por una función como <a href="MAP_GET_PIXEL"/>.  El fondo de
+	    pantalla no admite pixels transparentes.
+	</p>
+	<p>
+	    Esta función equivale a MAP_PUT_PIXEL (0, 0, x, y, color).
+	</p>
+    </description>
+    <note>
+	En ocasiones es posible usar un fondo de 8 bits en un juego que funcione
+	en modo de 16 bits. Normalmente, Fenix detecta cuando se da esta circunstancia.
+	Por ejemplo, un juego que usa <a href="PUT_SCREEN"/> con un mapa de 8 bits hace que
+	se cree en fondo de pantalla de 8 bits. Sin embargo, una vez se utilice una
+	función como <a href="PUT"/> con un gráfico de 16 bits, el fondo se crea
+	o se convierte a 16 bits y se mantiene así. Es importante tener en cuenta
+	esta circunstancia porque a veces GET_PIXEL puede requerir un valor de 0 a 255
+	insospechadamente, a pesar de estar funcionando en 16 bits. Si quieres estar
+	seguro de qué profundidad de color tiene el fondo de pantalla, utiliza
+	la función <a href="GRAPHIC_INFO"> con el mapa (0, 0) y el parámetro G_DEPTH.
+    </note>
+    <see href="GET_PIXEL"/>
+</function>

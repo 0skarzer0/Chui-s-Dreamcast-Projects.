@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+<function name="END_FLI">
+    <abstract> Detiene la animación FLI/FLC en curso</abstract>
+    <description>
+	<p>
+		Esta función detiene la reproducción de la animación FLI/FLC en curso, iniciada 
+		anteriormente con <a href="/FLI/START_FLI" name="START_FLI"/>.
+	</p>
+	</description>
+    <see name="START_FLI" href="FLI/START_FLI"/>
+    <see name="FRAME_FLI" href="FLI/FRAME_FLI"/>
+    <see name="RESET_FLI" href="FLI/RESET_FLI"/>    
+</function>

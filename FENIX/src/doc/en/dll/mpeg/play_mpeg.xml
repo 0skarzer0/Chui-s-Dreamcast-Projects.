@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PLAY_MPEG">
+    <retval/>
+    <param name="video"> Identifier of video </param>
+    <abstract> It starts the reproduction of a video </abstract>
+    <description>
+	<p>
+	    This function starts to reproduce a MPEG video.
+	    The video is not shown in screen automatically.
+	    This function returns the code of a graph that is
+	    in the library 0 which always represents the current
+	    frame of the video.
+	</p>
+	<p>
+	    To show the video in screen, it is recommended
+	    to assign the code returned by PLAY_MPEG to the variable <a href="GRAPH"/>
+	    of a process. The coordinates <a href="X"/> and
+	    <a href="Y"/> of the process will identify then
+	    the position of video in screen, by his center.
+	</p>
+	<p>
+	    You can use the graph normally  in all type of operations.
+	    For example, you can use the variable
+	    <a href="FLAGS"/> to show a transparent video,
+	    or change it his size with <a href="SIZE"/>.
+	    You can use this graph in operations of draw
+	    by the functions <a href="MAP_PUT"/> or <a href="MAP_XPUT"/>,
+	    but you must know that in that case you only get the last frame.
+	    The content of graph is rewritten continuously, so that it is not possible
+		to modify it directly (for example, to add a subtitle).
+	    If you want to do this type of operations,
+	    you will have to draw the additional elements in screen,
+	    with a superior coordinate <a href="Z"/>, or
+	    copy each frame to another graph before operating.
+	</p>
+    </description>
+    <note>
+	It is not allowed the reproduction of MPEG video in mode of 
+	8 bits (256 colours).
+    </note>
+    <see href="dll/mpeg/LOAD_MPEG" name="LOAD_MPEG"/>
+    <see href="dll/mpeg/STOP_MPEG" name="STOP_MPEG"/>
+    <see href="dll/mpeg/PAUSE_MPEG" name="PAUSE_MPEG"/>
+</function>

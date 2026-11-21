@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="Y">
+    <abstract>Posición Y del proceso</abstract>    
+	<description>
+	<p>
+		Esta posición Y es relativa al tipo de coordenadas indicador por 
+		la variable <a href="LVARS/CTYPE" name="CTYPE" type="VAR" />.  Cambiando 
+		el valor de esta variable el gráfico del proceso se dibujará en la posición 
+		adecuada en el siguiente frame.
+	</p>
+	<p>
+		Por defecto el valor para esta coordenada se da en pixels, donde 0,0 corresponde 
+		a la esquina superior izquierda de la zona de destino.  Para utilizar coordenadas 
+		con unidades más pequeñas debe indicarse el factor de reducción usando la variable 
+		<a type="var" name="RESOLUTION" href="LVARS/RESOLUTION" />.  Automáticamente se 
+		redondearán los valores de fracciones de pixel antes de dibujar el gráfico en pantalla.
+	</p>
+	<p>
+		La coordenada y referenciada es la del punto de control 0 del gráfico o en su defecto 
+		a su centro geométrico.
+	</p>
+    </description>
+    <see type="var" name="X" href="LVARS/X" />
+    <see type="var" name="Z" href="LVARS/Z" />
+    <see type="var" name="CTYPE" href="LVARS/CTYPE" />
+    <see type="var" name="RESOLUTION" href="LVARS/RESOLUTION" />
+</variable>

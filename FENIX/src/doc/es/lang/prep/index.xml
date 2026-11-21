@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+
+<index name="lang/prep">
+    <abstract> El preprocesador </abstract>
+    <description>
+	<p>
+	    El preprocesador es un pequeño programa que filtra el
+	    contenido de tu programa antes de pasarselo al compilador.
+	    Interpreta ciertas <i>directivas</i> que pueden estar
+	    presente en cualquier punto del programa y se caracterizan
+	    por ocupar una línea completa y empezar por el carácter #
+	    al principio de la misma (opcionalmente, precedido por espacios).
+	</p>
+	<p>
+	    Las directivas del preprocesador permiten definir macros
+	    (palabras que, al aparecer más adelante de su definición
+	    en el código, son sustituídas por un texto determinado)
+	    o para crear secciones de código opcionales (que sólo
+	    aparecen si se cumple una condición determinada).
+	</p>
+    </description>
+</index>
+
+

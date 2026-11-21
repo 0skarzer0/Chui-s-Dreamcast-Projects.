@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FREE">
+    <param name="mem" type="POINTER"> Puntero a una zona de memoria reservada en una llamada anterior de <a name="ALLOC" href="MEM/ALLOC" /> </param>
+    <abstract> Libera memoria dinámica reservada anteriormente </abstract>
+    <description>
+	<p>
+	  Libera una zona de memoria reservada previamente por la función <a name="ALLOC" href="MEM/ALLOC"/>. El 
+	  parámetro que recibe debe ser un puntero a una zona de memoria reservada con alloc. Una vez 
+	  liberada, la memoria queda libre para usos posteriores. 
+	</p>
+    </description>
+    <see name="ALLOC" href="MEM/ALLOC"/>
+    <see name="REALLOC" href="MEM/REALLOC"/>
+</function>

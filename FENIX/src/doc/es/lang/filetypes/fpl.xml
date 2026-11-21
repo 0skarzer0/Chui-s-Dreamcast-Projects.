@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="FGC">
+	<syntax> 
+		<b>FPL</b> (Fenix Palette)
+	</syntax>
+	<abstract> Informacion de color de una paleta gráfica </abstract>
+    <description>
+		<p>
+			Un fichero FPL contiene toda la informacion de color 
+			de una paleta gráfica.  Actualmente solo se soportan
+			paletas gráficas de 8 bits, pero es posible  que en 
+			un futuro se añada soporte para paletas indexadas de 
+			mayor profundidad de color.
+		</p>
+		<p>
+			Esta sección describe el contenido de un fichero FPL. No es
+			necesario conocer estos detalles simplemente para programar
+			juegos, pero serán de utilidad a quien quiera realizar
+			utilidades en lenguajes externos que lean o escriban
+			ficheros FPL.
+		</p>
+		<p>
+			Un fichero FPL no incluye compresión. Fenix soporta de forma
+			transparente el uso de compresión GZIP en los ficheros, sin
+			necesidad de marcarlos especialmente con extensión .gz.
+			Normalmente un fichero FPL se guarda en disco comprimido de
+			esta manera, pero en el resto del fichero asumiremos que el
+			fichero FPL no está comprimido.
+		</p>
+		<p>
+			En la descripción siguiente, DWORD identifica un número
+			entero de 4 bytes sin signo mientras INT indica entero de
+			4 bytes con signo. Estos valores se guardan siguiendo la
+			codificación Intel de bytes en memoria, así que hay que
+			darles la vuelta al leer o escribir el fichero en
+			otras plataformas.
+		</p>
+		<h3>
+			Cabecera
+		</h3>
+		<p>
+			Un fichero FPL comienza con la siguiente cabecera:
+			<table>
+				<tr>
+					<th> MAGIC </th>
+					<td> 16 bytes </td>
+					<td> 
+						Cadena de caracteres de identificación del fichero.
+						Debe contener exactamente "FenixPalette" 
+						y, a continuación, los cuatro
+						bytes 1Ah, 0Dh, 0Ah y 00h. Esta terminación indica,
+						en un fichero MS-DOS, final de fichero. Gracias a
+						ella un comando TYPE en MS-DOS no mostraría los
+						datos binarios del fichero. En este formato se
+						conserva por razones puramente nostálgicas.
+					</td>
+				</tr>
+				<tr>
+					<th> VERSION </th>
+					<td> DWORD </td>
+					<td>
+						Código de versión. Se compone de un número mayor
+						de 16 bits y un número menor de 16 bits. Actualmente
+						es 0x0100. Si el formato se modificase en el futuro
+						pero de manera que los ficheros fuesen compatibles
+						con el formato actual, se incrementaría el número
+						menor. Las rutinas de carga deben rechazar un
+						fichero FPL sólo si el número mayor no es 01.
+					</td>
+				</tr>
+				<tr>
+					<th> PROFUNDIDAD </th>
+					<td> DWORD </td>
+					<td>
+						Bits por pixel de las información de color. 
+						Actualmente sólo es válida la de 8 bits por pixel (bpp).
+					</td>
+				</tr>
+			</table>
+		</p>
+		<h3>
+			Paleta de colores
+		</h3>
+		<p>
+			A continuación, si el FPL es de 8 bits (tal como indica
+			la cabecera del fichero) habrán 768 bytes con la paleta 
+			de colores.  Cada color ocupa tres bytes en orden RGB 
+			(rojo, verde y azul) y con un rango para cada componente 
+			de color de 0 a 255.
+		</p>
+		
+    </description>
+	<note>
+		Esta es una versión temporal de este formato de fichero.
+		Es posible que en versiones posteriores se soporten paletas indexadas 
+		con mayor resolucion de color con intencion de reducir el tamaño necesario 
+		para almacenar gráficos en formatos de alta densidad de color (16, 24 y 32 bpp) .
+	</note>
+</section>

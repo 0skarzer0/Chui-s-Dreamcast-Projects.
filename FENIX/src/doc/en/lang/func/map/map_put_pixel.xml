@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_PUT_PIXEL">
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph inside of library </param>
+    <param name="x"> Horizontal coordinate </param>
+    <param name="y"> Vertical coordinate </param>
+    <param name="colour"> Colour to draw </param>
+    <abstract> It changes the value of a pixel of a graph </abstract>
+    <description>
+	<p>
+	    This function allows to change the colour of a pixel determined inside of a
+	    graph. The coordinates increase towards up and right, and
+	    the point (0, 0) represents the top left corner of the graph.
+	</p>
+	<p>
+	    In case of graph of 256 colours (8 bits), the value of colour
+	    must be a number of 0 to 255. In oppositive case, the value is a codification of
+	    the components of the colour that depends of the video card and the mode graph.
+	    It is normal to use this function <a href="RGB"/> to obtain the
+	    codification of a concrete colour, or use a colour obtained
+	    by a function like <a href="MAP_GET_PIXEL"/>. The colour 0, in
+	    both mode graphs, represents a transparent pixel.
+	</p>
+    </description>
+    <see href="MAP_GET_PIXEL"/>
+</function>

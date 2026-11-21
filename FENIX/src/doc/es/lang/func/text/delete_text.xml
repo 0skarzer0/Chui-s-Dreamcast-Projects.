@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DELETE_TEXT">
+    <retval/>
+    <param name="texto"> Identificador del texto o 0 para todos </param>
+    <abstract> Elimina un texto dibujado mediante WRITE </abstract>
+    <description>
+	<p>
+	    Destruye un texto creado mediante la función
+	    <a href="WRITE"/> u otra equivalente. El texto no será
+	    dibujado por más tiempo, a partir del frame actual.
+	    Usando 0 como parámetro, en lugar de un identificador
+	    devuelto por <a href="WRITE"/>, se borrarán todos
+	    los textos actualmente en pantalla.
+	</p>
+    </description>
+    <see href="MOVE_TEXT"/>
+    <see href="WRITE"/>
+</function>

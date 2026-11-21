@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_MPEG">
+    <retval/>
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <param name="vídeo"> 1 para activar la reproducción de vídeo </param>
+    <param name="audio"> 1 para activar la reproducción de audio </param>
+    <abstract> Recupera de disco un fichero de vídeo </abstract>
+    <description>
+	<p>
+	    Abre un fichero MPEG en disco, para
+	    reproducir posteriormente con <a href="PLAY_MPEG"/>.
+	</p>
+	<p>
+	    Esta función devuelve un número entero que identifica al
+	    vídeo, o -1 si el fichero no está en formato MPEG u
+	    ocurre cualquier otro error.
+	    Puedes usar el número devuelto para reproducir la música
+	    mediante la función <a href="PLAY_MPEG"/>.
+	</p>
+	<p>
+	    Los parámetros adicionales te permiten activar o
+	    desactivar la reproducción de vídeo y audio,
+	    respectivamente. Puedes usarlo para reproducir un
+	    vídeo donde sólo te interesa uno de los dos elementos.
+	</p>
+    </description>
+    <see href="PLAY_MPEG"/>
+    <see href="STOP_MPEG"/>
+    <see href="UNLOAD_MPEG"/>
+</function>

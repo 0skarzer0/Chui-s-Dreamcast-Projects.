@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_FPG">
+    <retval> Código de la librería FPG recuperada </retval>
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <abstract> Recupera de disco una librería FPG </abstract>
+    <description>
+	<p>
+	    Esta función carga en memoria el contenido de un fichero
+	    FPG, que contiene una librería con hasta 1000 gráficos
+	    diferentes, todos ellos con la misma profundidad de color
+	    (pero, por otra parte, tan flexibles como los gráficos
+	    recuperados independientemente con <a href="LOAD_MAP"/>).
+	</p>
+    </description>
+    <note>
+	El primer fichero FPG en recuperarse siempre tiene el código 0.
+	Si tu juego es sencillo y sólo tendrá unos pocos gráficos, puedes
+	considerar guardarlos todos en un mismo fichero FPG y recuperarlo
+	al comienzo de tu programa. Puedes usar 0 a partir de entonces
+	en todas las llamadas a funciones que empleen gráficos, como
+	código de librería.
+    </note>
+    <note>
+	Una librería FPG mantiene todos sus gráficos en memoria
+	simultáneamente. Si tu juego va a tener una gran cantidad de
+	gráficos de gran tamaño, se recomienda que los distribuyas
+	en varios ficheros FPG que vayas recuperando conforme son
+	necesarios. Puedes liberar la memoria ocupada por un FPG
+	empleando la función <a href="UNLOAD_FPG"/>, una vez ya
+	no es necesario.
+    </note>
+    <see href="FPG_NEW"/>
+    <see href="SAVE_FPG"/>
+    <see href="UNLOAD_FPG"/>
+</function>

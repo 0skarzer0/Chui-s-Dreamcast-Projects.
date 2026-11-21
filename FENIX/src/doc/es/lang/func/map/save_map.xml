@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SAVE_MAP">
+    <param name="librería"> Código de la librería FPG </param>
+    <param name="gráfico"> Número del gráfico </param>
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <abstract> Guarda en disco un gráfico, en formato MAP </abstract>
+    <description>
+	<p>
+	    Esta función guarda en disco un gráfico cualquiera en
+	    formato FNT. Este gráfico puede formar parte de una
+	    librería FPG cualquiera, o haber sido creado en memoria
+	    con funciones como <a href="NEW_MAP"/> o <a href="MAP_CLONE"/>.
+	</p>
+	<p>
+	    Cualquier cambio realizado en el gráfico, como por ejemplo
+	    cambios al centro o los puntos de control, o cambios a
+	    su contenido con funciones como <a href="MAP_PUT"/> o
+	    <a href="DRAWING_MAP"/>, será almacenado en el fichero.
+	</p>
+    </description>
+    <note>
+	Los ficheros creados con SAVE_MAP no pueden recuperarse
+	desde DIV Games Studio.
+    </note>
+    <see href="GRAPHIC_SET"/>
+    <see href="SET_CENTER"/>
+    <see href="MAP_SET_NAME"/>
+    <see href="MAP_CLONE"/>
+    <see href="NEW_MAP"/>
+</function>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LABEL_TEXT">
+    <retval/>
+    <param name="label"> Identificador del control devuelto por LABEL </param>
+    <param name="texto" type="STRING"> Nuevo texto de la etiqueta </param>
+    <abstract> Cambia el texto de una etiqueta estática </abstract>
+    <description>
+	<p>
+	    Dada una etiqueta de texto creada con <a name="LABEL"/>,
+	    cambia el texto que contiene. No se modifica el ancho del
+	    control ni su alineación: es preciso haberlo creado con
+	    un ancho suficiente para contener cualquier futuro texto,
+	    o de lo contrario el mismo se verá truncado.
+	</p>
+    </description>
+    <see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+    <see name="LABEL"/>
+</function>

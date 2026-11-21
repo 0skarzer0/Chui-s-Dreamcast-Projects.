@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_PANNING">
+    <param name="channel"> Number of channel returned by PLAY_WAV </param>
+    <param name="left"> Left volume (0-255) </param>
+    <param name="right"> Rigth volume (0-255) </param>
+    <abstract> It changes the balance of a channel </abstract>
+    <description>
+	<p>
+	    This function allows to change the left/right positioning
+	    of a sound in stereo, simply adjusts the volume of each one
+	    of the two subchannels.
+	    If you want to play the sound with the volume of 
+	    the beginning, you must use SET_PANNING(255,255).
+	</p>
+    </description>
+    <see href="PLAY_WAV"/>
+    <see href="IS_PLAYING_WAV"/>
+</function>

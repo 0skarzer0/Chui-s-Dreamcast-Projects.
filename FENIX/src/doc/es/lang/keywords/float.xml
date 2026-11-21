@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="FLOAT">
+	<syntax> 
+		<b>FLOAT</b> <i>nombre-variable</i> ; 
+	</syntax>
+	<abstract> Tipo de dato numérico de 32 bits </abstract>
+    <description>
+		<p>
+			Identifica una variable, parámetro o valor de retorno
+			numérico de 32 bits. Aunque esta variable admite
+			números muy grandes o muy pequeños e incluyendo
+			decimales, la precisión es pequeña, por lo que el
+			resultado de los cálculos será impreciso y se
+			perderán o cambiarán los dígitos menos significativos
+			del resultado con bastante frecuencia.
+		</p>
+    </description>
+	<see href="Tipos de dato"/>
+</section>

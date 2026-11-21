@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CONTROL_TOOLTIP">
+    <retval/>
+    <param name="control"> Identificador de un control </param>
+    <param name="texto" type="STRING"> Texto del tooltip </param>
+    <abstract> Asigna un tooltip a un control </abstract>
+    <description>
+	<p>
+	    Asigna un texto de ayuda a un control, que aparecerá
+	    por debajo del ratón cuando el usuario deje el cursor
+	    parado por un momento encima del mismo. Es posible
+	    asignar un tooltip a cualquier tipo de control.
+	</p>
+    </description>
+    <see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

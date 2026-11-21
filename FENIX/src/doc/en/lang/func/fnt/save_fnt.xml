@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SAVE_FNT">
+    <retval/>
+    <param name="font"> Code of the font </param>
+    <param name="archive" type="STRING"> Name of archive </param>
+    <abstract> It saves in disk a type of FNT font </abstract>
+    <description>
+	<p>
+	    This function saves in disk a type of letter in FNT format,
+	    from an identifier of the source on memory returned
+		by functions like <a href="LOAD_FNT"/>.
+	</p>
+	<p>
+	    Although actually there are not facilities to change types of
+	    letter on memory from Fenix, the major utility of this function
+	    is can save in disk an archive in the new FNT format,
+	    that admits compression, from an original font in BDF or another format.
+	</p>
+    </description>
+    <note>
+	The archives created with SAVE_FNT can not be recovered from
+	DIV Games Studio.
+    </note>
+    <see href="LOAD_BFD"/>
+    <see href="LOAD_FNT"/>
+</function>

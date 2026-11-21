@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_FPS">
+    <param name="fps"> Valor deseado de <i>frames por segundo</i>.</param>
+    <param name="salto"> Número máximo de frames que Fenix puede
+	<i>saltarse</i> (no dibujar) para lograr que la velocidad
+	del juego se ajuste al valor de fps deseado. </param>
+    <abstract> Establece la velocidad del juego </abstract>
+    <description>
+	<p>
+	    Esta función establece el número de frames que se deben completar
+	    y visualizar por segundo. Si no se llama a esta función, el
+	    número de frames por segundo por defecto es 25.
+	</p>
+	<p>
+	    Aunque tu juego se ejecutará en una variedad de ordenadores,
+	    unos más rápidos que otros, es deseable que el juego funcione
+	    a la misma velocidad en todos ellos. Para lograr este efecto,
+	    Fenix utiliza un límite interno de frames por segundo que puedes
+	    escoger con esta función. Cuando un ordenador sea muy rápido
+	    y pueda ejecutar todos los procesos y dibujar la pantalla en
+	    menos tiempo del necesario, Fenix hará una pausa tras el dibujo
+	    de manera que el número total de frames dibujados en un segundo
+	    no sea superior al establecido como máximo. En cambio, cuando
+	    un ordenador sea demasiado lento y no sea capaz de mostrar ese
+	    número de frames en un segundo, Fenix dejará de dibujar algunos
+	    de ellos aunque sí ejecutará los procesos. Esto tiene el efecto
+	    de que la animación sea más brusca, pero a cambio los cálculos
+	    de posición y movimiento serán los mismos que en un ordenador
+	    más rápido. Se te permite establecer un límite al número de
+	    frames consecutivos que Fenix puede saltarse: ese es el significado
+	    del segundo parámetro de esta función. Normalmente 1 o 2
+	    es suficiente, y un valor superior puede hacer el juego injugable.
+	    Si lo deseas puedes utilizar un valor de 0, de manera que el juego
+	    se enlentezca en ordenadores más lentos, pero la animación nunca
+	    sea más brusca.
+	</p>
+	<p>
+	    Se aconseja elegir una cantidad de frames por segundo tal que
+	    el tiempo de ejecución de un frame sea divisor de 60, ya que
+	    muchos monitores muestran por defecto ese número de imágenes 
+	    por segundo. Establecer un número superior suele ser malgastar
+	    los recursos del ordenador, ya que el monitor no será capaz
+	    de mostrar esas imágenes, ni el usuario de distinguirlas.
+	</p>
+	<p>
+	    Si haces la llamada especial SET_FPS(0,0), estás diciendo a
+	    Fenix que no haga nunca ninguna pausa y que ejecute el juego
+	    a la máxima velocidad posible. De esta manera puedes saber
+	    qué rendimiento, como máximo, puedes obtener en un ordenador.
+	</p>
+    </description>
+    <note>
+	Por supuesto, no todos los ordenadores están configurados a una
+	frecuencia de refresco de 60Hz, especialmente en modos gráficos de
+	baja resolución que usarás en Fenix. Sin embargo es un valor mínimo
+	habitual, y de todas formas pocas personas pueden <i>distinguir</i> 
+	entre 60 imágenes por segundo y más.
+    </note>
+    <see type="var" name="FPS" href="GVARS/FPS">
+</function>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="XGRAPH">
+    <abstract>Tabla de gráficos en función del ángulo</abstract>    
+	<description>
+	<p>
+		A esta variable se le puede asignar el OFFSET de una tabla de variables de 
+		tipo INT (entero), de manera que el efecto de la variable <a href="LVARS/ANGLE" name="ANGLE" type="var"/> 
+		no sea el de rotar el gráfico, sino el de seleccionar un elemento de esta tabla.
+	</p>
+	<p>
+		La tabla deberá constar de una secuencia de números. El primero de ellos debe ser
+		el número de gráficos que van a utilizarse (el número total de elementos de 
+		la tabla, menos uno) y el resto será una serie de números de gráfico válidos
+		dentro del fichero gráfico del proceso actual, especificado por la variable local <a href="FILE"/>.
+		El intérprete dividirá internamente los 360 grados que 
+		corresonden a la rotación completa del gráfico entre los gráficos disponibles, de 
+		forma homogénea (el ángulo 0 siempre para el primer gráfico), eligiendo en cada 
+		frame el gráfico de la tabla adecuado en función del valor de <b>ANGLE</b>.
+		Un valor negativo en esta tabla indica que el gráfico en cuestión se mostrará invertido
+		horizontalmente. Por ejemplo, un valor de -2 sirve para especificar el gráfico de
+		código 2, reflejado horizontalmente.
+	</p>
+	<p>
+		El valor por defecto de esta variable es 0, que es el único valor válido exceptuando 
+		un <b>OFFSET</b> o valor de un <b>POINTER</b>.
+	</p>
+    </description>
+    <see type="var" name="GRAPH" href="LVARS/GRAPH"/>
+    <see type="var" name="ANGLE" href="LVARS/ANGLE" />
+</variable>

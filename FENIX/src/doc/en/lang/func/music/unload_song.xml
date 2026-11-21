@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="UNLOAD_SONG">
+    <retval/>
+    <param name="music"> Identifier of the music </param>
+    <abstract> It unloads the memory occupied for a music </abstract>
+    <description>
+	<p>
+	    It unloads the memory occupied for a music loaded on memory
+	    with <a href="LOAD_SONG"/>. Before it is necessary,
+	    if the music is still playing, to stop the reproduction
+	    of the music with <a href="STOP_SONG"/>.
+	</p>
+    </description>
+    <see href="STOP_SONG"/>
+    <see href="LOAD_SONG"/>
+</function>

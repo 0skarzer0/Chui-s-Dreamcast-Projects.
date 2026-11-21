@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="XPUT">
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph to draw </param>
+    <param name="x"> Horizontal coordinate </param>
+    <param name="y"> Vertical coordinate </param>
+    <param name="angle"> Angle in thousandth of degree (90000 = 90º) </param>
+    <param name="size"> Size in percentage (100 = original size) </param>
+    <param name="flags"> Flags for the graph </param>
+    <param name="region"> Cut region (0 = none) </param>
+    <abstract> It draws a graph in the background of screen </abstract>
+    <description>
+	<p>
+	    This function draws a graph in the background of screen, in the coordinates
+	    specified like parameter, applying to the possibilities of drawing of a process
+		(rotation angle, transparencies, sizable...).
+	    The point specified will be equivalent to the zone where
+	    the center of the graph will be drawn, and so which it will be
+	    rotated or modified his size.
+	</p>
+	<p>
+	    This function is specially useful "to prepare" screens or levels
+	    from graphical blocks.
+	</p>
+    </description>
+    <see href="NEW_MAP"/>
+    <see href="MAP_PUT"/>
+</function>

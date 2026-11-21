@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW_CHANGED">
+    <retval>
+	Valor del indicador de "modificada" de la ventana
+    </retval>
+    <param name="ventana"> Identificador de la ventana </param>
+    <param name="cambiada" optional="YES"> Nuevo valor para el flag </param>
+    <abstract> Recupera o cambia el flag de "modificada" de una ventana </abstract>
+    <description>
+	<p>
+	    Todas las ventanas disponen de un "flag" o indicador interno
+	    para especificar si su contenido ha sido modificado por el
+	    usuario y aún no se ha grabado a disco. Las ventanas con este
+	    flag activado muestran un asterisco (*) a la derecha de su título.
+	</p>
+	<p>
+	    Es responsabilidad del programa asignar este indicador a las
+	    ventanas a medida que el usuario realice cualquier cambio en
+	    su estado, así como comprobar que una ventana no sea cerrada
+	    con información no guardada en disco, sin pedir antes
+	    confirmación al usuario.
+	</p>
+	<p>
+	    Si no se especifica el segundo parámetro, esta función se usa para
+	    obtener el actual valor del indicador. Si desea cambiarse
+	    basta con indicar el nuevo valor (TRUE o FALSE) como segundo parámetro.
+	</p>
+    </description>
+    <see name="WINDOW" href="DLL/GUI/WINDOW"/>
+</function>

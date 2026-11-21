@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TEXT_COLOR">
+    <param name="colour"> Number of colour </param>
+    <abstract> It selects the colour which it will be used to paint the texts made
+	with functions like <a href="WRITE"/>. </abstract>
+    <description>
+	<p>
+	    This function allows to choose the colour of text with which the 
+		characters of the fonts will be drawn to two colours. 
+		The types of letter (fonts) of 256 colours or 16 bits already 
+		include colour information and they will not be 
+		affected by this function. The types of letter to two colours
+	    can be recovered by the functions <a href="LOAD_BDF"/> or <a href="LOAD_FNT"/>.
+	</p>
+	<p>
+	   The texts drawn with <a href="WRITE"/> and derived remember the
+	   color selected at the moment that was called, although draw their
+	   text each frame. Therefore, it is valid to call to TEXT_COLOR
+	   before drawing each one and being able simultaneously to show
+	   in screen texts of several colors.
+	</p>
+	<p>
+	    In case of graphs of 256 colours (8 bits), the value of colour
+	    must be a number of 0 to 255. In oppositive case (16 bits),
+		the value is a codification of the components of the colour
+	    that changes based on the video card and graph mode.
+	    It is normal to use the function <a href="RGB"/> to obtain the codification
+	    of a concrete colour, or use a colour obtained by a function like
+	    <a href="MAP_GET_PIXEL"/>. 
+	</p>
+    </description>
+    <see href="WRITE"/>
+    <see href="WRITE_VAR"/>
+    <see href="WRITE_IN_MAP"/>
+    <see href="DRAWING_COLOR"/>
+</function>

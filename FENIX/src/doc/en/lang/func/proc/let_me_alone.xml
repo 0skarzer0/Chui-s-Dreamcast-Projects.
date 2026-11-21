@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LET_ME_ALONE">
+    <abstract> Kill all active processes </abstract>
+    <description>
+	<p>
+	    This function kills all active proccesses, except the current.
+	    It is very useful to exit the game and return to any type of menu, 
+	    which it will imply to kill a lot of processes manually.
+	</p>
+	<p>
+	    The limitations of the function <a href="SIGNAL"/> are applied
+	    to LET_ME_ALONE.
+	</p>
+    </description>
+    <see href="SIGNAL"/>
+</function>

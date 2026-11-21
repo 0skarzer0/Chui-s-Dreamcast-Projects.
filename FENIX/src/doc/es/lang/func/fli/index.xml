@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="END_FLI" />
+<fnc href="FRAME_FLI" />
+<fnc href="RESET_FLI" />
+<fnc href="START_FLI" />
+</INDEX>

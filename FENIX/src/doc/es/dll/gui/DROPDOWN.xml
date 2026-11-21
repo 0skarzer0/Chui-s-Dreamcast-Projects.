@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DROPDOWN">
+<retval type="INT">Identificador del control creado</retval>
+<param name="ancho"> Ancho del control, en pixels </param>
+<param name="variable" type="POINTER"> Puntero a una variable STRING </param>
+<param name="opciones" type="VAR" optional="YES"> Nombre de un array de STRINGS que contenga los posibles valores </param>
+<abstract> Crea un control desplegable </abstract>
+<description>
+    <p>
+	Un control desplegable es un botón acompañado de una flecha
+	hacia abajo. Al hacer clic o pulsar ENTER sobre el control,
+	se despliega un menú de posibles valores. Una vez elegido
+	uno de los valores, éste sustituye la etiqueta del botón.
+    </p>
+    <p>
+	Para crear un control desplegable es preciso crear una variable
+	de tipo STRING que contenga el valor actualmente seleccionado
+	por el desplegable en todo momento, y pasar a esta función la
+	dirección de dicha variable empleando el operador &amp;. Se
+	recomienda usar una variable global, ya que es imprescindible
+	(y responsabilidad del programador) que la variable exista
+	siempre que el control sea visible (por ejemplo, no es válido
+	usar una variable privada de un proceso que pueda ser destruído
+	antes que el control desplegable).
+    </p>
+    <p>
+	Hay dos opciones para "llenar" el contenido de la lista de
+	posibles opciones que aparecerán al hacer clic sobre el
+	desplegable. La más sencilla es preparar un array de cadenas
+	STRING con todas las posibilidades, y pasar a esta función
+	el nombre del array como tercer parámetro. Opcionalmente es
+	posible no indicar este parámetro y usar la función
+	<a href="DLL/GUI/DROPDOWN_ADDLINE" name="DROPDOWN_ADDLINE"/>
+	para añadir las diferentes líneas una a una.
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

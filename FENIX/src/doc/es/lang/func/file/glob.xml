@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GLOB">
+    <retval type="STRING">Nombre de siguiente fichero o "" si no quedan más.</retval>
+    <param name="patrón" type="STRING"> Patrón de búsqueda </param>
+    <abstract> Busca ficheros en el directorio actual que coincidan con el patrón indicado </abstract>
+    <description>
+	<p>
+	    Busca cualquier fichero que coincida con el patrón indicado. El patrón
+	    es un nombre de fichero en el cual el comodín "?" indica "cualquier carácter"
+	    y el comodín "*" indica "uno o más caracteres cualesquiera". El uso más
+	    habitual es "*.*" para buscar todos los ficheros presentes. También
+	    es posible indicar un directorio relativo (por ejemplo, "FPG/*.*")
+	    además del patrón.
+	</p>
+	<p>
+	    Esta función devuelve el nombre del primer fichero que encuentra y, en
+	    sucesivas llamadas con el mismo patrón, va devolviendo el resto de
+	    ficheros que coincidan con el patrón. Cuando ya no queden más ficheros,
+	    o tras la primera llamada si no se encontró ninguno, devuelve una
+	    cadena en blanco. El nombre de fichero que va devolviendo esta función
+	    no contiene el directorio.
+	</p>
+	<p>
+	    Esta función además rellena, cada vez que es llamada, la estructura global
+	    FILEINFO con la siguiente información:
+	    <ul>
+	    <li> FILEINFO.PATH: Directorio donde se encuentra el fichero </li>
+	    <li> FILEINFO.NAME: Nombre completo del fichero </li>
+	    <li> FILEINFO.DIRECTORY: Contiene TRUE si el fichero es un directorio,
+	    	o FALSE si es un fichero corriente. </li>
+	    <li> FILEINFO.HIDDEN: Contiene TRUE si el fichero está oculto. </li>
+	    <li> FILEINFO.READONLY: Contiene TRUE si el fichero no tiene
+	    activados permisos de escritura. </li>
+	    <li> FILEINFO.CREATED: Una cadena de texto que contiene la fecha
+	    y hora de creación del fichero. </li>
+	    <li> FILEINFO.MODIFIED: Una cadena de texto que contiene la fecha
+	    y hora del último acceso al fichero.. </li>
+	    </ul>
+	</p>
+    </description>
+    <see href="FILE/FILE_EXISTS" name="FILE_EXISTS"/>
+</function>

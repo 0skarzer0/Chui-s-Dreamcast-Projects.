@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LABEL">
+    <retval type="INT">Identificador del control creado</retval>
+    <param name="texto" type="STRING"> Texto de la etiqueta </param>
+    <param name="alineación" optional="YES"> Alineación de la etiqueta </param>
+    <param name="ancho" optional="YES"> Ancho del control en pixels </param>
+    <abstract> Crea una etiqueta de texto estático </abstract>
+    <description>
+	<p>
+	    Crea una etiqueta de texto. La etiqueta puede tener varias
+	    líneas, separadas por el caracter de salto de línea CHR(10),
+	    y opcionalmente alguna letra subrayada si se precede
+	    del carácter &amp;. Cuando el usuario pulse ALT junto con
+	    la tecla subrayada de una de las etiquetas dentro de la
+	    ventana actual, el sistema moverá el foco de entrada al
+	    siguiente control que fuese añadido a la ventana justo
+	    después de la etiqueta.
+	</p>
+	<p>
+	    Es posible especificar un alineamiento a la izquierda (0),
+	    al centro (1) o a la derecha (2). Esta opción sólo tiene
+	    sentido en etiquetas de múltiples líneas, ya que el ancho
+	    del control se ajusta automáticamente a su contenido.
+	</p>
+	<p>
+	    Es posible especificar un ancho en pixels para el control
+	    (por defecto se ajusta al ancho mínimo de la etiqueta).
+	    En este caso, el texto se alineará sobre el ancho escogido,
+	    y el contról se marcará como redimensionable horizontalmente.
+	</p>
+    </description>
+    <see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+    <see name="LABEL_TEXT"/>
+</function>

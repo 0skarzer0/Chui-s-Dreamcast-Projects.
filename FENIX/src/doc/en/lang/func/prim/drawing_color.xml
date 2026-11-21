@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DRAWING_COLOR">
+    <param name="colour"> Number of colour </param>
+    <abstract> Select the colour with which the primitive graphs will be drawn
+	with functions like <a href="PRIM/DRAW_LINE" name="DRAW_LINE"/>. </abstract>
+    <description>
+	<p>
+	    This function allows to select the colour with which
+	    the primitive graphs will be drawn (routines that
+	    begin by DRAW...) so like the graphs of two colours
+	    created by <a href="NEW_MAP"/>.
+	</p>
+	<p>
+	    In the case of graph modes of 256 colours (8 bits), 
+	    the value of colour 
+	    must be a number (interval 0-255). In the case of graph modes of
+	    16 bits, the value is a codification of the components
+	    of the colour according of the video card an the graph mode.
+	    It is normal to use the function <a href="RGB"/> to obtain the
+	    codification of a concrete colour, or use a colour obtained
+	    by a function like <a href="MAP_GET_PIXEL"/>. 
+	</p>
+	<p>
+	    However, it is possible to use <a href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/> to draw
+	    in a graph 8 bits even in 16 bits.
+	    In both cases, the primitive graphs will use a colour
+	    approximated to the specified by this function, it is equivalent to
+	    use the function <a href="FIND_NEAREST_COLOR"/>.
+	    In oppositive case, it is not valid to draw over a graph of 16 bits
+	    in 8 bits, because the config of video card sets the exact format
+	    of the colour in 16 bits.
+	</p>
+    </description>
+	<see href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>
+    <see href="PRIM/DRAW_LINE" name="DRAW_LINE"/>
+    <see href="PRIM/DRAW_BOX" name="DRAW_BOX"/>
+    <see href="PRIM/DRAW_RECT" name="DRAW_RECT"/>
+    <see href="PRIM/DRAW_CIRCLE" name="DRAW_CIRCLE"/>
+    <see href="PRIM/DRAW_FCIRCLE" name="DRAW_FCIRCLE"/>
+</function>

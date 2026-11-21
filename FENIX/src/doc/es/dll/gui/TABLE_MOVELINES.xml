@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_MOVELINES">
+<retval />
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="primera"> Número de la primera fila (empezando en 0) </param>
+<param name="número"> Nueva posición deseada para la primera fila </param>
+<param name="número"> Número de filas a mover </param>
+<abstract> Mueve una serie de filas dentro una tabla </abstract>
+<description>
+    <p>
+	Desplaza una serie de filas de una tabla. La nueva
+	posición puede ser anterior o posterior, pero en ningún
+	caso se añadirán nuevas líneas a la tabla.
+    </p>
+    <p>
+	Es posible especificar un índice de destino más elevado de lo que sería
+	posible. En ese caso, esta función moverá las líneas requeridas
+	al final de la tabla.
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+<see name="TABLE_ADDLINE" href="DLL/GUI/TABLE_ADDLINE"/>
+</function>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GRAPHIC_INFO">
+    <retval/>
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph inside of the library </param>
+    <param name="type"> Type of attribute to consult. It can be:
+	<const name="G_WIDE"> Width in pixels of the graph </const>
+	<const name="G_HEIGHT"> Height in pixels of the graph </const>
+	<const name="G_CENTER_X"> Horizontal coordinate of the center </const>
+	<const name="G_CENTER_Y"> Vertical coordinate of the center </const>
+	<const name="G_PITCH"> Different in bytes, in memory,
+	    between two rows of the graph </const>
+	<const name="G_DEPTH"> Depth of colour (in bits per pixel) </const>
+	<const name="G_FRAMES"> Total de "versiones" del gráfico </const>
+	<const name="G_ANIMATION_STEP"> Current frame of the animation </const>
+	<const name="G_ANIMATION_STEPS"> Number of frames of the animation </const>
+	<const name="G_ANIMATION_SPEED"> Current speed of the animation </const>
+    </param>
+    <abstract> It allows to consult an attribute of a graph </abstract>
+    <description>
+	<p>
+	    This function allows to access in runtime to determined attributes
+	    of a graph, specially of his animation, although it results useful
+	    to access to the content of the graph by <a href="MAP_BUFFER"/> too. 
+	</p>
+	<p>
+	    The animations of the MAP graphs are automatic, and independent
+	    of the frames per second established by the function <a href="SET_FPS"/>.
+	</p>
+    </description>
+    <see href="GRAPHIC_SET"/>
+    <see href="GET_POINT"/>
+    <see href="LOAD_MAP"/>
+</function>

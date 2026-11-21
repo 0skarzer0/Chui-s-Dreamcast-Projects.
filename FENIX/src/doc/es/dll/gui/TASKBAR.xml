@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TASKBAR">
+<retval type="INT">Identificador del control creado</retval>
+<abstract> Crea un control de barra de tareas </abstract>
+<description>
+    <p>
+	Crea una barra de tareas, un control que contiene un botón
+	por cada ventana actual y permite al usuario cambiar la
+	ventana activa haciendo clic sobre los mismos. Este control
+	ha sido diseñado para incorporar dentro de una ventana
+	de estilo DOCK_SOUTH o DOCK_NORTH, ya que siempre muestra
+	los botones en dirección horizontal.
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

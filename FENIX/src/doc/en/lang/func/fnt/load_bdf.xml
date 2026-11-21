@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_BDF">
+    <retval/>
+    <param name="archive" type="STRING"> Name of archive </param>
+    <abstract> It recovers of disk any type of BDF font </abstract>
+    <description>
+	<p>
+	    This function recovers any type of letter of two colours of disk,
+	    in format BDF (Bitmap Distribution Format) of Adobe.
+	    This types of letter do not include information of colour: each
+	    pixel can be transparent or opaque. By default, the non-transparent
+		pixels will draw with the white colour when you use this font.
+	    However, it is possible to select any other colour using the function 
+	    <a href="TEXT_COLOR"/>.
+	</p>
+	<p>
+	    LOAD_BDF returns an entire number that identifies to the font
+	    on memory. It can be used this code to write text with functions 
+	    like <a href="WRITE"/>.
+	</p>
+    </description>
+    <note>
+	It is possible to find fonts in format BDF on Internet, and
+	programs to edit. It is a simple format based on ASCII text.
+	The specifications are on <a href="ftp://ftp.adobe.com/pub/adobe/DeveloperSupport/TechNotes/PSfiles/5005.BDF_Spec.ps"/>.
+    </note>
+    <see href="WRITE"/>
+    <see href="WRITE_VAR"/>
+    <see href="WRITE_IN_MAP"/>
+    <see href="TEXT_COLOR"/>
+</function>

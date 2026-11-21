@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_FNT">
+    <retval> Identificador del nuevo tipo de letra </retval>
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <abstract> Recupera de disco un tipo de letra FNT </abstract>
+    <description>
+	<p>
+	    Esta función recupera un tipo de letra desde disco. El 
+	    FNT es un formato propio de Fenix que permite almacenar
+	    tipos de letra de formato "bitmap" (cada carácter dentro
+	    de la fuente es un gráfico compuesto de pixels), 
+	    de 1, 8 o 16 bits por pixel en formato
+	    comprimido, con pixels transparentes. Los tipos de letra
+	    tradicionales (TTF, BDF, FON) son a menudo tipos de letra
+	    escalables (es decir, en el mismo fichero se incluye
+	    información para dibujar textos a cualquier resolución
+	    y tamaño) y en blanco y negro, mientras los tipos de letra
+	    en Fenix no son escalables (no es posible dibujar un texto
+	    a varios tamaños diferentes) pero a todo color.
+	</p>
+	<p>
+	    LOAD_FNT devuelve un número entero que identifica al
+	    nuevo tipo de letra. Es posible utilizar a partir de entonces
+	    este valor con cualquier función que admita un
+	    tipo de letra como parámetro, como por ejemplo
+	    <a href="WRITE"/>.
+	</p>
+    </description>
+    <note>
+	Sólo es posible visualizar gráficos de 16 bits si el modo
+	gráfico actual es de 16 bits. Esta limitación se aplica
+	también a tipos de letra de 16 bits.
+	En cambio, es posible visualizar
+	gráficos (y por lo tanto, textos) de 8 bits en el modo de 16 bits.
+    </note>
+    <note>
+	El formato FNT de 8 bits incluye también una paleta de colores,
+	al igual que el formato MAP. Recuerda que
+	sólo puede haber una paleta de colores activa en todo momento. Todo
+	gráfico de 8 bits debe compartir la misma paleta de colores.
+	Fenix usará automáticamente la paleta de colores del primer
+	gráfico en recuperar de disco e ignorará la paleta de los demás,
+	y esto incluye el primer fichero FNT de 8 bits que sea
+	cargado con esta función.
+	Incluso en modo de 16 bits existe una paleta de colores
+	(si bien en ese modo la paleta sólo afecta a gráficos de 8 bits).
+    </note>
+    <see href="WRITE"/>
+    <see href="WRITE_IN_MAP"/>
+    <see href="UNLOAD_FNT"/>
+</function>

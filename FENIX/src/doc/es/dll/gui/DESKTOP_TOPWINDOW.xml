@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DESKTOP_TOPWINDOW">
+<retval type="INT"> Identificador de la ventana con foco, ó 0 si no hay </retval>
+<abstract> Devuelve el identificador de la ventana que actualmente tiene el foco </abstract>
+<description>
+    <p>
+	Devuelve el identificador de la ventana que actualmente tiene
+	el foco de entrada, es decir, la última en la lista ordenada
+	de ventanas presentes en el escritorio.
+    </p>
+</description>
+</function>
+<see href="DLL/GUI/DESKTOP_BOTTOMWINDOW" name="DESKTOP_BOTTOMWINDOW"/>

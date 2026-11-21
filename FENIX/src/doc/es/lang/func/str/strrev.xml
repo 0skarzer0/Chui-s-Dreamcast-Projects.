@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="STRREV">
+    <retval type="STRING"> Cadena resultante </retval>
+    <param name="cadena"> Cadena original </param>
+    <abstract> Pone al revés una cadena </abstract>
+    <description>
+	<p>
+	    Esta función devuelve una cadena creada tras dar la vuelta
+	    a la cadena que recibe como parámetro. Es decir,
+	    STRREV("ABCD") devolvería "DCBA".
+	</p>
+    </description>
+</function>

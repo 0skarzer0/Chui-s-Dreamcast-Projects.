@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ITOA">
+    <retval type="STRING"> Cadena resultante </retval>
+    <param name="valor"> Número a convertir </param>
+    <abstract> Convierte un número entero en cadena </abstract>
+    <description>
+	<p>
+	    Dado un número entero, devuelve una cadena con su
+	    representación, sin separador de miles.
+	</p>
+    </description>
+<see href="STR/ATOI" name="ATOI"/>
+<see href="STR/ATOF" name="ATOF"/>
+<see href="STR/FTOA" name="FTOA"/>
+<see href="STR/FORMAT" name="FORMAT"/>
+</function>

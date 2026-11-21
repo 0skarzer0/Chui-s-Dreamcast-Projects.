@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CHR">
+    <retval type="STRING"> Cadena con el caracter </retval>
+    <param name="caracter"> Código ASCII del carácter </param>
+    <abstract> Devuelve el carácter que representa el código ASCII dado </abstract>
+    <description>
+	<p>
+	    Esta función devuelve una cadena con una longitud de 1
+	    que contiene el caracter cuyo código ASCII (un número entre 0 y 255)
+	    corresponde al especificado
+	    como parámetro. Por ejemplo, CHR(32) devuelve " "
+	    (una cadena con un espacio).
+	</p>
+    </description>
+<see href="STR/ASC" name="ASC"/>
+</function>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="START_SCROLL">
+	<param name="número"> Número del scroll (0 a 9) </param>
+	<param name="fichero"> Número de fichero FPG </param>
+	<param name="gráfico"> Número de gráfico para el primer plano del scroll </param>
+	<param name="fondo"> Número de gráfico para el fondo del scroll, 0 para ninguno </param>
+	<param name="region"> Número de región a ocupar </param>
+	<param name="flags"> Flags
+	<abstract> Crea una zona de scroll </abstract>
+	<description>
+		<p>
+			Inicializa y activa una ventana de scroll. Las ventanas de
+			scroll permiten mostrar en pantalla una zona de juego más
+			grande que la pantalla, de manera que sólo es posible
+			ver una parte del total. Los procesos pueden configurarse
+			para ser mostrados en el interior de esa zona de juego, en
+			lugar de la pantalla normal. Es posible desplazar manualmente
+			la posición de la zona visible o hacer que ésta persiga
+			automáticamente a algún proceso importante.
+		</p>
+		<p>
+			Para poder usar una zona de scroll, primero hay que activarla
+			con esta función, que establece los parámetros básicos de la
+			misma. Luego es posible ajustarlos modificando la estructura
+			global <a href="SCROLL"/>.
+		</p>
+		<p>
+			Toda zona de scroll debe disponer de un gráfico de primer plano
+			que debe ser válido, cuyo código y fichero FPG se le pasa a esta 
+			función como parámetro. Se considera un error grave no usar un
+			gráfico válido. El scroll puede contar con un gráfico de segundo
+			plano o fondo, que se verá a través de los pixels transparentes
+			del gráfico de primer plano. Este fondo es opcional y es posible
+			no utilizarlo pasando el valor 0 como parámetro "fondo".
+		</p>
+		<p>
+			Una zona de scroll puede ocupar toda la pantalla si se le pasa
+			0 como región a esta función, o bien sólo una parte, usando el
+			número de una región válida. Véase <a href="DEFINE_REGION"/>.
+		</p>
+		<p>
+			La zona de scroll definida cuenta con varias opciones o "flags",
+			que pueden ser 0 para el funcionamiento normal o la suma de
+			una o más de las siguientes opciones:
+			<const name="Mosaico horizontal del primer plano" value="1"/>
+			<const name="Mosaico vertical del primer plano" value="2"/>
+			<const name="Mosaico horizontal del fondo" value="4"/>
+			<const name="Mosaico vertical del fondo" value="8"/>
+		</p>
+		<p>
+			Por defecto, el scroll está delimitado por el tamaño del primer
+			plano, lo que significa que la posición visible nunca se
+			desplazará más allá de sus límites. Sin embargo, se puede
+			activar un modo de "mosaico" que hace que el gráfico de primer
+			plano se repita, como un gráfico de fondo en un escritorio. Con
+			este modo activado, no hay límite para el movimiento. Es posible
+			eliminar el límite para el movimiento vertical u horizontal,
+			escogiendo entre los flags anteriores. De la misma forma, puede
+			activarse un modo de mosaico para el fondo, si bien eso no
+			provoca efectos en las limitaciones de movimiento para el scroll.
+		</p>
+		<p>
+			Por defecto, los procesos no son dibujados en la zona de scroll.
+			Para ello, es preciso que la variable local del proceso
+			<a href="CTYPE"/> sea igual a la constante predefinida C_SCROLL
+			(con valor 1). Hecho este cambio, las variables
+			de posición <a href="X"/> e <a href="Y"/> del proceso se
+			considerarán relativas a la zona de scroll y no a la pantalla.
+		</p>
+		<p>
+			Es posible activar hasta 10 scrolls a la vez. Esto puede ser
+			útil para mostrar dos zonas de scroll distintas, pero el uso
+			más común es mostrar dos ventanas de movimiento dentro de la
+			misma zona (por ejemplo para partidas a dos jugadores). Por
+			defecto, los procesos con CTYPE 1 se mostrarán en todas las
+			zonas de scroll. Para escoger las zonas concretas en las que
+			un proceso es visible, hay que asignar a su variable local
+			<a href="CNUMBER"/> la suma de una o más de las constantes
+			predefinidas C_0, C_1 a C_9, para indicar qué números de
+			scrolls son aquellos en los que el proceso será visible.
+			Así, con CNUMBER = C_0 + C_2 se hace que un proceso sea
+			visible en las zonas de scroll 0 y 2, pero no en la 1 ni en
+			ninguna otra (si existe).
+		</p>
+		<p>
+			Normalmente siempre es conveniente modificar los valores
+			de la estructura global <a href="SCROLL"/>, que contiene
+			opciones de configuración adicionales para cada zona de
+			scroll. Es posible modificar los valores de esta estructura
+			cada frame si es preciso, mientras que la configuración
+			especificada por esta función es fija para cada zona hasta
+			que se detenga su funcionamiento con <a href="STOP_SCROLL"/>.
+		</p>
+	</description>
+	<see name="SCROLL"/>
+	<see name="STOP_SCROLL"/>
+	<see name="DEFINE_REGION"/>
+</function>

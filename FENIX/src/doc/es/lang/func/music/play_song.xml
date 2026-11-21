@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PLAY_SONG">
+    <retval/>
+    <param name="música"> Identificador de la música </param>
+    <param name="repeticiones"> Número de repeticiones </param>
+    <abstract> Inicia la reproducción de música </abstract>
+    <description>
+	<p>
+	    Inicia la reproducción de un fichero de música
+	    recuperado con la función <a name="LOAD_SONG" href="MUSIC/LOAD_SONG"/>.
+	    Dependiendo del tipo de fichero, sólo es posible
+	    reproducir un fichero de música a la vez, por
+	    lo que cualquier música que se estuviese
+	    reproduciendo debe detenerse primero con 
+	    <a name="STOP_SONG" href="MUSIC/STOP_SONG"/>.
+	</p>
+	<p>
+	    El segundo parámetro indica el número de veces
+	    que debe repetirse la reproducción. Puede usarse
+	    0 para no repetirla, o -1 para repetirla contínuamente
+	    hasta que se detenga con <a name="STOP_SONG" href="MUSIC/STOP_SONG"/>.
+	</p>
+    </description>
+    <see name="STOP_SONG" href="MUSIC/STOP_SONG"/>
+    <see name="LOAD_SONG" href="MUSIC/LOAD_SONG"/>
+</function>

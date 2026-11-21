@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="ASCII">
+    <abstract>It contains information of the last character that has been pressed in the keyboard</abstract>
+    <description>
+	<p>
+		It contains the value ASCII of the key pressed in the last frame or a 0 if any key was not pressed, 
+		If some keys are pressed in a frame the pulsations are saved in a small buffer 
+		that avoids the loss of pulsations.
+	</p>
+    </description>
+    <see type="var" href="GVARS/SCAN_CODE" name="SCAN_CODE"/>
+</variable>

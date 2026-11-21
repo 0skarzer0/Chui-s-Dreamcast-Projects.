@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FILE">
+    <retval type="STRING"> Contenido completo del fichero </retval>
+    <param name="fichero" type="STRING"> Nombre de un fichero en disco </param>
+    <abstract> Recupera un fichero de texto completo </abstract>
+    <description>
+	<p>
+	    Esta función recupera un fichero de texto completo,
+	    devolviendo su contenido en forma de cadena.
+	    Resulta útil para procesar ficheros pequeños sin
+	    tener que recurrir a <a name="FOPEN"/> y <a name="FGETS"/>
+	    para procesarlo línea a línea.
+	</p>
+    </description>
+    <see name="FOPEN"/>
+    <see name="FGETS"/>
+</function>

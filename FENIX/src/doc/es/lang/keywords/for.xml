@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="FOR">
+	<syntax> 
+		<b>FOR</b> ( <i>preparación</i> ; <i>condición</i> ; <i>incremento</i> ) 
+		<blockquote>
+			<a href="Sentencias" />
+			...
+		</blockquote>
+		<b>END</b>
+	</syntax>
+	<abstract> Sentencia de bucle flexible </abstract>
+    <description>
+		<p>
+			Esta sentencia permite crear un bucle de forma más flexible
+			que los bucles característicos como <a href="WHILE"/> o
+			<a href="FROM"/>.
+		</p>
+		<p>
+			Entre paréntesis deben especificarse tres expresiones
+			diferentes (que pueden estar en blanco):
+			<ul>
+				<li> 
+					La primera expresión es típicamente una sentencia
+					de <b>asignación</b> y se ejecuta una sóla vez,
+					antes de empezar el bucle. Si está en blanco, no
+					se ejecuta nada en especial. Se suele usar para
+					preparar la variable que se usará como contador
+					del bucle.
+				</li>
+				<li>
+					La segunda expresión es la <b>condición</b> del
+					bucle y se evalúa tanto al principio, antes de la
+					primera ejecución, como después de acabar cada
+					ejecución posterior del bucle. Cuando esta
+					condición se evalúe a falsa, el bucle se
+					cortará inmediatamente y el control pasará a la
+					siguiente sentencia después del END correspondiente.
+					Si la segunda expresión está en blanco, se
+					considerará siempre CIERTA.
+				</li>
+				<li>
+					La tercera expresión suele ser un <b>incremento</b>
+					(empleando operadores como += o ++)
+					y se ejecuta después de cada iteración del bucle,
+					y antes de volver a comprobar la condición. Se usa
+					para actualizar la variable de contador al siguiente
+					valor.
+				</li>
+			</ul>
+		</p>
+		<p>
+			Mediante un FOR es posible duplicar el comportamiento de
+			un bucle WHILE o FROM, y también crear bucles más
+			sofisticados. Aunque cualquier cosa hecha con FOR sería
+			posible también hacerla con WHILE, resulta más claro y
+			cómodo de cara a usar <a href="CONTINUE"/>.
+		</p>
+    </description>
+	<note>
+		En Fenix, cualquier valor entero impar se considera cierto
+		(como por ejemplo, 1) mientras cualquier valor par se
+		considera falso (incluyendo el 0). Los operadores de
+		comparación como == o &gt; devuelven 1 ó 0 siempre,
+		pero no hay razón para no poder usar cualquier otro cálculo.
+	</note>
+	<see href="WHILE"/>
+	<see href="FROM"/>
+	<see href="BREAK"/>
+	<see href="CONTINUE"/>
+</section>

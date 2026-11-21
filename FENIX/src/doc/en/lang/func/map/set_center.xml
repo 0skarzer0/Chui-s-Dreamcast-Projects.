@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_CENTER">
+    <retval/>
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of grpah inside of library </param>
+    <param name="x"> New value to horizontal coordinate of the center </param>
+    <param name="y"> New value to vertical coordinate of the center </param>
+    <abstract> It allows to change the center of a graph </abstract>
+    <description>
+	<p>
+	    This function allows to change the center of a graph. The center is
+	    a point within of the pixels of the graph that is used to:
+	    <ul>
+		<li> Specify the meaning of the coordinate (x, y)
+		    when the graph is shown in screen. If a graph is
+		    shown in the coordinate (10, 15) it means that his center is drawn
+		    in that point. </li>
+		<li> Specify the point from as the graph is rotated.
+		    The center is not displaced, and the rest of graph turn
+		    to his round. View the variable <a href="ANGLE"/>. </li>
+		<li> Specify the point from as the operations of horizontal and vertical mirror
+			are made.
+		    View the variable <a href="FLAGS"/>. </li>
+		<li> When a graph is used like pointer of the mouse, using the
+		    variable MOUSE.GRAPH, indicates the "hot" point of the same one, 
+			which is used to check where the mouse is marking. </li>
+	    </ul>
+	</p>
+	<p>
+	    When a graph has not assinged center (for example, because it has
+	    been recovered from a standard file like can be a PNG), it is used so like his geometric center.
+	</p>
+	<p>
+	    This function allows to change that center, specifying a new coordinates
+	    for the same one. This coordinates are always in pixels inside of the graph,
+	    where the pixel (0, 0) represents the top left corner of the grpah and the
+	    coordinates increase towards down and right.
+	</p>
+    </description>
+    <see href="SET_POINT"/>
+    <see href="GET_POINT"/>
+</function>

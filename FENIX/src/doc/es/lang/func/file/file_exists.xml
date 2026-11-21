@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FILE_EXISTS">
+    <retval/>
+    <param name="file" type="STRING"> Nombre del fichero </param>
+    <abstract> Determina si el fichero existe o no en la ruta especificada </abstract>
+    <description>
+	<p>
+	    Esta función comprueba si un fichero existe, devuelve 1 si el fichero existe y 
+	    0 si no existe.  El fichero se busca en la ruta actual por defecto o en la ruta 
+	    que se haya especificado como parámetro.
+	</p>
+    </description>
+</function>

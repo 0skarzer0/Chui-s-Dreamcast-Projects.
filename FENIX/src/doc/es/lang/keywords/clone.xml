@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="CLONE">
+	<syntax> 
+		<b>CLONE</b>  
+		<blockquote>
+			<a href="Sentencias"/>
+			...
+		</blockquote>
+		<b>END</b>
+	</syntax>
+	<abstract> Crea un duplicado del proceso actual </abstract>
+    <description>
+		<p>
+			Esta sentencia crea un duplicado exacto del proceso actual,
+			con los mismos valores en todas las variables locales y
+			privadas en el momento de ejecutarse. Las sentencias contenidas
+			en el interior del bloque CLONE (hasta el END correspondiente)
+			se ejecutan sólo en el nuevo proceso creado, mientras el proceso
+			original continúa la ejecución a partir de la sentencia
+			siguiente en el exterior del bloque.
+		</p>
+    </description>
+</section>

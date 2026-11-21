@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="IS_PLAYING_WAV">
+    <retval/>
+    <param name="channel"> Identifier of channel returned by PLAY_WAV </param>
+    <abstract> It returns 1 if an sound effect is still playing </abstract>
+    <description>
+	<p>
+	    This function checks if any sound effect reproduced before by the
+	    function <a href="PLAY_WAV"/> is still playing. In oppositive
+		case this function will return 0.
+	    We must know that the channel can be use after for other sound
+	    effects, so that it is not secure to use this function if it has
+	    returned 0.
+	</p>
+    </description>
+    <see href="PLAY_WAV"/>
+    <see href="STOP_WAV"/>
+    <see href="PAUSE_WAV"/>
+</function>

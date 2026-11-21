@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="EXPLOSION">
+    <retval/>
+    <param name="clouds" type="INT"> Number of clouds of particles that will be created. </param>
+    <param name="size" type="INT"> Maximum size that the cloud gets. In pixels.</param>
+    <param name="frames" type="INT"> Number of Frames that explosion will generate. (1-20)</param>
+    <param name="blur" type="INT"> Number of times that the graph will be stumped (1-5).</param>
+    <param name="density" type="INT"> Density of the particles in a cloud.</param>
+    <param name="width" type="INT"> Width of map that will be generated.</param>
+    <param name="height" type="INT"> Height of map that will be generated.</param>
+    <abstract> It generates an explosion with the indicated parameters </abstract>
+    <description>
+	<p>
+	    It creates an explosion to reproduce it by 
+	    <a href="DLL/EXPLOSION/MOVE_EXPLOSION" name="MOVE_EXPLOSION"/>.
+	</p>
+	<p>
+	    This function returns a map of 8 bits where the explosion will be generated.
+	    It can be used this function in 8 or 16 bits, but the returned map always will be
+	    of 8 and will use the palette that we have saved in memory.
+	    In case of that an explosion is on process or it can not be created a new explosion, it will return
+	    -1.
+	    
+	</p>
+    </description>
+    <see href="DLL/EXPLOSION/MOVE_EXPLOSION" name="MOVE_EXPLOSION"/>
+</function>

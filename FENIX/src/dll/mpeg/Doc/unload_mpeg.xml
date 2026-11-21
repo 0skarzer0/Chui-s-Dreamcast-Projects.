@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="UNLOAD_MPEG">
+    <retval/>
+    <param name="vídeo"> Identificador del vídeo </param>
+    <abstract> Libera la memoria ocupada por un vídeo </abstract>
+    <description>
+	<p>
+	    Esta función borra de memoria la información
+	    necesaria para reproducir un vídeo MPEG
+	    cargada previamente con <a href="LOAD_MPEG"/>.
+	    Si estás reproduciendo el vídeo, debes detener
+	    primero la reproducción con <a href="STOP_MPEG"/>.
+	</p>
+    </description>
+    <see href="LOAD_MPEG"/>
+    <see href="STOP_MPEG"/>
+</function>

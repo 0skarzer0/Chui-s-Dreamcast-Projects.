@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PLAY_WAV">
+    <retval/>
+    <param name="wav"> Identifier of the sound returned by LOAD_WAV </param>
+    <param name="repeats"> Number of repeats </param>
+    <abstract> It reproduces a sound effect </abstract>
+    <description>
+	<p>
+	    It reproduces a sound effect recovered previously of disk
+	    by the function <a href="LOAD_WAV"/>. It is possible to reproduce
+	    sometimes a same effect of simultaneous form. This function
+	    returns a identifier of the <i>channel</i> of sound used to reproduce
+	    the sound effect. There are 16 channels of sound avaliable for effects, 
+	    and this function can choose any of them that are free. In case of reproducing
+		a great amount of sound effects simultaneously, it is possible that in a while
+	    there will be 16 active sounds, in which case the new sound will not be reproduced
+	    and this function will return -1.
+	</p>
+	<p>
+	    The identifier of channel returned by this function can be used with 
+	    <a href="IS_PLAYING_WAV"/>, <a href="SET_WAV_VOLUME"/>, and other functions of sound.
+	</p>
+	<p>
+	    The sound effect can be reproduced one time, two times... 
+	    if the parameter of repeats is 0, 1, 2... or it can be
+	    reproduced all time if this parameter is -1.
+	    We must know that if the sound is reproduced all time,
+	    the channel, which is used by the sound, always will be 
+	    occupied unless the sound stops by the function <a href="STOP_WAV"/>.
+	</p>
+    </description>
+    <see href="STOP_WAV"/>
+    <see href="IS_PLAYING_WAV"/>
+    <see href="SET_WAV_VOLUME"/>
+    <see href="SET_PANNING"/>
+    <see href="SET_POSITION"/>
+    <see href="SET_DISTANCE"/>
+    <see href="REVERSE_STEREO"/>
+</function>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SIN">
+    <retval/>
+    <param name="número" type="FLOAT"> Ángulo en milésimas de grado (90000 = 90º) </param>
+    <abstract> Devuelve el seno de un ángulo </abstract>
+    <description>
+	<p>
+	    Esta función devuelve el seno de un ángulo dado en milésimas
+	    de grado (la unidad estándar para especificar ángulos en Fenix).
+	    El resultado será un número en coma flotante entre -1 y 1.
+	</p>
+    </description>
+    <see href="ASIN"/>
+    <see href="COS"/>
+    <see href="TAN"/>
+</function>

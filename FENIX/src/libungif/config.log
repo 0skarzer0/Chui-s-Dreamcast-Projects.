@@ -1,0 +1,54 @@
+This file contains any messages produced by compilers while
+running configure, to aid debugging if configure makes a mistake.
+
+configure:560: checking for a BSD compatible install
+configure:613: checking whether build environment is sane
+configure:670: checking whether make sets ${MAKE}
+configure:716: checking for working aclocal
+configure:729: checking for working autoconf
+configure:742: checking for working automake
+configure:755: checking for working autoheader
+configure:768: checking for working makeinfo
+configure:835: checking host system type
+configure:858: checking for ranlib
+configure:887: checking for gcc
+configure:964: checking whether the C compiler (gcc  ) works
+configure:978: gcc -o conftest    conftest.c  1>&5
+configure:998: checking whether the C compiler (gcc  ) is a cross-compiler
+configure:1003: checking whether we are using GNU C
+configure:1027: checking whether gcc accepts -g
+configure:1067: checking for ld used by GCC
+configure:1124: checking if the linker (/usr/bin/ld) is GNU ld
+configure:1140: checking for BSD-compatible nm
+configure:1175: checking whether ln -s works
+ltconfig:585: checking if gcc PIC flag -fPIC works
+ltconfig:586: gcc -c -g -O2 -fPIC -DPIC  conftest.c 1>&5
+ltconfig:629: checking if gcc static flag -static works
+ltconfig:630: gcc -o conftest -g -O2   -static conftest.c  1>&5
+GNU ld version 2.17.50 20070103 Ubuntu
+ltconfig:1013: checking if global_symbol_pipe works
+ltconfig:1014: gcc -c -g -O2  conftest.c 1>&5
+ltconfig:1017: eval "/usr/bin/nm -B conftest.o | sed -n -e 's/^.* [ABCDGISTUW] \([_A-Za-z][_A-Za-z0-9]*\)$/ /p' > conftest.nm"
+ltconfig:1075: gcc -o conftest -g -O2 -fno-builtin   conftest.c conftestm.o 1>&5
+configure:1248: checking for gcc
+configure:1325: checking whether the C compiler (gcc -g -O2 ) works
+configure:1339: gcc -o conftest -g -O2   conftest.c  1>&5
+configure:1359: checking whether the C compiler (gcc -g -O2 ) is a cross-compiler
+configure:1364: checking whether we are using GNU C
+configure:1388: checking whether gcc accepts -g
+configure:1426: checking for a BSD compatible install
+configure:1476: checking whether make sets ${MAKE}
+configure:1505: checking for ranlib
+configure:1533: checking how to run the C preprocessor
+configure:1598: checking for X
+configure:2430: checking for pow in -lm
+configure:2473: checking for rle_hdr_init in -lrle
+configure:2516: checking for main in -lgl_s
+configure:2558: checking for XOpenDisplay in -lX11
+configure:2612: checking for ANSI C header files
+configure:2719: checking for fcntl.h
+configure:2757: checking for working const
+configure:2833: checking for 8-bit clean memcmp
+configure:2869: checking whether setvbuf arguments are reversed
+configure:2915: checking for vprintf
+configure:3022: checking for strdup

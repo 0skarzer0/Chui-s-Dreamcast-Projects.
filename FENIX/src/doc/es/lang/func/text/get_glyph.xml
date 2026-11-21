@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_GLYPH">
+    <retval/>
+    <param name="fuente"> Número de tipo de letra </param>
+    <param name="caracter"> Número de carácter, de 0 a 255 </param>
+    <abstract> Recupera el gráfico de un carácter </abstract>
+    <description>
+	<p>
+	    Dado un tipo de letra, esta función crea un gráfico que
+	    contiene uno de sus caracteres. A diferencia de
+	    <a href="WRITE_IN_MAP"/>, esta función ha sido diseñada
+	    para poder modificar este gráfico en memoria y guardar
+	    luego los cambios en la propia fuente, empleando
+	    la función <a href="SET_GLYPH"/>.
+	</p>
+	<p>
+	    El gráfico creado pertenecerá a la librería 0 y será
+	    una copia de la información contenida en la fuente.
+	    Esto significa que las modificaciones realizadas sobre
+	    él no afectarán directamente a la fuente: será necesario
+	    llamar a la función <a href="SET_GLYPH"/> para que los
+	    cambios sean realmente efectivos.
+	</p>
+	<p>
+	    El gráfico creado es una copia fiel del contenido en el
+	    tipo de letra, y se incluyen dos puntos de control
+	    (el 1 y el 2) para almacenar información adicional del
+	    carácter:
+	    <ul>
+		<li> El punto 1 contendrá el desplazamiento a
+		    efectuar sobre el punto de escritura en el
+		    momento de escribir el carácter. Normalmente
+		    ocupará la esquina superior izquierda (0, 0)
+		    indicando que no hay ningún desplazamiento. </li>
+		<li> El punto 2 contendrá el avance efectivo de
+		    posición, horizontal y vertical, que se
+		    realizará al escribir el carácter. El avance
+		    vertical no se emplea actualmente. </li>
+	    </ul>
+	</p>
+    </description>
+    <see href="LOAD_FNT"/>
+    <see href="SAVE_FNT"/>
+    <see href="SET_GLYPH"/>
+</function>

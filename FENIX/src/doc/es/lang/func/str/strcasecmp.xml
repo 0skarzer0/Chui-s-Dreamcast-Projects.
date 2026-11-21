@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="STRCASECMP">
+    <retval> 0 si las cadenas son equivalentes </retval>
+    <param name="cadena" type="STRING"> Cadena </param>
+    <param name="cadena2" type="STRING"> Otra cadena </param>
+    <abstract> Compara dos cadenas, sin distinguir mayúsculas de minúsculas </abstract>
+    <description>
+	<p>
+	    Dadas dos cadenas, realiza una comparación entre las mismas
+	    sin distinguir las mayúsculas de las minúsculas, y devuelve
+	    un valor que indica su diferenciación:
+	    <ul>
+		<li> 0 quiere decir que las cadenas son iguales </li>
+		<li> un valor negativo indica que la primera cadena
+		    va después de la segunda en un orden alfabético </li>
+		<li> un valor positivo indica que la segunda cadena
+		    va después de la primera en un orden alfabético </li>
+	    </ul>
+	</p>
+    </description>
+<see href="STR/LCASE" name="LCASE"/>
+<see href="STR/UCASE" name="UCASE"/>
+</function>

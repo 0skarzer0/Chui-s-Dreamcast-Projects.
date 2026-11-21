@@ -1,0 +1,171 @@
+
+
+   ------------------------------------------------
+
+Aqui unas pequeñas notas sobre los cambios para los ports GP32 y Dreamcast.
+Espero haberlo cambiado sin impacto alguno en el resto de arquitecturas.
+
+Chui.
+
+   ------------------------------------------------
+
+
+
+**********************
+* FICHEROS CAMBIADOS *
+**********************
+
+- Makefile
+
+Se ha añadido la posibilidad para target=GP32 o target=DC.
+
+
+- include/files.h
+
+Se ha añadido las constantes FILEOPEN_READ_BINARY y FILEOPEN_WRITE_BINARY para el uso en cualquier punto del FXI. La Dreamcast no soporta modo de lectura/escritura "rb0" y "rw0".
+
+
+- fxi/src/dcbr.c
+
+Se ha cambiado la lectura en modo "rb0" por la constante FILEOPEN_READ_BINARY definida en include/files.h.
+
+
+- fxi/src/g_blendop.c
+
+Si esta definida la constante de compilacion USE_MATH_SLL compilara usando include/math-sll. Siendo asi, es posible usar punto fijo de 64bit para las funciones blend_intensity, blend_translucency y blend_tint.
+
+
+- fxi/inc/grlib.h
+
+Define las funciones blend_intensity, blend_translucency y blend_tint usando punto fijo de 64bits si esta definido USE_MATH_SLL y USE_FIXED_POINT. Tambien anuladas las funciones gr_sys_color, gr_sys_puts, gr_sys_putchar, gr_con_printf, gr_con_putline, gr_con_show, gr_con_draw, gr_con_getkey, gr_con_scroll y gr_con_do si esta definida la constante NO_CONSOLE. Anuladas las funciones de profiler si esta definida la constante NO_PROFILER.
+
+
+- fxi/src/g_blit.c
+
+Adaptadas las funciones gr_calculate_corners, gr_get_bbox y gr_rotated_blit para usar punto fijo de 64bits si esta definido USS_MATH_SLL.
+
+
+- fxi/src/g_console.c
+
+Nueva constante de compilacion NO_CONSOLE para la anulacion de la consola.
+
+
+- fxi/src/g_systexts.c
+
+Anulado si esta activado NO_CONSOLE.
+
+
+- fxi/src/g_main.c
+
+Si definido constante de compilacion GP32 o FSL vuelca el contenido del error de la funcion gr_error en una cadena externa llamada 'fenix_runtime_error_msg'. Esto nos da la posibilidad de mostrar el error por pantalla cuando se compila para TARGET_GP32 o TARGET_DC.
+
+
+- fxi/src/g_pal.c
+
+La funcion 'gr_fill_nearest_table' solo reserva una vez memoria temporal y no una por iteracción si esta definido TARGET_DC o TARGET_GP32. Esto resulta mas rapido sobre todo si tenemos funciones alloc/free lentas como en la GP32.
+
+
+- fxi/src/g_profiler.c
+
+Nueva contante de compilacion NO_PROFILER para la anulacion del profiler.
+
+
+- fxi/src/i_func.c
+
+Solo para GP32 es necesario cambiar 'fxi_rand'. Aparte no es posible 'fxi_regex' para GP32.
+
+
+- fxi/src/img_png.c
+
+No se permite guardar PNGs para TARGET_DC.
+
+
+- fxi/src/main.c
+
+La entrada y salida del FXI cambia notablemente para TARGET_DC, TARGET_GP32 o usando el loader FSL.
+
+
+- common/files.c
+
+Para DC hay que quitar el 0 del mode al abrir un fichero en 'open_raw' si queremos que fopen funcione con normalidad.
+
+
+- include/dcb.h
+
+Para Dreamcast y GP32, DCB_HEADER_SIZE es igual a sizeof(DCB_HEADER).
+
+
+
+*******************
+* FICHEROS NUEVOS *
+*******************
+
+- include/math-sll.h
+
+Funciones matematicas en punto fijo de 64bits. Especialmente optimizado para microprocesadores ARM y X86 usando ensamblador en linea. Para maquinas sin coprocesador matematico acelera en torno al 400%. Tiene que estar definida la constante de compilacion USE_FIXED_POINT para que tenga efecto.
+
+
+- res/gp32icon.bmp
+
+El icono para GP32.
+
+
+- fxi/dc/*
+
+Ficheros necesarios para compilar el FXI para Dreamcast.
+
+
+- fxi/gp32/*
+
+Ficheros necesarios para compilar el FXI para GP32.
+
+
+- fsl/*
+
+Ficheros fuente del FSL.
+
+
+- bin/data/*
+
+Ficheros de datos del FSL.
+
+
+- bin/example/*
+
+Pequeño ejemplo para el FSL.
+
+
+
+**************************
+* Fenix SDL Loader (FSL) *
+**************************
+
+Es mi pequeño programa cargador de ejecutables Fenix. A partir de un XML muestra un menu grafico con el nombre, autor y descripcion del juego. Fundamental para la Dreamcast donde lo normal no es tostar un CD con solo un juego.
+
+Se encuentra el fuente en la carpeta 'fsl' y generara el binario como 'bin/fsl'. La version Dreamcast y GNU/Linux se compilara de forma estatica conjuntamente con FXI. Para GP32 y WIN32 ejecutara el FXI.
+
+En la carpeta 'bin' esta un subdirectorio 'data' con las imagenes, etc. propias del FSL. Tambien se encuentra un pequeño ejemplo de uso en el subdirectorio 'example'.
+
+
+
+********
+* GP32 *
+********
+
+Teniendo el toolchain adecuadamente con make target=GP32 se obtendra el bin/fenix.rte que debe ponerse en la carpeta GPSYS de la GP32.
+
+Tambien se generara el pequeño cargador 'bin/fenix.fxe' que puede ser renombrado para ejecutar cualquier juego de forma autonoma.
+
+Se incluye mis propios ports de las librerias: libc, SDL, SDL_mixer, SDL_image, libjpeg, libpng y zlib independiente de GPSDK.
+
+
+
+*************
+* Dreamcast *
+*************
+
+Teniendo instalado KallistiOS con make target=DC se obtendra el ejecutable bin/fsl.elf (para crear un CD-autoboot se debe convertir a BIN y pasarle el scramble). Por defecto para Dreamcast se compilara el FSL, lo normal es a partir del ejemplo de FSL crear un CD con multitud de juegos.
+
+Se incluye mis propios ports de librerias: SDL, SDL_mixer, SDL_image, libjpeg, libpng, zlib.
+
+

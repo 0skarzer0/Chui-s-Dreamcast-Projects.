@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="NUMBER_JOY">
+    <retval/>
+    <abstract>Informa del número total de joysticks presentes en el sistema</abstract>
+    <description>
+	<p>
+	    Nos devuelve el número total de joysticks registrados en el sistema de los que 
+	    Fenix tiene constancia.  A través de este valor podemos preparar una interfice 
+	    de manejo de joystick más completa usando el resto de funciones para joysticks.
+	</p>
+    </description>
+    <see name="SELECT_JOY" href="JOY/SELECT_JOY"/>
+    <see name="JOY_NAME" href="JOY/JOY_NAME"/>
+    <see name="JOY_BUTTONS" href="JOY/JOY_BUTTONS"/>
+    <see name="JOY_AXES" href="JOY/JOY_AXES"/>
+</function>

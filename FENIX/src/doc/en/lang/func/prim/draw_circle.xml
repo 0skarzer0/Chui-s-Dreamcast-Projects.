@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DRAW_CIRCLE">
+    <param name="x"> Horizontal coordinate of the center </param>
+    <param name="y"> Vertical coordinate of the center </param>
+    <param name="radius"> Radius in pixels </param>
+    <abstract> Draw a circle </abstract>
+    <description>
+	<p>
+	    It draws a circle around of a point, using the
+	    chosen colour with <a href="PRIM/DRAWING_COLOR" name="DRAWING_COLOR"/>, and in the chosen 
+		graph by the last call to <a href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>. It is
+	    valid to specify coordinates out of the limits of the graph,
+	    but the picture will cut off over these.
+	</p>
+    </description>
+	<see href="PRIM/DRAWING_COLOR" name="DRAWING_COLOR"/>
+    <see href="PRIM/DRAW_LINE" name="DRAW_LINE"/>
+    <see href="PRIM/DRAW_BOX" name="DRAW_BOX"/>
+    <see href="PRIM/DRAW_RECT" name="DRAW_RECT"/>
+    <see href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>
+    <see href="PRIM/DRAW_FCIRCLE" name="DRAW_FCIRCLE"/>
+</function>

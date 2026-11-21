@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="BLENDOP_NEW">
+    <retval> Identificador de la nueva tabla BLENDOP </retval>
+    <abstract> Crea una nueva tabla BLENDOP </abstract>
+    <description>
+	<p>
+	    Crea una nueva tabla blendop en memoria. La tabla blendop permite
+	    crear efectos de colores y mezclas al dibujar un gráfico, incluyendo
+	    cosas tales como colorizar una superficie, o emplear un porcentaje
+	    variable de transparencia.
+	</p>
+	<p>
+	    Una tabla blendop puede usarse de tres maneras diferentes:
+	    <ul>
+		<li> 
+		    Activarla en un proceso, asignando el identificador devuelto
+		    por esta función a la variable local <a href="BLENDOP"/>.
+		    Esto permite dibujar cualquier proceso con el efecto de
+		    color deseado. El rendimiento es el mismo que dibujar un
+		    gráfico transparente.
+		</li>
+		<li>
+		    Asignarla a un gráfico, empleando la función
+		    <a href="BLENDOP_ASSIGN"/>. Cualquier uso posterior de
+		    ese gráfico empleará la tabla blendop para dibujarlo,
+		    aunque la variable local BLENDOP tiene preferencia si
+		    está precesente (y los efectos no se acumularán).
+		</li>
+		<li>
+		    Aplicarla a un gráfico, empleando la función
+		    <a href="BLENDOP_APPLY"/>. Los puntos del gráfico serán
+		    modificados de acuerdo con la tabla. Esto es útil para
+		    colorizar gráficos y demás efectos parecidos.
+		</li>
+	    </ul>
+	</p>
+	<p>
+	    Una tabla blendop ocupa una cantidad considerable de memoria
+	    (256K) por lo que se aconseja no excederse en su uso. Por ejemplo,
+	    un programa que cree 20 tablas blendop necesitará unos 5M de RAM
+	    sólo para almacenarlas. Si una tabla sólo se va a usar temporalmente,
+	    se recomienda emplear <a href="BLENDOP_FREE"/> para liberarla.
+	</p>
+	<p>
+	    Una tabla blendop recién creada no realiza ninguna operación,
+	    por lo que usarla para dibujar no alterará el aspecto del gráfico.
+	    Es necesario especificar las características del efecto deseado
+	    empleando cualquiera de las funciones BLEND_XXX. La mayoría de
+	    estas funciones son acumulables sobre una misma tabla, por lo
+	    que es posible especificar un efecto de coloreado con
+	    <a href="BLENDOP_TINT"/> y seguidamente un porcentaje de
+	    transparencia con <a href="BLENDOP_TRANSLUCENCY"/>, por ejemplo.
+	</p>
+    </description>
+    <see name="BLENDOP_IDENTITY" />
+    <see name="BLENDOP_TRANSLUCENCY" />
+    <see name="BLENDOP_TINT" />
+    <see name="BLENDOP_INTENSITY" />
+    <see name="BLENDOP_GRAYSCALE" />
+    <see name="BLENDOP_SWAP" />
+    <see name="BLENDOP_FREE" />
+    <see name="BLENDOP_ASSIGN" />
+    <see name="BLENDOP_APPLY" />
+</function>

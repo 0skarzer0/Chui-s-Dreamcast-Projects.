@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_DISTANCE">
+    <param name="canal"> Número de canal devuelto por PLAY_WAV </param>
+    <param name="distancia"> Distancia del jugador (0-255) </param>
+    <abstract> Cambia el volumen de un canal </abstract>
+    <description>
+	<p>
+	    Esta función permite alterar el sonido de un canal determinado
+	    simulando un alejamiento del mismo, a partir de una distancia al
+	    jugador.  La distancia 0 deja el sonido como estaba al principio,
+	    mientras una distancia de 255 hace el sonido inaudible.
+	</p>
+	<p>
+	    Esta función filtra el sonido de un canal de sin hacer uso de las
+	    características avanzadas de algunas tarjetas de audio. Si se desea
+	    una emulación algo más sofisticada, es mejor usar <a
+		href="SET_POSITION"/>.
+	</p>
+    </description>
+    <see href="PLAY_WAV"/>
+    <see href="IS_PLAYING_WAV"/>
+    <see href="SET_POSITION"/>
+</function>

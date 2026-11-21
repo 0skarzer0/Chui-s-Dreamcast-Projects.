@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="Z">
+    <abstract>Posición Z del proceso</abstract>    
+	<description>
+	<p>
+		La posición Z determina la profundidad a la que se encuentra un proceso
+		en relación con el resto, fijando así qué procesos se pintan por encima 
+		de otros.
+	</p>
+	<p>
+		Su valor se mueve en el rango de -512 (más cercano a nosotros) a 512 (más 
+		lejano a nosotros).  Si no se especifica lo contrario, los procesos se ordenan 
+		en profundidad en función de su momento de creación (procesos posteriores, Z más 
+		cercana).
+	</p>
+    </description>
+    <see type="var" name="X" href="LVARS/X" />
+    <see type="var" name="Y" href="LVARS/Y" />
+</variable>

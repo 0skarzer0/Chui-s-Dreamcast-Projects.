@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CONTROL_INFO">
+<retval type="INT"> Valor del parámetro requerido </retval>
+<param name="control"> Identificador de un control </param>
+<param name="parametro"> Tipo de parámetro requerido </param>
+<abstract> Devuelve información acerca de un control </abstract>
+<description>
+    <p>
+	Devuelve un valor entero informativo sobre el control
+	indicado como primer parámetro. El tipo de información
+	que se solicita viene dado por el segundo parámetro,
+	que debe ser una de las siguientes constantes definidas
+	en GUI.INC:
+	<ul>
+	    <li> CONTROL_WIDTH: Ancho en pixels del control </li>
+	    <li> CONTROL_HEIGHT: Alto en pixels del control </li>
+	    <li> CONTROL_X: Coordenada horizontal dentro del marco de la ventana </li>
+	    <li> CONTROL_Y: Coordenada vertical dentro del marco de la ventana </li>
+	    <li> CONTROL_HIDDEN: 1 si el control está oculto </li>
+	    <li> CONTROL_MIN_WIDTH: Ancho mínimo del control </li>
+	    <li> CONTROL_MAX_WIDTH: Ancho máximo del control </li>
+	    <li> CONTROL_MIN_HEIGHT: Alto mínimo del control </li>
+	    <li> CONTROL_MAX_HEIGHT: Alto máximo del control </li>
+	    <li> CONTROL_VRESIZABLE: 1 si el control puede
+	    	redimensionarse verticalmente </li>
+	    <li> CONTROL_HRESIZABLE: 1 si el control puede
+	    	redimensionarse horizontalmente </li>
+	</ul>
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

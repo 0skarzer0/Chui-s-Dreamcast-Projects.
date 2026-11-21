@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_PAL">
+    <retval/>
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <abstract> Recupera de disco una paleta de colores </abstract>
+    <description>
+	<p>
+	    Esta función recupera una paleta de colores desde disco.
+	    Las paletas de colores se guardan en formato PAL, pero
+	    esta función también soporta cargar la paleta desde un
+	    gráfico FPG o MAP (basta con especificar el fichero como
+	    parámetro en lugar de un PAL).
+	</p>
+	<p>
+	    Normalmente, la librería gráfica carga la paleta del
+	    primer gráfico de 8 bits recuperado con funciones como 
+	    <a name="LOAD_MAP" href="MAP/LOAD_MAP" />, e ignora la paleta contenida
+	    en cualquier gráfico de 8 bits cargado posteriormente. 
+	    Siempre que se
+	    usen gráficos de 8 bits con la misma paleta de colores,
+	    este funcionamiento es satisfactorio. Sin embargo, en
+	    algunos programas se deseará usar varias paletas de
+	    colores en función del nivel o decorado utilizado. En
+	    ese caso, debe usarse esta función para recuperar cada
+	    nueva paleta de colores.
+	</p>
+	<p>
+	    Aunque un juego que utilice varias paletas de colores
+	    puede resultar más atractivo al disfrutar de una mayor
+	    variedad de colores entre fases, hay que tener en cuenta
+	    que introduce numerosas complicaciones: todos los gráficos
+	    que puedan aparecer en todas las fases (marcadores, textos,
+	    el proceso protagonista) deberán limitarse a una selección
+	    de colores que tengan en común todas las paletas, y con
+	    los mismos índices de color.
+	</p>
+    </description>
+    <see name="SET_COLORS" href="PAL/SET_COLORS"/>
+    <see name="GET_COLORS" href="PAL/GET_COLORS"/>
+    <see name="LOAD_MAP" href="MAP/LOAD_MAP"/>
+    <see name="LOAD_PNG" href="MAP/LOAD_PNG"/>
+</function>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="RAND">
+    <retval/>
+    <param name="mínimo"> Mínimo número entero a obtener </param>
+    <param name="máximo"> Máximo número entero a obtener </param>
+    <abstract> Devuelve un número pseudo-aleatorio entre los
+	límites especificados como parámetro (inclusives) </abstract>
+    <description>
+	<p>
+	    Esta función genera un número pseudo-aleatorio. Cada
+	    llamada a esta función generará un número
+	    diferente, aunque siempre dentro del rango especificado.
+	</p>
+	<p> 
+	    Puede utilizarse rand_seed para seleccionar una <i>semilla</i>
+	    determinada, a partir de la cual se generán los numeros aleatorios. Al
+	    comienzo del programa se selecciona una semilla aleatoria (en función
+	    de la hora del dia). 
+	</p>
+    </description>
+    <note>
+	<p>
+	    Utilizando RAND_SEED, es posible obtener una serie de números con aspecto
+	    de aleatoriedad pero de tal manera que sea siempre la misma, lo cual puede ser
+	    importante si interesa que el juego muestre un comportamiento predecible. Por
+	    ejemplo, algunos juegos permiten grabar "demos" de partidas simplemente
+	    almacenando las pulsaciones de tecla que el jugador va haciendo durante una
+	    partida normal, y reproduciéndolas luego haciendo uso del mismo juego de
+	    funciones usadas durante el juego normal. Para un juego que emplee esta
+	    técnica, el uso de la función RAND puede provocar que algún pequeño
+	    comportamiento varíe durante la reproducción de la demo de forma impredecible,
+	    haciendo inviable la reproducción de la demo. 
+	</p>
+    </note>
+    <see href="MATH/RAND_SEED" name="RAND_SEED"/>
+</function>

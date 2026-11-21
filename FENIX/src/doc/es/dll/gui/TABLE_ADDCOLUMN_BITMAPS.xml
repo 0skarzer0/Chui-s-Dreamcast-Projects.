@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_ADDCOLUMN_BITMAPS">
+<retval />
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="nombre" type="STRING"> Nombre de la columna </param>
+<abstract> Añade una columna a una tabla, opcionalmente con datos </abstract>
+<description>
+    <p>
+	Añade una columna a una tabla, al final de las existentes
+	(si las hay). No se incluyen datos en la columna, pero se
+	marca la misma para contener gráficos en lugar de cadenas.
+    </p>
+    <p>
+	Una columna que contiene gráficos espera encontrar el
+	número de cada gráfico como dato de cada fila cuando
+	se añade ésta con la función 
+	<a href="DLL/GUI/TABLE_ADDLINE" name="TABLE_ADDLINE"/>.
+	La librería a la cual pertenezca el gráfico debe ser
+	la misma para toda la columna: por defecto la 0, pero
+	es posible cambiarla mediante la función
+	<a href="DLL/GUI/TABLE_LIBRARY" name="TABLE_LIBRARY"/>.
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+<see name="TABLE_REMOVECOLUMN" href="DLL/GUI/TABLE_REMOVECOLUMN"/>
+</function>

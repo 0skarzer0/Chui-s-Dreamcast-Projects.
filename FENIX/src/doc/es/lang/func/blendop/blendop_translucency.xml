@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="BLENDOP_TRANSLUCENCY">
+    <retval/>
+    <param name="BLENDOP"> Identificador de una tabla BLENDOP </param>
+    <param name="OPACIDAD" type="FLOAT"> Cantidad de opacidad, entre 0.0 y 1.0 </param>
+    <abstract> Aplica transparencia a una tabla blendop </abstract>
+    <description>
+	<p>
+	    Dada una tabla blendop creada con <a href="BLENDOP_NEW"/>, esta
+	    función aplica un valor de transparencia según el parámetro de
+	    opacidad. 1.0 equivale a un dibujo completamente opaco (tal como
+	    es creada la tabla), mientras 0.0 dibujaría un gráfico completamente
+	    transparente. Este efecto es semejante al proporcionado por la
+	    variable local <a href="ALPHA"/>, aunque mucho más preciso.
+	</p>
+	<p>
+	    Esta es una función lenta, que no es recomendable llamar periódicamente
+	    en el programa, al igual que ocurre con la mayoría de funciones BLENDOP.
+	</p>
+    </description>
+    <see name="BLENDOP_NEW"/>
+    <see name="BLENDOP_IDENTITY" />
+    <see name="BLENDOP_TINT" />
+    <see name="BLENDOP_INTENSITY" />
+    <see name="BLENDOP_GRAYSCALE" />
+    <see name="BLENDOP_SWAP" />
+    <see name="BLENDOP_ASSIGN" />
+    <see name="BLENDOP_APPLY" />
+</function>

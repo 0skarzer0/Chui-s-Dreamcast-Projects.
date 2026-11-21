@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MEMCOPY">
+    <param name="destino" type="POINTER"> Puntero a la zona de destino </param>
+    <param name="origen" type="POINTER"> Puntero a la zona de origen </param>
+    <param name="bytes" type="INT"> Número de bytes a copiar </param>
+    <abstract> Copia bloques de memoria </abstract>
+    <description>
+	<p>
+	    Esta función avanzada copia un bloque de memoria de tamaño
+	    BYTES desde la posición especificado por la dirección de ORIGEN,
+	    a la especificada por DESTINO. Ambas zonas pueden solaparse,
+	    en cuyo caso la zona de destino contendrá tras la ejecución
+	    los valores que antes estaban en la de origen, machacando
+	    cualquier posición compartida.
+	</p>
+    </description>
+    <see name="ALLOC" href="MEM/ALLOC"/>
+    <see name="MEMSET" href="MEM/MEMSET"/>
+    <see name="MEMSETW" href="MEM/MEMSETW"/>
+    <see name="MAP_BUFFER" href="MAP/MAP_BUFFER"/>
+</function>

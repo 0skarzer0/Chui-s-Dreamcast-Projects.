@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="REGEX">
+    <retval> Posición encontrada o -1 si no se encontró </retval>
+    <param name="expresión"> Expresión regular </param>
+    <param name="cadena"> Cadena original </param>
+    <abstract> Busca una expresión regular dentro de una cadena </abstract>
+    <description>
+	<p>
+	    Dada una expresión regular, comprueba si la cadena dada
+	    la cumple en algún punto, y devuelve la posición (número
+	    de carácter desde la izquierda, empezando en 0) donde
+	    la encuentra, o -1 si no se cumple.
+	</p>
+	<p>
+	    Una expresión regular puede entenderse como una forma
+	    avanzada de búsqueda. La expresión regular puede ser
+	    una serie de caracteres corrientes como "abc", con lo que esta
+	    función se comportará igual que la función
+	    <a href="STR/FIND" name="FIND"/> haciendo una búsqueda.
+	    Pero la verdadera potencia es que la expresión regular
+	    puede contener toda una serie de caracteres "comodín"
+	    que tienen significados específicos.
+	    Los siguientes metacaracteres son reconocidos:
+	    <ul>
+		<li> 
+		    ".": un punto quiere decir "cualquier carácter". Por
+		    ejemplo, "ab.de" permite encontrar "abcde" y "abJde",
+		    pero no "abde".
+		</li>
+		<li> 
+		    "^": el exponencial quiere decir "principio de cadena"
+		    si la expresión regular empieza por ^. Por ejemplo,
+		    "^abc" permite encontrar "abcdef" pero no "fabcdef". 
+		</li>
+		<li>
+		    "$": el dólar quiere decir "final de cadena" si la
+		    expresión regular acaba en $. Por ejemplo,
+		    "abc$" permite encontrar "deabc" pero no "abcde".
+		</li>
+		<li>
+		    "[]": los corchetes quieren decir "cualquier carácter
+		    de esta lista", y en su interior puede haber una serie
+		    de caracteres corrientes, o bien rangos de caracteres.
+		    Por ejemplo "[abc]" permite encontrar "a", "b" ó "c",
+		    mientras que "[a-z]" permite encontrar cualquier letra
+		    entre la "a" y la "z", inclusives. Los rangos pueden
+		    ser inacabados: "[- ]" permite encontrar cualquier
+		    carácter hasta el espacio, mientras "[ -]" permite
+		    encontrar cualquier carácter del espacio en adelante.
+		    Además, se reconocen "clases de caracteres" posix,
+		    que son secuencias predefinidas de caracteres que
+		    se escriben con la sintaxis "[:clase:]" y pueden ser
+		    cualquiera de las siguientes:
+		    [:alpha:] para cualquier letra, [:upper:] para letras
+		    mayúsculas, [:lower:] para minúsculas, [:alnum:] para
+		    letras o números, [:digit:] para números y
+		    [:space:] para espacios.
+		</li>
+		<li>
+		    "()": los paréntesis permiten agrupar secuencias de
+		    caracteres y metacaracteres. Esto tiene varias utilidades:
+		    <ul>
+			<li> Se pueden usar los metacaracteres de repetición
+			    como "*" o "?" después del paréntesis de cierre. </li>
+			<li> Se pueden poner varias secuencias dentro de los
+			    paréntesis, separadas por el signo "|". La
+			    expresión encontrará cualquiera de las posibilidades.
+			    Por ejemplo, "(abc|efg)" encontrará "abcde" al
+			    igual que "defgh", pero no "bcdef". </li>
+			<li> La función REGEX rellena un array de cadenas
+			    global llamado REGEX_REG[] con cada sección entre
+			    paréntesis de la cadena localizada, empezando
+			    por el índice 1. </li>
+		    </ul>
+		    Esta última posibilidad requiere mención aparte, ya que
+		    es muy potente, pues permite hacer cosas como buscar
+		    una fecha y localizar sus partes. La expresión regular
+		    "(..)/(..)/(....)" busca expresiones del estilo
+		    "10/04/1980" y rellena en REGEX_REG[1] el día, en
+		    REGEX_REG[2] el mes, y en REGEX_REG[3] el año.
+		</li>
+		<li>
+		    "*": Indica "0 o más repeticiones de lo anterior", donde
+		    "lo anterior" se refiere al último carácter o metacarácter.
+		    Este metacarácter, al igual que los metacaracteres de
+		    repetición que detallamos a continuación, es más útil
+		    concatenado detrás de secuencias con corchetes o
+		    paréntesis. Por ejemplo, "[abc]*" encuentra cualquier
+		    secuencia de 0 o más caracteres "a", "b", o "c". Es
+		    decir, "[abc]*" permite encontrar "aabc", "bbbcca",
+		    "bca" o "a". De la misma forma, "(abc)*" permite
+		    encontrar "abcabcabc", "abcabc" o "abc", pero no "aabbcc".
+		    Es importante tener en cuenta que 0 repeticiones también
+		    son válidas, por lo que la expresión regular "[abc]*"
+		    en realidad se cumple siempre, ya que cualquier cadena
+		    contiene 0 o más repeticiones de cualquier secuencia.
+		</li>
+		<li>
+		    "+": encuentra 1 o más repeticiones de lo anterior,
+		    del último carácter o metacaracter anterior a este símbolo.
+		    "[abc]+" encuentra "aabbcc" y "bccba", pero no "defg".
+		</li>
+		<li>
+		    "?": encuentra 0 ó 1 repeticiones de lo anterior. Es
+		    decir, permite marcar un trozo de la expresión como
+		    opcional.
+		</li>
+		<li>
+		    "{}": encuentra un rango de repeticiones de lo anterior.
+		    El rango son dos dígitos separados por comas, aunque
+		    uno de ellos puede omitirse. Por ejemplo,
+		    "[abc]{2,}" encuentra cualquier secuencia de dos
+		    o más caracteres "a", "b" o "c", mientras
+		    "[abc]{,4}" encuentra cualquier secuencia de hasta
+		    cuatro caracteres del mismo rango. Hay que tener
+		    en cuentra que si se omite el primer número, 0 también
+		    es un número válido de repeticiones. Si se especifica
+		    un número sólo, busca ese número exacto de repeticiones.
+		</li>
+	    </ul>
+	</p>
+	<p>
+	    El array global REGEX_REG de cadenas contendrá en el elemento
+	    0 la sección de la cadena encontrada, y en los sucesivos
+	    elementos (del 1 en adelante, hasta 15), el resultado de
+	    cada sección marcada entre paréntesis en la expresión original.
+	</p>
+    </description>
+    <see href="STR/REGEX_REPLACE" name="REGEX_REPLACE"/>
+</function>

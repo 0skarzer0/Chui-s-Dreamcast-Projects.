@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="UNLOAD_MAP">
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph inside of library </param>
+    <abstract> It unloads the memory occupied by a graph </abstract>
+    <description>
+	<p>
+	    It unloads the memory occupied by a graph that can be
+	    inside of FPG library, to have been created independently
+	    by <a href="NEW_MAP"/>, or recovered of disk by a function
+	    like <a href="LOAD_MAP"/>.
+	    The later accesses to the unloaded graph are considered an error
+		(for example, it is not valid to assign the graph to the variable
+	    <a href="GRAPH"/> of a process).
+	</p>
+	<p>
+	    It is possible to use this function to quit graph of a FPG
+	    archive. The changes made by this function only affect
+	    to the FPG on memory: to refresh the FPG archive
+	    with them it is necessary to use the function <a href="SAVE_FPG"/>.
+	</p>
+    </description>
+    <see href="UNLOAD_FPG"/>
+</function>

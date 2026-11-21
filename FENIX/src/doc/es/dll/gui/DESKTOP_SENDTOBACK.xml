@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DESKTOP_SENDTOBACK">
+    <retval/>
+    <param name="ventana"> Identificador de la ventana </param>
+    <abstract> Asigna el foco a una ventana </abstract>
+    <description>
+	<p>
+	    Mueve una ventana hasta el fondo de la lista actual de
+	    ventanas, de manera que será visualizada por debajo de
+	    todas las demás, y será la devuelta por
+	    <a name="DESKTOP_BOTTOMWINDOW"/> en sucesivas llamadas.
+	</p>
+    </description>
+    <see name="DESKTOP_BRINGTOFRONT" href="DLL/GUI/DESKTOP_BRINGTOFRONT"/>
+</function>

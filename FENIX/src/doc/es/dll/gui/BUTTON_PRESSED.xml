@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="BUTTON_PRESSED">
+<retval type="INT">1 si el botón fue pulsado recientemente </retval>
+<param name="botón"> Identificador de un control tipo botón </param>
+<abstract> Comprueba si el botón ha sido pulsado </abstract>
+<description>
+    <p>
+	Comprueba si un botón ha sido pulsado desde la última vez que
+	se llamó a esta misma función con dicho botón. Devuelve 1
+	(TRUE) en caso afirmativo y 0 (FALSE) en caso contrario.
+	Es importante entender que esta función sólo devuelve 1 una
+	vez. No volverá a devolver 1 en sucesivas llamadas (con el mismo
+	botón) hasta que el usuario lo pulse otra vez.
+    </p>
+</description>
+<see name="BUTTON" href="DLL/GUI/BUTTON"/>
+</function>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MENU_SEPARATOR">
+<retval/>
+<abstract> Añade un separador al último menú creado </abstract>
+<description>
+    <p>
+	Añade un separador (una línea horizontal no seleccionable)
+	al último menú creado con la función
+	<a href="DLL/GUI/MENU" name="MENU"/>.
+    </p>
+</description>
+<see href="DLL/GUI/MENU_ACTION" name="MENU_ACTION" />
+<see href="DLL/GUI/MENU_TOGGLE" name="MENU_TOGGLE" />
+<see href="DLL/GUI/MENU_SUBMENU" name="MENU_SUBMENU" />
+<see href="DLL/GUI/MENU_RADIO" name="MENU_RADIO" />
+</function>

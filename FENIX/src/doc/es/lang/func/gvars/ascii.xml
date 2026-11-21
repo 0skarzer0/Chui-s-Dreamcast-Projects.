@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="ASCII">
+    <abstract>Contiene información del último carácter que se ha pulsado en el teclado</abstract>
+    <description>
+	<p>
+		Contiene el valor ASCII de la tecla pulsada en el último frame o un 0 si no se pulsó 
+		ninguna.  Si se han pulsado varias teclas durante el frame las pulsaciones quedan almacenadas 
+		en un pequeño buffer que evita la pérdida de pulsaciones.
+	</p>
+    </description>
+    <see type="var" href="GVARS/SCAN_CODE" name="SCAN_CODE"/>
+</variable>

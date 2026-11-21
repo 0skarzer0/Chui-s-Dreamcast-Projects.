@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CHECKBOX">
+<retval type="INT">Identificador del control creado</retval>
+<param name="texto" type="STRING"> Texto de la caja de chequeo </param>
+<param name="variable" type="POINTER"> Puntero a la variable INT </param>
+<abstract> Crea una caja de chequeo </abstract>
+<description>
+    <p>
+	Crea una caja de chequeo, un control con dos estados:
+	activado y desactivado, que el usuario puede cambiar y que
+	se basan en el contenido de una variable INT, cuya dirección
+	se le pasará a esta función como segundo parámetro
+	empleando el operador &amp;. Si esta variable contiene un
+	valor CIERTO, la caja de chequeo estará marcada. El control
+	cambiará el contenido de la variable automáticamente cuando
+	el usuario manipule el control.
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

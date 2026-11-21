@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FGET_DIST">
+    <retval/>
+    <param name="angle1"> Original angle </param>
+    <param name="angle2"> Destiny angle </param>
+    <param name="maximum"> Maximun increase in thousandth of degree </param>
+    <abstract> It returns the distance between two points </abstract>
+    <description>
+	<p>
+	    This function increases the original angle like
+	    first parameter in the optimal direction to approach to 
+	    destiny angle like second parameter. If the maximun increase
+	    is not sufficient to get the destiny, the function returns an angle
+	    displaced the maximun of thousandth in the direction adapted. If the
+	    maximun increase is sufficient, the function returns the destiny angle.
+	</p>
+	<p>
+	    The value of maximun increase must be positive. The function will
+	    reduce or add this value according to the direction adapted to
+	    go to the destiny.
+	</p>
+	<p>
+	    This function is useful to create processes that have a capacity
+	    of turn limited, as a tank in a game of superior perspective,
+	    which wants to aim in a concrete direction, (for example, towards other process,
+	    in which case can be useful to make use of GET_ANGLE).
+	</p>
+    </description>
+    <see href="FGET_ANGLE"/>
+    <see href="GET_ANGLE"/>
+</function>

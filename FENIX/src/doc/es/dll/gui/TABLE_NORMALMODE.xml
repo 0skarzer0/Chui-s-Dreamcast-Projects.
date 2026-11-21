@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_NORMALMODE">
+<retval/>
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<abstract> Desactiva el modo de previsualización de una tabla </abstract>
+<description>
+    <p>
+	Simplemente desactiva el modo inicializado por
+	<a href="TABLE_PREVIEWMODE"/>, de manera que la tabla
+	volverá a tomar el aspecto habitual.
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+<see name="TABLE_PREVIEWMODE" href="DLL/GUI/TABLE_PREVIEWMODE"/>
+</function>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_POSITION">
+    <param name="canal"> Número de canal devuelto por PLAY_WAV </param>
+    <param name="ángulo"> Ángulo respecto al jugador, en grados (0-360) </param>
+    <param name="distancia"> Distancia del jugador (0-255) </param>
+    <abstract> Cambia el posicionamiento 3D de un canal </abstract>
+    <description>
+	<p>
+	    Esta función permite alterar el sonido de un canal determinado
+	    simulando un posicionamiento en 3D del mismo, a partir de un ángulo
+	    de posición y una distancia al jugador. Los párametros (0,0) dejan
+	    el sonido como estaba al principio, mientras una distancia de 255
+	    hace el sonido inaudible.
+	</p>
+	<p>
+	    Esta función filtra el sonido de un canal de una forma algo lenta,
+	    sin hacer uso de las características avanzadas de algunas tarjetas
+	    de audio. Si sólo se desea una emulación más simple, es más rápido
+	    llamar a <a href="SET_DISTANCE"/>.
+	</p>
+    </description>
+    <see href="PLAY_WAV"/>
+    <see href="IS_PLAYING_WAV"/>
+    <see href="SET_DISTANCE"/>
+</function>

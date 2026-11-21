@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PLAY_CD">
+    <param name="track" type="INT"> Número de pista a reproducir. </param>
+    <param name="repeat" type="INT"> 1 Reproducción contínua, 0 una sola vez.</param>
+    <abstract>Inicia la reproducción de una pista de aCD Audio</abstract>
+    <description>
+	<p>
+		Inicia la reproducción de CD Audio en el lector principal del 
+    	sistema en modo contínuo o una sola vez.  Puede usarse la función 
+    	<a href="IS_PLAYING_CD"/> para averiguar si ha terminado la reproducción 
+    	en el modo de reproducción única.
+	</p>
+	</description>
+    <see href="CD/IS_PLAYING_CD" name="IS_PLAYING_CD"/>
+    <see href="CD/STOP_CD" name="STOP_CD"/>
+</function>

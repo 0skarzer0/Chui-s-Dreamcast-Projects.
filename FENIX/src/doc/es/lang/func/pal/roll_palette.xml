@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ROLL_PALETTE">
+    <retval/>
+    <param name="primer"> Número del primer color de paleta </param>
+    <param name="numero"> Número de colores a rotar </param>
+    <param name="desplazamiento"> Cantidad de espacios a rotar a la izquierda </param>
+    <abstract> Rota una sección de colores de la paleta </abstract>
+    <description>
+	<p>
+	    Esta función rota una sección de la paleta de colores, es decir,
+	    hace que el primer color obtenga el valor del segundo, el segundo
+	    color el del tercero, y así sucesivamente. Los valores que desaparecen
+	    por la izquierda vuelven a entrar por la derecha, de manera que llamar
+	    a esta función de forma sucesiva iría desplazando los colores hasta
+	    eventualmente llegar a su posición original.
+	</p>
+	<p>
+	    Con un valor de desplazamiento de 1, todos los colores se desplazan
+	    una posición hacia la izquierda. Un valor superior equivale a hacer
+	    varios desplazamientos consecutivos (por ejemplo, un desplazamiento
+	    de 2 permite obtener el mismo efecto que llamar a la función dos
+	    veces seguidas con un valor de desplazamiento de 1).
+	</p>
+	<p>
+	    El valor de desplazamiento puede ser negativo, lo cual equivale a
+	    rotar los colores en dirección contraria, hacia la derecha, de
+	    manera que los colores que desaparezcan por el final entran de
+	    nuevo por el principio.
+	</p>
+	<p>
+	    Si se elige con cuidado la paleta de colores y se crea un rango
+	    dentro de ella de colores parecidos, ordenados por orden de
+	    intensidad o color, esta función permite obtener efectos curiosos,
+	    como la ilusión de movimiento en una cascada de agua, por ejemplo.
+	    Para obtener este efecto es preciso escoger con cuidado los
+	    valores de los pixels del gráfico que se desea animar, y prestar
+	    atención para que ningún otro gráfico emplee colores dentro
+	    del rango escogido.
+	</p>
+    </description>
+    <see name="SET_COLORS" href="PAL/SET_COLORS"/>
+</function>

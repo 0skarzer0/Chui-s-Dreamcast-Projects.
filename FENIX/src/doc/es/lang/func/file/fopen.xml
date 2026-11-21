@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FOPEN">
+    <retval> Identificador del fichero abierto </retval>
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <param name="modo"> Modo de apertura. Puede ser uno de los siguientes:
+	<const name="O_READ"> Modo de lectura </const>
+	<const name="O_READWRITE"> Modo de lectura/escritura </const>
+	<const name="O_WRITE"> Modo de escritura/creación </const>
+	<const name="O_ZREAD"> Modo de lectura de ficheros comprimidos </const>
+	<const name="O_ZWRITE"> Modo de escritura de ficheros comprimidos </const>
+    </param>
+    <abstract> Abre un fichero en disco </abstract>
+    <description>
+	<p>
+	    Esta función abre un fichero en disco, permitiendo realizar
+	    lecturas y manipulaciones sobre el mismo empleando posteriormente
+	    funciones como <a name="FREAD"/> o <a name="FWRITE"/> con el
+	    identificador de fichero que devuelve. Una vez acabadas las
+	    operaciones, es preciso cerrar el fichero empleando la
+	    función <a name="FCLOSE"/>.
+	</p>
+	<p>
+	    Si se abre un fichero en modo O_READ o O_READWRITE, su contenido
+	    se preserva y el puntero se posiciona al comienzo del mismo.
+	    En el modo O_READWRITE, es posible realizar modificaciones sobre
+	    su contenido, reemplazando el existente o añadiendo nuevos
+	    datos al final del fichero. En cambio, si se abre un fichero
+	    en modo O_WRITE, su contenido es truncado inmediatamente a 0.
+	</p>
+	<p>
+	    Un fichero abierto en modo O_READ o O_READWRITE debe existir previamente.
+	    En caso contrario, la función devolverá 0. En cambio, un fichero
+	    será creado si no existe previamente al ser abierto en 
+	    modo O_WRITE.
+	</p>
+	<p>
+	    Los modos O_ZWRITE y O_ZREAD equivalen a O_WRITE y O_READ,
+	    pero crean ficheros comprimidos. Un fichero comprimido no
+	    puede abrirse en modo lectura/escritura, y tampoco se admite
+	    desplazar el puntero mediante la función <a href="FSEEK"/>.
+	</p>
+    </description>
+    <see name="FREAD"/>
+    <see name="FWRITE"/>
+    <see name="FSEEK"/>
+    <see name="FCLOSE"/>
+    <see name="FILE_EXISTS"/>
+</function>

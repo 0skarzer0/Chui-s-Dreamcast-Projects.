@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW_ADDCONTROL">
+<retval/>
+<param name="ventana"> Identificador de la ventana </param>
+<param name="x"> Coordenada horizontal </param>
+<param name="y"> Coordenada vertical </param>
+<param name="control"> Identificador del control </param>
+<abstract> Añade un control a una ventana </abstract>
+<description>
+    <p>
+	Añade un control a una ventana, en las coordenadas especificadas
+	(donde 0, 0 se refiere a la esquina superior izquierda
+	del interior de la ventana). El control se ubicará de tal manera
+	que su esquina superior izquierda pasará a ocupar esa posición.
+    </p>
+    <p>
+	El identificador del control es el valor devuelto por cualquiera
+	de las funciones que crea un control, como por ejemplo
+	<a href="DLL/GUI/BUTTON" name="BUTTON"/>,
+	<a href="DLL/GUI/LABEL" name="LABEL"/>, o
+	<a href="DLL/GUI/CHECKBOX" name="CHECKBOX"/>.
+	Un control sólo puede ser añadido a una ventana una vez. No
+	es válido volver a usar el control en otra llamada a esta
+	función, ni como pop-up con <a href="DLL/GUI/DESKTOP_ADDPOPUP" name="DESKTOP_ADDPOPUP"/>.
+	El motivo es que una ventana, al ser destruída, destruye
+	automáticamente todos los controles que contiene.
+    </p>
+    <p>
+	La ventana se redimensionará automáticamente de manera que su
+	tamaño sea suficiente para que quepa cualquier control que
+	sea añadido en su interior, en el caso de que sea demasiado
+	pequeña en el momento de llamar a esta función.
+    </p>
+</description>
+<see name="BUTTON" href="DLL/GUI/BUTTON"/>
+<see name="CHECKBOX" href="DLL/GUI/CHECKBOX"/>
+<see name="RADIO" href="DLL/GUI/RADIO"/>
+<see name="LABEL" href="DLL/GUI/LABEL"/>
+<see name="FRAME" href="DLL/GUI/FRAME"/>
+<see name="INPUTLINE" href="DLL/GUI/INPUTLINE"/>
+<see name="HSCROLLBAR" href="DLL/GUI/HSCROLLBAR"/>
+<see name="VSCROLLBAR" href="DLL/GUI/VSCROLLBAR"/>
+<see name="CONTAINER" href="DLL/GUI/CONTAINER"/>
+<see name="LIST" href="DLL/GUI/LIST"/>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+<see name="TOOLBAR" href="DLL/GUI/TOOLBAR"/>
+<see name="TASKBAR" href="DLL/GUI/TASKBAR"/>
+<see name="PALETTE_PANEL" href="DLL/GUI/PALETTE_PANEL"/>
+<see name="IMAGE_VIEW" href="DLL/GUI/IMAGE_VIEW"/>
+</function>

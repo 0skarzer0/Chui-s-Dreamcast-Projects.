@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_POINT">
+    <retval/>
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph inside of library </param>
+    <param name="number"> Number of point of control (0 to 999) </param>
+    <param name="x"> New value for horizontal coordinate of the point </param>
+    <param name="y"> New value for vertical coordinate of the point </param>
+    <abstract> It allows to change a point of control of a graph </abstract>
+    <description>
+	<p>
+	    A graph can contain up to 999 points of control of which the 
+		point of control 0 represents the center of the graph,
+		and the rest is available for the user. By this function a point of control
+	    of any graph can be assigned: if the graph did not contain points of control,
+	    or did not contain enough points of control, then the necessary points of control will be added. 
+		For example, if a graph has not points of control and by this function the point of control 20
+	    is added, the points of control 0 to 19 will be filled up with the indefined value (-1, -1).
+	</p>
+    </description>
+    <see href="SET_CENTER"/>
+    <see href="GET_POINT"/>
+</function>

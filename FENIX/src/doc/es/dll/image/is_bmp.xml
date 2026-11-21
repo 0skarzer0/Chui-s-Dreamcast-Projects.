@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="IS_BMP">
+<retval/>
+<param name="fichero" type="STRING"> Nombre de un fichero </param>
+<abstract> Devuelve 1 si el fichero es una imagen en formato BMP </abstract>
+<description>
+    <p>
+	Esta función comprueba el formate de una imagen en disco y
+	devuelve 1 si la imagen está en formato BMP o 0 en caso contrario.
+    </p>
+</description>
+<see name="IS_GIF" href="DLL/IMAGE/IS_GIF"/>
+<see name="IS_JPG" href="DLL/IMAGE/IS_JPG"/>
+<see name="IS_LBM" href="DLL/IMAGE/IS_LBM"/>
+<see name="IS_PCX" href="DLL/IMAGE/IS_PCX"/>
+<see name="IS_PNG" href="DLL/IMAGE/IS_PNG"/>
+<see name="IS_PNM" href="DLL/IMAGE/IS_PNM"/>
+<see name="IS_TIF" href="DLL/IMAGE/IS_TIF"/>
+<see name="IS_XCF" href="DLL/IMAGE/IS_XCF"/>
+<see name="IS_XPM" href="DLL/IMAGE/IS_XPM"/>
+<see name="LOAD_IMAGE" href="DLL/IMAGE/LOAD_IMAGE"/>
+</function>
+

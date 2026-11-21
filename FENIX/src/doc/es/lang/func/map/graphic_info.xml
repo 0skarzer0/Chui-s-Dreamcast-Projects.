@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GRAPHIC_INFO">
+    <retval/>
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <param name="tipo"> Tipo de característica a consultar. Puede ser:
+	<const name="G_WIDTH"> Ancho en pixels del gráfico </const>
+	<const name="G_HEIGHT"> Alto en pixels del gráfico </const>
+	<const name="G_CENTER_X"> Coordenada horizontal del centro </const>
+	<const name="G_CENTER_Y"> Coordenada vertical del centro </const>
+	<const name="G_PITCH"> Diferencia en bytes, en memoria,
+	    entre dos filas del gráfico </const>
+	<const name="G_DEPTH"> Profundidad de color (en bits por pixel) </const>
+	<const name="G_FRAMES"> Total de "versiones" del gráfico </const>
+	<const name="G_ANIMATION_STEP"> Frame actual de la animación </const>
+	<const name="G_ANIMATION_STEPS"> Total de frames de la animación </const>
+	<const name="G_ANIMATION_SPEED"> Velocidad actual de la animación </const>
+    </param>
+    <abstract> Permite consultar una característica de un gráfico </abstract>
+    <description>
+	<p>
+	    Esta función permite acceder en tiempo de ejecución a
+	    determinadas características de un gráfico, especialmente
+	    de su animación, aunque también resulta útil para acceder
+	    al contenido del gráfico mediante <a href="MAP_BUFFER"/>. 
+	</p>
+	<p>
+	    Las animaciones de los gráficos MAP son automáticas, e
+	    independientes de los frames por segundo establecidos
+	    por la función <a href="SET_FPS"/>.
+	</p>
+    </description>
+    <see href="GRAPHIC_SET"/>
+    <see href="GET_POINT"/>
+    <see href="LOAD_MAP"/>
+</function>

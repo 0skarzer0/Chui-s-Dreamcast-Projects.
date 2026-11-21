@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="UNLOAD_FPG">
+    <param name="librería"> Número de librería FPG </param>
+    <abstract> Libera la memoria ocupada por una librería FPG </abstract>
+    <description>
+	<p>
+	    Libera la memoria ocupada por una librería FPG y todos
+	    los gráficos que contenga. La librería puede haber sido
+	    creada por <a href="FPG_NEW"/>, o recuperada de disco
+	    mediante <a href="LOAD_FPG"/>.
+	</p>
+	<p>
+	    Cualquier cambio realizado por funciones como <a href="FPG_ADD"/>
+	    o <a href="UNLOAD_MAP"/>, o cualquier cambio realizado independientemente
+	    a gráficos dentro de la librería, se perderá si antes de
+	    llamar a esta función no se ha guardado el fichero en disco
+	    mediante <a href="SAVE_FPG"/>.
+	</p>
+    </description>
+    <see href="LOAD_FPG"/>
+    <see href="NEW_FPG"/>
+    <see href="SAVE_FPG"/>
+</function>

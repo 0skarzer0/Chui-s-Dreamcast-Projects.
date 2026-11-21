@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="ALPHA_STEPS">
+    <abstract>Niveles de transparencia necesitados</abstract>    
+	<description>
+	<p>
+		Contiene un valor entre 0 y 255 para indicar la cantidad de 
+		tablas de transparencia que se van a definir.  Por defecto se 
+		inicializan 16 niveles de transparencia.
+	</p>
+	<p>
+		Siempre se crea un total de 256 niveles de transparencia que son 
+		inicializados a valores iguales en bloques de 256/ALPHA_STEPS niveles 
+		iguales, por ejemplo, con 16 niveles, los niveles de <a type="var" name="ALPHA" href="LVARS/ALFA"/> 
+		hasta el 16 tienen el mismo grado de transparencia.
+	</p>
+    </description>
+    <see type="var" href="LVARS/ALPHA" name="ALPHA"/>
+</variable>

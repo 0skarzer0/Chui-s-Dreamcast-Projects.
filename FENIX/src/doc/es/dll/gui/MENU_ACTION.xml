@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MENU_SEPARATOR">
+<retval/>
+<param name="menu"> Identificador del menú </param>
+<param name="texto">Texto de la opción</param>
+<param name="proceso">Tipo de proceso a crear al hacer clic en la opción</param>
+<abstract> Añade un separador a un menú </abstract>
+<description>
+    <p>
+	Añade una línea
+	a un menú previamente creado mediante la opción
+	<a href="DLL/GUI/MENU" name="MENU"/>.
+	El tercer parámetro permiti indicar un tipo de
+	proceso (mediante la instrucción TYPE) que
+	será creado y ejecutado en cuanto el usuario
+	haga clic sobre la opción.
+    </p>
+</description>
+<see href="DLL/GUI/MENU_ACTION" name="MENU_ACTION" />
+<see href="DLL/GUI/MENU_TOGGLE" name="MENU_TOGGLE" />
+<see href="DLL/GUI/MENU_SUBMENU" name="MENU_SUBMENU" />
+<see href="DLL/GUI/MENU_SEPARATOR" name="MENU_SEPARATOR" />
+<see href="DLL/GUI/MENU_RADIO" name="MENU_RADIO" />
+</function>

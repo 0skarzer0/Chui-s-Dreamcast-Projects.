@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MEMSET">
+    <param name="mem" type="POINTER"> Pointer to a memory zone </param>
+    <param name="value" type="BYTE"> Value to assign to all bytes of that zone </param>
+    <param name="bytes" type="INT"> Size in bytes of the memory zone </param>
+    <abstract> It fills a memory zone of size BYTES located in MEM with VALUE </abstract>
+    <description>
+	<p>
+		This advanced function fills a memory zone of size BYTES from 
+		value indicated by VALUE. This function is useful to fill dynamic memory blocks 
+		reserved by <a href="EN/MEM/ALLOC" name="ALLOC" />, however it can be useful too
+		to modify graphs of 8 bits using <a href="EN/MAP/MAP_BUFFER" name="MAP_BUFFER" />.  
+	</p>
+    </description>
+    <see name="ALLOC" href="EN/MEM/ALLOC"/>
+    <see name="MEMSETW" href="EN/MEM/MEMSETW"/>
+    <see name="MAP_BUFFER" href="EN/MAP/MAP_BUFFER"/>
+</function>

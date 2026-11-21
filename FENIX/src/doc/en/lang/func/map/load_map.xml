@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_MAP">
+    <retval/>
+    <param name="archive" type="STRING"> Name of archive </param>
+    <abstract> Recover of disk a MAP graph </abstract>
+    <description>
+	<p>
+	    This function recovers a MAP graph from disk. The 
+	    MAP is an own format of Fenix that allows to contain
+	    graphs of 1, 8 or 16 bits per pixel in comprimed format, 
+	    with transparent pixels, and optionally with an animation.
+	    The graphs of 8 bits have the palette of colours inside
+	    of MAP archive.
+	</p>
+	<p>
+	    LOAD_MAP returns an entire number that identifies to MAP 
+	    graph. It is possible to use then this value with any function
+	    that allows a graph like parameter, indicating the code 0 of 
+	    library, or assing the numbert to variable <a href="GRAPH"/>.
+	</p>
+    </description>
+    <note>
+	It is only possible to visualize graphs of 16 bits if the current graph mode
+	is of 16 bits. But it is possible to visualize graphs of 8 bits in mode of
+	16 bits.
+    </note>
+    <note>
+	There is only an active palette of colours in all time. Use
+	only graphs of 8 bits that use the same palette of colours.
+	Fenix will use automatically the palette of colours of the first graph
+	recovered of disk and will ingore other palettes.
+	Even in mode of 16 bits exists a palette of colours	(but in these mode the 
+	palette only affects to graphs of 16 bits).
+    </note>
+    <see href="LOAD_PNG"/>
+    <see href="LOAD_PCX"/>
+    <see href="UNLOAD_MAP"/>
+</function>

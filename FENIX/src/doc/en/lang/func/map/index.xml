@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="GET_POINT" />
+<fnc href="GRAPHIC_INFO" />
+<fnc href="GRAPHIC_SET" />
+<fnc href="LOAD_MAP" />
+<fnc href="LOAD_PCX" />
+<fnc href="LOAD_PNG" />
+<fnc href="MAP_BLOCK_COPY" />
+<fnc href="MAP_BUFFER" />
+<fnc href="MAP_CLEAR" />
+<fnc href="MAP_CLONE" />
+<fnc href="MAP_EXISTS" />
+<fnc href="MAP_GET_PIXEL" />
+<fnc href="MAP_NAME" />
+<fnc href="MAP_PUT" />
+<fnc href="MAP_PUT_PIXEL" />
+<fnc href="MAP_SET_NAME" />
+<fnc href="MAP_XPUT" />
+<fnc href="NEW_MAP" />
+<fnc href="SAVE_MAP" />
+<fnc href="SAVE_PNG" />
+<fnc href="SET_CENTER" />
+<fnc href="SET_POINT" />
+<fnc href="UNLOAD_MAP" />
+</INDEX>

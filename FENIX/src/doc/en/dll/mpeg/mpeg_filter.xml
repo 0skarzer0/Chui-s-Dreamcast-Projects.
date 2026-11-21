@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MPEG_FILTER">
+    <retval/>
+    <param name="video"> Identifier of the video </param>
+    <param name="filter"> Type of filter </param>
+    <abstract> It allows to choose the type of filter used
+    	to render a video </abstract>
+    <description>
+	<p>
+	    It allows to choose one of the available filters to reproduce
+	    a concrete video of the following ones:
+	    <ul>
+		<li> 0: Without filtering. The video is reproduced,
+		    without applying filters. </li>
+		<li> 1: Bilinear filter. This filter smooths to the image 
+			mixing adjacent pixels. 
+			It is a filter adapted for videos in low resolution. </li>
+		<li> 2: Deblocking. This filter smooths certain defects 
+		in the reproduction of videos, without modifying 
+		the rest of the image. </li>
+	    </ul>
+	</p>
+	<p>
+	    By default, the filter activated for any video is the 0
+	    (it is no filter).
+	</p>
+    </description>
+    <see href="dll/mpeg/LOAD_MPEG" name="LOAD_MPEG"/>
+    <see href="dll/mpeg/PLAY_MPEG" name="PLAY_MPEG"/>
+</function>

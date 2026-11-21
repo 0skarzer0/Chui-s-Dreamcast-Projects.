@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="RADIO">
+<retval type="INT">Identificador del control creado</retval>
+<param name="texto" type="STRING"> Texto de la caja de chequeo </param>
+<param name="variable" type="POINTER"> Puntero a la variable INT </param>
+<param name="valor"> Contenido a comparar </param>
+<abstract> Crea un botón de "radio" </abstract>
+<description>
+    <p>
+	Crea un botón de radio, un control con dos estados:
+	activado y desactivado, que el usuario puede cambiar y que
+	se basan en el contenido de una variable INT, cuya dirección
+	se le pasará a esta función como segundo parámetro
+	empleando el operador &amp;. Si esta variable contiene 
+	exactamente el valor que se pasa a esta función como
+	tercer parámetro, el botón estará marcado. El control
+	cambiará el contenido de la variable automáticamente cuando
+	el usuario manipule el control.
+    </p>
+    <p>
+	Este control se diferencia del control
+	<a href="DLL/GUI/CHECKBOX" name="CHECKBOX"/> en que
+	está diseñado para crear varios botones que se refieran
+	a la misma variable INT con distintos valores, de forma
+	que el usuario puede hacer una elección entre más de
+	dos opciones.
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="SCAN_CODE">
+    <abstract>It contains the code of the key pressed in the last frame</abstract>
+    <description>
+	<p>
+		This value is the predefined constant for the function <a href="KEY"/>. 
+		As the use of <a href="GVARS/ASCII" type="var" name="ASCII" /> 
+		if the player has pressed two or more keys, the additional pulsations are saved in a small buffer to avoid their losses.
+	</p>
+	<p>
+		It is recommend tu use <a href="KEY" /> to check what key has been pressed, 
+		so it is more efficient and quick that check it manually using code in our program.
+	</p>
+    </description>
+    <see type="var" href="GVARS/SCAN_CODE" name="SCAN_CODE"/>
+</variable>

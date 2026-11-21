@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW_MOVE">
+<retval/>
+<param name="ventana"> Identificador de la ventana </param>
+<param name="x"> Nueva coordenada horizontal en pantalla </param>
+<param name="y"> Nueva coordenada vertical en pantalla </param>
+<abstract> Mueve la posición de una ventana </abstract>
+<description>
+    <p>
+	Cambia la posición en pantalla de una ventana, de la misma
+	forma que si la hubiera desplazado el usuario. Las nuevas
+	coordenadas corresponden a la nueva posición en pantalla
+	de su esquina superior izquierda.
+    </p>
+    <p>
+	No es válido cambiar la posición de una pantalla de estilo DOCK,
+	ya que dicha posición se ajusta automáticamente por el sistema.
+    </p>
+</description>
+<see name="WINDOW" href="DLL/GUI/WINDOW"/>
+</function>

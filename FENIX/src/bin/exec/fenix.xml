@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<?fenix version="0.84"?>
+<games name="FSL Test">
+
+<game name="Test" author="Fenix Team" image="test.png" exec="test/test.dcb" description="Fenix Test Program"/>
+<game name="Bench" author="Fenix Team" image="bench.png" exec="bench/bench.dcb" description="Little Benchmark"/>
+
+</games>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+<function name="FRAME_FLI">
+	<retval/>
+    <abstract> Devuelve el fotograma actual de la animación FLI/FLC en curso</abstract>
+    <description>
+	<p>
+		Esta función deevuelve el fotograma actual de una animación FLI/FLC iniciada 
+		anteriormente con <a href="/FLI/START_FLI" name="START_FLI"/>.
+	</p>
+	<p>
+		Si la animación hubiese terminado, el valor de retorno de esta función será 0 y 
+		deberá utilizarse <a href="/FLI/RESET_FLI" name="RESET_FLI"/> para volver a iniciar 
+		su reproducción.
+	</p>
+	</description>
+    <see name="START_FLI" href="FLI/START_FLI"/>
+    <see name="END_FLI" href="FLI/END_FLI"/>
+    <see name="RESET_FLI" href="FLI/RESET_FLI"/>    
+</function>

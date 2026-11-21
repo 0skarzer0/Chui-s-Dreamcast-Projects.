@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DRAW_CURVE">
+    <param name="x1"> Coordenada horizontal del primer punto </param>
+    <param name="y1"> Coordenada vertical del primer punto </param>
+    <param name="x2"> Coordenada horizontal del segundo punto </param>
+    <param name="y2"> Coordenada vertical del segundo punto </param>
+    <param name="x3"> Coordenada horizontal del tercer punto </param>
+    <param name="y3"> Coordenada vertical del tercer punto </param>
+    <param name="x4"> Coordenada horizontal del cuarto punto </param>
+    <param name="y4"> Coordenada vertical del cuarto punto </param>
+    <param name="nivel"> Nivel de calidad de la curva </param>
+    <abstract> Dibuja una curva </abstract>
+    <description>
+	<p>
+	    Dibuja una curva Bézier entre dos puntos (puntos 1 y 4), usando otros dos puntos 
+	    (puntos 2 y 3) como puntos de control de la curva. Usa el color escogido por
+	    elegido con <a href="PRIM/DRAWING_COLOR" name="DRAWING_COLOR"/>, en el gráfico
+	    escogido por la última llamada a <a NAME="DRAWING_MAP" href="PRIM/DRAWING_MAP"/>.
+	    Además, se utiliza el último valor especificado con
+	    <a NAME="DRAWING_ALPHA" href="PRIM/DRAWING_ALPHA"/> como nivel de
+	    transparencia para el dibujo, de manera que es posible dibujar una
+	    curva parcialmente transparente.
+	    Es válido especificar coordenadas fuera de los límites
+	    del gráfico, pero el dibujo resultante se recortará sobre éstos.
+	</p>
+	<p>
+	    Si antes de llamar a esta función se hace una llamada a
+	    <a NAME="DRAWING_Z" href="PRIM/DRAWING_Z"/>, la primitiva gráfica
+	    no se dibuja sobre ningún mapa. En lugar de eso, se crea como objeto
+	    y la librería gráfica lo dibujará cada frame en la coordenada Z
+	    especificada en la llamada a DRAWING_AT. En este caso, esta función
+	    devuelve un número entero que identifica al objeto. Este identificador
+	    es posible usarlo en llamadas a
+	    <a NAME="MOVE_DRAW" href="PRIM/MOVE_DRAW"/> o
+	    <a NAME="DELETE_DRAW" href="PRIM/DELETE_DRAW"/> para
+	    mover de sitio o destruir el objeto.
+	</p>
+	<p>
+	    El nivel de calidad es un valor entero entre 1 y 16. A mayor nivel
+	    de calidad, más precisa será la curva, pero más costoso será
+	    dibujarla. Se recomienda un nivel de calidad entre 6 y 9.
+	</p>
+    </description>
+    <see href="PRIM/DRAWING_COLOR" name="DRAWING_COLOR"/>
+    <see href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>
+    <see href="PRIM/DRAWING_ALPHA" name="DRAWING_ALPHA"/>
+    <see href="PRIM/DRAWING_Z" name="DRAWING_Z"/>
+    <see href="PRIM/DRAW_LINE" name="DRAW_BOX"/>
+</function>

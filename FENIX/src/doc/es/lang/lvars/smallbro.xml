@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="SMALLBRO">
+    <abstract>Identificador del proceso creado después del nuestro</abstract>    
+	<description>
+	<p>
+		Este identificador referencia al primer proceso que el creador del proceso actual 
+		creó después que él.  Valdrá 0 si no se ha creado ningún proceso posterior al actual.		
+	</p>
+    </description>
+    <see type="var" name="FATHER" href="LVARS/FATHER" />
+    <see type="var" name="SON" href="LVARS/SON" />
+    <see type="var" name="BIGBRO" href="LVARS/BIGBRO" />
+</variable>

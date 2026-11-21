@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MEMSETW">
+    <param name="mem" type="POINTER"> Puntero a una zona de memoria </param>
+    <param name="valor" type="WORD"> Valor que se desea asignar a todos los bytes de esa zona </param>
+    <param name="words" type="INT"> Tamaño en palabras (1 palabra = 2 bytes) de la zona de memoria </param>
+    <abstract> Rellena una zona de memoria de tamaño WORDS situado en MEM con VALOR </abstract>
+    <description>
+	<p>
+		Esta función avanzada rellena una zona de memoria de tamaño BYTES a partir de 
+		del valor indicado por VALOR.  Su mayor utilidad consiste modificar gráficos 
+		de 16 bits con un color devuelto por <a name="RGB" href="COL/RGB" /> en combinación con 
+		<a href="MAP/MAP_BUFFER" name="MAP_BUFFER" />.  Hay que tener presente que el 
+		tamaño total en bytes de la zona que se rellena es WORDS * 2 ya que el tamaño de 
+		cada WORD es de 2 BYTES.  
+	</p>
+    </description>
+    <see name="ALLOC" href="MEM/ALLOC"/>
+    <see name="MEMSET" href="MEM/MEMSET"/>
+    <see name="MAP_BUFFER" href="MAP/MAP_BUFFER"/>
+    <see name="RGB" href="COL/RGB"/>
+</function>

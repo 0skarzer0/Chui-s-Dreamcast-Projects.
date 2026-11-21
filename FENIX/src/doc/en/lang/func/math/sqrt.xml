@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SQRT">
+    <retval/>
+    <param name="number" type="FLOAT"> Floating point number </param>
+    <abstract> It returns the square root of a number </abstract>
+    <description>
+	<p>
+	    This function returns the square root of a number specified
+	    like parameter.
+	</p>
+    </description>
+</function>

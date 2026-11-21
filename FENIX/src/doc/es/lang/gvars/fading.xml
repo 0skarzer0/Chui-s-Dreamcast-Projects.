@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="FADING">
+    <abstract>Estado de la operación de fundido</abstract>
+    <description>
+	<p>
+		Esta variable informa del estado de la operación de fundido 
+		<a href="COLOR/FADE" name="FADE"/> en curso.  Valdrá 0 si no hay 
+		fundidos en activo y 1 si todavía hay un fundido en marcha.
+	</p>
+    </description>
+    <see href="COLOR/FADE" name="FADE"/>
+</variable>

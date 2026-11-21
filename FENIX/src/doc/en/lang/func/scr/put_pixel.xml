@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="PUT_PIXEL">
+    <param name="x"> Horizontal coordinate </param>
+    <param name="y"> Vertical coordinate </param>
+    <param name="colour"> Colour to draw </param>
+    <abstract> It changes the value of a pixel of the background of screen </abstract>
+    <description>
+	<p>
+	    This function allows to change the colour of a pixel determined of the background
+	    of screen. The coordinates increase towards down and right, and the point
+	    (0, 0) represents the top left corner of screen.
+	</p>
+	<p>
+	    In the case of the graph mode of 256 colours (8 bits), the value of colour
+	    must be a number of 0 to 255. In oppositive case (16 bits), the value is a codification
+		of the components of the colour that changes in function of the video card and the graph mode.
+	    It is normal to use the function <a href="RGB"/> to obtain the codification of a concrete
+		colour, or to use a colour obtanied by a function like <a href="MAP_GET_PIXEL"/>. 
+		The background of screen does not accept transparent pixels.
+	</p>
+	<p>
+	    This function is equivalent to MAP_PUT_PIXEL (0, 0, x, y, colour).
+	</p>
+    </description>
+    <note>  
+	It is possible to use a background of 8 bits in a game that works in mode of 16 bits.
+	Normally, Fenix detects when it happens.
+	For example, a game that uses <a href="PUT_SCREEN"/> with a map of 8 bits makes that
+	it is created in background of screen of 8 bits. However, once is used a function
+	like <a href="PUT"/> with a graph of 16 bits, the background is created or
+	converted to 16 bits and it can not be changed. It is important to know that
+	because sometimes GET_PIXEL can need a value of 0 to 255 unsuspectedly,
+	although it is working in 16 bits. If you want to be secure which is the depth of colour
+	of the background, you have	to use the function <a href="GRAPHIC_INFO"> with the map (0, 0) 
+	and the parameter G_DEPTH.
+    </note> 
+    <see href="GET_PIXEL"/>
+</function> 

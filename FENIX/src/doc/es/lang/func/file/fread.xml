@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FREAD">
+    <retval> Número de bytes leídos, 0 en caso de error </retval>
+    <param name="fichero"> Identificador de fichero devuelto por FOPEN </param>
+    <param name="variable" type="VAR"> Nombre de la variable a leer </param>
+    <abstract> Recupera datos de un fichero abierto </abstract>
+    <description>
+	<p>
+	    Esta función lee datos binarios de un fichero abierto con
+	    la función <a href="FOPEN"/>. Esta función sólo puede leer
+	    una variable a la vez. Sin embargo, esa variable puede ser
+	    un array o estructura: se leerán secuencialmente todos los
+	    elementos del array o estructura, por orden.
+	</p>
+	<p>
+	    Los datos se leen en modo binario. Por ejemplo, leer una
+	    variable de tipo INT leerá cuatro bytes del disco. Al leer
+	    datos enteros de más de un byte, se supone un formato INTEL y
+	    se ordenará el dato en otras plataformas, por lo que los
+	    ficheros binarios escritos por <a href="FWRITE"/> pueden
+	    leerse con más facilidad.
+	</p>
+	<p>
+	    En el caso de escribir a disco una cadena STRING, se leerá en
+	    primer lugar un entero de cuatro bytes con el número de
+	    caracteres de la misma, y a continuación todos los caracteres
+	    en sí. Esto significa que el tamaño de un fichero que
+	    contenga cadenas es variable.
+	</p>
+	<p>
+	    Si se desea procesar ficheros binarios genéricos o escritos
+	    con otra utilidad, puede usarse esta función para leer
+	    un dato de tipo BYTE cada vez, y procesarlos en secuencia.
+	</p>
+    </description>
+    <see name="FOPEN"/>
+    <see name="FWRITE"/>
+    <see name="FSEEK"/>
+    <see name="FILE_EXISTS"/>
+</function>

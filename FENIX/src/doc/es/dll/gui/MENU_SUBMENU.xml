@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MENU_SUBMENU">
+<retval/>
+<param name="menu"> Identificador del menú </param>
+<param name="texto">Texto del submenú</param>
+<param name="submenu"> Identificadro del submenú </param>
+<abstract> Añade una línea con submenú a un menú </abstract>
+<description>
+    <p>
+	Añade una opción al menú indicado. El segundo parámetro
+	indica el nombre de la opción. El tercero es un nuevo
+	menú que se desplegará cuando el usuario haga clic
+	sobre la opción.
+	Ambos menús deben haber sido
+	creados con la función <a href="DLL/GUI/MENU" name="MENU"/>.
+    </p>
+</description>
+<see href="DLL/GUI/MENU_ACTION" name="MENU_ACTION" />
+<see href="DLL/GUI/MENU_TOGGLE" name="MENU_TOGGLE" />
+<see href="DLL/GUI/MENU_SUBMENU" name="MENU_SUBMENU" />
+<see href="DLL/GUI/MENU_SEPARATOR" name="MENU_SEPARATOR" />
+<see href="DLL/GUI/MENU_RADIO" name="MENU_RADIO" />
+</function>

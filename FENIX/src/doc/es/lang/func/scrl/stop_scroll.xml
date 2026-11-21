@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="STOP_SCROLL">
+	<param name="número"> Número del scroll (0 a 9) </param>
+	<abstract> Detiene una zona de scroll activada previamente </abstract>
+	<description>
+		<p>
+			Detiene una ventana de scroll activada previamente mediante
+			la función <a href="START_SCROLL"/>. Debe indicarse el mismo
+			número de zona de scroll especificado al inicializarla. La
+			ventana de scroll no será visible a partir del próximo frame.
+		</p>
+	</description>
+	<see name="START_SCROLL"/>
+</function>

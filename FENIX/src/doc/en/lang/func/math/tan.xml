@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TAN">
+    <retval/>
+    <param name="number" type="FLOAT"> Angle in thousandth of degree (90000 = 90º) </param>
+    <abstract> It returns the tan of an angle </abstract>
+    <description>
+	<p>
+	    This function returns the tan of an angle in thousandth of degree
+	    (the standard units to specify angles in Fenix).
+	    The result will be a floating point number.
+	</p>
+    </description>
+</function>

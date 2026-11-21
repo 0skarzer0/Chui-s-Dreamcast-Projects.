@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FRAME">
+<retval type="INT">Identificador del control creado</retval>
+<param name="ancho"> Ancho en pixels </param>
+<param name="alto"> Alto en pixels </param>
+<param name="tipo"> Tipo de recuadro </param>
+<abstract> Crea un recuadro o línea </abstract>
+<description>
+    <p>
+	Crea un recuadro o línea, para separar controles.
+	A diferencia de otros controles, cuyo tamaño es fijo
+	o aproximado según su contenido, es necesario especificar
+	el tamaño exacto en pixels a la hora de crear un
+	recuadro. Se sugiere un alto o ancho de 2 para crear
+	líneas en lugar de recuadros.
+    </p>
+    <p>
+	El tipo de recuadro será una de las siguientes constantes,
+	predefinidas en GUI.INC:
+	<ul>
+	    <li> FRAME_RAISE: El rectángulo estará "elevado",
+		como un botón. </ul>
+	    <li> FRAME_LOWER: El rectángulo estará "hundido". </ul>
+	    <li> FRAME_LINE: El rectángulo será una línea 3D
+		que no hunde ni eleva su contenido. </ul>
+	</ul>
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

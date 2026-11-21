@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_GLYPH">
+    <retval/>
+    <param name="fuente"> Número de tipo de letra </param>
+    <param name="caracter"> Número de carácter, de 0 a 255 </param>
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico </param>
+    <abstract> Recupera el gráfico de un carácter </abstract>
+    <description>
+	<p>
+	    Dado un tipo de letra, esta función permite cambiar
+	    cualquiera de sus caracteres por el gráfico especificado
+	    entre sus tercer y cuarto parámetros. Esto cambia
+	    efectivamente el aspecto de la fuente en memoria,
+	    y el nuevo carácter será reflejado en posteriores usos
+	    de la fuente, incluyendo cualquier texto escrito por
+	    la función <a href="WRITE"/> u otra equivalente,
+	    que pudiera estar en pantalla en ese momento.
+	</p>
+	<p>
+	    Es posible incluir dos puntos de control con información
+	    adicional sobre el carácter:
+	    <ul>
+		<li> El punto 1 contendrá el desplazamiento a
+		    efectuar sobre el punto de escritura en el
+		    momento de escribir el carácter. Normalmente
+		    ocupará la esquina superior izquierda (0, 0)
+		    indicando que no hay ningún desplazamiento. </li>
+		<li> El punto 2 contendrá el avance efectivo de
+		    posición, horizontal y vertical, que se
+		    realizará al escribir el carácter. El avance
+		    vertical no se emplea actualmente. </li>
+	    </ul>
+	</p>
+	<p>
+	    Si estos puntos de control no se incluyen, la información
+	    del caracter existente no será modificada. Normalmente esto
+	    no es deseable, así que se recomienda añadir siempre los
+	    puntos de control al gráfico mediante la función
+	    <a href="SET_POINT"/>.
+	</p>
+    </description>
+    <see href="LOAD_FNT"/>
+    <see href="SAVE_FNT"/>
+    <see href="GET_GLYPH"/>
+</function>

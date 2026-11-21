@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CONTROL_LEAVED">
+    <retval type="INT">
+	1 si el control perdió el foco de teclado
+    </retval>
+    <param name="control"> Identificador de un control cualquiera </param>
+    <abstract> Comprueba si el control ha perdido el foco </abstract>
+    <description>
+	<p>
+	    Cada vez que un control pierde el foco de entrada del teclado,
+	    se activa un flag interno en el control. 
+	    Esta función devuelve el flag y lo pone de nuevo a 0, de
+	    manera que en posteriores llamadas sólo devolverá 1 si el
+	    usuario ha vuelto a entrar y salir del el control.
+	</p>
+	<p>
+	    Esta función se ha diseñado para ejecutarse cada frame, como
+	    medio para detectar cuando un control pierde el foco.
+	</p>
+    </description>
+    <see name="CONTROL_FOCUSED" href="DLL/GUI/CONTROL_FOCUSED"/>
+</function>

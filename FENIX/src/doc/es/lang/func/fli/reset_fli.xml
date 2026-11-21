@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+<function name="RESET_FLI">
+    <abstract> Resetea la animación FLI/FLC en curso a su primer fotograma</abstract>
+    <description>
+	<p>
+		Esta función devuelve la posición de la animación FLI/FLC en curso, iniciada 
+		anteriormente con <a href="/FLI/START_FLI" name="START_FLI"/>, a su primer 
+		fotograma, y en caso de haber quedado detenida al haber terminado reinicia su 
+		reproducción.
+	</p>
+	</description>
+    <see name="START_FLI" href="FLI/START_FLI"/>
+    <see name="FRAME_FLI" href="FLI/FRAME_FLI"/>
+    <see name="END_FLI" href="FLI/END_FLI"/>    
+</function>

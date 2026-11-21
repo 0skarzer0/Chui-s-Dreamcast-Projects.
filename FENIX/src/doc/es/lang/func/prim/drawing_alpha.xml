@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DRAWING_ALPHA">
+    <param name="alpha"> Valor de opacidad, entre 0 y 255 </param>
+    <abstract> Escoge el valor de transparencia con el que se dibujarán las primitivas
+	gráficas con funciones como DRAW_LINE. </abstract>
+    <description>
+	<p>
+	    Esta función permite escoger el valor de transparencia
+	    a utilizar con todas las primitivas gráficas
+	    (funciones que empiezan por DRAW). Un valor de 255
+	    indica opacidad completa (sin transparencia), mientras
+	    con un valor de 0 la primitiva gráfica sería invisible.
+	    Es válido usar cualquier valor intermedio (por ejemplo,
+	    128 para especificar una transparencia del 50%).
+	</p>
+	<p>
+	    Por defecto el valor de transparencia es de 255
+	    y las primitivas se dibujan sin transparencia.
+	</p>
+    </description>
+    <see href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>
+    <see href="PRIM/DRAW_BOX" name="DRAW_BOX"/>
+    <see href="PRIM/DRAW_CIRCLE" name="DRAW_CIRCLE"/>
+    <see href="PRIM/DRAW_FCIRCLE" name="DRAW_FCIRCLE"/>
+    <see href="PRIM/DRAW_LINE" name="DRAW_LINE"/>
+    <see href="PRIM/DRAW_CURVE" name="DRAW_CURVE"/>
+    <see href="PRIM/DRAW_RECT" name="DRAW_RECT"/>
+</function>

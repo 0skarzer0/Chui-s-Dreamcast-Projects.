@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ABS">
+    <retval/>
+    <param name="number" type="FLOAT"> Floating point number </param>
+    <abstract> It returns the absolute value of a number </abstract>
+    <description>
+	<p>
+	    This function returns the absolute value of a determined
+		number, it converts any negative number in positive and 
+	    lets positive numbers or the number 0 unmodified.
+	</p>
+    </description>
+</function>

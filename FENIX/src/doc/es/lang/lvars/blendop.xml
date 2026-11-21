@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="BLENDOP">
+    <abstract>Indica el identificador de la BLENDOP que debe aplicarse al proceso</abstract>    
+	<description>
+	<p>
+		Contiene el identificador devuelto al crear una tabla de BLENDOP con la función 
+		<a href="BLE/BLENDOP_NEW" name="BLENDOP_NEW"/>.  Una vez inicializada esta variable 
+		el proceso siempre se dibujará con la BLENDOP asignada, como si se hubiese hecho un 
+		<a href="BLE/BLENDOP_ASSIGN" name="BLENDOP_ASSIGN"/> sobre ese gráfico.
+		
+		A diferencia que una asignación, esta BLENDOP sólo aplicará sobre este proceso y no 
+		sobre todos los usos del gráfico en cuestión.
+	</p>	
+    </description>
+    <see type="func" href="BLE/BLENDOP_NEW" name="BLENDOP_NEW"/>
+    <see type="func" href="BLE/BLENDOP_ASSIGN" name="BLENDOP_ASSIGN"/>
+</variable>

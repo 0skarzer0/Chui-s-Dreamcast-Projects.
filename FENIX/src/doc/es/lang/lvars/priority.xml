@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="PRIORITY">
+    <abstract>Nivel de prioridad del proceso</abstract>    
+	<description>
+	<p>
+		Esta variable contiene el valor de prioridad del proceso actual. Los 
+		procesos que tienen una prioridad mayor se ejecutan antes ya que a la 
+		hora de dibujar cada FRAME del juego el intérprete utiliza el valor de 
+		esta variable para determinar el orden de ejecución.
+	</p>
+	<p>
+		Hay que tener en cuenta que los procesos se ejecutan primero y sólo cuando 
+		ya no queda ningun proceso por ejecutar en el FRAME actual, se dibujan en 
+		pantalla.
+	</p>
+	<p>
+		El valor de esta variable no tiene nada que ver con el ordenamiento en profundidad 
+		de los procesos, para ese cometido debe usarse la variable local <a href="LVARS/Z" name="Z" type="VAR"/>.
+	</p>
+	</description>
+    <see type="var" name="Z" href="LVARS/Z"/>
+</variable>

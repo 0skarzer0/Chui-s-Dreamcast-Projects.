@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="RAND">
+    <retval/>
+    <param name="minimum"> Minimum entire number to obtain </param>
+    <param name="maximum"> Maximum entire number to obtain </param>
+    <abstract> It returns a random number between the limits specified like parameter, 
+	including the limits </abstract>
+    <description>
+	<p>
+	    This function generates a random number. Each call to this function
+	    generates a different number, although always it will be within the specified rank.
+	</p>
+	<p> 
+	    It can use rand_seed to select a determined <i>seed</i>, from which the random numbers are
+		generated. At begin of the program, a random seed is selected (based on the hour of the day). 
+	</p>
+    </description>
+    <note>
+	<p>
+	    Using RAND_SEED, it is possible to obtain a series of numbers with randomness 
+		aspect but in such a way that it is always the same one, so that it is important
+	    if you want that the game shows a predictable behavior. For example, some games
+	    allow to save "demos" of games simply storing the pulsations of key that the player 
+		is doing during a normal game,and reproducing soon making them use of the same game 
+		of functions used during the normal game. For a game that uses this technique, the 
+		use of the function RAND can cause that some small behavior varies during the reproduction
+		of demo of unpredictable form, making the reproduction non-viable of demo. 
+	</p>
+    </note>
+    <see href="math/RAND_SEED" name="RAND_SEED"/>
+</function>

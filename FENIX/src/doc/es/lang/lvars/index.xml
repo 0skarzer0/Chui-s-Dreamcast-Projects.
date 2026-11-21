@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+
+<index name="lang/lvars">
+    <abstract> Variables locales </abstract>
+    <description>
+	<p>
+	    Las variables locales están presentes en todos y cada uno
+	    de los procesos de Fenix. Representan datos que normalmente
+	    son de interés para un objeto visible en pantalla, como su
+	    número de gráfico (<a href="GRAPH"/>) o sus coordenadas en
+	    pantalla (<a href="X"/>, <a href="Y"/>).
+	</p>
+	<p>
+	    Es posible acceder a variables locales de otro proceso
+	    empleando el operador punto (.) si se dispone del
+	    identificador del mismo. También es posible declarar nuevas
+	    variables locales, además de las predefinidas, dentro
+	    de la sección <a href="LOCAL"/> de un programa. Sin embargo
+	    es preciso tener en cuenta que estas variables serán creadas
+	    dentro de todos los procesos, incluso de aquellos que no las
+	    usen, por lo que es preciso tener cuidado y limitar la
+	    cantidad de memoria que ocupan reduciendo su uso al máximo.
+	</p>
+    </description>
+</index>
+
+

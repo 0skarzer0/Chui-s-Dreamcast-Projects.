@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FADE_MUSIC_OFF">
+    <param name="milisegundos"> Tiempo para apagar la música en milisegundos</param>
+    <abstract> Detiene la música bajando gradualmente el volumen </abstract>
+    <description>
+	<p>
+	    Esta función detiene la música que esté ejecutándose actualmente
+	    (que haya sido iniciada mediante la función <a name="PLAY_SONG" href="MUSIC/PLAY_SONG"/>)
+	    bajando gradualmente el volumen hasta que se apague.
+	    El parámetro <i>milisegundos</i> indica el tiempo aproximado
+	    en el que se desea que la música haya terminado.
+	</p>
+	<p>
+	    Obviamente justo después de llamar a esta función, la
+	    música no ha acabado inmediatamente. Para saber cuándo
+	    es seguro usar <a name="UNLOAD_SONG" href="MUSIC/UNLOAD_SONG"/> o reproducir
+	    otra música, es preciso utilizar <a name="IS_PLAYING_SONG" href="MUSIC/IS_PLAYING_SONG"/>
+	    para comprobar si la música ya ha terminado de apagarse.
+	</p>
+    </description>
+    <see href="MUSIC/PLAY_SONG" name="PLAY_SONG"/>
+    <see href="MUSIC/STOP_SONG" name="STOP_SONG"/>
+    <see href="MUSIC/LOAD_SONG" name="LOAD_SONG"/>
+    <see href="MUSIC/UNLOAD_SONG" name="UNLOAD_SONG"/>
+    <see href="MUSIC/IS_PLAYING_SONG" name="IS_PLAYING_SONG"/>
+    <see href="MUSIC/FADE_MUSIC_IN" name="FADE_MUSIC_IN"/>
+
+</function>

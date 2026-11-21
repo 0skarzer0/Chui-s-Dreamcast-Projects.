@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FIND">
+    <retval> Posición de comienzo o -1 si no se encontró </retval>
+    <param name="cadena" type="STRING"> Cadena original </param>
+    <param name="buscar" type="STRING"> Cadena a buscar </param>
+    <param name="posición" optional="YES"> Posición de inicio </param>
+    <abstract> Busca una cadena dentro de otra </abstract>
+    <description>
+	<p>
+	    Busca la cadena especificada como segundo parámetro en el
+	    interior de la cadena especificada como primer parámetro,
+	    y devuelve la posición de la primera coincidencia que
+	    encuentre, o -1 para indicar que no encontró ninguna.
+	    Esta posición es el número de carácter desde la izquierda
+	    de la cadena: 0 para el primer carácter, 1 para el segundo,
+	    y así sucesivamente.
+	</p>
+	<p>
+	    El tercer parámetro, opcional, indica el primer carácter
+	    donde dará comienzo la búsqueda. La parte de la cadena
+	    a la izquierda de éste, será ignorada. Si no se especifica
+	    el parámetro, se empezará por el primer carácter (posición 0).
+	</p>
+	<p>
+	    La búsqueda se hace de izquierda a derecha. Sin embargo,
+	    es posible hacer también la búsqueda de derecha a izquierda
+	    si se especifica como primer parámetro un número negativo,
+	    que indicará además la primera posición a tener en cuenta
+	    (-1 para el último carácter de la cadena, -2 para el penúltimo,
+	    y así sucesivamente).
+	</p>
+    </description>
+<see href="STR/SUBSTR" name="SUBSTR"/>
+</function>

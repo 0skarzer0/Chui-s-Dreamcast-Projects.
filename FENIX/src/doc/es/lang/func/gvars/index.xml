@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<var href="ALPHA_STEPS" />
+<var href="ARGC" />
+<var href="ARGV" />
+<var href="ASCII" />
+<var href="FADING" />
+<var href="FPS" />
+<var href="FRAME_TIME" />
+<var href="FULL_SCREEN" />
+<var href="GRAPH_MODE" />
+<var href="SCAN_CODE" />
+<var href="SHIFT_STATUS" />
+<var href="SPEED_GAUGE" />
+<var href="TEXT_Z" />
+<var href="TIMER" />
+</INDEX>

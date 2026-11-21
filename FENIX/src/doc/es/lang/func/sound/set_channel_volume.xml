@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_CHANNEL_VOLUME">
+    <retval/>
+    <param name="canal"> Identificador de canal devuelto por PLAY_WAV </param>
+    <param name="volumen"> Nuevo volumen, de 0 a 128 </param>
+    <abstract> Especifica el volumen general del canal de sonido</abstract>
+    <description>
+	<p>
+	    Cambia el volumen de un efecto de sonido reproducido
+	    anteriormente mediante <a href="PLAY_WAV"/>, entre
+	    0 (silencio) y 128 (volumen original del efecto).
+	</p>
+	<p>
+	    Si el canal especificado es -1, afecta al volumen
+	    de todos los canales.
+	</p>
+    </description>    
+    <see href="PLAY_WAV"/>
+    <see href="SET_WAV_VOLUME"/>
+    <see href="STOP_WAV"/>
+    <see href="PAUSE_WAV"/>
+</function>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="XADVANCE">
+<retval/>
+<param name="angle"> Angle in thousanth of degree (90000 = 90º) </param>
+<param name="number"> Entire number </param>
+<abstract> It displaces the current process according to his angle</abstract>
+<description>
+    <p>
+	This function displaces the current process in the direction specified
+	for the angle indicated like first paramater, the number of units
+	indicated like second parameter.
+    </p>
+    <p>
+	We must know that the displacement sis made in extra units, 
+	and so it has limitations of precision. A displacement of 1 or 2
+	units can not reflect the differences between angles, so that it will 
+	not be effective. If you want to displace a process in arbitrary angles
+	and only a few pixels, it will be necessary to use the variable
+	<a href="RESOLUTION"/> so that the coordinates of the graph
+	will be in units smaller than pixel, how it happens by default.
+    </p>
+</description>
+<see href="ADVANCE"/>
+<see href="RESOLUTION"/>
+<see href="GET_ANGLE"/>
+<see href="FGET_ANGLE"/>
+</function>

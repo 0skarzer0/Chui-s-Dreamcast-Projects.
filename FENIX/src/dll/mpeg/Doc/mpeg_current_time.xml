@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MPEG_CURRENT_TIME">
+    <retval/>
+    <param name="vídeo"> Identificador del vídeo </param>
+    <abstract> Devuelve la posición de un vídeo en centésimas de segundo </abstract>
+    <description>
+	<p>
+	    Devuelve el momento actual de reproducción de un vídeo,
+	    medido en centésimas de segundo desde el comienzo del
+	    mismo. Puedes utilizar esta función para controlar cuándo
+	    un vídeo llega a algún momento importante.
+	    Observa que esta medida del tiempo es compatible
+	    con la variable <a href="TIMER"/>.
+	</p>
+    </description>
+    <see href="LOAD_MPEG"/>
+    <see href="MPEG_TOTAL_TIME"/>
+</function>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="dll" name="DLL"/>
+<fnc HREF="EXPLOSION" />
+<fnc HREF="MOVE_EXPLOSION" />
+</INDEX>

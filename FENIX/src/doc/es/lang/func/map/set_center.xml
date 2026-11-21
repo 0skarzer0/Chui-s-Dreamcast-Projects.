@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_CENTER">
+    <retval/>
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <param name="x"> Nuevo valor para la coordenada horizontal del centro </param>
+    <param name="y"> Nuevo valor para la coordenada vertical del centro </param>
+    <abstract> Permite cambiar el centro de un gráfico </abstract>
+    <description>
+	<p>
+	    Esta función permite cambiar el centro de un gráfico. El centro
+	    es un punto dentro de los pixels del gráfico que se utiliza para:
+	    <ul>
+		<li> Especificar el significado de la coordenada (x, y)
+		    cuando el gráfico se visualiza en pantalla. Si un gráfico
+		    se visualiza en la coordenada (10, 15) significa que se
+		    dibujará de tal manera que su centro ocupará dicho punto. </li>
+		<li> Especificar el punto a partir de cual se rota el gráfico.
+		    El centro no se desplaza, y el resto del gráfico gira
+		    a su alrededor. Ver la variable <a href="ANGLE"/>. </li>
+		<li> Especifica el punto a partir del cual se realizan las
+		    operaciones de espejo horizontal y vertical.
+		    Ver la variable <a href="FLAGS"/>. </li>
+		<li> Cuando un gráfico se utiliza como puntero del ratón, usando
+		    la variable MOUSE.GRAPH, indica el punto "caliente" del
+		    mismo, que se usa para comprobar dónde está marcando el ratón. </li>
+	    </ul>
+	</p>
+	<p>
+	    Cuando un gráfico no tiene centro asignado (por ejemplo, porque se
+	    ha recuperado a partir de un fichero estandar como puede ser
+	    un PNG), se utiliza como tal su centro geométrico.
+	</p>
+	<p>
+	    Esta función permite cambiar dicho centro, especificando unas nuevas
+	    coordenadas para el mismo. Estas coordenadas se dan siempre en pixels
+	    dentro del gráfico, donde el pixel (0, 0) representa la esquina
+	    superior izquierda del gráfico y las coordenadas crecen abajo y a la derecha.
+	</p>
+    </description>
+    <see href="SET_POINT"/>
+    <see href="GET_POINT"/>
+</function>

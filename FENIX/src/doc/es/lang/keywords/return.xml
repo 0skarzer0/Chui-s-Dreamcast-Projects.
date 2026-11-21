@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="RETURN">
+	<syntax> 
+		<b>RETURN</b> [ valor ]; 
+	</syntax>
+	<param name="valor" type="">
+		Valor de retorno del proceso, del tipo especificado
+		en la cabecera del proceso o función (INT por defecto)
+	</param>
+	<abstract> Sentencia que finaliza la ejecución de una función o proceso </abstract>
+    <description>
+		<p>
+			Esta sentencia provoca la terminación inmediata del
+			proceso actual y la muerte del mismo. Si el proceso
+			actual es un <a href="FUNCTION"/>, o un proceso que
+			no ha ejecutado ninguna sentencia FRAME, el proceso que lo
+			llamó puede recoger el valor de retorno opcional especificado.
+		</p>
+    </description>
+	<see href="FUNCTION"/>
+</section>

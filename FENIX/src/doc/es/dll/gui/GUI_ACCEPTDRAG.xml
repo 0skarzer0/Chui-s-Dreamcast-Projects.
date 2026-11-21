@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GUI_ACCEPTDRAG">
+    <retval/>
+    <abstract> Activa la aceptación de una operación drag&amp;drop </abstract>
+    <description>
+	<p>
+	    Esta función permite activar la operación drag&amp;drop que
+	    el usuario está intentando. Debe llamarse cada frame, dentro
+	    de un bucle que compruebe si existe una operación
+	    activa con <a href="GUI_DRAGGING"/> y que compruebe los
+	    parámetros de la operación con
+	    <a href="GUI_DRAGTYPE"/> y <a href="GUI_DRAGDESTINATION"/>.
+	</p>
+    </description>
+    <see href="GUI_DRAGGING"/>
+    <see href="GUI_DRAGTYPE"/>
+    <see href="GUI_DRAGDESTINATION"/>
+</function>

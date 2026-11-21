@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW">
+<retval type="INTEGER"> Identificador único de la ventana </retval>
+<param name="título" optional="YES"> Título de la ventana </param>
+<param name="estilo" optional="YES"> Estilo de la ventana </param>
+<abstract> Crea una nueva ventana </abstract>
+<description>
+    <p>
+	Crea una nueva ventana en memoria. Una ventana es una sección de pantalla
+	delimitada por un rectángulo que puede contener uno o más controles.
+	Una ventana puede disponer de una barra de título, un borde fijo o
+	redimensionable, botones del sistema, o ser desplazada libremente por
+	el usuario. El comportamiento exacto de la ventana se define mediante
+	el estilo de la misma, que puede especificarse como parámetro a esta
+	función y puede ser uno de los siguientes:
+	<ul>
+	    <li> STYLE_FIXED: La ventana cuenta con un borde, pero no puede
+		redimensionarse. Usa este estilo para ventanas que muestran
+		controles que no vayan a redimensionarse, como por ejemplo
+		una caja de herramientas, pero que formen parte del interfaz
+		de la aplicación. </li>
+	    <li> STYLE_STATIC: La ventana no tiene borde, y no puede ser
+		movida ni redimensionada por el usuario. Usa esta ventana
+		cuando quieras crear efectos especiales o disponer de
+		elementos en el interfaz de usuario que quieras manipular
+		manualmente en tu programa. </li>
+	    <li> STYLE_DIALOG: La ventana cuenta con un borde y no puede
+		redimensionarse ni ocultarse (minimizarse). Usa estas
+		ventanas para obtener información puntual del usuario
+		(son llamadas cuadros de diálogo). </li>
+	    <li> STYLE_RESIZABLE_DIALOG: Ventana idéntica a la anterior,
+		pero en este caso el usuario puede redimensionarla. Algunos
+		cuadros de diálogo pueden ser útiles a mayor tamaño, por
+		ejemplo aquellos que contengan listas de información que
+		puedan crecer hasta un tamaño indeterminado.</li>
+	    <li> STYLE_NORMAL: Ventana corriente, que puede minimizarse,
+		redimensionarse y maximizarse. Este es el estilo por
+		defecto si no empleas ninguno. </li>
+	    <li> STYLE_DOCK_NORTH: Esta ventana se posicionará automáticamente
+		en la parte superior de la pantalla, abarcando todo su ancho,
+		y siempre será visible por encima del resto. Además, el usuario
+		no podrá moverla de sitio. Usa este estilo para crear barras
+		de menús o herramientas. </li>
+	    <li> STYLE_DOCK_SOUTH: Idéntico al anterior, pero para la parte
+		inferior de la pantalla. Usalo para crear barras de tareas
+		o de estado. </li>
+	    <li> STYLE_DOCK_WEST: Esta ventana se posicionará a la izquierda
+		del escritorio, siempre visible por encima del resto. </li>
+	    <li> STYLE_DOCK_EAST: Idéntico al anterior, pero para la derecha.
+		Un punto importante en ambos estilos es que los estilos
+		DOCK_NORTH y DOCK_SOUTH tienen preferencia, es decir, la
+		barra de menús o de tareas siempre tocará los extremos
+		derechos e izquierdos de pantalla. </li>
+	</ul>
+    </p>
+    <p>
+	Además, esta función permite especificar un título. Sólo las
+	ventanas que disponen de título mostrarán la cabecera de la
+	ventana con los botones de cerrar, minimizar y maximizar. Si
+	se desea, es posible crear una ventana con título "oculto", es
+	decir, una ventana con título (que aparece en la lista de tareas)
+	pero sin cabecera. Para ello es preciso usar un título con prefijo "*".
+	Una ventana titulada "*Tools" aparecerá con el texto "Tools" en la
+	barra de tareas, pero no tendrá cabecera.
+    </p>
+    <p>
+	Todas las ventanas, excepto las de estilos DOCK y FIXED,
+	se dibujarán con una sombra para destacar su profundidad.
+    </p>
+    <p>
+	Las ventanas de estilos DOCK son especiales, ya que una ventana
+	maximizada se redimensionará de manera que ocupe el espacio que
+	estas dejen disponible, y no más.
+    </p>
+    <p>
+	La ventana recién creada no estará inmediatamente visible, pero puede
+	agregarse al escritorio en cualquier momento mediante la función
+	<a href="DLL/GUI/DESKTOP_ADDWINDOW"/>. Es buena idea crear primero
+	los controles que vaya a contener la ventana mediante repetidas llamadas
+	a la función
+	<a href="DLL/GUI/WINDOW_ADDCONTROL" name="WINDOW_ADDCONTROL"/>.
+    </p>
+    <p>
+	Esta función devuelve un valor entero que identifica de forma única
+	a la ventana creada. Este valor debe guardarse y utilizar en cualquier
+	llamada posterior al resto de funciones con prefijo WINDOW_.
+    </p>
+</description>
+<see name="WINDOW_DESTROY" href="DLL/GUI/WINDOW_DESTROY"/>
+<see name="WINDOW_RESIZE" href="DLL/GUI/WINDOW_RESIZE"/>
+<see name="WINDOW_MOVE" href="DLL/GUI/WINDOW_MOVE"/>
+<see name="WINDOW_TOP" href="DLL/GUI/WINDOW_TOP"/>
+<see name="WINDOW_ONTOP" href="DLL/GUI/WINDOW_ONTOP"/>
+<see name="DESKTOP_ADDWINDOW" href="DLL/GUI/DESKTOP_ADDWINDOW"/>
+<see name="DESKTOP_REMOVEWINDOW" href="DLL/GUI/DESKTOP_REMOVEWINDOW"/>
+</function>

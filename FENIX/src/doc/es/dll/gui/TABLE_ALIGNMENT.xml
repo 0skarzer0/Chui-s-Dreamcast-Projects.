@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_ALIGNMENT">
+<retval />
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="nombre" type="STRING"> Nombre de la columna </param>
+<param name="alineación"> Tipo de alineación </param>
+<abstract> Cambia la alineación horizontal de una columna de una tabla </abstract>
+<description>
+    <p>
+	Dada una columna de una tabla (por su nombre, o opcionalmente por
+	su número de índice, con 0 para la columna más a la izquierda),
+	cambia su alineación a una de las tres posibilidades: 0 (izquierda),
+	1 (centro) ó 2 (derecha).
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+</function>

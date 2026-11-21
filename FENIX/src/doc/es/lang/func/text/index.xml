@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="GET_TEXT_COLOR" />
+<fnc href="SET_TEXT_COLOR" />
+<fnc href="GET_GLYPH" />
+<fnc href="SET_GLYPH" />
+<fnc href="TEXT_WIDTH" />
+<fnc href="TEXT_HEIGHT" />
+<fnc href="WRITE" />
+<fnc href="WRITE_IN_MAP" />
+<fnc href="WRITE_FLOAT" />
+<fnc href="WRITE_INT" />
+<fnc href="WRITE_STRING" />
+<fnc href="WRITE_VAR" />
+<fnc href="LOAD_FNT" />
+<fnc href="LOAD_BDF" />
+<fnc href="UNLOAD_FNT" />
+<fnc href="FNT_NEW" />
+<fnc href="DELETE_TEXT" />
+<fnc href="MOVE_TEXT" />
+</INDEX>

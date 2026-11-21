@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="UNLOAD_WAV">
+    <retval/>
+    <param name="wav"> Identifier of the sound returned by LOAD_WAV </param>
+    <abstract> It unloads the memory occupied for a sound effect </abstract>
+    <description>
+	<p>
+	    It eliminates a sound effect of memory. It is important
+	    that the effect is not playing when we use this function,
+	    so that you must check it using the function <a href="IS_PLAYING_WAV"/>.
+	    Normally only it is necessary to unload of memory sound effects which
+	    never stops, or occupies more space, like
+	    the engine of a car or the rain of background,
+	    so this limitation will not be advisable because it is necessary
+	    of all ways to take a control of the reproduction of this sound.
+	</p>
+    </description>
+    <see href="STOP_WAV"/>
+    <see href="IS_PLAYING_WAV"/>
+</function>

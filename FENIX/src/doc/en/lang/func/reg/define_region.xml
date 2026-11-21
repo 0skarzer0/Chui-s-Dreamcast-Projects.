@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DEFINE_REGION">
+    <retval/>
+    <param name="region"> Number of region, interval 0-31 </param>
+    <param name="x"> Horizontal coordinate of top left corner </param>
+    <param name="y"> Vertical coordinate of top left corner </param>
+    <param name="width"> Width in pixels of the region </param>
+    <param name="height"> Height in pixels of the region </param>
+    <abstract> It allows to define a region </abstract>
+    <description>
+	<p>
+	    This function allows to define the limits of a region. There are
+	    32 avaliable regions, but you must know that the region 0 is always
+	    to full screen and it can not be changed.
+	</p>
+	<p>
+	    A region is a zone of screen of special interest. The regions
+	    are specially useful in games in which the visible zone does not
+		corresponds to the game area: for example, a zone can be destinied
+	    to use of marks. The regions can be used to:
+	    <ul>
+		<li> Define the occuped area for a scroll region. </li>
+		<li> Define an area of "clipping", where the processes
+		    that are marked like beloging to the same will be
+		    cutted of for their limits. </li>
+		<li> Define a zone of screen where we wanna know easily
+		    when a process is in or out. </li>
+	    </ul>
+	</p>
+	<p>
+	    This function allows to establish the limits of a region.
+	    The coordinates are always in pixels, where (0, 0) corresponds
+	    to top left corner of screen. However, define a region has not
+	    any effect until it is used. You can assign the number of region to
+	    the variable <a href="REGION"/> of a process, use with
+	    <a href="START_SCROLL"/>, or use the function 
+	    <a href="OUT_REGION"/> with the new region defined.
+	</p>
+    </description>
+    <see href="REGION"/>
+    <see href="START_SCROLL"/>
+    <see href="reg/OUT_REGION" name="OUT_REGION"/>
+</function>

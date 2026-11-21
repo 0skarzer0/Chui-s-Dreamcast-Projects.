@@ -1,0 +1,356 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+</head>
+<body>
+<h2>Bucle principal del FXI 0.83<br>
+</h2>
+<p>El siguiente esquema ilustra el funcionamiento del bucle principal
+del FXI <span style="font-weight: bold;">[instange_go_all]</span> en la
+versi&oacute;n 0.83:</p>
+<ul>
+  <li>
+    <p>Mientras haya activo alg&uacute;n proceso:</p>
+  </li>
+  <ul>
+    <li>
+      <p>Examina todos los procesos activos:</p>
+    </li>
+    <ul>
+      <li>
+        <p>Crea una lista (<span style="font-style: italic;">ilist</span>)con
+todos aquellos que tengan STATUS igual a 2 y FRAME_PERCENT menor a 100</p>
+      </li>
+      <li>
+        <p>Inicializa las variables TYPE_SCAN y ID_SCAN (contadores
+para GET_ID y COLLISION)</p>
+      </li>
+    </ul>
+    <li>
+      <p>Si la lista est&aacute; vac&iacute;a:</p>
+    </li>
+    <ul>
+      <li>
+        <p>Destruye todos los procesos que tengan STATUS igual a 1</p>
+      </li>
+      <li>
+        <p>Espera hasta que sea momento de empezar el siguiente frame <span
+ style="font-weight: bold;">[gr_wait_frame]</span> </p>
+      </li>
+      <li>
+        <p>Dibuja el siguiente frame en pantalla <span
+ style="font-weight: bold;">[gr_draw_frame]</span>:</p>
+      </li>
+      <ul>
+        <li>
+          <p>Recoge los eventos de teclado y rat&oacute;n de SDL,
+actualizando las variables globales correspondientes <span
+ style="font-weight: bold;">[do_events]</span><br>
+          </p>
+        </li>
+        <li>
+          <p>Si est&aacute; activado el flag de saltar el frame actual,
+no hace nada m&aacute;s</p>
+        </li>
+        <li>
+          <p>Si est&aacute; activado el flag de cambio de paleta, la
+actualiza <span style="font-weight: bold;">[gr_refresh_palette]</span> </p>
+        </li>
+        <li>
+          <p>Bloquea el acceso a pantalla <span
+ style="font-weight: bold;">[gr_lock_screen]</span>. Esta
+funci&oacute;n crea un bitmap "falso" cuyo puntero a datos en realidad
+apunta al buffer de video (modo doble_buffer o en ventana), o bien crea
+un bitmap en memoria para la pantalla (modo 2xscale o pantalla completa
+sin doble_buffer).</p>
+        </li>
+        <li>
+          <p>Dibuja el frame completo <span style="font-weight: bold;">[gr_draw_screen]</span>
+en el bitmap (<span style="font-style: italic;">scrbitmap</span>)
+preparado por gr_lock_screen:</p>
+        </li>
+        <ul>
+          <li>
+            <p>En el caso de que no haya un scroll a pantalla completa <span
+ style="font-weight: bold;">[gr_scroll_is_fullscreen]</span>, borra la
+pantalla: poniendola a negro si no hay fondo, o copiando el
+gr&aacute;fico de fondo, que puede ser de 8 &oacute; 16 bits.</p>
+          </li>
+          <li>
+            <p>Crea una lista de objetos a dibujar, con:</p>
+          </li>
+          <ul>
+            <li>
+              <p>Todos los procesos donde CTYPE vale 0, su estado es 2
+&oacute; 4, y tienen un n&uacute;mero distinto de 0 en GRAPH &oacute;
+XGRAPH.</p>
+            </li>
+            <li>
+              <p>Todos los objetos registrados por DLL [gr_new_object].
+Esto incluye los gr&aacute;ficos tipo primitiva creados como objetos
+[gr_drawing_new]</p>
+            </li>
+            <li>
+              <p>El dibujo de textos, como objeto &uacute;nico
+[draw_texts]</p>
+            </li>
+            <li>
+              <p>El dibujo del rat&oacute;n, como objeto &uacute;nico <span
+ style="font-weight: bold;">[draw_mouse]</span> </p>
+            </li>
+            <li>
+              <p>El dibujo del FLI actual, como objeto &uacute;nico
+[draw_fli]</p>
+            </li>
+            <li>
+              <p>Cualquier plano de scroll, como objeto &uacute;nico
+[draw_scroll]</p>
+            </li>
+            <li>
+              <p>Cualquier plano de modo 7, como objeto &uacute;nico
+[draw_mode7]</p>
+            </li>
+          </ul>
+          <li>
+            <p>Ordena la lista en funci&oacute;n de coordenada Z con un
+qsort</p>
+          </li>
+          <li>
+            <p>Llama a la funci&oacute;n que dibuja cada objeto, por
+orden</p>
+          </li>
+        </ul>
+      </ul>
+    </ul>
+  </ul>
+</ul>
+<div style="margin-left: 200px;"><span
+ style="font-style: italic; font-weight: bold;">(fin de gr_draw_screen)</span>
+Vuelta a gr_draw_frame:<br>
+</div>
+<ul>
+  <ul>
+    <ul>
+      <ul>
+        <li>
+          <p>Si hay un fade activo, actualiza su posici&oacute;n y
+opcionalmente colorea scrbitmap <span style="font-weight: bold;">[gr_fade_step]</span></p>
+        </li>
+        <li>
+          <p>Desbloquea el acceso a pantalla <span
+ style="font-weight: bold;">[gr_unlock_screen]</span>. </p>
+        </li>
+        <ul>
+          <li>
+            <p>En modo 2xscale, esta funci&oacute;n mueve el contenido
+de scrbitmap a la pantalla real (<span style="font-style: italic;">screen</span>)
+empleando la funci&oacute;n AdMame2x y seguidamente hace un
+SDL_UpdateRect() de toda la pantalla. </p>
+          </li>
+          <li>
+            <p>En modo doble buffer o a ventana, se limita a
+desbloquear el bitmap "falso" y hacer un SDL_Flip.</p>
+          </li>
+          <li>
+            <p>En modo de pantalla completa sin doble buffer, copia el
+contenido de scrbitmap a screen y hace un SDL_UpdateRect. Adem&aacute;s,
+en 16 bits soporta el "filtrado" -f, que mezcla cada color con el de su
+derecha al hacer la copia.</p>
+          </li>
+        </ul>
+        <li>Vuelve a recoger eventos de SDL por segunda vez (idealmente
+bastar&iacute;a con hacerlo aqu&iacute;) <span
+ style="font-weight: bold;">[do_events]</span></li>
+      </ul>
+    </ul>
+  </ul>
+</ul>
+<div style="margin-left: 160px;"><span
+ style="font-style: italic; font-weight: bold;">(fin de gr_draw_frame)</span>
+Vuelta a instance_go_all:<br>
+</div>
+<ul>
+  <ul>
+    <ul>
+      <li>
+        <p>Resta 100 al FRAME_PERCENT de todos los procesos que tengan
+STATUS igual a 2</p>
+      </li>
+      <li>
+        <p>Avanza los contadores de tiempo <span
+ style="font-weight: bold;">[gr_advance_timers]</span></p>
+      </li>
+      <li>
+        <p>Sale del bucle principal si existe una condici&oacute;n de
+salida (ej. se ejecut&oacute; EXIT)</p>
+      </li>
+      <li>
+        <p>Vuelve al comienzo del bucle principal</p>
+      </li>
+    </ul>
+    <li>
+      <p>Ordena la lista de procesos activos (<span
+ style="font-style: italic;">ilist</span>) por la variable PRIORITY</p>
+    </li>
+    <li>
+      <p>Ejecuta uno a uno los procesos, por el orden dado por la lista <span
+ style="font-weight: bold;">[instance_go]</span> </p>
+    </li>
+  </ul>
+</ul>
+<p>La lista de procesos se recorre de principio a fin varias veces por
+frame: una para obtener la lista de procesos a ejecutar, otra para
+destuir los procesos afectados, y otra para restar 100 al FRAME_PERCENT
+de los procesos. Adem&aacute;s, la lista de procesos activos se crea y
+se ordena como m&iacute;nimo una vez por frame, incluso aunque no hayan
+cambios respecto a la ejecuci&oacute;n anterior.<br>
+</p>
+<h2>Propuesta de nuevo bucle principal</h2>
+<p>El nuevo bucle principal se nutre de los siguientes conceptos:</p>
+<ul>
+  <li>
+    <p>Existen dos bucles de ejecuci&oacute;n de procesos:</p>
+  </li>
+  <ul>
+    <li>
+      <p>Un bucle primario que se ejecuta al principio de cada frame y
+considera todos los procesos que existen al principio del FRAME (incluso
+aquellos que no son susceptibles de ejecutarse), ejecutando los que lo
+precisen. Este bucle tambi&eacute;n reduce el valor de FRAME_PERCENT.<br>
+      </p>
+    </li>
+    <li>
+      <p>Un bucle secundario que se ejecuta inmediatamente
+despu&eacute;s y puede ejecutarse varias veces, y que s&oacute;lo
+considera aquellos procesos que tras la ejecuci&oacute;n de un bucle
+anterior este frame a&uacute;n tienen tiempo de frame por agotar,
+as&iacute; como aquellos procesos que se crean pero no agotan todo su
+tiempo de frame durante la primera ejecuci&oacute;n.</p>
+    </li>
+  </ul>
+  <li>
+    <p>Existen cinco listas globales que se mantienen como listas
+doblemente enlazadas. Las cinco listas son:</p>
+  </li>
+  <ul>
+    <li>
+      <p>Lista primaria de ejecuci&oacute;n: para el bucle primario.
+Contiene todos los procesos existentes ordenados por PRIORITY, incluso
+aquellos que est&eacute;n dormidos, para que el bucle primario pueda
+observar que han despertado. Sin embargo, al crear un proceso nuevo <span
+ style="font-weight: bold;">[instance_new]</span> este no se
+a&ntilde;ade a la lista, ya que perturbar&iacute;a la ejecuci&oacute;n
+de este frame (el bucle primario s&oacute;lo debe considerar procesos
+que exist&iacute;an al iniciar el frame).</p>
+    </li>
+    <li>
+      <p>Lista secundaria de ejecuci&oacute;n: un proceso que tras
+ejecutarse <span style="font-weight: bold;">[instance_go]</span> no
+acaba con un FRAME_PERCENT de 100 o m&aacute;s debe volver a ejecutarse
+en un bucle secundario posterior, as&iacute; que se a&ntilde;ade a esta
+lista, manteniendo un orden por PRIORITY. Esto tambi&eacute;n incluye a
+los procesos nuevos, creados durante este frame.</p>
+    </li>
+    <li>
+      <p>Lista de procesos nuevos: un proceso nuevo <span
+ style="font-weight: bold;">[instance_new] </span>se a&ntilde;ade a
+esta lista desordenada en lugar de a la primaria. El bucle principal se
+encargar&aacute; de actualizar la lista primaria moviendo el contenido
+de esta, antes de iniciar un nuevo frame.</p>
+    </li>
+    <li>
+      <p>Lista de procesos a matar: tanto el bucle principal como el
+secundario a&ntilde;adir&aacute;n a esta lista desordenada cualquier
+proceso tal que, antes o despu&eacute;s de ejecutarlo, acaba con STATUS
+= 1. El bucle principal har&aacute; efectiva la destrucci&oacute;n de
+los procesos que figuren en esta lista justo despu&eacute;s de dibujar
+el frame actual, antes de empezar el siguiente.</p>
+    </li>
+    <li>
+      <p>Lista de objetos. No es una lista de procesos propiamente
+dicha, ya que puede contener objetos, textos, primitivas gr&aacute;ficas
+y objetos de DLL. Pero los procesos deben a&ntilde;adirse a esta lista
+si son susceptibles de ser dibujados. Tanto el bucle principal como el
+secundario deben comprobar los datos del proceso para a&ntilde;adirlo a
+esta lista, borrarlo de ella, o actualizar su posici&oacute;n en la
+misma (ante una variaci&oacute;n de coordenada Z).</p>
+    </li>
+  </ul>
+</ul>
+<h2>Propuesta de sistema de dibujo</h2>
+<p>Actualmente se est&aacute; dibujando cada frame entero, incluso
+cuando el gr&aacute;fico de pantalla scrbitmap es falso y se
+podr&iacute;a mantener entre frames. Deber&iacute;a permitirse modificar
+la modalidad de funcionamiento en funci&oacute;n de la necesidad del
+juego, como en DIV, soportando las variables DUMP_TYPE y RESTORE_TYPE
+con las siguientes combinaciones:</p>
+<ul>
+  <li>
+    <p>DUMP_TYPE = COMPLETE_DUMP ; RESTORE_TYPE = COMPLETE_RESTORE</p>
+    <p>Funcionamiento actual. Cada nuevo frame, se borra toda la
+pantalla (o se copia el fondo sobre scrbitmap) y se pasan a dibujar
+todos los objetos y procesos por orden de coordenada Z. Compatible con
+doble buffer (dibujando directamente sobre el buffer de video).<br>
+    </p>
+  </li>
+  <li>
+    <p>DUMP_TYPE = COMPLETE_DUMP ; RESTORE_TYPE = NO_RESTORE</p>
+    <p>No se copia el fondo ni se borra la pantalla, y se dibujan todos
+los procesos y objetos encima de "lo que haya". Esto s&oacute;lo es
+&uacute;til con scrolls a pantalla completa. Compatible con doble buffer.<br>
+    </p>
+  </li>
+  <li>
+    <p>DUMP_TYPE = PARTIAL_DUMP ; RESTORE_TYPE = PARTIAL_RESTORE</p>
+    <p>Se hace una b&uacute;squeda de rect&aacute;ngulos "sucios" a
+redibujar... B&aacute;sicamente, se trata de ennumerar los
+rect&aacute;ngulos que contengan a cualquier proceso que haya cambiado
+una de las variables, GRAPH, FILE, X, Y, SIZE, ANGLE, SIZE_X &oacute;
+SIZE_Y desde el &uacute;ltimo frame que fueron dibujados. Las DLL
+deber&aacute;n registrar una funci&oacute;n que proporcione estos
+rect&aacute;ngulos cada frame. Seguidamente, se dibujan selectivamente
+s&oacute;lo estas zonas (primero se borran o se copia un trozo de fondo
+sobre ellas; luego se dibujan con clipping los procesos y objetos
+precisos).<br>
+    <br>
+El mayor inconveniente es que los rect&aacute;ngulos no deber&iacute;an
+superponerse, y puede haber un n&uacute;mero elevado de los mismos.<br>
+    <br>
+Para que sea compatible con el doble buffer habr&iacute;a que guardar
+las posiciones de los procesos tal como se dibujaron por separado por
+cada uno de los buffers, para poder comprobar si hay variaciones.
+Habr&iacute;a que consultar la SDL a ver si el doble buffer nos deja el
+backbuffer con los datos correctos tal como se dibujaron, o bien su
+contenido es indeterminado.<br>
+    </p>
+  </li>
+  <li>
+    <p>DUMP_TYPE = PARTIAL_DUMP ; RESTORE_TYPE = NO_RESTORE<br>
+    <br>
+Igual que el paso anterior, pero no se borran los rect&aacute;ngulos ni
+se copia sobre ellos el fondo. S&oacute;lo resulta &uacute;til en
+juegos con scrolls que no sean a pantalla completa. Compatible con
+doble buffer sin tener que hacer nada especial. Un juego que tenga
+procesos normales y use este modo no funcionar&aacute; correctamente.</p>
+  </li>
+</ul>
+Adem&aacute;s deber&iacute;an existir algunas variables adicionales:<br>
+<br>
+<ul>
+  <li>GRAPH_MODE |= MODE_HARDWARE;<br>
+    <br>
+Este flag permitir&iacute;a escoger cuando se dibuja directamente sobre
+el buffer de video de la tarjeta gr&aacute;fica o bien se reserva un
+bitmap en memoria. En teor&iacute;a los modos anteriores
+deber&iacute;an ser compatibles con ambas posibilidades. Sin embargo,
+este modo es incompatible con 2XSCALE.<br>
+    <br>
+  </li>
+  <li>GRAPH_MODE |= MODE_DOUBLEBUFFER;<br>
+    <br>
+Este flag activar&iacute;a el modo de doble buffer. En teor&iacute;a no
+deber&iacute;a ser incompatible con el anterior.<br>
+  </li>
+</ul>
+</body>
+</html>

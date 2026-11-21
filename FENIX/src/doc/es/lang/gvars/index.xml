@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+
+<index name="lang/gvars">
+    <abstract> Variables globales </abstract>
+    <description>
+	<p>
+	    Las variables globales son accesibles desde cualquier
+	    proceso en Fenix. Sin embargo, por cada variable, sólo
+	    hay una copia. En esto se diferencias de las variables
+	    locales o privadas, de las cuales existe una instancia de
+	    la variable para cada proceso existente.
+	</p>
+	<p>
+	    Las variables globales predefinidas suelen almacenar
+	    datos de configuración general o datos informativos
+	    sobre el estado del programa, como <a href="FPS"/>.
+	</p>
+    </description>
+</index>
+
+

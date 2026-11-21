@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_POINT">
+    <retval> 1 si el punto está definido, 0 en caso contrario </retval>
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <param name="número"> Número de punto de control (0 es el centro) </param>
+    <param type="INT POINTER" name="x"> Offset de una variable de tipo entero (INT)
+	que pasará a contener la coordenada horizontal del punto </param>
+    <param type="INT POINTER" name="y"> Offset de una variable de tipo entero (INT)
+	que pasará a contener la coordenada vertical del punto </param>
+    <abstract> Permite obtener un punto de control de un gráfico </abstract>
+    <description>
+	<p>
+	    Un gráfico cualquiera puede contener un número indeterminado
+	    de puntos de control de los cuales el punto de control 0
+	    representa el centro del gráfico, y el resto están disponibles
+	    para el usuario. Mediante esta función puede consultarse
+	    un punto de control del gráfico. Si el número de punto
+	    de control especificado queda fuera de rango o no está definido, 
+	    la función devuelve 0 y las variables x e y no serán modificadas.
+	    En el resto de casos, x e y pasarán a contener las coordenadas
+	    del punto de control, de manera que (0, 0) representa el pixel
+	    ubicado en la esquina superior izquierda del gráfico, y las
+	    coordenadas crecen hacia abajo y a la derecha.
+	</p>
+    </description>
+    <see name="SET_POINT" href="MAP/SET_POINT"/>
+    <see name="GET_REAL_POINT" href="PROC/GET_REAL_POINT"/>
+</function>

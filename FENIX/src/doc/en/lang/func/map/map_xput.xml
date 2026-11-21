@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_XPUT">
+    <param name="libray"> Number of FPG library </param>
+    <param name="graph"> Number of destiny graph inside of library </param>
+    <param name="source-graph"> Number of graph to draw inside of library </param>
+    <param name="x"> Horizontal coordinate </param>
+    <param name="y"> Vertical coordinate </param>
+    <param name="angle"> Angle of graph to draw in miligrades (90000 = 90º) </param>
+    <param name="size"> Size of graph to draw, in percent (100 = original size) </param>
+    <param name="flags"> Flags for the graph </param>
+    <param name="region"> Cut region </param>
+    <abstract> It draws a graph inside of other </abstract>
+    <description>
+	<p>
+	    This function draws a graph directly over other, using a coordinates
+	    inside of destiny graph, as if it is the background of screen. 
+		Unlike <a href="MAP_PUT"/>, this function has all flexibility 
+		to draw the processes, including the cutting of a region.
+	</p>
+	<p>
+	    A limitation of this function is that both graphs must be in the
+	    same library. Habitually the destiny graphs are temporal graphs
+	    created by <a href="NEW_MAP"/>, so that it can be use like
+	    source graph a copy <a href="MAP_CLONE"/> of a graph of any library
+	    to ignore this limitation.
+	</p>
+	<p>
+	    The point specified with the parameters will be equivalent to the zone where
+	    is drawn the center of the graph to draw.
+	</p>
+	<p>
+	    The flags are an added or union with the operator | of the following
+	    values:
+	    <ul>
+		<li> 1: Draw the graph reflected horizontally, as seen
+		    in a mirror. </li>
+		<li> 2: Draw the graph reflected vertically. </li>
+		<li> 4: Draw the graph with transparency. </li>
+		<li> 128: Draw the graph without having known the transparent
+		    pixels of the same one. This option is not compatible with
+		    the flag 4. </li>
+	    </ul>
+	</p>
+	<p>
+	    The region corresponds to a limitation of coordinates. We must know that
+	    normally a region is defined with respect to the screen, and in the case
+	    of this function, the same limits are applied to a destiny graph that is small.
+	    Securely it is necessary to define new regions to use them specifically with this function.
+
+	</p>
+    </description>
+    <see href="MAP_PUT"/>
+    <see href="NEW_MAP"/>
+    <see href="MAP_CLONE"/>
+    <see href="DEFINE_REGION"/>
+    <see href="FLAGS"/>
+    <see href="ANGLE"/>
+    <see href="SIZE"/>
+</function>

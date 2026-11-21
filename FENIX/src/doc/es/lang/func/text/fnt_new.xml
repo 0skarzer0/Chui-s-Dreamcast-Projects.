@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FNT_NEW">
+    <retval> Identificador del nuevo tipo de letra </retval>
+    <param name="profundidad"> Profundidad de color (1, 8 ó 16) </param>
+    <abstract> Crea un tipo de letra FNT </abstract>
+    <description>
+	<p>
+	    Esta función crea un tipo de letra. El nuevo tipo de
+	    letra estará preparado para contener caracteres de la
+	    profundidad de color deseada, pero en un principio
+	    estará vacío. Será necesario utilizar la función
+	    <a href="SET_GLYPH"/> para añadir gráficos de
+	    caracteres al tipo de letra.
+    </description>
+    <see href="SET_GLYPH"/>
+    <see href="SAVE_FNT"/>
+    <see href="UNLOAD_FNT"/>
+</function>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_ANGLE">
+    <retval/>
+    <param name="id"> Identificador de un proceso </param>
+    <abstract> Calcula el ángulo de la línea entre dos procesos </abstract>
+    <description>
+	<p>
+	    Esta función devuelve el ángulo formado por la línea que parte
+	    del centro del proceso actual y pasa por el centro del proceso
+	    cuyo identificador se especifica como parámetro.
+	</p>
+	<p>
+	    El uso habitual de esta función consiste en hacer que un proceso
+	    "apunte" en dirección a otro: es el caso típico de monstruos y
+	    otros objetos que buscan siempre atrapar al jugador.
+	</p>
+	<p>
+	    Para que esta función devuelva un resultado útil, asegúrate de
+	    que no has asignado valores diferentes de <a href="RESOLUTION"/>
+	    y de que las coordenadas de ambos representan la misma zona
+	    (por ejemplo, que no estén cada uno en un área de scroll diferente).
+	</p>
+    </description>
+    <see href="FGET_ANGLE"/>
+    <see href="ADVANCE"/>
+    <see href="XADVANCE"/>
+</function>

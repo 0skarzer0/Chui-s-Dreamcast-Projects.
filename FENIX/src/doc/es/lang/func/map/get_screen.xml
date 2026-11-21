@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_SCREEN">
+    <retval> Código del nuevo gráfico </retval>
+    <abstract> Crea un nuevo gráfico con el estado de pantalla actual </abstract>
+    <description>
+	<p>
+	    Esta función crea un nuevo gráfico con el tamaño y número de bits
+	    por pixel equivalentes a la pantalla actual, y seguidamente dibuja
+	    sobre él el fondo de pantalla y todos los procesos, textos y
+	    objetos, en el mismo orden que existan. El resultado es que el
+	    nuevo gráfico contendrá una representación fiel de la última
+	    pantalla que fue mostrada al usuario.
+	</p>
+    </description>
+    <note>
+	El nuevo gráfico utiliza el estado actual de todos los procesos
+	y objetos, lo cual significa que cualquier proceso que se ejecute
+	antes que el proceso que haga GET_SCREEN() puede mostrar un aspecto
+	ligeramente diferente al de la pantalla dibujada el frame anterior. 
+	Esto puede resultar útil, ya que por ejemplo es posible obtener una
+	copia de la pantalla sin el cursor del ratón simplemente eliminando
+	su gráfico antes de llamar a GET_SCREEN y volviéndolo a restaurar
+	inmediatamente después (para que se vea normalmente en el próximo
+	frame, sin apreciarse ningún "parpadeo"). A cambio, para asegurar
+	una reproducción fiel de la última pantalla, es preciso que el
+	proceso que llame a esta función tenga la prioridad máxima y se
+	ejecute en primer lugar.
+    </note>
+    <see href="NEW_MAP"/>
+    <see href="MAP_CLONE"/>
+</function>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="REWIND_MPEG">
+    <retval/>
+    <param name="video"> Identifier of video </param>
+    <abstract> It restarts the reproduction of a video from the beginning </abstract>
+    <description>
+	<p>
+	    This function restarts the reproduction of a MPEG video from the beginning.
+	    It can be used to simulate a loop.
+	</p>
+    </description>
+    <see href="dll/mpeg/LOAD_MPEG" name="LOAD_MPEG"/>
+    <see href="dll/mpeg/PLAY_MPEG" name="PLAY_MPEG"/>
+    <see href="dll/mpeg/STOP_MPEG" name="STOP_MPEG"/>
+    <see href="dll/mpeg/PAUSE_MPEG" name="PAUSE_MPEG"/>
+</function>

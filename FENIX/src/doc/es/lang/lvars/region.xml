@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="REGION">
+    <abstract>Región de recorte del proceso</abstract>    
+	<description>
+	<p>
+		Indica el número de sección que se utilizará para recortar el 
+		gráfico en pantalla.  Por defecto valdrá 0 (la región por defecto 
+		que equivale a la pantalla completa).  Su valor debe corresponder 
+		con un número de sección inicializado con <A href="REG/DEFINE_REGION" name="DEFINE_REGION"/>.
+	</p>
+	<p>
+		Si el gráfico se encuentra dentro de la zona de recorte de la 
+		sección será visualizado, las partes del gráfico del proceso que 
+		queden fuera de la zona definida por la región se recortarán y 
+		no serán mostradas.
+	</p>
+    </description>
+    <see name="DEFINE_REGION" href="REG/DEFINE_REGION" />
+    <see type="var" name="Y" href="LVARS/Y" />
+</variable>

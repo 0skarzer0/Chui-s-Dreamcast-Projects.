@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_COLORS">
+    <retval/>
+    <param name="primer"> Número del primer color de paleta a cambiar </param>
+    <param name="numero"> Número de colores a cambiar </param>
+    <param name="color" type="POINTER"> Puntero a un array de bytes con los nuevos valores </param>
+    <abstract> Cambia inmediatamente los valores de la paleta de colores </abstract>
+    <description>
+	<p>
+	    Modifica inmediatamente los valores actuales de la paleta de colores del sistema.
+	    La paleta de colores contiene 256 entradas de tres bytes cada una e incluye los
+	    componentes rojo, verde y azul (en ese orden) de cada uno de los 256 colores
+	    disponibles en un modo de 8 bits.
+	</p>
+	<p>
+	    Todos los gráficos de 8 bits están representados por un byte por cada pixel.
+	    Cada byte representa un índice dentro de la paleta de colores, donde se encuentra
+	    el color real que se verá en pantalla al mostrarse dicho pixel. Modificar la
+	    paleta de colores durante la ejecución del programa permite modificar de
+	    forma instantánea la apariencia de los pixels, sin cambiar el contenido en
+	    bits de la pantalla o de los gráficos. Esta técnica tiene múltiples aplicaciones,
+	    desde colorear, iluminar u oscurecer toda la pantalla, a emular movimientos o
+	    animaciones cambiando o rotando una serie de colores determinados.
+	</p>
+	<p>
+	    Esta función permite cambiar una serie consecutiva de colores, que pueden variar
+	    de un color a la paleta completa. Para utilizarla, es preciso crear en algún
+	    lugar de memoria un array de bytes que contenga tres bytes por cada color que
+	    desee cambiarse, y escribir en él las nuevas componentes deseadas por cada
+	    color (0 indica ausencia de la componente, y 255 valor máximo; por ejemplo
+	    las componentes 255, 0, 0 indicarían un color rojo de máxima intensidad).
+	    Seguidamente basta con llamar a esta función especificando el número del
+	    primer color a cambiar (0 para el primer color de la paleta), el número total
+	    de colores a cambiar (de 1 a 256), y la dirección de memoria del array,
+	    empleando el operador &amp;.
+	</p>
+    </description>
+    <note>
+    Puede ser más cómodo usar una estructura o un tipo de dato definido por el
+    usuario para representar las componentes de los colores. Es válido usar una
+    estructura con 256 elementos, cada uno de ellos con tres variables tipo byte,
+    en lugar de un array de 768 bytes, por ejemplo.
+    </note>
+    <note>
+    Es preciso llamar a esta función cada vez que se desee hacer un cambio en la
+    paleta. Si se desea hacer un degradado u otro efecto, habrá que llamar a la
+    función cada frame. No basta con llamarla una vez y limitarse luego a cambiar
+    los valores en memoria del array usado como parámetro.
+    </note>
+    <note>
+    En un modo de 16 bits, los gráficos de 8 bits deben convertirse a 16 bits
+    cada vez que se dibujan. Esto significa que el motor gráfico leerá los valores
+    de la paleta en el momento de dibujarlos: en modo de 16 bits cada pixel de un
+    gráfico contiene el color real utilizado, y no es posible cambiar la apariencia
+    de los colores sin cambiar los bits del gráfico en sí. Si se desean utilizar
+    gráficos de 8 bits en un modo de 16 bits y poder usar esta u otras funciones
+    de paleta para hacer efectos, es preciso usar los gráficos de 8 bits como
+    gráficos de un proceso (de manera que el motor los vuelva a dibujar cada frame)
+    y nunca dibujarlos sobre el fondo de pantalla o dentro
+    de gráficos de 16 bits, ya que eso los convertiría a 16 bits. También es posible
+    usar un gráfico de 8 bits como fondo en modo de 16 bits, teniendo cuidado de no
+    dibujar ningún gráfico de 16 bits sobre él, ya que eso también convertiría el
+    fondo de pantalla a 16 bits y dejarían de afectarle los cambios sobre la paleta.
+    </note>
+    <see name="GET_PIXEL" href="MAP/GET_PIXEL"/>
+    <see name="GET_COLORS" href="PAL/GET_COLORS"/>
+</function>

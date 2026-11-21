@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="STOP_CD">
+    <abstract>Detiene la reproducción de CD Audio</abstract>
+    <description>
+	<p>
+		Detiene la reproducción de cualquier pista de CD Audio que 
+		esté actualmente en marcha.
+	</p>
+	</description>
+    <see href="CD/IS_PLAYING_CD" name="IS_PLAYING_CD"/>
+    <see href="CD/PLAY_CD" name="PLAY_CD"/>
+</function>

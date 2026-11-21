@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW_TYPE">
+<retval type="STRING"> Nuevo (o antiguo) tipo de ventana </retval>
+<param name="ventana"> Identificador de la ventana </param>
+<param name="type" optional="YES" type="STRING"> Nuevo tipo de ventana </param>
+<abstract> Permite obtener o cambiar el tipo de una ventana </abstract>
+<description>
+    <p>
+	Esta función permite asignar un "tipo" a una ventana. El tipo
+	no es más que una cadena definida por el usuario que puede
+	contener cualquier texto, pero es de utilidad porque procesos
+	que se ejecuten en respuesta a acciones del usuario (por ejemplo,
+	al marcar opciones de menú) pueden consultar el tipo de la
+	ventana que tenga el foco (<a href="DESKTOP_TOPWINDOW"/>)
+	para obrar en consecuencia.
+    </p>
+</description>
+<see name="WINDOW_DATA" href="DLL/GUI/WINDOW_DATA"/>
+</function>

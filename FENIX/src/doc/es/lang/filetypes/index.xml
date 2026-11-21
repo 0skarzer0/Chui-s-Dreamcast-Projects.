@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+
+<index name="filetypes">
+    <abstract> Tipos de fichero </abstract>
+    <description>
+	<p>
+		Este directorio contiene la descripción técnica de los ficheros
+		de formato propio utilizados en Fenix.
+	</p>
+	<p>
+		Fenix soporta la carga y/o grabación de algunos ficheros gráficos
+		estándar (como por ejemplo, PNG y PCX) y algunos más mediante el
+		uso de DLL. Sin embargo, para aprovechar las características
+		nativas del lenguaje especialmente diseñadas para apoyar la creación
+		de videojuegos, es preciso utilizar los formatos propios de Fenix.
+		Además, estos formatos están especialmente optimizados para guardar
+		los gráficos a la misma calidad que se muestran en pantalla, por
+		lo que suelen ocupar menos que otros formatos gráficos de uso
+		habitual (salvo formatos que perjudican la calidad del gráfico
+		y no suelen ser por lo tanto aptos para un videojuego donde debe
+		preservarse cada gráfico pixel a pixel).
+	</p>
+    </description>
+</index>
+
+

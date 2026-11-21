@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_CLONE">
+    <retval/>
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <abstract> Crea una copia de un gráfico </abstract>
+    <description>
+	<p>
+	    Esta función crea una copia en memoria de un gráfico cualquiera.
+	    El nuevo gráfico se crea como perteneciente a la librería 0,
+	    y Fenix asigna un número nuevo disponible para el mismo.
+	    El valor de retorno de esta función corresponde al número
+	    del nuevo gráfico, y debe recogerse para poder utilizarse
+	    en cualquier operación gráficas.
+	</p>
+	<p>
+	    La librería 0 o librería del sistema no está limitada a 999 gráficos,
+	    por lo que no es posible que esta función devuelva un error al
+	    no haber más números disponibles.
+	</p>
+	<p>
+	    Si lo que se desea es crear un gráfico nuevo dentro de una 
+	    librería FPG distinta de la del sistema, entonces es
+	    preferible usar la función <a href="FPG_ADD"/>.
+	</p>
+    </description>
+    <see href="FPG_ADD"/>
+    <see href="NEW_MAP"/>
+</function>

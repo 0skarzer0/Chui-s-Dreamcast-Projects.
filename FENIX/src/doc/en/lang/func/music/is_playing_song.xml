@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="IS_PLAYING_SONG">
+    <retval/>
+    <abstract> It returns 1 if the music is still playing </abstract>
+    <description>
+	<p>
+	    This function checks if any music reproduced before
+	    by the function <a href="PLAY_SONG"/> is still
+	    playing. In oppositve case (the music is not playing
+	    and it is not repeating, or it has been stopped by
+	    functions like <a href="STOP_SONG"/> or <a href="FADE_MUSIC_OFF"/>),
+	    this function will return 0.
+	</p>
+    </description>
+    <see href="FADE_MUSIC_OFF"/>
+    <see href="PLAY_SONG"/>
+    <see href="STOP_SONG"/>
+    <see href="LOAD_SONG"/>
+</function>

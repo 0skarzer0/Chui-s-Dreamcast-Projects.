@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DRAWING_MAP">
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico a dibujar </param>
+    <abstract> Escoge el gráfico destino de las primitivas gráficas </abstract>
+    <description>
+	<p>
+	    Esta función permite escoger el gráfico donde se dibujarán
+	    las primitivas gráficas (todas aquellas funciones
+	    que empiezan por DRAW_...). No es válido llamar a ninguna
+	    de estas funciones si no se escoge antes un fondo como
+	    destino. El gráfico (0, 0) representa el fondo de pantalla.
+	</p>
+    </description>
+    <see href="PRIM/DRAWING_COLOR" name="DRAWING_COLOR"/>
+    <see href="PRIM/DRAW_BOX" name="DRAW_BOX"/>
+    <see href="PRIM/DRAW_CIRCLE" name="DRAW_CIRCLE"/>
+    <see href="PRIM/DRAW_FCIRCLE" name="DRAW_FCIRCLE"/>
+    <see href="PRIM/DRAW_LINE" name="DRAW_LINE"/>
+    <see href="PRIM/DRAW_RECT" name="DRAW_RECT"/>
+</function>

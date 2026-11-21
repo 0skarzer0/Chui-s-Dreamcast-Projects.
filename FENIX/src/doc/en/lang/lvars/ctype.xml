@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="CTYPE">
+    <abstract>It defines the type of coordinates of the process</abstract>    
+	<description>
+	<p>
+		It allows to specify the kind of source of coordinates for the process, 
+		being affected the calculation of its positioning in screen.
+	</p>
+	<p>
+		Their values can be:<BR /><BR />
+		<const name="C_SCREEN" />
+		<const name="C_SCROLL" />
+		<const name="C_M7" /><BR/>	
+		<B>C_SCREEN</B> makes reference to the coordinates of screen<BR/>
+		<B>C_SCROLL</B> makes reference to the coordinates of a SCROLL zone<BR/>
+		<B>C_M7</B> makes reference to the coordinates of a Mode7 zone<BR/>
+		<br/>
+		The value by default is <b>C_SCREEN</b>, for other values must be specified
+		in the variable <a type="var" name="CFLAGS" href="LVARS/CFLAGS" /> 
+		the zones of SCROLL or Mode7 in which the process will be showed.
+	</p>
+    </description>
+    <see type="var" name="CFLAGS" href="LVARS/CFLAGS" />
+    <see type="var" name="X" href="LVARS/X" />
+    <see type="var" name="Y" href="LVARS/Y" />
+</variable>

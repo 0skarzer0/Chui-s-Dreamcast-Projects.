@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_TITLE">
+    <param name="title" type="STRING"> Name of the application </param>
+    <abstract> It establishes the title of the game window </abstract>
+    <description>
+	<p>
+	    This function allows to choose the title of the game window,
+	    if the game does not work to full screen. It is necessary to 
+	    call to this function to use <a href="INIT/SET_MODE" name="SET_MODE"/>, because
+	    that is the function which will create and show the game window.
+	    You must remember that SET_MODE initializes normally the game to
+	    full screen: to initialize the window mode, you must change
+	    the value of the variable <a href="FULL_SCREEN"/>
+	    before calling to <a href="INIT/SET_MODE" name="SET_MODE"/>.
+	</p>
+	<p>
+	    It is not possible to change the title of a window which is running,
+	    but you can call to <a href="INIT/SET_MODE" name="SET_MODE"/> again to active the changes.
+	</p>
+    </description>
+    <see href="FULL_SCREEN"/>
+    <see href="INIT/SET_MODE" name="SET_MODE"/>
+    <see href="INIT/SET_ICON" name="SET_ICON"/>
+</function>

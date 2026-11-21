@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CHDIR">
+    <retval/>
+    <param name="directorio" type="STRING"> Nuevo directorio </param>
+    <abstract> Cambia el directorio actual por el nuevo directorio </abstract>
+    <description>
+	<p>
+	    Esta función cambia el directorio por defecto al que se especifica con 
+	    el parámetro <b>directorio</b>.  Devuelve 0 si ha tenido éxito y -1 en caso 
+	    de no poderse efectuar el cambio al nuevo directorio, por ejemplo, si el 
+	    directorio indicado no existe.
+	</p>
+	<p>
+		Las rutas pueden indicarse usando el separador de directorios <b>/</b> o <b>\</b> 
+		y se puede especificar, en el caso de plataformas que así lo requieran, el 
+		nombre de unidad, por ejemplo c:\midirectorio en plataformas Windows.
+	</p>
+    </description>
+    <see href="FILE/CD" name="CD"/>
+</function>

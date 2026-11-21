@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DRAWING_STIPPLE">
+    <param name="valor"> Nuevo valor de "stipple"</param>
+    <abstract> Escoge el aspecto de dibujo de líneas </abstract>
+    <description>
+	<p>
+	    Esta función permite escoger el aspecto con el que se
+	    dibujan las líneas dibujadas con
+	    <a href="DRAW_LINE"/> o <a href="DRAW_RECT"/>.
+	    El parámetro es un número entero de 32 bits, en el cual
+	    cada bit a 1 representa un pixel activo en cada segmento
+	    de 32 pixels de la línea. Por defecto, el valor de
+	    stipple es 0FFFFFFFFh, con los 32 bits a 1, por lo que
+	    las líneas tienen la apariencia de una línea sólida.
+	</p>
+	<p>
+	    Algunos valores útiles para este parámetro son
+	    055555555h para dibujar una línea de puntos
+	    o 0F0F0F0Fh para dibujar una línea de rayas. 
+	</p>
+    </description>
+    <note>
+	El primer punto a dibujar estará activo si lo está el bit
+	más a la derecha del número. Este parámetro va rotando a la
+	derecha a medida que se dibujan puntos, por lo que si varias
+	líneas se dibujan una a continuación de la anterior, darán
+	una impresión de continuidad de la apariencia de la línea.
+    </note>
+    <see href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>
+    <see href="PRIM/DRAW_LINE" name="DRAW_LINE"/>
+    <see href="PRIM/DRAW_RECT" name="DRAW_RECT"/>
+</function>

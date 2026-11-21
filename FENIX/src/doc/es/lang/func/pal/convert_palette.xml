@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CONVERT_PALETTE">
+    <retval/>
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <param name="tabla" type="POINTER"> Tabla de 256 bytes con los nuevos valores de pixel </param>
+    <abstract> Modifica los valores de pixel de un gráfico según una tabla </abstract>
+    <description>
+	<p>
+	    Esta función permite hacer conversiones de color en un gráfico de 8 bits.
+	    A diferencia del resto de funciones de paleta de 8 bits, alterará
+	    efectivamente los valores de pixel del gráfico.
+	</p>
+	<p>
+	    Para utilizarla es preciso crear una tabla de 256 valores de tipo byte,
+	    de manera que cada valor contendrá el nuevo valor para cada uno de los
+	    256 pixels diferentes posibles. El primer byte contendrá el nuevo valor
+	    que se asignará a los pixels que estén a 0, el segundo byte a los
+	    que estén a 1, y así sucesivamente. 
+	</p>
+	<p>
+	    A veces es deseable crear gráficos con zonas que sea posible cambiar de
+	    color fácilmente para obtener varias versiones del gráfico con pequeñas
+	    diferencias, como los colores de las camisetas de los sprites de un juego
+	    deportivo o el color de piel de un monstruo. Para ello, sería preciso
+	    determinar una serie de colores en el gráfico que interesaría cambiar
+	    por otros. Esta función permite lograr ese efecto fácilmente: basta con
+	    preparar un array de bytes que contenga inicialmente todos los números 
+	    del 0 a 255 ordenados de menor a mayor, y modificar en su interior los
+	    colores que desean cambiarse por los nuevos valores.
+	</p>
+	<p>
+	    Hay que tener en cuenta que el cambio es de una sóla dirección: al
+	    cambiar los valores de pixel de cada gráfico, es preciso mantener en
+	    memoria varias copias de cada gráfico del que se desee crear varias
+	    versiones empleando esta función. Para ello es posible emplear
+	    la función <a name="MAP_CLONE" href="MAP/MAP_CLONE"/>.
+	</p>
+    </description>
+    <see name="MAP_CLONE" href="MAP/MAP_CLONE"/>
+    <see name="SET_COLORS" href="PAL/SET_COLORS"/>
+    <see name="ROLL_PALETTE" href="PAL/ROLL_PALETTE"/>
+</function>

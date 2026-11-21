@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="WINDOW_STATUS">
+	<abstract> Se pone a 0 cuando la ventana está minimizada </abstract>
+    <description>
+	<p>
+		Esta variable se pone automáticamente a 0 cuando la ventana del
+		programa está minimizada, y a 1 cuando está visible (incluso
+		aunque esté en segundo plano, tapada por otras ventanas).
+		En juegos que se ejecutan a ventana completa, esta variable
+		se pone a 1 cuando la aplicación está visible, y a 0 si el
+		usuario pasa al escritorio (por ejemplo, pulsando ALT+TAB en
+		Windows, o el equivalente en otro sistema operativo).
+	</p>
+    </description>
+</variable>

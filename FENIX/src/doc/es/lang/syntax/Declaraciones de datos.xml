@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="Declaraciones de datos">
+	<syntax> 
+		[ <a href="CONST" /> <blockquote> <i>constantes</i> </blockquote> END ] <br/>
+		[ <a href="GLOBAL"/> <blockquote> <i>variables</i>  </blockquote> END ] <br/>
+		[ <a href="LOCAL" /> <blockquote> <i>variables</i>  </blockquote> END ] 
+	</syntax>
+	<abstract> Es posible declarar datos constantes, globales y locales </abstract>
+    <description>
+		<p>
+			Hay tres secciones de datos diferentes que pueden aparecer
+			en un programa. Todas ellas son opcionales y pueden aparecer
+			en cualquier orden. Sin embargo, en Fenix es siempre necesario
+			declarar un dato <i>antes</i> de usarlo, por lo que se recomienda
+			que estas secciones aparezcan siempre antes que ningún proceso,
+			al principio del programa.
+		</p>
+		<p>
+			Fenix distingue entre los siguientes datos:
+		</p>
+		<dl>
+			<dt> Datos globales </dt>
+			<dd> 
+				Los datos globales son únicos. Sólo aparecen una vez, y
+				cualquier objeto dentro del juego puede utilizarlos o
+				consultarlos. En un juego, los datos globales incluirían
+				la puntuación del jugador, el número de nivel actual,
+				o la tabla de records. No importa cuántos procesos
+				existan o cuántos objetos haya en pantalla, sólo hay
+				una puntuación o una tabla de records. Consulta
+				<a href="GLOBAL"/> para saber más acerca de la sintaxis
+				utilizada para declarar datos globales.
+			 </dd>
+			 <dt> Datos locales </dt>
+			 <dd> 
+				 Por otra parte, en el juego habrán numerosos objetos
+				 visibles, como enemigos o trampas. Cada uno de ellos
+				 tendrá ciertas propiedades. Por ejemplo, cada enemigo
+				 puede tener puntos de vida para representar cuanto
+				 daño ha causado sobre él el protagonista. Los datos
+				 locales representan estas propiedades, con una
+				 salvedad: son importantes, y todos los objetos sin
+				 excepción pueden usarlos y comprobar los de los
+				 demás. Por ejemplo, todos los objetos visibles tienen
+				 una posición en pantalla, y desde cualquier otro
+				 objeto o proceso puedes consultarla en todo momento.
+				 Consulta <a href="LOCAL" /> para saber más acerca
+				 de cómo declarar datos locales.
+			 </dd>
+			 <dt> Datos privados </dt>
+			 <dd>
+				 Los datos privados son propiedades que permanecen
+				 ocultas. Pueden ser contadores internos, datos
+				 temporales, o contener cualquier otra cosa. Cada
+				 tipo de proceso u objeto define sus propios datos
+				 privados, y no pueden consultarse desde otros
+				 objetos o procesos. Los datos privados no se
+				 declaran en una sección aparte del programa, sino
+				 dentro de cada proceso concreto.
+			 </dd>
+		</dl>
+		<p>
+			Un problema habitual que encontrarás al programar en
+			Fenix es decidir cuándo un dato debe ser local o
+			privado. En general, si un dato es usado por más de
+			un tipo de proceso y puede ser necesario consultarlo
+			desde otros procesos, debe ser un dato local. Siempre
+			que no sea necesario, usa un dato privado.
+		</p>
+    </description>
+</section>

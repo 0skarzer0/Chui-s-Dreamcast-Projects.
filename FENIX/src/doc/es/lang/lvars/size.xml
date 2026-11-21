@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="SIZE">
+    <abstract>Escalado del gráfico</abstract>    
+	<description>
+	<p>
+		Esta variable especifica el tamaño del gráfico.  El intérprete escalará el 
+		gráfico en función del valor de esta variable, siendo el valor por defecto 
+		100 (tamño 100% del original).  Así por ejemplo SIZE=50 dibujaría el gráfico 
+		a la mitad de su tamaño.
+	</p>
+	<p>
+		Las variables de control de tamaño no tienen efecto en el MODO7, ya que 
+		el tamaño en ese tipo de representación se calcula automaticamente sobre 
+		el 100% en función de la distancia.
+	</p>	
+	</description>
+    <see type="var" name="SIZE_X" href="LVARS/SIZE_X"/>
+    <see type="var" name="SIZE_Y" href="LVARS/SIZE_Y"/>
+</variable>

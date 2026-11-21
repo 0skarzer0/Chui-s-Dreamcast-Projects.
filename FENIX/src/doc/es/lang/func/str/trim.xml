@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TRIM">
+    <retval type="STRING"> Cadena resultante </retval>
+    <param name="cadena"> Cadena original </param>
+    <abstract> Elimina todos los espacios a inicio y final de una cadena </abstract>
+    <description>
+	<p>
+	    Esta función devuelve una cadena idéntica a la original,
+	    pero eliminando cualquier espacio o serie de espacios que encuentre al
+	    principio o al final de la misma. Por espacio se entiene cualquier
+	    caracter de código ASCII 9 (tabulador), 10 (salto de línea), 
+	    13 (retorno de carro) ó 32 (espacio).
+	</p>
+    </description>
+<see href="STR/RPAD" name="RPAD"/>
+<see href="STR/LPAD" name="LPAD"/>
+</function>

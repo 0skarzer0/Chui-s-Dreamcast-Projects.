@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_EXISTS">
+    <retval/>
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph inside of library </param>
+    <abstract> It returns 1 if a graph exists </abstract>
+    <description>
+	<p>
+	    This function returns 1 if a graph exists inside of
+	    the library indicated. Only can have 1000 graphs in a
+	    library, with codes of 0 to 999, it is possible to use this
+	    function inside of a loop, repeat... to enumerate all graphs that
+	    exist inside of FPG library.
+	</p>
+    </description>
+    <see href="LOAD_FPG"/>
+    <see href="NEW_FPG"/>
+</function>

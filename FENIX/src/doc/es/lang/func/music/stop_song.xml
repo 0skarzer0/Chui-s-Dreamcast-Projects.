@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="STOP_SONG">
+    <abstract> Detiene la reproducción de música </abstract>
+    <description>
+	<p>
+	    Detiene la reproducción de cualquier fichero
+	    de música en curso.
+	</p>
+	<p>
+	    Esta función detiene la reproducción de música
+	    inmediatamente. Para un mejor efecto, prueba
+	    a usar la función <a name="FADE_MUSIC_OFF" href="MUSIC/FADE_MUSIC_OFF"/>.
+	</p>
+    </description>
+    <see name="FADE_MUSIC_OFF" href="MUSIC/FADE_MUSIC_OFF"/>
+    <see name="PLAY_SONG" href="MUSIC/PLAY_SONG"/>
+    <see name="LOAD_SONG" href="MUSIC/LOAD_SONG"/>
+</function>

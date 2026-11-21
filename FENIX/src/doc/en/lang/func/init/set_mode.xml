@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_MODE">
+    <param name="mode"> It indicates the screen resolution. Can be one of the 
+	following constants:
+	<const name="M320x200"/>
+	<const name="M320x240"/>
+	<const name="M320x400"/>
+	<const name="M360x480"/>
+	<const name="M376x282"/>
+	<const name="M640x400"/>
+	<const name="M640x480"/>
+	<const name="M800x600"/>
+	<const name="M1024x768"/>
+	<const name="M1280x1024"/>
+    </param>
+    <abstract> It establishes a graph mode or creates the game window </abstract>
+    <description>
+	<p>
+	    This function establishes a graph mode, whose resolution comes indicated
+	    by the constant that recives like parameter the function,
+	    and can be one of them enumerated previously.
+	</p>
+	<p>
+	    In the case of that a graph mode is not supported, Fenix
+	    will emulate it establishing the following graph mode of greater size
+	    and drawing a black edge automatically around the chosen resolution, of transparent way for the game.
+	    This allows that some modes like M640x400 are always available.
+	</p>
+	<p>
+	    By default, this function initializes a graph mode of 8 bits
+	    to full screen. If you want to initialize a window mode,
+	    it is necessary to put to 1 the variable <a href="FULL_SCREEN"/>. If
+	    you want to initialize a mode of 16 bits, it is necessary to assign to
+	    the global variable <a href="GRAPH_MODE"/> the value
+	    MODE_16BITS. Anyone of these two allocations must have been made before the call to SET_MODE.
+	</p>
+	<p>
+	    When this function creates the game window, by default uses
+	    for title the name of the game archive and uses a standard icon.
+	    You can use the function <a href="INIT/SET_TITLE" name="SET_TITLE"/> and
+	    <a href="INIT/SET_ICON" name="SET_ICON"/> to change these parameters, but you must
+	    call to these functions <b>before</b> using SET_MODE.
+	</p>
+    </description>
+    <note>
+	Advises against the use of ways M320X400, M360X240 and M376X282, since they 
+	can not be available in some combinations of video card and operating system.
+    </note>
+    <note>
+	It is valid to call to this function when there is a graph mode running.
+	That can allow to a game to change the resolution, or select full screen or
+	window mode if the variable <a href="FULL_SCREEN"/> changes before the new calling. If
+	the resolution is changed or the value of <a href="GRAPH_MODE"/>, the background of screen
+	will be lost when calling to this function.
+    </note>
+    <note>
+	It is not obligatory to call to this function. When your program makes a graph
+	operation, as draw something in screen or recover of disk a graph archive,
+	the graph mode will be initialized automatically to the resolution
+	320x200. It is better to select a new resolution manually.
+    </note>
+    <see href="FULL_SCREEN"/>
+    <see href="INIT/SET_TITLE" name="SET_TITLE"/>
+    <see href="INIT/SET_ICON" name="SET_ICON"/>
+    <see href="GRAPH_MODE"/>
+    <keyword word="M320x200"/>
+    <keyword word="M320x240"/>
+    <keyword word="M320x400"/>
+    <keyword word="M360x480"/>
+    <keyword word="M376x282"/>
+    <keyword word="M640x400"/>
+    <keyword word="M640x480"/>
+    <keyword word="M800x600"/>
+    <keyword word="M1024x768"/>
+    <keyword word="M1280x1024"/>
+</function>

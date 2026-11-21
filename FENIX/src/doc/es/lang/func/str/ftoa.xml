@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FTOA">
+    <retval type="STRING"> Cadena resultante </retval>
+    <param name="valor" type="FLOAT"> Número a convertir </param>
+    <abstract> Convierte un número en coma floante en cadena </abstract>
+    <description>
+	<p>
+	    Dado un número en coma flotante, devuelve una cadena con su
+	    representación, sin separador de miles. Utiliza un número de
+	    decimales variable en función del número especificado.
+	</p>
+    </description>
+<see href="STR/ATOI" name="ATOI"/>
+<see href="STR/ATOF" name="ATOF"/>
+<see href="STR/ITOA" name="ITOA"/>
+<see href="STR/FORMAT" name="FORMAT"/>
+</function>

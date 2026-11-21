@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="XPUT">
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico a dibujar </param>
+    <param name="x"> Coordenada horizontal </param>
+    <param name="y"> Coordenada vertical </param>
+    <param name="ángulo"> Ángulo en miligrados (90000 = 90º) </param>
+    <param name="tamaño"> Tamaño en porcentaje (100 = tamaño original) </param>
+    <param name="flags"> Flags para el dibujo </param>
+    <param name="region"> Región de recorte (0 = ninguna) </param>
+    <abstract> Dibuja un gráfico en el fondo de pantalla </abstract>
+    <description>
+	<p>
+	    Esta función dibuja un gráfico en el fondo de pantalla, en las
+	    coordenadas especificadas como parámetro, y aplicando todas
+	    las posibilidades de dibujo de un proceso (ángulo de rotación,
+	    transparencias, escalado...).
+	    El punto especificado equivaldrá al lugar donde
+	    se dibuje el centro del gráfico, y a partir de cual se
+	    rotará o cambiará de tamaño.
+	</p>
+	<p>
+	    Esta función es útil especialmente para "preparar"
+	    pantallas o niveles a partir de bloques gráficos.
+	</p>
+    </description>
+    <see href="XPUT"/>
+    <see href="MAP_PUT"/>
+</function>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FREE">
+    <param name="mem" type="POINTER"> Pointer to a memory zone reserved in a previous call of <a name="ALLOC" href="EN/MEM/ALLOC" /> </param>
+    <abstract> It releases dynamic memory reserved previously </abstract>
+    <description>
+	<p>
+	  It releases a memory zone reserved previously by the function <a name="ALLOC" href="MEM/ALLOC"/>. The 
+	  parameter that comes must be a pointer to a memory zone reserved with alloc. Once time
+	  is released, the memory is available for any use. 
+	</p>
+    </description>
+    <see name="ALLOC" href="EN/MEM/ALLOC"/>
+    <see name="REALLOC" href="EN/MEM/REALLOC"/>
+</function>

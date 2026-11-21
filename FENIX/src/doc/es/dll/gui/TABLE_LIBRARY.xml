@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_LIBRARY">
+<retval />
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="nombre" type="STRING"> Nombre de la columna </param>
+<param name="librería"> Número de librería FPG </param>
+<abstract> Selecciona la librería de una columna de gráficos </abstract>
+<description>
+    <p>
+	Dada una columna de una tabla, permite escoger a qué librería
+	pertenecen los gráficos. La columna debe haber sido creada
+	con TABLE_ADDCOLUMN_BITMAPS. El segundo parámetro es el
+	nombre de la tabla, pero opcionalmente también puede usarse
+	un número de índice, con 0 para la columna más a la izquierda.
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+<see name="TABLE_ADDCOLUMN_BITMAPS" href="DLL/GUI/TABLE_ADDCOLUMN_BITMAPS"/>
+</function>

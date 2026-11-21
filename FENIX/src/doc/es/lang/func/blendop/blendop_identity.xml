@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="BLENDOP_IDENTITY">
+    <retval/>
+    <param name="BLENDOP"> Identificador de una tabla BLENDOP </param>
+    <abstract> Reinicia una tabla blendop </abstract>
+    <description>
+	<p>
+	    Dada una tabla blendop creada con <a href="BLENDOP_NEW"/>, esta
+	    función la reinicia, es decir, la devuelve a sus valores originales
+	    (consistentes en no modificar el gráfico al dibujarlo).
+	</p>
+	<p>
+	    En ocasiones puede ser útil cambiar las características de una
+	    tabla blendop, sin emplear los efectos ya acumulados. Esta función
+	    la devuelve a su estado inicial, tal como fue creada.
+	</p>
+    </description>
+    <see name="BLENDOP_NEW"/>
+    <see name="BLENDOP_IDENTITY" />
+    <see name="BLENDOP_TRANSLUCENCY" />
+    <see name="BLENDOP_TINT" />
+    <see name="BLENDOP_INTENSITY" />
+    <see name="BLENDOP_GRAYSCALE" />
+    <see name="BLENDOP_SWAP" />
+    <see name="BLENDOP_ASSIGN" />
+    <see name="BLENDOP_APPLY" />
+</function>

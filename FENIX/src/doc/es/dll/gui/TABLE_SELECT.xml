@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_SELECT">
+<retval />
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="fila"> Número de la nueva fila (0 para la primera) </param>
+<abstract> Cambia la fila actualmente seleccionada en una tabla </abstract>
+<description>
+    <p>
+	Selecciona una fila concreta en una tabla. El segundo
+	parámetro puede ser -1, lo cual quita la selección de
+	la tabla (hasta que el usuario haga clic en otra línea).
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+</function>

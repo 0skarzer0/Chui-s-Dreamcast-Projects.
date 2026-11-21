@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="PRIVATE">
+	<syntax> 
+		<a href="PROCESS"/> nombre ( [ parámetros ] ) <br/>
+		<br/>
+		<b>PRIVATE</b> <blockquote> <a href="Variables" /> <br/> ... </blockquote> <br/>
+		BEGIN <br/> ...
+	</syntax>
+	<abstract> Declara las variables privadas de un proceso </abstract>
+    <description>
+		<p>
+			Esta sección contiene declaraciones de <a href="variables"/>
+			privadas de un proceso concreto. Estas variables son propias
+			del proceso: ningún otro proceso tiene acceso a ellas y sólo
+			procesos del mismo tipo exactamente al actual guardan una
+			copia de las mismas.  El valor de una variable privada puede ser (y
+			seguramente será) diferente de un proceso que la tenga a otro. Las
+			variables privadas identifican datos temporales o de
+			propósito concreto dentro de un
+			proceso, como un contador o un valor de estado que no tiene
+			relevancia para el resto de procesos. 
+		</p>
+		<p>
+			Consulta la sección <a href="Variables"/> para obtener
+			más información acerca de la sintaxis a usar para declarar
+			una variable, y <a href="Tipos de dato"/> para saber
+			qué clases de variable hay disponibles.
+		</p>
+		<p>
+			La sección PRIVATE aparece dentro de cada proceso y es
+			opcional. Un proceso que no la use no dispone de variables
+			privadas, aunque sí tiene variables locales (acude a la
+			sección <a href="LOCAL"/> para más información).
+		</p>
+		<p>
+			A diferencia de las variables locales o globales, no existen
+			variables privadas predefinidas. Un proceso por defecto no
+			tiene ninguna variable privada hasta que no se declare alguna.
+		</p>
+    </description>
+</section>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="GLOBAL">
+	<syntax> 
+		<b>GLOBAL</b> <blockquote> <a href="Variables" /> <br/> ... </blockquote> <b>END</b>
+	</syntax>
+	<abstract> Declara las variables de alcance global </abstract>
+    <description>
+		<p>
+			Esta sección contiene declaraciones de <a href="variables"/>
+			que identifican los datos de alcance global. Estas variables
+			están accesibles <b>en todo momento</b> y en cualquier
+			proceso y su valor es único (si un proceso modifica una
+			variable global, el próximo que la lea verá ya el nuevo
+			valor de la misma).
+		</p>
+		<p>
+			Consulta la sección <a href="Variables"/> para obtener
+			más información acerca de la sintaxis a usar para declarar
+			una variable, y <a href="Tipos de dato"/> para saber
+			qué clases de variable hay disponibles.
+		</p>
+		<p>
+			Sólo hay una copia de cada variable global, en todo momento,
+			a diferencia de las variables privadas o locales, de las
+			que hay varias versiones de la misma variable (una por
+			cada proceso que las utilice).
+		</p>
+		<p>
+			Es posible que la sección GLOBAL aparezca varias veces en
+			el mismo programa. Las variables globales declaradas en
+			las secciones siguientes son igualmente válidas y se añaden
+			a las declaradas anteriormente. Sin embargo, una variable
+			debe declararse siempre antes de ser usada.
+		</p>
+		<h3> Variables globales predefinidas </h3>
+		<p>
+			Además de las variables que declares en tu programa,
+			tienes disponibles una serie de <b>variables del sistema</b>
+			predefinidas a las que puedes acceder en todo momento.
+			Estas variables contienen información útil sobre el
+			entorno de ejecución de tu programa y otros datos
+			del sistema. Puedes acceder <a href="Variables globales">aquí</a>
+			a una lista y descripción de estas variables.
+		</p>
+    </description>
+</section>

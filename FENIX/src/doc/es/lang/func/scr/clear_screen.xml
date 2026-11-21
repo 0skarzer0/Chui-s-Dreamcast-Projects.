@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CLEAR_SCREEN">
+    <abstract> Borra el fondo de pantalla </abstract>
+    <description>
+	<p>
+	    Esta función borra el fondo de pantalla. Es importante
+	    utilizar esta función en lugar de otras posibilidades
+	    (como hacer un <a href="MAP_CLEAR"/> del fondo),
+	    porque Fenix sabrá que no hay ningún fondo en realidad
+	    y utilizará una versión más rápida de la rutina que
+	    empieza a escribir frames.
+	</p>
+    </description>
+    <see href="PUT"/>
+    <see href="PUT_SCREEN"/>
+    <see href="XPUT"/>
+</function>

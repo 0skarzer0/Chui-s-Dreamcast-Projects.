@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="UCASE">
+    <retval type="STRING"> Cadena resultante </retval>
+    <param name="cadena"> Cadena original </param>
+    <abstract> Convierte una cadena a mayúsculas </abstract>
+    <description>
+	<p>
+	    Devuelve una cadena idéntica a la original, pero
+	    convirtiendo todas las letras minúsculas a mayúsculas
+	    (incluyendo letras con acentos o tildes).
+	</p>
+    </description>
+<see href="STR/LCASE" name="LCASE"/>
+<see href="STR/STRCASECMP" name="STRCASECMP"/>
+</function>

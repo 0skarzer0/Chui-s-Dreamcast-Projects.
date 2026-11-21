@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="XADVANCE">
+<retval/>
+<param name="ángulo"> Ángulo en milésimas de grado (90000 = 90º) </param>
+<param name="número"> Número entero </param>
+<abstract> Desplaza el proceso actual según su ángulo</abstract>
+<description>
+    <p>
+	Esta función desplaza el proceso actual en la dirección
+	especificada por el ángulo indicado como primer parámetro,
+	el número de unidades indicado como segundo parámetro.
+    </p>
+    <p>
+	Hay que tener en cuenta que el desplazamiento se hace en
+	unidades entras, y por lo tanto tiene limitaciones de
+	precisión. Un desplazamiento de 1 ó 2 unidades no puede
+	reflejar las diferencias entre ángulos, por lo que no
+	será efectivo. Si se desea desplazar un proceso en
+	ángulos arbitrarios y sólo unos pocos pixels, será
+	preciso utilizar la variable <a href="RESOLUTION"/> para
+	que las coordenadas del gráfico vengan expresadas en
+	unidades más pequeñas que un pixel, como ocurre por defecto.
+    </p>
+</description>
+<see href="ADVANCE"/>
+<see href="RESOLUTION"/>
+<see href="GET_ANGLE"/>
+<see href="FGET_ANGLE"/>
+</function>

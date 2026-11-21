@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_SORT">
+<retval />
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<param name="nombre" type="STRING"> Nombre de la columna </param>
+<param name="ascendente"> Orden de la ordenación </param>
+<abstract> Ordena una tabla </abstract>
+<description>
+    <p>
+	Ordena una tabla a partir de la columna especificada
+	como segundo parámetro. Se recomienda usar el nombre de la
+	columna, aunque alternativamente es posible usar un número
+	de índice, con 0 para la columna más a la izquierda.
+	El tercer parámetro indica el orden de la operación,
+	1 para ascendente y 0 para descendente.
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+</function>

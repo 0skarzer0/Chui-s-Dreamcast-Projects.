@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FPUTS">
+    <retval/>
+    <param name="fichero"> Identificador de un fichero abierto con FOPEN </param>
+    <param name="texto" type="STRING"> Texto a escribir </param>
+    <abstract> Escribe una cadena en un fichero de texto </abstract>
+    <description>
+	<p>
+	    Esta función escribe una cadena en un fichero de texto abierto
+	    en modo de escritura con <a name="FOPEN"/>. Sirve para
+	    crear ficheros de texto, al contrario que
+	    <a name="FWRITE"/>, que puede usarse para crear ficheros binarios.
+	    La cadena se guarda en el fichero en una línea aparte. Si
+	    la cadena contiene un salto de línea o más, se guardará el
+	    carácter \ al principio de cada uno (lo cual permite volver
+	    a leerla empleando <a name="FGETS"/> en una sola llamada).
+	</p>
+    </description>
+    <see name="FOPEN"/>
+    <see name="FGETS"/>
+</function>

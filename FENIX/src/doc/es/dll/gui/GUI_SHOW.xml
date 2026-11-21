@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GUI_SHOW">
+<retval/>
+<param name="z"> Coordenada Z para el GUI </param>
+<abstract> Activa la presentación de la interfaz de usuario </abstract>
+<description>
+    <p>
+	Esta función activa la presentación en pantalla de la interfaz de usuario,
+	la cual se dibujará con un orden de coordenada Z igual al indicado como
+	parámetro a esta función. A partir del siguiente frame, todas las ventanas
+	creadas con <a href="DLL/GUI/WINDOW" name="WINDOW"/> que hayan sido añadidas
+	al escritorio mediante <a href="DLL/GUI/DESKTOP_ADDWINDOW" name="DESKTOP_ADDWINDOW" />
+	serán visualizadas.
+    </p>
+    <p>
+	Por defecto, el escritorio no se muestra en pantalla, por lo que es preciso
+	llamar a esta función al menos una vez en el programa. Mientras el escritorio
+	esté oculto, el usuario no podrá interactuar con el mismo. Para ocultarlo de
+	nuevo, puede emplearse la función <a href="DLL/GUI/GUI_HIDE" name="GUI_HIDE"/>.
+    </p>
+</description>
+<note>
+    El escritorio entero dispone de una única coordenada Z. Esto es debido a que
+    la política de distribución de ventanas es compleja y la DLL trata de optimizar
+    qué ventanas son dibujadas en pantalla (por ejemplo, una ventana que oculta
+    a otras provoca que esas otras ventanas nunca sean dibujadas, optimizando
+    el rendimiento; sin embargo hay condiciones de transparencia de ventana y
+    otros factores particulares a esta DLL que deben tenerse en consideración).
+    El precio a pagar es que no es posible, en un principio, mostrar procesos entre
+    ventanas o que se integren en la interfaz de usuario. Una forma posible de
+    imitar este comportamiento es crear controles <a href="DLL/GUI/IMAGE_VIEW" name="IMAGE_VIEW"/>
+    que pueden utilizarse para mostrar un gráfico dentro de una determinada ventana
+    o posición, y modificar el gráfico cada frame.
+</note>
+<see name="GUI_HIDE" href="DLL/GUI/GUI_HIDE"/>
+</function>

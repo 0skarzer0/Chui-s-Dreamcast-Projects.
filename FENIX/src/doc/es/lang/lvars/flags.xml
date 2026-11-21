@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="FLAGS">
+    <abstract>Indica operacioones especiales que se aplicarán al gráfico del proceso</abstract>    
+	<description>
+	<p>
+		El valor de esta variable activa operacionese especiales que se realizarán en el momento 
+		de dibujar el gráfico del proceso en la pantalla.  Puede contener uno o la suma de varios 
+		de los valores siguientes:
+	</p>
+	<p>
+		<const name="Espejado horizontal" value="1"/>
+		<const name="Espejado vertical" value="2"/>
+		<const name="transparencia" value="4"/>
+		<const name="alpha" value="8"/>
+		<const name="blit aditivo" value="16"/>
+		<const name="bllit sustractivo" value="32"/>
+		<const name="NO_COLOR_KEY" value="128"/>
+		<br/>
+		El valor por defecto de esta variable es 0.  
+	</p>
+	<p>
+		El espejado es distinto a la rotación, y también es 
+		mucho más rapido de dibujar que una rotación convencional.
+	</p>
+	<p>
+		Para gráficos grandes que no deban 
+		respetar transparencias, es interesante utilizar como valor de flags el de NO_COLOR_KEY ya que  el 
+		dibujado sin transparencia es mucho más rápido que el dibujado con transparencias.
+	</p>
+	<p>
+		El blit aditivo y sustractivo consiste en  hacer que el gráfico sume/reste sus componentes de color 
+		pixel a pixel con el valor que tenia antes de dibujar el gráfico ese pixel de pantalla, por tanto 
+		colores con componentes de color elevadas tiende a la saturación (se acercan al blanco) en el caso 
+		del blit aditivo y tienden a 0 en el caso del sustractivo.
+	</p>
+	<p>
+		El indicador de transparencia (valor 4) corresponde a una transparencia del 50% mientras que el 
+		de alpha trabaja en combinación con la variable local <a type="var" name="ALPHA" href="LVARS/ALPHA"/>.
+	</p>	
+    </description>
+    <note>
+    	<p>
+    	La combinación de blit aditivo/sustractivo solo funciona en combinación con ALPHA en la versión 
+    	de Fenix del CVS.
+    	</p>
+    </note>
+    <see type="var" name="ALPHA" href="LVARS/ALPHA" />
+</variable>

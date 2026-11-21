@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CONTROL_DOUBLECLICK">
+    <retval type="INT">
+	1 si el usuario hizo doble click sobre el control recientemente 
+    </retval>
+    <param name="control"> Identificador de un control cualquiera </param>
+    <abstract> 
+	Comprueba si el usuario hizo doble clic recientemente sobre el control 
+    </abstract>
+    <description>
+	<p>
+	    Cada vez que el usuario hace doble click sobre un control 
+	    cualquiera, se activa un flag interno en el control. 
+	    Esta función devuelve el flag y lo pone de nuevo a 0, de
+	    manera que en posteriores llamadas sólo devolverá 1 si el
+	    usuario ha vuelto a hacer doble click sobre el control.
+	</p>
+	<p>
+	    Esta función se ha diseñado para ejecutarse cada frame, como
+	    medio para detectar si el usuario hace doble click en el control.
+	</p>
+    </description>
+    <see name="CONTROL_PRESSED" href="DLL/GUI/CONTROL_PRESSED"/>
+</function>

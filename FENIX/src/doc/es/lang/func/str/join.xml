@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="JOIN">
+    <retval type="STRING"> Cadena resultante </retval>
+    <param name="separador" type="STRING"> Cadena a intercalar entre elementos </param>
+    <param name="array" type="STRING POINTER"> Array con los elementos a unir </param>
+    <param name="tamaño"> Número de elementos en el array </param>
+    <abstract> Une una serie de cadenas </abstract>
+    <description>
+	<p>
+	    Dado un array de cadenas STRING, esta función junta todas
+	    ellas en una cadena final, intercalando la cadena especificada
+	    como separador entre los elementos. Esta función permite obtener
+	    el efecto contrario a la función
+	    <a href="STR/SPLIT" name="SPLIT"/>.
+	</p>
+	<p>
+	    Por ejemplo, si un array contiene tres cadenas: "12", "04" y
+	    "1980", y se utiliza la cadena "/" como separador, esta
+	    función devolverá la cadena "12/04/1980".
+	</p>
+    </description>
+<see href="STR/SPLIT" name="SPLIT"/>
+</function>

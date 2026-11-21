@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="RGB">
+    <retval> Representación del color </retval>
+    <param name="r" type="BYTE"> Valor deseado de componente rojo </param>
+    <param name="g" type="BYTE"> Valor deseado de componente verde </param>
+    <param name="b" type="BYTE"> Valor deseado de componente azul </param>
+    <abstract> Devuelve la codificación de un color </abstract>
+    <description>
+	<p>
+	    Esta función devuelve un número entero de 16 bits que representa el
+	    color cuyas componentes recibe como parámetro, de forma compatible con
+	    la tarjeta gráfica y modo gráfico actual. Ese valor puede usarse en
+	    operaciones gráficas como <a name="MAP_PUT_PIXEL" href="MAP/MAP_PUT_PIXEL"/>.
+	</p>
+	<p>
+	    La codificación de un color depende completamente de la tarjeta
+	    gráfica. Es posible que algunas tarjetas gráficas no dispongan
+	    de un modo de 16 bits y Fenix se ejecute en uno de 15 bits en
+	    su lugar, por ejemplo. Por lo tanto, nunca debe almacenarse un
+	    valor de color devuelto por RGB o por otra función que pueda
+	    devolver colores de 16 bits, como <a name="MAP_GET_PIXEL" href="MAP/MAP_GET_PIXEL"/>.
+	    Este valor puede cambiar entre una tarjeta gráfica y otra.
+	    Fenix se encarga de convertir internamente todos los gráficos
+	    recuperados de disco a un formato óptimo para dibujarlos en
+	    la tarjeta gráfica y modo gráfico seleccionados.
+	</p>
+	<p>
+	    Además, debido a la diferente precisión disponible en modos
+	    gráficos, es posible que dos colores aparentemente iguales
+	    tengan una codificación diferente. Hay que tener cuidado al
+	    hacer comparativas entre colores obtenidos de gráficos y
+	    colores obtenidos con la función RGB: el valor puede no ser
+	    el deseado en otra tarjeta gráfica. Siempre que se desee
+	    trabajar con gráficos donde se interpretarán las componentes
+	    de los pixels de forma especial (mapas de durezas o similar)
+	    es recomendable usar gráficos de 8 bits, donde los valores
+	    de los pixels de 0 a 255 se mantendrán siempre estables
+	    entre un ordenador y otro.
+	</p>
+    </description>
+    <note>
+        En modo de 8 bits esta función se limita a llamar a 
+        <a name="FIND_COLOR" href="PAL/FIND_COLOR"/>. Esto permite escribir código
+        que pueda funcionar sin cambios en 8 y 16 bits.
+    </note>
+    <note>
+        Es importante inicializar el modo gráfico de 16 bits antes de
+        llamar a esta función o realizar ninguna otra operación con
+        colores de 16 bits.
+    </note>
+    <see name="FIND_COLOR" href="PAL/FIND_COLOR"/>
+    <see name="MAP_GET_PIXEL" href="MAP/MAP_GET_PIXEL"/>
+    <see name="GET_RGB" href="PAL/GET_RGB"/>
+</function>

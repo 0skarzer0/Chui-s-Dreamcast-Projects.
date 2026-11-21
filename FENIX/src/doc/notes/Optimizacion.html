@@ -1,0 +1,305 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+</head>
+<body>
+<h2>Optimizaciones<br>
+</h2>
+La siguiente es una lista de las optimizaciones m&aacute;s importantes
+que ser&iacute;a interesante estudiar o tener presentes de cara a la
+versi&oacute;n 1.0.<br>
+<h3>Subrutinas</h3>
+Actualmente la creaci&oacute;n de un proceso tiene una sobrecarga
+considerable: se inicializan todos sus valores locales (potencialmente
+2, 4K de datos), se marca el uso de todas sus cadenas locales, se
+reserva memoria para la estructura que lo describe, etc. Lo que es
+peor, estos recursos no son liberados hasta el siguiente frame. La
+programaci&oacute;n tradicional (por ejemplo, resoluci&oacute;n de
+problemas matem&aacute;ticos sencillos mediante funciones recursivas)
+resulta prohibitiva.<br>
+<br>
+Ser&iacute;a preciso poder marcar un proceso como subrutina. Un proceso
+de este tipo no se visualiza en pantalla, no contiene datos locales, y
+no ejecuta nunca la instrucci&oacute;n FRAME. Se comporta como una
+funci&oacute;n en C u otro lenguaje tradicional: recibe una serie de
+par&aacute;metros, tiene un espacio de variables privadas, y al salir
+&eacute;stas son destru&iacute;das. Las subrutinas se
+ejecutar&iacute;an desde dentro del propio int&eacute;rprete sin salir
+de la funci&oacute;n que ejecuta un proceso <span
+ style="font-weight: bold;">[instance_go]</span>, usando espacio de
+pila para mantener sus variables privadas temporalmente hasta que
+vuelvan y actuando poco m&aacute;s o menos como un salto JMP con algo
+m&aacute;s de sobrecarga para inicializar variables privadas.<br>
+<br>
+Deber&iacute;a ser responsabilidad del compilador FXC:<br>
+<ul>
+  <li>Identificar un proceso como subrutina (comprobando que no use
+variables locales ni contenga la instrucci&oacute;n FRAME) y marcarlo
+como tal.<br>
+    <br>
+  </li>
+  <li>Generar c&oacute;digo que habilite espacio de pila (stack) para
+variables privadas e inicialice sus valores (por ejemplo, aumente la
+cuenta de uso de las cadenas que se almacenen all&iacute;). Al entrar
+en la subrutina, un registro de "marco de pila" se inicializar&aacute;
+con la ubicaci&oacute;n de este espacio.<br>
+    <br>
+  </li>
+  <li>Generar c&oacute;digo que libere el espacio de pila ocupado (por
+ejemplo, reduzca la cuenta de uso de las cadenas que haya almacenadas
+en estas variables). Ser&aacute; responsabilidad de la subrutina
+adem&aacute;s restaurar el registro de marco de pila al valor anterior.<br>
+    <br>
+  </li>
+  <li>Sustituir los accesos a variables privadas del proceso por
+accesos a pila referenciados sobre el registro de marco de pila
+anteriormente mencionado.<br>
+  </li>
+</ul>
+Debe ser responsabilidad del compilador FXI:<br>
+<ul>
+  <li>Mantener el nuevo registro de marco de pila<br>
+    <br>
+  </li>
+  <li>Reconocer e interpretar cualquier nuevo mnem&oacute;nico
+necesario para acceder a valores de la pila distantes en funci&oacute;n
+del nuevo registro de marco.<br>
+    <br>
+  </li>
+  <li>Reconocer e interpretar el nuevo mnem&oacute;nico de salto a
+subrutina.</li>
+</ul>
+Ser&iacute;a deseable incorporar el mantenimiento del marco de pila
+dentro de los nuevos mnem&oacute;nicos de llamada a subrutina y retorno
+de la misma.<br>
+<h3>M&aacute;scaras o sprites RLE<br>
+</h3>
+Actualmente el dibujo de gr&aacute;ficos m&aacute;s com&uacute;n se
+realiza comprobando pixel a pixel la existencia de ceros (color
+transparente). La versi&oacute;n MMX del mismo proceso hace una
+combinaci&oacute;n de los valores le&iacute;dos con los existentes en
+el buffer de destino, lo cual es mucho m&aacute;s lento en memoria de
+video pero m&aacute;s r&aacute;pido en la RAM, ya que no ejecuta saltos
+internos.<br>
+<br>
+Existen t&eacute;cnicas que permiten acelerar considerablemente este
+proceso, a cambio de hacer el gr&aacute;fico inmutable: crear una
+m&aacute;scara de bits del mismo (con 1 para los pixels transparentes),
+o una versi&oacute;n RLE que codifique los espacios vac&iacute;os por
+separado de los pixels. Las m&aacute;scaras permiten acelerar
+tambi&eacute;n considerablemente la detecci&oacute;n de colisiones. <br>
+<br>
+Ninguna de las dos t&eacute;cnicas resulta interesante cuando los
+sprites son rotados, ampl&iacute;ados, o reducidos de tama&ntilde;o.
+Adem&aacute;s, el espejo horizontal requerir&iacute;a versiones
+especiales de las rutinas de dibujo por m&aacute;scara o con RLE. Todo
+ello sugiere que las versiones actuales del blitter deber&iacute;an
+seguir existiendo, y estas optimizaciones coexistir como casos
+especiales.<br>
+<br>
+El mayor problema es que se requiere una conversi&oacute;n m&aacute;s o
+menos costosa de un sprite a m&aacute;scara o a versi&oacute;n RLE. Una
+modificaci&oacute;n en el contenido del sprite puede requerir volver a
+convertirlo. Para este problema hay dos posibles soluciones:<br>
+<ol>
+  <li>Que sea el programador el que expl&iacute;citamente cree la
+m&aacute;scara o versi&oacute;n RLE de un gr&aacute;fico, mediante una
+funci&oacute;n al efecto, y que vuelva a llamarla para actualizarla si
+modifica el gr&aacute;fico original. Tiene el inconveniente de que
+puede ser pesado.<br>
+    <br>
+  </li>
+  <li>Usar un flag "dirty" en un gr&aacute;fico para detectar
+autom&aacute;ticamente cu&aacute;ndo ha sido modificado. Tiene el
+inconveniente de que algunos cambios son indetectables (p.ej.
+MAP_BUFFER) y de que err&oacute;neamente se puede estar perdiendo el
+tiempo en crear m&aacute;scaras de gr&aacute;ficos que siempre se van a
+dibujar escalados, por ejemplo.<br>
+  </li>
+</ol>
+Personalmente me decanto por la primera opci&oacute;n, en todo caso con
+una variante de la funci&oacute;n de crear m&aacute;scaras que cree
+m&aacute;scaras sobre todos los gr&aacute;ficos en memoria, o sobre
+todos los de una librer&iacute;a, o que active un modo para crearlas
+autom&aacute;ticamente sobre todos los gr&aacute;ficos cargados en el
+futuro. Esto aumentar&iacute;a el n&uacute;mero de funciones en tres o
+cuatro.<br>
+<br>
+En cuanto a la implementaci&oacute;n, cada estructura GRAPH
+deber&iacute;a contener un puntero a una funci&oacute;n de dibujo
+espec&iacute;fica, a ser llamado en lugar de gr_blit cuando las
+condiciones de dibujo sean normales (sin escalado, sin rotado, y sin
+flags o s&oacute;lo con un conjunto reducido de flags, tal vez con una
+m&aacute;scara especificada en otro campo de la estructura). La
+detecci&oacute;n de la existencia de esta rutina puede venir al
+principio de la propia gr_blit, haciendo la mejora transparente al
+sistema.<br>
+<br>
+La opci&oacute;n de hacer gr&aacute;ficos con rutinas de dibujo
+personalizables tiene m&uacute;ltiples aplicaciones adicionales. Por
+ejemplo, se podr&iacute;an crear DLLs que implementaran blitters
+alternativos al original (con efectos especiales, u optimizaciones como
+las comentadas). Tambi&eacute;n ser&iacute;a posible crear mapas
+compuestos (una versi&oacute;n especial de un mapa de 8 bits donde cada
+pixel en lugar de ser un color representa el &iacute;ndice de un
+gr&aacute;fico dentro de una librer&iacute;a FPG) que ser&iacute;an muy
+&uacute;tiles como fondo de un scroll, donde ahora hay limitaciones de
+tama&ntilde;o y memoria ya que todo el fondo es un &uacute;nico
+gr&aacute;fico. Bastar&iacute;a con crear una rutina de dibujo
+especializada al caso.<br>
+<h3>Se&ntilde;ales</h3>
+Ahora mismo las se&ntilde;ales lanzadas con SIGNAL tienen efecto al
+acabar la sentencia. Es posible para un proceso hijo lanzar una
+se&ntilde;al para dormir al proceso padre y volver: el proceso padre no
+llegar&aacute; a ejecutar la sentencia siguiente.<br>
+<br>
+El precio a pagar es que se comprueba el estado actual del proceso
+cont&iacute;nuamente. Tras cada mnem&oacute;nico hay una
+comprobaci&oacute;n de stack vac&iacute;o para saber si estamos en un
+punto final de sentencia. Aunque es s&oacute;lo una comparaci&oacute;n
+de registros, sobra, y el int&eacute;rprete se ver&iacute;a acelerado
+en un cierto porcentaje sin su existencia.<br>
+<br>
+Desgraciadamente eso har&iacute;a err&aacute;tica la actuaci&oacute;n
+de se&ntilde;ales, porque una se&ntilde;al tendr&iacute;a efecto cuando
+el bucle principal llegara al proceso correspondiente. Algunas
+se&ntilde;ales tendr&iacute;an efecto casi inmediato (las de un proceso
+contra otro que no lo ha llamado y que a&uacute;n no se ha ejecutado
+este frame), mientras otras no actuar&iacute;an hasta el siguiente.
+Para solucionar esto, la funci&oacute;n SIGNAL no deber&iacute;a
+cambiar inmediatamente el estado de un proceso, sino guardar el nuevo
+estado en una variable auxiliar, de manera que s&oacute;lo al final del
+actual frame &eacute;sta sustituyera al estado real. De esta forma se
+emular&iacute;a el funcionamiento del DIV, donde las se&ntilde;ales no
+tienen efecto hasta justo antes de la visualizaci&oacute;n, y que ya es
+suficiente como medio de interactuaci&oacute;n entre procesos.<br>
+<br>
+Lo que es peor es que se perder&iacute;a la compatibilidad con los
+programas ya existentes, que son dependientes del funcionamiento de las
+se&ntilde;ales.<br>
+<br>
+La mejor soluci&oacute;n es crear dos versiones del n&uacute;cleo del
+int&eacute;rprete (eventualmente es preciso crear m&aacute;s de una,
+por ejemplo para habilitar una ejecuci&oacute;n paso a paso o con
+breakpoints). En una de ellas se sigue el mecanismo actual (aunque la
+comprobaci&oacute;n del stack no sigue siendo v&aacute;lida si se
+implementan subrutinas, ya que estas pueden crear procesos), y en otra
+alternativa algo m&aacute;s r&aacute;pida las se&ntilde;ales
+funcionar&iacute;an como en DIV. Una variable global podr&iacute;a
+decidir qu&eacute; versi&oacute;n ejecutar. No ser&iacute;a necesario
+duplicar las versiones paso a paso del int&eacute;rprete, ya que en
+estas el rendimiento no es tan importante y podr&iacute;an comprobar el
+estado de dicha variable global para emular ambas versiones.<br>
+<h3>Bucle principal de ejecuci&oacute;n y dibujo<br>
+</h3>
+Actualmente el bucle principal de Fenix crea al menos dos listas
+din&aacute;micas que son ordenadas cada frame con qsort: una lista de
+procesos a ejecutar, y una lista de objetos a dibujar.<br>
+<br>
+Este funcionamiento no es &oacute;ptimo, ya que en muchos casos estas
+listas son largas y bastante constantes (con pocas o ninguna
+variaci&oacute;n de un frame a otro).<br>
+<br>
+Se obtendr&iacute;a algo de mejora en el rendimiento, especialmente en
+programas con muchos procesos simples, si estas listas se mantuvieran
+en todo momento creadas y ordenadas (insertando los nuevos elementos en
+la posici&oacute;n correcta, por ejemplo). La mayor complejidad
+consiste en detectar cambios en los procesos (por ejemplo, las
+variables PRIORITY y Z pueden ser cambiadas por procesos remotos que
+accedan usando punteros o el operador punto [.]).<br>
+<br>
+Tampoco es &oacute;ptimo el m&eacute;todo de dibujo que se emplea
+actualmente, que redibuja el frame entero. Ser&iacute;a m&aacute;s
+&oacute;ptimo en muchos casos (especialmente en juegos en alta
+resoluci&oacute;n con fondo est&aacute;tico) si se creara una lista de
+zonas "calientes" rectangulares y se limitara el dibujo del frame a
+esas zonas (repasando los procesos que han sido creados, movidos o
+alterados en forma o gr&aacute;fico). Este tipo de
+implementaci&oacute;n tiene el problema de que es necesario mezclar los
+rect&aacute;ngulos obtenidos. Por ejemplo, una gran cantidad de
+procesos "part&iacute;cula" pueden crear 15 &oacute; 20
+rect&aacute;ngulos en pantalla que se superpongan en una
+configuraci&oacute;n no trivial. En un caso extremo puede ser
+m&aacute;s lento realizar este proceso que dibujar la pantalla entera.
+Ser&iacute;a mejor dejar de manos del usuario la elecci&oacute;n,
+soportando las variables DUMP_TYPE y RESTORE_TYPE del DIV original. Un
+juego con una gran cantidad de procesos est&aacute;ticos (por ejemplo
+un juego isom&eacute;trico tipo "Alien 8" donde cada cubo en pantalla
+formando el decorado sea un proceso) no es pr&aacute;ctico ahora mismo,
+pero podr&iacute;a serlo si no se redibujaran todos cada frame.<br>
+<br>
+[El fichero que esquematiza el funcionamiento actual del
+int&eacute;rprete contiene una posible implementaci&oacute;n de este
+sistema]<br>
+<br>
+Otra alternativa es dividir la pantalla en una rejilla y marcar cada
+cuadro de la rejilla que sea "pisado" por un proceso para ser
+redibujado. Con un n&uacute;mero ajustado de celdas esto puede ser
+m&aacute;s adecuado para ciertos casos que la soluci&oacute;n anterior
+de los rect&aacute;ngulos, a costa de dibujar potencialmente una zona
+de pantalla bastante m&aacute;s amplia.<br>
+<h3>Scroll "parallax"<br>
+</h3>
+Ahora mismo no hay ninguna rutina que dibuje scrolls, sino que
+simplemente se dibujan las capas del mismo la una sobre la otra. Esto
+resulta lento especialmente en alta resoluci&oacute;n.<br>
+<br>
+Un primer paso es dibujar una rutina de dibujo "parallax" que mezcle
+dos o m&aacute;s capas, dibujando las capas inferiores a trav&eacute;s
+de los agujeros de las capas superiores. Esta rutina puede beneficiarse
+de la compresi&oacute;n RLE del gr&aacute;fico que forme la capa
+superior. Ser&iacute;a preciso alterar las estructuras actuales,
+pensadas para la existencia de s&oacute;lo dos capas por scroll. El
+resultado podr&iacute;a no ser compatible con los juegos actuales.<br>
+<br>
+Un inconveniente es que puede ser interesante usar rutinas particulares
+para dibujar planos de scroll, como por ejemplo la rutina comentada
+m&aacute;s arriba de dibujo de gr&aacute;ficos por bloques a partir de
+otros gr&aacute;ficos. Para implementar este caso, la rutina de scroll
+podr&iacute;a mantener una cach&eacute; con la zona visible de cada
+plano (de tama&ntilde;o un poco superior a la superficie visible de
+pantalla) e irla actualizando llamando a la rutina de dibujo a medida
+que se desplace la pantalla. Esto permitir&iacute;a tambi&eacute;n
+habilitar planos con flags simples, como el espejo horizontal, sin
+implementar un caso especial de la rutina de parallax para ello, a
+costa de un incremento en el uso de memoria (m&aacute;s o menos
+elevado; a 640x480 un plano a pantalla completa de 16 bits son unos
+600K de RAM).<br>
+<br>
+Un problema cl&aacute;sico de los juegos DIV con scroll es la no
+existencia de planos superiores de scroll (o mejor dicho, no poder
+intercalar procesos entre planos de scroll). S&oacute;lo habiendo dos
+planos no es especialmente importante y el usuario recurre a procesos
+para simular un plano de scroll superior, pero permitiendo la
+existencia de m&aacute;s planos ser&iacute;a mejor soportar esta
+caracter&iacute;stica. Fenix permite ahora el apilado de capas de
+scroll, pero salvo a baja resoluci&oacute;n, no es una soluci&oacute;n
+&oacute;ptima. Si se implementa un parallax de m&aacute;s de dos planos
+ser&iacute;a interesante poder dibujar procesos entre plano y plano.
+Este problema no tiene una soluci&oacute;n sencilla. La rutina de
+parallax podr&iacute;a dibujar los procesos encima del scroll, una vez
+dibujado &eacute;ste al completo, y luego redibujar las capas que
+est&eacute;n encima de ellos (limitandose a la zona que ocupan en
+pantalla, una t&eacute;cnica parecida a un RESTORE_TYPE por
+rect&aacute;ngulos). Esta soluci&oacute;n ser&iacute;a m&aacute;s
+r&aacute;pida que tener que dibujar los planos en m&uacute;ltiples
+pasos, pero de todas formas son bastantes pixels los que se dibujan
+varias veces. Una soluci&oacute;n mejor pero m&aacute;s compleja:
+estudiar la disposici&oacute;n en pantalla de todos los procesos y
+hacer una clasificaci&oacute;n de la pantalla en zonas rectangulares,
+de forma similar a como funciona la GUI.DLL para dibujar ventanas sin
+pintar dos veces el mismo pixel. En los rect&aacute;ngulos donde no
+haya procesos, actuar normalmente; en donde haya alg&uacute;n proceso,
+dibujar los planos inferiores, seguidos de los procesos, seguidos de
+los planos superiores.<br>
+<br>
+Para complicar el asunto sigue siendo interesante poder hacer
+transparencias o efectos entre planos de scroll. Sin embargo este tipo
+de recursos ya no hay m&aacute;s remedio que dibujarlos despu&eacute;s
+de haber dibujado el scroll inferior. La soluci&oacute;n m&aacute;s
+simple es permitir el apilado de planos de scroll como hasta ahora, de
+manera que si el usuario desea hacer una franja de nubes que se
+desplacen, por ejemplo, puede hacer un scroll apilado sobre una
+regi&oacute;n reducida de pantalla.<br>
+</body>
+</html>

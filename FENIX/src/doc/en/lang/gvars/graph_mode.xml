@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="GRAPH_MODE">
+    <abstract>It adjusts the depth of colour that will be used</abstract>    
+	<description>
+	<p>
+	    This variable indicates if the program uses a depth of colour of 8 or 16 bits.
+	    To indicate that the program uses a depth of 16 bits his value must be 1, for
+	    8 bits his value must be 0. The default value is 0 (depth of 8 bits). Too can be
+		indicated the use of 2XScale filter (only available for previous modes at 400x400 pixels).
+	</p>	
+	<p>
+		To simplify this task, there are the following constants:
+	</p>
+	<p>
+		To indicate the use of 16 bits:	<const name=" MODE_16BITS"/>
+		To indicate the use of 2XScale filter: <const name=" MODE_2XSCALE"/>
+	</p>
+	<p>
+		The value of this variable (to use 16 bits) must be indicated before calling to the function
+		<a href="INIT/SET_MODE" name=" SET_MODE"/>.	    
+	</p>
+	<p>
+		If you want to use both constants, simply use: "graph_mode = mode_16bits | mode_2xscale ;".
+	</p>
+    </description>
+    <see href="INIT/SET_MODE" name="SET_MODE"/>
+</variable>

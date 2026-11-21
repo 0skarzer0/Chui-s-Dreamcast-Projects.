@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="KEY">
+    <retval/>
+    <param name="tecla"> Key code. It can be any of the 
+	following constants:
+	    <const name="_ESC"/>
+	    <const name="_1"/>
+	    <const name="_2"/>
+	    <const name="_3"/>
+	    <const name="_4"/>
+	    <const name="_5"/>
+	    <const name="_6"/>
+	    <const name="_7"/>
+	    <const name="_8"/>
+	    <const name="_9"/>
+	    <const name="_0"/>
+	    <const name="_MINUS"/>
+	    <const name="_PLUS"/>
+	    <const name="_BACKSPACE"/>
+	    <const name="_TAB"/>
+	    <const name="_Q"/>
+	    <const name="_W"/>
+	    <const name="_E"/>
+	    <const name="_R"/>
+	    <const name="_T"/>
+	    <const name="_Y"/>
+	    <const name="_U"/>
+	    <const name="_I"/>
+	    <const name="_O"/>
+	    <const name="_P"/>
+	    <const name="_L_BRACHET"/>
+	    <const name="_R_BRACHET"/>
+	    <const name="_ENTER"/>
+	    <const name="_C_ENTER"/>
+	    <const name="_CONTROL"/>
+	    <const name="_A"/>
+	    <const name="_S"/>
+	    <const name="_D"/>
+	    <const name="_F"/>
+	    <const name="_G"/>
+	    <const name="_H"/>
+	    <const name="_J"/>
+	    <const name="_K"/>
+	    <const name="_L"/>
+	    <const name="_SEMICOLON"/>
+	    <const name="_APOSTROPHE"/>
+	    <const name="_WAVE"/>
+	    <const name="_L_SHIFT"/>
+	    <const name="_BACKSLASH"/>
+	    <const name="_Z"/>
+	    <const name="_X"/>
+	    <const name="_C"/>
+	    <const name="_V"/>
+	    <const name="_B"/>
+	    <const name="_N"/>
+	    <const name="_M"/>
+	    <const name="_COMMA"/>
+	    <const name="_POINT"/>
+	    <const name="_SLASH"/>
+	    <const name="_C_BACKSLASH"/>
+	    <const name="_R_SHIFT"/>
+	    <const name="_C_ASTERISK"/>
+	    <const name="_PRN_SCR"/>
+	    <const name="_ALT"/>
+	    <const name="_SPACE"/>
+	    <const name="_CAPS_LOCK"/>
+	    <const name="_F1"/>
+	    <const name="_F2"/>
+	    <const name="_F3"/>
+	    <const name="_F4"/>
+	    <const name="_F5"/>
+	    <const name="_F6"/>
+	    <const name="_F7"/>
+	    <const name="_F8"/>
+	    <const name="_F9"/>
+	    <const name="_F10"/>
+	    <const name="_NUM_LOCK"/>
+	    <const name="_SCROLL_LOCK"/>
+	    <const name="_HOME"/>
+	    <const name="_C_HOME"/>
+	    <const name="_UP"/>
+	    <const name="_C_UP"/>
+	    <const name="_PGUP"/>
+	    <const name="_C_PGUP"/>
+	    <const name="_C_MINUS"/>
+	    <const name="_LEFT"/>
+	    <const name="_C_LEFT"/>
+	    <const name="_C_CENTER"/>
+	    <const name="_RIGHT"/>
+	    <const name="_C_RIGHT"/>
+	    <const name="_C_PLUS"/>
+	    <const name="_END"/>
+	    <const name="_C_END"/>
+	    <const name="_DOWN"/>
+	    <const name="_C_DOWN"/>
+	    <const name="_PGDN"/>
+	    <const name="_C_PGDN"/>
+	    <const name="_INS"/>
+	    <const name="_C_INS"/>
+	    <const name="_DEL"/>
+	    <const name="_C_DEL"/>
+	    <const name="_F11"/>
+	    <const name="_F12"/>
+	    <const name="_LESS"/>
+	    <const name="_EQUALS"/>
+	    <const name="_GREATER"/>
+	    <const name="_ASTERISK"/>
+	</param>
+    <abstract> It returns 1 if any key is pressed </abstract>
+    <description>
+	<p>
+	    This function checks the state of a key by his position
+	    code in the keyboard or scan-code, and it returns 1
+	    if the key is pressed and 0 if it is not pressed.
+	    The parameter can be any of the predefined constants
+	    listed before.
+	</p>
+	<p>
+	    It is important that the key codes indicate his position
+	    over the keyboard, and they do not indicate to the characters
+	    that hold. For example, the key _L_BRACHET corresponds to key that
+	    holds the signs [, ^ and ` in the spanish keyboard, but in 
+	    an english keyboard or in other language, the symbols will be
+	    different. However, _L_BRACHET always corresponds to key placed at right
+		of P.
+	</p>
+	<p>
+	    If you want to guess that key has been pressed really
+	    (including the symbol, that can be other if you use
+	    keys like Shift or AltGr), it is necessary to consult
+	    the variable <a href="ASCII"/>.
+	</p>
+    </description>
+    <see href="SCAN_CODE"/>
+    <see href="ASCII"/>
+    <keyword word="_ESC"/>
+    <keyword word="_1"/>
+    <keyword word="_2"/>
+    <keyword word="_3"/>
+    <keyword word="_4"/>
+    <keyword word="_5"/>
+    <keyword word="_6"/>
+    <keyword word="_7"/>
+    <keyword word="_8"/>
+    <keyword word="_9"/>
+    <keyword word="_0"/>
+    <keyword word="_MINUS"/>
+    <keyword word="_PLUS"/>
+    <keyword word="_BACKSPACE"/>
+    <keyword word="_TAB"/>
+    <keyword word="_Q"/>
+    <keyword word="_W"/>
+    <keyword word="_E"/>
+    <keyword word="_R"/>
+    <keyword word="_T"/>
+    <keyword word="_Y"/>
+    <keyword word="_U"/>
+    <keyword word="_I"/>
+    <keyword word="_O"/>
+    <keyword word="_P"/>
+    <keyword word="_L_BRACHET"/>
+    <keyword word="_R_BRACHET"/>
+    <keyword word="_ENTER"/>
+    <keyword word="_C_ENTER"/>
+    <keyword word="_CONTROL"/>
+    <keyword word="_A"/>
+    <keyword word="_S"/>
+    <keyword word="_D"/>
+    <keyword word="_F"/>
+    <keyword word="_G"/>
+    <keyword word="_H"/>
+    <keyword word="_J"/>
+    <keyword word="_K"/>
+    <keyword word="_L"/>
+    <keyword word="_SEMICOLON"/>
+    <keyword word="_APOSTROPHE"/>
+    <keyword word="_WAVE"/>
+    <keyword word="_L_SHIFT"/>
+    <keyword word="_BACKSLASH"/>
+    <keyword word="_Z"/>
+    <keyword word="_X"/>
+    <keyword word="_C"/>
+    <keyword word="_V"/>
+    <keyword word="_B"/>
+    <keyword word="_N"/>
+    <keyword word="_M"/>
+    <keyword word="_COMMA"/>
+    <keyword word="_POINT"/>
+    <keyword word="_SLASH"/>
+    <keyword word="_C_BACKSLASH"/>
+    <keyword word="_R_SHIFT"/>
+    <keyword word="_C_ASTERISK"/>
+    <keyword word="_PRN_SCR"/>
+    <keyword word="_ALT"/>
+    <keyword word="_SPACE"/>
+    <keyword word="_CAPS_LOCK"/>
+    <keyword word="_F1"/>
+    <keyword word="_F2"/>
+    <keyword word="_F3"/>
+    <keyword word="_F4"/>
+    <keyword word="_F5"/>
+    <keyword word="_F6"/>
+    <keyword word="_F7"/>
+    <keyword word="_F8"/>
+    <keyword word="_F9"/>
+    <keyword word="_F10"/>
+    <keyword word="_NUM_LOCK"/>
+    <keyword word="_SCROLL_LOCK"/>
+    <keyword word="_HOME"/>
+    <keyword word="_C_HOME"/>
+    <keyword word="_UP"/>
+    <keyword word="_C_UP"/>
+    <keyword word="_PGUP"/>
+    <keyword word="_C_PGUP"/>
+    <keyword word="_C_MINUS"/>
+    <keyword word="_LEFT"/>
+    <keyword word="_C_LEFT"/>
+    <keyword word="_C_CENTER"/>
+    <keyword word="_RIGHT"/>
+    <keyword word="_C_RIGHT"/>
+    <keyword word="_C_PLUS"/>
+    <keyword word="_END"/>
+    <keyword word="_C_END"/>
+    <keyword word="_DOWN"/>
+    <keyword word="_C_DOWN"/>
+    <keyword word="_PGDN"/>
+    <keyword word="_C_PGDN"/>
+    <keyword word="_INS"/>
+    <keyword word="_C_INS"/>
+    <keyword word="_DEL"/>
+    <keyword word="_C_DEL"/>
+    <keyword word="_F11"/>
+    <keyword word="_F12"/>
+    <keyword word="_LESS"/>
+    <keyword word="_EQUALS"/>
+    <keyword word="_GREATER"/>
+    <keyword word="_ASTERISK"/>
+</function>

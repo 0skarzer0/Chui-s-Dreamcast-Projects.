@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="TIMER" size="9">
+    <abstract>Ten accessible programmable chronometers at any moment</abstract>
+    <description>
+    <p>
+    	Fenix has 10 accessible chronometers through the array of variables 
+    	timer (from timer[0] to timer[9]). As it happens with any array to get the value of timer as a 
+		integer	variable is just like to get the value of timer[0].
+    </p>
+    <p>
+    	These timers are initialized to	value 0 automatically when the program begins 
+		and are increased 100 times per second automatically.
+    </p>
+    <p>
+    	In any moment the value of each one can be changed, for example
+    	inicializándolo de nuevo a 0, to control an ammount of concrete time. 
+    	For example, to make a clock, we would must check the chosen timer against 
+		a value greater to 100 and to reduce it 100 to that timer.
+    </p>
+	</description>
+	<note>
+		The global variables are updated each instruction FRAME with the
+		object of language therefore the values read in a timer will not be
+		consecutive unless our program is being executed to 100 frames per
+		second.
+	</note>
+	<note>
+		The verifications with the timers must be always made with the
+		operators of <b>>=</b> or <b>></b> and never with the <b>=</b> so that it is not secure
+		that after the update of the timer the value will be exactly equal to the wished one.
+	</note>
+</variable>

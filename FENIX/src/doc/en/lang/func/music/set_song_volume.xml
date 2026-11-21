@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_SONG_VOLUME">
+    <param name="volume"> New volume (0-128) </param>
+    <abstract> It allows to establish the general volume of the music </abstract>
+    <description>
+	<p>
+	    This function changes the total level of volume for the music 
+	    between a level of 0 (total silence)
+	    and 128 (original volume of archive).
+	</p>
+    </description>
+    <see href="FADE_MUSIC_ON"/>
+    <see href="PLAY_SONG"/>
+    <see href="LOAD_SONG"/>
+</function>

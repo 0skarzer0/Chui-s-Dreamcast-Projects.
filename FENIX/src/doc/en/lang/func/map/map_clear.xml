@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_CLEAR">
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph inside of library </param>
+    <param name="colour"> Number of colour </param>
+    <abstract> It cleans the content of a graph </abstract>
+    <description>
+	<p>
+	    It cleans the content of a graph, establishing all pixels to
+	    the colour indicated.
+	</p>
+	<p>
+	    The mean of the colour parameter depends of the colour depth of the
+	    graph. For a graph of 8 bits, represents a colour number of 0 to
+	    255. For a graph of 16 bits, it is a number of 0 to 65535 that can
+	    change in function of graph mode. You can use the function <a href="RGB"/> to obtain
+	    the codification of a colour determined by his components.
+	</p>
+	<p>
+	    In all cases, the colour 0 represents a transparent pixel,
+	    in 8 or in 16 bits.
+	</p>
+    </description>
+    <see href="RGB"/>
+    <see href="FIND_NEAREST_COLOR"/>
+</function>

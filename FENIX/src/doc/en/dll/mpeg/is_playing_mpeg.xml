@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="IS_PLAYING_MPEG">
+    <retval/>
+    <param name="video"> Identifier of video </param>
+    <abstract> It returns 1 if a video is still playing </abstract>
+    <description>
+	<p>
+	    It returns 1 if a video is still playing,
+	    and 0 if the video has stopped. If a video is playing always
+	    (option that can be used with <a href="dll/mpeg/LOOP_MPEG" name="LOOP_MPEG"/>), it will not stop.
+	</p>
+    </description>
+    <see href="dll/mpeg/LOAD_MPEG" name="LOAD_MPEG"/>
+    <see href="dll/mpeg/LOOP_MPEG" name="LOOP_MPEG"/>
+    <see href="dll/mpeg/MPEG_CURRENT_TIME" name="MPEG_CURRENT_TIME"/>
+</function>

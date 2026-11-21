@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="BREAK">
+	<syntax> 
+		<b>BREAK</b> ; 
+	</syntax>
+	<abstract> Sale del bucle actual </abstract>
+    <description>
+		<p>
+			Esta sentencia sólo es válida en el interior de un bucle
+			(<a href="LOOP"/>, <a href="FOR"/>, <a href="FROM"/>, 
+			 <a href="WHILE"/> o <a href="REPEAT"/>) y sirve para saltar
+			 inmediatamente a la primera sentencia fuera del interior
+			 del bucle, rompiendo el curso de la ejecución del mismo.
+		</p>
+		<p>
+			En bucles <a href="FOR"/>, BREAK se salta incluso la
+			acción de incremento, que no será evaluada.
+		</p>
+    </description>
+	<see href="CONTINUE"/>
+</section>

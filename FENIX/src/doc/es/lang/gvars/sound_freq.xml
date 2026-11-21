@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="SUND_FREQ">
+    <abstract>Frecuencia de sampling del mezclador</abstract>
+    <description>
+	<p>
+		Esta variable indica la cantidad de samples por segundo que 
+		utiliza el mezclador para reproducir los sonidos.  Acepta 
+		cualquier valor, pero el intérprete redondea automaticamente 
+		a valores pre-establecidos de 11025, 22050 y 44100 Hz.
+	</p>
+	<p>
+		Para una mejor calidad de reproduccion se recomienda una 
+		velocidad de muestreo alta, pero los mejores resultados de 
+		fidelidad al sonido original se consiguen teniendo la misma 
+		velocidad de muestreo en el sample que en le mezclador, ya que 
+		de no ser así pueden producirse diferencias en la velocidad de
+		reproducción de los sonidos.
+	</p>
+    </description>
+    <see href="COLOR/FADE" name="FADE"/>
+</variable>

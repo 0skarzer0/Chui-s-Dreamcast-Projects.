@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CONTROL_DRAGGABLE">
+    <retval/>
+    <param name="control"> Identificador de un control </param>
+    <param name="texto" type="STRING"> Texto asociado </param>
+    <param name="fpg" optional="YES"> Librería FPG </param>
+    <param name="graph" optional="YES"> Identificador de gráfico </param>
+    <abstract> Activa la opción drag&amp;drop en un objeto </abstract>
+    <description>
+	<p>
+	    Activa la posibilidad de arrastrar el contenido de un
+	    control. En algunos controles, esto afecta a toda su
+	    área. En otros, el usuario no podrá arrastrar algunas
+	    zonas internas (como barras de desplazamiento), pero
+	    sí el contenido principal del control.
+	</p>
+	<p>
+	    Es preciso especificar una cadena de texto que sirva
+	    para identificar el objeto que se arrastra. La información
+	    que pueda contener esta cadena es totalmente libre, y
+	    será devuelta por <a href="GUI_DRAGTYPE"/> cuando el
+	    usuario esté arrastrando el objeto.
+	</p>
+	<p>
+	    Es posible opcionalmente indicar un gráfico que será
+	    visualizado de forma transparente cuando el usuario
+	    arrastre el contenido del control. Por defecto, se
+	    usa un simple recuadro blanco y negro.
+	</p>
+    </description>
+    <see href="GUI_DRAGGING"/>
+    <see href="GUI_DRAGTYPE"/>
+</function>

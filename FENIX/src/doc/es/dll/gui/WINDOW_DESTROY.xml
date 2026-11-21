@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW_DESTROY">
+<retval/>
+<param name="ventana"> Identificador de la ventana </param>
+<abstract> Destruye una ventana </abstract>
+<description>
+    <p>
+	Elimina una ventana del escritorio (si está presente) y libera la memoria
+	ocupada por la misma (incluyendo los recursos ocupados por todos los
+	controles). Cualquier referencia posterior hecho al identificador de
+	la ventana será inválida y se considerará un error por parte del
+	programador que puede provocar consecuencias imprevisibles.
+    </p>
+</description>
+<see name="DESKTOP_REMOVEWINDOW" href="DLL/GUI/DESKTOP_REMOVEWINDOW"/>
+</function>

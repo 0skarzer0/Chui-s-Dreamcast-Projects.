@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="INPUTLINE">
+<retval type="INT">Identificador del control creado</retval>
+<param name="ancho"> Ancho en caracteres </param>
+<param name="variable" type="VAR"> Variable de tipo CHAR[] con el texto </param>
+<abstract> Crea una caja de Input de una sóla línea </abstract>
+<description>
+    <p>
+	Crea una caja de Input, donde el usuario puede escribir
+	un texto, de un ancho determinado (el ancho especificado
+	a la función vendrá dado en caracteres, no en pixels;
+	el ancho real del control será aproxiamdamente esta
+	cantidad más 1, multiplicada por 8). Como segundo parámetro
+	se especificará una variable (directamente, sin usar el
+	operador &amp;) que deberá ser de tipo CHAR[] (una
+	cadena de ancho limitado). El control se asegurará de
+	esta manera que el usuario no escriba más caracteres
+	de los que caben en la memoria disponible para ello.
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

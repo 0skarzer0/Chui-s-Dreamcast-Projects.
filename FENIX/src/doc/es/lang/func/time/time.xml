@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TIME">
+    <retval/>    
+    <abstract>Devuelve la fecha actual en formato entero.</abstract>
+    <description>
+	<p>
+	    Esta función devuelve la fecha actual en formato entero como 
+	    el número de segundos transcurridos desde el 1 de Enero de 1970.
+	</p>
+	<p>
+		El valor devuelto por esta función puede utilizarse con la función 
+		<a href="TIME/FTIME" name="FTIME"/> para transformarla a un formato 
+		legible.
+	</p>
+	</description>
+    <see name="FTIME" href="TIME/FTIME"/>
+</function>

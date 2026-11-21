@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+
+<index name="lang">
+    <abstract> Referencia del lenguaje </abstract>
+    <description>
+	<p>
+	    Este directorio contiene la referencia actual del lenguaje
+	    Fenix, incluyendo todas las funciones y variables predefinidas,
+	    las sentencias y comandos, y las directivas del preprocesador.
+	</p>
+	<p>
+	    Visita <a href="Sintaxis de un programa"/> para desglosar
+	    la sintaxis general de un programa en Fenix y a partir de ahí conocer
+	    las sentencias, operadores y funciones disponibles.
+	</p>
+    </description>
+</index>
+
+

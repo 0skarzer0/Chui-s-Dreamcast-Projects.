@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="DELETE_DRAWING" />
+<fnc href="DRAW_BOX" />
+<fnc href="DRAW_CURVE" />
+<fnc href="DRAW_CIRCLE" />
+<fnc href="DRAW_FCIRCLE" />
+<fnc href="DRAW_LINE" />
+<fnc href="DRAW_RECT" />
+<fnc href="DRAWING_ALPHA" />
+<fnc href="DRAWING_COLOR" />
+<fnc href="DRAWING_MAP" />
+<fnc href="MOVE_DRAWING" />
+</INDEX>

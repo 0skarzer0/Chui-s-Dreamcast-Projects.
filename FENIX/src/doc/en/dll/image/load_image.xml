@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_IMAGE">
+<retval/>
+<param name="archive" type="STRING"> Name of archive to recover </param>
+<abstract> It recovers an image of disk detecting automatically his type,
+    using SDL_image.DLL
+</abstract>
+<description>
+    <p>
+	This function recovers of disk an image detecting automatically
+	his format, and creates a graph in memory that can be used
+	in the habitual operations. The function returns an entire identifier
+	that represents the loaded graph, that is imported like
+	pertaining to the library 0. For example, 
+	PUT_SCREEN (0, LOAD_IMAGE("x.jpg")) will put like background of screen
+	the loaded image from archive x.jpg. If you want to have more memory
+	then unload the graph recovered with this function, that
+	can be made using the function <a href="UNLOAD_MAP"/>.
+    </p>
+    <p> The function supports actually the following formats:
+	<ul>
+	    <li> JPEG </li>
+	    <li> PNG </li>
+	    <li> PCX </li>
+	    <li> GIF </li>
+	    <li> BMP </li>
+	    <li> TIFF </li>
+	    <li> LBM </li>
+	    <li> XPM </li>
+	    <li> XCF </li>
+	    <li> PNM </li>
+	</ul>
+    </p>
+    <p>
+	The images of 8 bits will be imported like images of 8 bits,
+	although the palette of colours of the image will be recovered only in 
+	the case of this is the first image in being loaded in the program.
+	 
+	The rest of formats of colour will be converted internally to 16 bits.
+    </p>
+    <p>
+	This function does not support GIF animations.
+    </p>
+    <p>
+	The transparencies in the image will be imported for graphs of 16 or
+	32 bits with alpha channel (like PNG format) so the pixels with a
+	transparency of 128 or more will be imported like transparent
+	in the final graph.
+    </p>
+</description>
+<note>
+    <p>
+	Actually, it exists a compatibility problem with the functions
+	of load of PNG. It is recommended to use the incorporated function
+	in the standard graph library LOAD_PNG to recover these images.
+    </p>
+</note>
+<see href="LOAD_MAP"/>
+<see href="LOAD_PNG"/>
+<see href="LOAD_PCX"/>
+<see href="UNLOAD_MAP"/>
+<see href="SAVE_MAP"/>
+</function>
+

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="UNLOAD_WAV">
+    <retval/>
+    <param name="wav"> Identificador del sonido devuelto por LOAD_WAV </param>
+    <abstract> Libera la memoria ocupada por un efecto de sonido </abstract>
+    <description>
+	<p>
+	    Elimina un efecto de sonido de memoria. Es importante
+	    que el efecto no se esté reproduciendo en el momento
+	    de descargarlo de memoria, por lo que debes asegurarte
+	    de ello mediante la función <a href="IS_PLAYING_WAV"/>.
+	    Normalmente sólo es preciso descargar de memoria
+	    efectos de sonido contínuos, que ocupan más espacio,
+	    como el motor de un coche o una lluvia de fondo,
+	    así que esta limitación no resulta conveniente ya
+	    que es necesario de todas maneras llevar un control
+	    de la reproducción de dicho sonido.
+	</p>
+    </description>
+    <see href="STOP_WAV"/>
+    <see href="IS_PLAYING_WAV"/>
+</function>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_TITLE">
+    <param name="título" type="STRING"> Nombre de la aplicación </param>
+    <abstract> Establece el título de la ventana del juego </abstract>
+    <description>
+	<p>
+	    Esta función permite escoger el título de la ventana del juego,
+	    si el juego no funciona a pantalla completa. Es necesario llamar
+	    a esta función antes que llamara a <a href="INIT/SET_MODE" name="SET_MODE"/>, ya que
+	    esa es la función que creará y visualizará dicha ventana.
+	    Recuerda que SET_MODE inicializa en un principio el juego a
+	    pantalla completa: para inicializar el modo de ventana, es
+	    preciso cambiar el valor de la variable <a type="var" href="GVARS/FULL_SCREEN" name="FULL_SCREEN"/>
+	    antes de llamar a <a href="INIT/SET_MODE" name="SET_MODE"/>.
+	</p>
+	<p>
+	    No es posible cambiar el título de una ventana ya inicializada,
+	    pero puedes volver a llamar a <a href="INIT/SET_MODE" name="SET_MODE"/> para
+	    activar los cambios.
+	</p>
+    </description>
+    <see type="var" href="GVARS/FULL_SCREEN" name="FULL_SCREEN"/>
+    <see href="INIT/SET_MODE" name="SET_MODE"/>
+    <see href="INIT/SET_ICON" name="SET_ICON"/>
+</function>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="CNUMBER">
+    <abstract>Indica en qué ventanas de scroll o modo7 se visualiza el proceso</abstract>    
+	<description>
+	<p>
+		Esta variable permite determinar que ventana de scroll o modo7 va a utilizarse 
+		para visualizar el proceso.  Su valor puede conseguirse una o la suma 
+		de varias de las siguientes constantes (<b>suma</b> u <b>operación OR</b>)
+	</p>
+	<p>
+		<const name="C_0" value="1"/>
+		<const name="C_1" value="2"/>
+		<const name="C_2" value="4"/>
+		<const name="C_3" value="8"/>
+		<const name="C_4" value="16"/>
+		<const name="C_5" value="32"/>
+		<const name="C_6" value="64"/>
+		<const name="C_7" value="128"/>
+		<const name="C_8" value="256"/>
+		<const name="C_9" value="512"/>
+		<BR/>	
+		El valor por defecto indica que se verá en todas las ventanas de scroll y/o modo7 
+		activas (independientemente al valor de C_FLAGS, una ventana de scroll o modo7 debe 
+		estar activa para que los procesos puedan visualizarse en ella).
+	</p>
+	<p>
+		Esta variable sólo tiene sentido si se inicializa también la variable local 
+		<a type="var" name="CTYPE" href="LVARS/CTYPE"/>
+	</p>
+    </description>
+    <see type="var" name="CTYPE" href="LVARS/CTYPE" />
+</variable>

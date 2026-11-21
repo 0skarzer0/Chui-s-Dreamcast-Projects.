@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="RESOLUTION">
+    <abstract>Factor de ampliación para las coordenadas X e Y</abstract>    
+	<description>
+	<p>
+		Permite aumentar la resolución de las coordenadas X e Y del proceso, ya que 
+		indica cuantas unidades lógicas existen por cad pixel de pantalla.  Por ejemplo 
+		avanzar 400 unidades en un proceso con resolución 100 nos desplaza únicamente 4 
+		pixels en la pantalla.
+	</p>
+	<p>
+		Es conveniente usar esta variable para realentizar el movimiento de objetos que deban 
+		moverse lentamente o para aumentar la suavidad en movimientos complejos que depende de 
+		la precisión en calculos matemáticos como tiros parabólicos, gravedad, etc.		
+	</p>
+	<p>
+		Por defecto su valor es 0, indicando que la equivalencia es de 1:1
+	</p>
+    </description>
+    <see type="var" name="X" href="LVARS/X" />
+    <see type="var" name="Y" href="LVARS/Y" />
+</variable>

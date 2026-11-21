@@ -1,0 +1,16 @@
+#!/usr/local/bin/python
+# $Id: StrCat.py,v 1.1 2003/11/27 07:00:39 jlceb Exp $
+# http://www.bagley.org/~doug/shootout/
+# from Brad Knotwell
+
+import sys,cStringIO
+
+def main():
+    n = int(sys.argv[1])
+    str = cStringIO.StringIO()
+    for i in xrange(0,n):
+        str.write('hello\n')
+
+    print str.tell()
+
+main()

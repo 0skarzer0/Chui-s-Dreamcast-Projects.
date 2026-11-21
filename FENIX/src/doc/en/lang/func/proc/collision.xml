@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="COLLISION">
+    <retval/>
+    <param name="id"> Identifier of a process, or of a type
+    	of process by the instruction <a href="TYPE"/>,
+	or the number 0 or the special instruction TYPE MOUSE </param>
+    <abstract> Find collisions of any type against the current process  </abstract>
+    <description>
+	<p>
+	    This is the main function of collision, that finds a process
+	    that, according to his graph, position on screen according to
+	    its variables <a href="X"/> and <a href="Y"/> and values
+	    of flags, it will collide with the current in case of being 
+	    both drawn immediately. In case of finding a process, this
+	    function returns his <a href="ID"/> (that always is a uneven
+	    number). In opposite case, it will return 0.
+	</p>
+	<p>
+	    According to the value specified like parameter, it is possible:
+	    <ul>
+		<li> Find any process which makes collision 
+		    (using 0 like parameter) </li>
+		<li> Find any process of a determined type which
+		    makes collision (for it, we use like parameter
+		    the expression <a href="TYPE"/> <b>PROCESS</b>, where
+		    PROCESS is the name of some kind of process </li>
+		<li> Check if a determined process makes collision
+		    with the current (using like parameter his value of
+			<a href="ID"/>, or by the operator, or 
+		    for being stored in a variable like <a href="SON"/>. </li>
+		<li> Check if the mouse is on the current process,
+		    using the special expression <b>TYPE MOUSE</b>.
+	    </ul>
+	</p>
+	<p>
+	    The verification is perfect to level of pixel, and it considers
+	    differences of size, rotations, and works althought the objects
+	    are not in visible limits of the screen or althought only the
+	    part which collides will be out of screen. That has important
+	    consequences: for example, an object which is a donut will not
+	    collide with an smaller object that is drawn whitin it, if this
+		other object does not touch a non-transparent pixel.
+	</p>
+	<p>
+		However, both process must be visible so that this function 
+	    checks the existence of a collision. Consult this function
+		 <a href="SIGNAL"/> for more information.
+	</p>
+	<p>
+	    The successive calls to the function COLLISION with the same
+	    parameters return the following processes of the specified
+	    type which make collision, until there are not any, in which
+	    case this function returns 0. This method allows, by
+	    a curl, find all process which make collision with the current.
+	</p>
+    </description>
+    <note>
+	The operation of COLLISION(TYPE MOUSE) is special, because
+	it does not check the collision with the full graph of mouse
+	(MOUSE.GRAPH), but only with the center indicated by MOUSE.X 
+	and MOUSE.Y, then the function returns 1.
+    </note>
+    <see href="ID"/>
+    <see href="SIGNAL"/>
+    <see href="GRAPH"/>
+    <see href="X"/>
+    <see href="Y"/>
+    <see href="SIZE"/>
+    <see href="ANGLE"/>
+    <see href="FLAGS"/>
+    <see href="RESOLUTION"/>
+</function>

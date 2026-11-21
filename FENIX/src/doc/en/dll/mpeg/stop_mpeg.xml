@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="STOP_MPEG">
+    <retval/>
+    <param name="video"> Identifier of video </param>
+    <abstract> It stops the reproduction of a video </abstract>
+    <description>
+	<p>
+	    This function stops the reproduction of a MPEG video.
+	    Call to this function when the video loaded will not be used.
+	</p>
+    </description>
+    <see href="dll/mpeg/LOAD_MPEG" name="LOAD_MPEG"/>
+    <see href="dll/mpeg/STOP_MPEG" name="STOP_MPEG"/>
+    <see href="dll/mpeg/PAUSE_MPEG" name="PAUSE_MPEG"/>
+</function>

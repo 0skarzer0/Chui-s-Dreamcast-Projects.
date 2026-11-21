@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+<function name="START_FLI">
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <param name="x"> Posición X de la animación </param>
+    <param name="y"> Posición Y de la animación </param>
+    <abstract> Carga en memoria y comienza la reproducción de una animación FLI/FLC </abstract>
+    <description>
+	<p>
+		Esta función inicia la reproducción de un fichero FLI/FLC desde el disco duro 
+		en las coordenadas indicadas.  Sólo se puede tener una animación de este tipo 
+		activa en el programa y que será la que se verá afectada por llamadas posteriores a 
+		las funciones de control de animaciones FLI/FLC como <a name="FRAME_FLI"/> o 
+		<a name="END_FLI"/>.
+	</p>
+	<p>
+	    La reproducción es automática y se realiza a la velocidad original de la animación, 
+	    quedando sincronizada la presentación en pantalla con el evento FRAME 
+	    a la velocidad en FPS actual del programa.
+	</p>	
+    </description>
+    <see name="END_FLI" href="FLI/END_FLI"/>
+    <see name="FRAME_FLI" href="FLI/FRAME_FLI"/>
+    <see name="RESET_FLI" href="FLI/RESET_FLI"/>    
+</function>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_GET_PIXEL">
+    <retval/>
+    <param name="library"> Number of FPG library </param>
+    <param name="graph"> Number of graph inside of library </param>
+    <param name="x"> Horizontal coordinate </param>
+    <param name="y"> Vertical coordinate </param>
+    <abstract> It reads the value of a pixel of a graph </abstract>
+    <description>
+	<p>
+	    This function recovers the colour of a determined pixel inside of a
+	    graph. The coordinates increase towards down and right, and
+	    the point (0, 0) represents the top left corner of the graph.
+	</p>
+	<p>
+	    In the case of graphs of 256 colours (8 bits), the value returned
+	    by this function is a color of 0 to 255. In oppositive case the value
+	    returned is a codification of the components of the colour that depends
+	    of the video card and graph mode.
+	    It can be used <a href="GET_RGB"/> to obtain the approximated
+	    values of the components of the colour.
+	</p>
+    </description>
+    <note>
+	although GET_RGB returns value of 0 to 255 for each component of colour,
+	it is important to understand that the precision of a mode of 16 bits is not
+	sufficient to get all possibilities. Because the high value (255) can not be showed
+	without 8 bits. It is not recommended the use of MAP_GET_PIXEL to use collision maps or of other type,
+	with graphs of 16 bits. For that use is recommended to use arrays.
+    </note>
+    <see href="FPG_ADD"/>
+    <see href="MAP_CLONE"/>
+    <see href="GET_PIXEL"/>
+</function>

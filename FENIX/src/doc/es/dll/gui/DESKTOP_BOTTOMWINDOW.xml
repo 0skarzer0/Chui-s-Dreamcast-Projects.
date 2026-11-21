@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DESKTOP_BOTTOMWINDOW">
+<retval type="INT"> Identificador de la primera ventana, ó 0 si no hay </retval>
+<abstract> Devuelve el identificador de la primera ventana en el escritorio </abstract>
+<description>
+    <p>
+	Devuelve el identificador de la primera ventana de las presentes
+	en el escritorio, es decir, la ventana más "al fondo" en pantalla.
+    </p>
+</description>
+</function>
+<see href="DLL/GUI/DESKTOP_TOPWINDOW" name="DESKTOP_TOPWINDOW"/>
+<see href="DLL/GUI/DESKTOP_NEXTWINDOW" name="DESKTOP_NEXTWINDOW"/>

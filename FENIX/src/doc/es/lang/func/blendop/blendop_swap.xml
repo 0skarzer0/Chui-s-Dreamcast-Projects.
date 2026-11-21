@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="BLENDOP_SWAP">
+    <retval/>
+    <param name="BLENDOP"> Identificador de una tabla BLENDOP </param>
+    <abstract> Intercambia el efecto de una operación en una tabla blendop </abstract>
+    <description>
+	<p>
+	    Dada una tabla blendop creada con <a href="BLENDOP_NEW"/>, esta
+	    función intercambia las operaciones realizadas con el gráfico de
+	    origen y las realizadas con el de destino. Las funciones
+	    <a href="BLENDOP_TINT"/>, <a href="BLENDOP_GRAYSCALE"/> y
+	    <a href="BLENDOP_INTENSITY"/> modifican sólo el gráfico original.
+	    Utilizando esta función, es posible hacer que las operaciones
+	    acumuladas alteren el gráfico destino.
+	</p>
+	<p>
+	    Es preciso entender que todos los pixels a 0 en un gráfico son
+	    ignorados por las rutinas de dibujo: una tabla blendop que haga
+	    modificaciones sobre el gráfico de destino sólo afectará a los
+	    pixels en pantalla que haya debajo de pixels que no estén a
+	    cero en el gráfico a dibujar.
+	</p>
+	<p>
+	    Una tabla blendop recién creada tiene una opacidad del 0%
+	    para el gráfico de destino. Si se intercambia con esta función
+	    sin haber llamado a <a href="BLENDOP_TRANSLUCENCY"/>, el
+	    efecto resultante será que los pixels del gráfico a dibujar no
+	    serán visibles de por sí, pero los pixels que haya bajo todos
+	    ellos serán modificados según las operaciones que hubiese en
+	    la tabla blendop acumuladas antes de llamar a BLENDOP_SWAP.
+	    Si se desea un gráfico parcialmente visible, que haga algún
+	    tipo de efecto (como oscurecer o entintar) sobre la zona de
+	    pantalla que haya bajo él, es preciso llamar a
+	    <a href="BLENDOP_TRANSLUCENCY"/> antes de BLENDOP_SWAP.
+	</p>
+	<p>
+	    Esta es una función lenta, que no es recomendable llamar periódicamente
+	    en el programa, al igual que ocurre con la mayoría de funciones BLENDOP.
+	</p>
+    </description>
+    <see name="BLENDOP_NEW"/>
+    <see name="BLENDOP_IDENTITY" />
+    <see name="BLENDOP_TRANSLUCENCY" />
+    <see name="BLENDOP_TINT" />
+    <see name="BLENDOP_INTENSITY" />
+    <see name="BLENDOP_GRAYSCALE" />
+    <see name="BLENDOP_ASSIGN" />
+    <see name="BLENDOP_APPLY" />
+</function>

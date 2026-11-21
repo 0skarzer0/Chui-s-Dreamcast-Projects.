@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="ALPHA">
+    <abstract>It indicates the transparency of the graph of the process</abstract>    
+	<description>
+	<p>
+		It contains a value between 0 and 255 to indicate the
+		transparency degree that has the graph.
+	</p>	
+    </description>
+    <note>
+    <p><b>ONLY AVAILABLE IN CVS VERSION</b></p>
+    </note>
+</variable>

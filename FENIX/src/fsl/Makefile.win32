@@ -1,0 +1,84 @@
+TARGET	=	../bin/fsl.exe
+
+TV_FILTER =1
+
+CC =		gcc
+STRIP=		strip
+
+
+#SDL_CFLAGS =	-I/usr/local/include/SDL -Dmain=SDL_main -I/usr/include/mingw -DWIN32 -Uunix -mn o-cygwin
+
+#SDL_LDFLAGS =	-L/usr/local/lib -lmingw32 -lSDLmain -lSDL -mwindows -mno-cygwin -luser32 -lgdi3 2 -lwinmm
+
+
+SDL_CFLAGS =	`sdl-config --cflags` -DWIN32 -DFSL -DTARGET_WIN32 -DTARGET_win32 -DTARGET_windows
+SDL_LDFLAGS =	`sdl-config --libs`
+
+
+CFLAGS =	-Wall -Wno-switch -march=pentium -mtune=pentium ${SDL_CFLAGS} \
+		-ffast-math -fno-common -ffreestanding -fno-builtin -Isrc/ \
+		-fno-exceptions -fstrict-aliasing -O6 -I/usr/local/include \
+		-Isrc/SFont -Isrc/ML_Lib -Isrc/ -I../include -I../fxi/inc \
+		-I../fxi/src -DNO_MMX_FUNCTIONS -I/usr/include/mingw -I/usr/include \
+
+#CFLAGS+=-DDATA_PREFIX=\"example/\"
+CFLAGS+=-DDATA_PREFIX=\"exec/\"
+#CFLAGS+=-DNOSOUND
+CFLAGS+=-DVERTICAL_SCROLL
+CFLAGS+=-DNO_DESC
+#CFLAGS+=-DFULLSCREEN
+
+
+LDFLAGS =	-L/usr/lib -lSDL_image ${SDL_LDFLAGS} \
+		-lpng -lz -ljpeg \
+
+
+ifndef TV_FILTER
+CFLAGS += -DNO_USE_TV_FILTER
+endif
+
+.CFILES	=	src/fsl.c \
+		src/stretch.c \
+		src/video.c \
+		src/process.c \
+		src/audio.c \
+		src/parse.c \
+		src/error.c \
+		src/bin.c \
+		src/run.c \
+		src/tvfilter/tvfilter.c \
+		src/SFont/SFont.c \
+		src/ML_Lib/ML_Attribute.c \
+		src/ML_Lib/ML_Comment.c \
+		src/ML_Lib/ML_common_func.c \
+		src/ML_Lib/ML_COM_Sim.c \
+		src/ML_Lib/ML_Document.c \
+		src/ML_Lib/ML_Element.c \
+		src/ML_Lib/ML_leng_process.c \
+		src/ML_Lib/ML_Node.c \
+		src/ML_Lib/ML_Process.c \
+		src/ML_Lib/ML_Text.c \
+
+
+all: $(TARGET)
+
+
+
+OBJS =		$(.CFILES:.c=.o)
+
+
+$(TARGET):	$(OBJS)
+ifndef TV_FILTER
+	$(CC) -L/usr/lib/w32api -L/usr/local/lib -o $(TARGET) -lmingw32 $(OBJS) -lSDL_static_1212 -mwindows -mno-cygwin -luser32 -lgdi32 -lwinmm -ldxguid
+else
+	$(CC) -L/usr/local/lib  -L/usr/lib/w32api/ -L/usr/X11R6/lib -lglu32 -lopengl32 -o $(TARGET) -lmingw32 $(OBJS)  -lglu32  -lopengl32 -lSDL_static_1212 -lGL -lpthread -mwindows -mno-cygwin -luser32 -lgdi32 -lwinmm -ldxguid
+endif
+	$(STRIP) $(TARGET)
+
+
+run:	$(TARGET)
+	cd ../bin && ./$(TARGET)
+
+
+clean:
+	rm -f $(OBJS) $(TARGET)

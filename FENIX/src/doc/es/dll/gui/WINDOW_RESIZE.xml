@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW_RESIZE">
+<retval/>
+<param name="ventana"> Identificador de la ventana </param>
+<param name="ancho"> Ancho de la ventana en pixels </param>
+<param name="alto"> Alto de la ventana en pixels </param>
+<abstract> Cambia el tamaño de una ventana </abstract>
+<description>
+    <p>
+	Cambia el tamaño de una ventana. Esta función equivale a un
+	intento de redimensionar la ventana por parte del usuario, por
+	lo que intentará desplazar y redimensionar los controles que
+	existan en su interior, para acomodar el nuevo tamaño. Si los
+	controles no son redimensionables, o la función no encuentra
+	la forma adecuada de distribuirlos, el tamaño no será modificado.
+	Esto puede ocurrir en una sola coordenada: por ejemplo, es posible
+	que una ventana pueda redimensionarse horizontalmente, pero no
+	verticalmente. Sin embargo esta función tratará de cambiar de tamaño
+	cualquier ventana, incluso aquellas creadas con un estilo que indica
+	que no son redimensionables por el usuario.
+    </p>
+    <p>
+	Esta DLL analiza el contenido de una ventana en el momento de
+	redimensionarla, y trata de mantener pegados los controles que
+	encuentre que están demasiado cerca (12 pixels o menos), y
+	además trata de mantener pegados al borde de la ventana aquellos
+	controles que estén cerca del mismo. Esto significa que si un
+	control es lo bastante grande como para ocupar todo el ancho o
+	alto de la ventana, esas cercanías deben mantenerse al cambiar
+	el tamaño del borde y por lo tanto el control debe cambiarse de
+	tamaño. En ocasiones, la distribución de controles en una
+	ventana es compleja, y la función tal vez no encuentre una
+	solución al problema.
+    </p>
+    <p>
+	Se recomienda si es posible modificar el tamaño de una ventana nada más
+	crearla, antes de añadir cualquier control.
+    </p>
+</description>
+<see name="WINDOW" href="DLL/GUI/WINDOW"/>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

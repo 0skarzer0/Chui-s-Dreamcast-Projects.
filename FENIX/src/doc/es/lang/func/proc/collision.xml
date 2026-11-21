@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="COLLISION">
+    <retval/>
+    <param name="id"> Identificador de un proceso, o de un tipo
+    	de proceso mediante la instrucción <a href="TYPE"/>,
+	o bien el número 0 o la instrucción especial TYPE MOUSE </param>
+    <abstract> Busca colisiones de cualquier tipo contra el proceso actual </abstract>
+    <description>
+	<p>
+	    Esta es la función principal de colisión, que busca un proceso
+	    que, según su gráfico, posición en pantalla según sus
+	    variables <a href="X"/> e <a href="Y"/>, y valores
+	    de flags, colisionaría con el actual en caso de ser ambos
+	    dibujados inmediatamente. En el caso de encontrar un proceso,
+	    esta función devuelve su <a href="ID"/> (que siempre es un 
+	    número impar). En caso contrario, devolverá 0.
+	</p>
+	<p>
+	    Según el valor especificado como parámetro, es posible:
+	    <ul>
+		<li> Encontrar cualquier proceso que haga colisión
+		    (pasando 0 como parámetro) </li>
+		<li> Encontrar cualquier proceso de un tipo determinado
+		    que haga colisión (para ello se pasa como parámetro
+		    la expresión <a href="TYPE"/> <b>PROCESO</b>, donde
+		    PROCESO es el nombre de algún tipo de proceso </li>
+		<li> Comprobar si un proceso determinado hace colisión
+		    con el actual (pasando como parámetro su valor de
+		    <a href="ID"/>, sea mediante el operador . o bien 
+		    por estar almacenado en una variable como <a href="SON"/>. </li>
+		<li> Comprobar si el ratón está encima del proceso actual,
+		    usando la expresión especial <b>TYPE MOUSE</b>. </li>
+	    </ul>
+	</p>
+	<p>
+	    La comprobación es perfecta a nivel de pixel, y tiene en cuenta
+	    diferencias de tamaño, rotaciones, y funciona incluso aunque los
+	    objetos no estén dentro de los límites visibles de la pantalla o
+	    aunque sólo la parte que colisiona esté fuera de pantalla. Esto
+	    tiene importantes consecuencias: por ejemplo, un objeto con forma
+	    de donut no colisionará con un objeto más pequeño que se dibuje en
+	    su interior, si este otro objeto no toca un pixel no transparente.
+	</p>
+	<p>
+	    Sin embargo, ambos procesos deben estar visibles para que esta
+	    función compruebe la existencia de una colisión. Consulta la
+	    función <a href="SIGNAL"/> para más información.
+	</p>
+	<p>
+	    Las sucesivas llamadas a la función COLLISION con los mismos
+	    parámetros devuelven los siguientes procesos del tipo
+	    especificado que hacen colisión, hasta que ya no queda ninguno,
+	    en cuyo caso esta función devuelve 0. Este mecanismo permite,
+	    mediante un bucle, buscar todos los procesos que hacen
+	    colisión con el actual.
+	</p>
+    </description>
+    <note>
+	El funcionamiento de COLLISION(TYPE MOUSE) es un poco especial, ya
+	que no se comprueba colisión con todo el gráfico del ratón
+	(MOUSE.GRAPH), sino sólo con el centro indicado por
+	MOUSE.X y MOUSE.Y, y la función devuelve 1 en caso de haberlo.
+    </note>
+    <see href="ID"/>
+    <see href="SIGNAL"/>
+    <see href="GRAPH"/>
+    <see href="X"/>
+    <see href="Y"/>
+    <see href="SIZE"/>
+    <see href="ANGLE"/>
+    <see href="FLAGS"/>
+    <see href="RESOLUTION"/>
+</function>

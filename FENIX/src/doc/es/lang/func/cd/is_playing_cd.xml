@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="IS_PLAYING_CD">
+    <retval />
+    <abstract>Información del estado de CD Audio</abstract>
+    <description>
+	<p>
+		Devuelve 1 si hay alguna pista de CD Audio actualmente en 
+		reproducción o 0 si la reproducción ha terminado.
+	</p>
+	</description>
+    <see href="CD/PLAY_CD" name="PLAY_CD"/>
+    <see href="CD/STOP_CD" name="STOP_CD"/>
+</function>

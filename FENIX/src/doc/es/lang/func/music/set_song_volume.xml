@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_SONG_VOLUME">
+    <param name="volumen"> Volumen deseado (0-128) </param>
+    <abstract> Permite establecer el volumen general de la música </abstract>
+    <description>
+	<p>
+	    Esta función cambia el nivel total de volumen para
+	    la música entre un nivel de 0 (silencio total)
+	    y 128 (volumen original del fichero).
+	</p>
+    </description>
+    <see name="FADE_MUSIC_IN" href="MUSIC/FADE_MUSIC_IN"/>
+    <see name="FADE_MUSIC_OFF" href="MUSIC/FADE_MUSIC_OFF"/>
+    <see name="PLAY_SONG" href="MUSIC/PLAY_SONG"/>
+    <see name="LOAD_SONG" href="MUSIC/LOAD_SONG"/>
+</function>

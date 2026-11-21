@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="RMDIR">
+    <retval/>
+    <param name="directorio" type="STRING"> Nuevo directorio </param>
+    <abstract> Borra el directorio indicado </abstract>
+    <description>
+	<p>
+	    Esta función crea el directorio indicado por el parámetro <b>directorio</b> en el 
+	    directorio actual.  Devuelve 0 si ha tenido éxito y -1 en caso 
+	    de no poderse efectuar la creación del nuevo directorio, por ejemplo si 
+	    el directorio ya existiese.
+	</p>
+	<p>
+		También se puede especificar la ruta completa en el parámetro y el directorio 
+		será creado utilizando la ruta completa en lugar de crearse a partir del 
+		directorio actual.  Las rutas pueden indicarse usando el separador de directorios <b>/</b> o <b>\</b>
+		indiferentemente.
+	</p>
+	<p>
+		Un directorio no podra ser borrado si es el directorio actual, si no está vacio 
+		o si es el directorio raíz del sistema. En plataformas que así lo permitan, un 
+		directorio no se podrá borrar si no se tienen los permisos adecuados para 
+		ello.
+	</p>
+    </description>
+    <see href="FILE/CD" name="CD"/>
+    <see href="FILE/MKDIR" name="MKDIR"/>
+</function>

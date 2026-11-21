@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_MPEG_VOLUME">
+    <retval/>
+    <param name="vídeo"> Identificador del vídeo </param>
+    <param name="filter"> Volumen deseado (0-100) </param>
+    <abstract> Permite cambiar el volumen de reproducción
+	de audio para un vídeo MPEG </abstract>
+    <description>
+	<p>
+	    Esta función cambia el volumen de reproducción
+	    del audio de un vídeo, desde 0 (silencio) hasta
+	    100 (volumen original). Para que esto tenga algún
+	    sentido, la reproducción de sonido debe haber sido
+	    activada en la llamada a <a name="PLAY_MPEG" href="DLL/MPEG/PLAY_MPEG"/>.
+	</p>
+    </description>
+    <see name="LOAD_MPEG" href="DLL/MPEG/LOAD_MPEG"/>
+    <see name="PLAY_MPEG" href="DLL/MPEG/PLAY_MPEG"/>
+</function>

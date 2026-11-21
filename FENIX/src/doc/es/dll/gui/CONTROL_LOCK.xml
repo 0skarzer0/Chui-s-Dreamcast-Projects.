@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="CONTROL_LOCK">
+<retval/>
+<param name="control"> Identificador de un control </param>
+<param name="horizontal"> 1 para bloque el control horizontalmente </param>
+<param name="vertical"> 1 para bloque el control verticalmente </param>
+<abstract> Bloquea el tamaño de un control, impidiendo que cambie </abstract>
+<description>
+    <p>
+	Bloque el tamaño de un control, impidiendo que sea modificado
+	por el usuario respecto a su original. Es útil cuando en un
+	cuadro de diálogo complejo interesa que sólo algunos controles
+	sean modificados por una operación de cambio de tamaño
+	de la ventana. Una vez bloqueado, un control no puede
+	desbloquearse de nuevo. Es posible bloquear el control
+	sólo en la dirección vertical u horizontal, o ambas,
+	en función de cuales de los dos últimos parámetros de
+	esta función contienen 1 (TRUE).
+    </p>
+    <p>
+	Se recomienda usar esta función antes de visualizar la
+	ventana donde se ubique el control.
+    </p>
+</description>
+<see name="WINDOW_ADDCONTROL" href="DLL/GUI/WINDOW_ADDCONTROL"/>
+</function>

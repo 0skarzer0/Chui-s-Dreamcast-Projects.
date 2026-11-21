@@ -1,0 +1,38 @@
+# Microsoft Developer Studio Generated Dependency File, included by efects.mak
+
+.\efects.c : \
+	"..\fxi\inc\flic_st.h"\
+	"..\fxi\inc\grlib_st.h"\
+	"..\fxi\inc\i_procdef_st.h"\
+	"..\fxi\inc\instance_st.h"\
+	"..\include\files_st.h"\
+	"..\include\fxdll.h"\
+	"..\include\offsets.h"\
+	"..\include\pslang.h"\
+	"..\include\typedef_st.h"\
+	"..\include\xctype_st.h"\
+	"..\sdl\include\begin_code.h"\
+	"..\sdl\include\close_code.h"\
+	"..\sdl\include\sdl.h"\
+	"..\sdl\include\sdl_active.h"\
+	"..\sdl\include\sdl_audio.h"\
+	"..\sdl\include\sdl_byteorder.h"\
+	"..\sdl\include\sdl_cdrom.h"\
+	"..\sdl\include\sdl_error.h"\
+	"..\sdl\include\sdl_events.h"\
+	"..\sdl\include\sdl_getenv.h"\
+	"..\sdl\include\sdl_joystick.h"\
+	"..\sdl\include\sdl_keyboard.h"\
+	"..\sdl\include\sdl_keysym.h"\
+	"..\sdl\include\sdl_main.h"\
+	"..\sdl\include\sdl_mouse.h"\
+	"..\sdl\include\sdl_mutex.h"\
+	"..\sdl\include\sdl_quit.h"\
+	"..\sdl\include\sdl_rwops.h"\
+	"..\sdl\include\sdl_timer.h"\
+	"..\sdl\include\sdl_types.h"\
+	"..\sdl\include\sdl_version.h"\
+	"..\sdl\include\sdl_video.h"\
+	"..\zlib\zconf.h"\
+	"..\zlib\zlib.h"\
+	

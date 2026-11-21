@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="RESUME_SONG">
+    <abstract> Continúa con la reproducción de música </abstract>
+    <description>
+	<p>
+	    Continúa la reproducción de música desde el punto
+	    donde se detuvo anteriormente mediante la
+	    función <a name="PAUSE_SONG" href="MUSIC/PAUSE_SONG"/>.
+	</p>
+    </description>
+    <see name="FADE_MUSIC_ON" href="MUSIC/FADE_MUSIC_ON"/>
+    <see name="PAUSE_SONG" href="MUSIC/PAUSE_SONG"/>
+    <see name="STOP_SONG" href="MUSIC/STOP_SONG"/>
+    <see name="PLAY_SONG" href="MUSIC/PLAY_SONG"/>
+    <see name="LOAD_SONG" href="MUSIC/LOAD_SONG"/>
+</function>

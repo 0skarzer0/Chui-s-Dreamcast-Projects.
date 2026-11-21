@@ -1,0 +1,201 @@
+EPSILON v1.0
+============
+
+Introducción.
+-------------
+
+ Año 2008, La Tierra se esta viendo amenazada por numerosos ataques de una raza nueva, una raza
+superior, en inteligencia y en numero. Estos ataques son fruto de las constantes incursiones
+que los humanos han realizado en el espacio exterior, hara cerca de 2 años cuando la nave EpsiloN
+enviada en mision especial a la plataforma que nuestra raza coloco en Marte fue sorprendida por 
+una especie de marcianos de los que no se sabe la procedencia. Sin pensarselo dos veces los
+tripulantes de la nave EpsiloN intentaron un regreso fallido a nuestro planeta, fue un error...
+
+ ...lo unico que eso trajo consigo fue mostrar a esos marcianos nuestro hogar... desde aquel dia
+La Tierra se ha visto amenazada por constantes ataques, es por eso que el gobierno, reunido
+por fuerza mayor ha decidido que es momento de acabar esa situación y ha ordenado que al mando
+de cualquiera de las tres mejores naves que se hayan en el planeta un piloto, el mejor piloto,
+salga en busca de ellos y los intente destruir... es una mision suicida... y ellos lo saben, pero
+la situación no permite pensar en esas cosas. Solo hay dos opciones, o ellos o nosotros, no hay
+un termino medio... ahora solo puedo desearte SUERTE!.
+
+
+
+El juego
+--------
+
+ En el juego puedes elejir entre tres naves completamente diferentes:
+
+	-Storm: Debido a su gran tamaño es la mas lenta, no tiene protecciones contra paralisis
+	 ni contra recalentamiento del cañon, sin embargo y para compensar es la que mas vida
+	 trae y su cadencia de disparo es muy alta.
+
+	-RazoR: Su velocidad es moderada, al igual que su cadencia de disparo, es inmune a la 
+	 paralisis eliminando el efecto casi instantaneamente.
+
+	-HunteR: Es la mas rapida de las tres, por el contrario es la mas debil debido a su poko
+	 peso. Tiene la cualidad de que su cañon de disparo es lo suficientemente amplio como
+	 para no recalentarse, por el contrario el efecto de paralisis si la afecta.
+
+ Con una de estas tres naves el jugador podra comenzar la partida, su mision consiste en eliminar
+las horda de marcianos que iran apareciendo.
+
+ Existen tipos de marcianos:
+
+	-Los del disparo normal: dejan caer pequeños disparos que si nos golpean reduciran en uno
+	 la resistencia de nuestra nave. Este disparo se reconoce por tener color azul.
+
+	-Los del disparo que provoca paralisis: Este disparo es de color rojo. Su forma es
+	 exactamente la misma que la del disparo anterior cambiando unicamente su color, si
+	 nos golpea un disparo de este tipo no tendra repercuisiones en nuestra resistencia pero
+	 salvo que nuestra nave sea inmune a la paralisis quedaremos paralizado un cierto tiempo
+	 que dependera del nivel del marciano en cuestion y de las caracteristicas de nuestra
+	 nave.
+
+	-Los del disparo que provoca recalentamiento: Semejante al disparo anterior salvo que su
+	 color es verde, si un disparo de este tipo, ya sea disparo normal o disparo laser
+	 impacta en nuestra nave nuestro cañon de disparo quedara recalentado durante un tiempo
+	 impidiendonos disparar.
+
+	-Los bombarderos: Este disparo es el mas potente, los marcianos que lo utilizan son muy
+	 peligrosos, sobretodo en sus niveles altos, el efecto del disparo es que provoca una
+	 gran explosion en el lugar del impacto, si esta explosion nos alcanza nuestra energia
+	 se vera reducida en dos unidades, mantente alejado de estos marcianos e intenta elimi-
+	 narlos lo antes posible.
+
+	-Los Kamikazes: Son marcianos suicidas... como norma general estan teñidos de un color
+	 rojo intenso, no siente ni padecen, se lanzaran en pikado con su unica intencion de 
+	 eliminar nuestra nave, un impacto de estos marcianos nos restara 2 unidades de energia.
+	 Cuanto mayor sea el nivel del marciano... mas decididamente se lanzara contra nosotros.
+
+
+Teclas.
+-------
+
+
+ *El el juego:
+
+	-Movimiento: Cursores Izquierda y Derecha. Si estamos paralizados estas teclas no
+	 responderan, lo sabremos porque nuestra nave se tornara de un color rojizo.
+	-Disparo: Espace. Si nuestro cañon esta recalentado los disparos no se produciran, lo
+	 sabremos porque nuestra nave se teñira de un color verdoso.
+	-Salir: Escape.
+
+ *En el editor:
+
+	-Cursor Izquierda y Derecha: Varian el marciano activo pasando de uno a otro.
+	-Cursor Arriba y Abajo: varian el numero de nivel sobre el que actuaran los comandos
+	 Cargar y Salvar.
+	-Tecla L (Load): Carga el nivel que le hayamos indicado, en caso de que el nivel no 
+	 exista recibiremos el mensaje de "Fichero no encontrado.".
+	-Tecla ENTER (Save): Salva el nivel que estamos editando y lo guarda en el nivel que 
+	 estemos indicandole en ese preciso instante.
+	-Tecla C (Clear): Borra las celdas ocupadas por marcianos, dejandolas todas con casillas
+	 vacias para comenzar a editar de nuevo el nivel.
+	-Tecla Mayusculas o boton Izquiero del Raton: Coloca el marciano sobre la casilla que
+	 estemos seleccionando.
+	-Boton Derecho del Raton: Cambia el marciano seleccionado, su efecto es el mismo que el
+	 del cursor de la misma direccion.
+	-Tecla F1: Si se mantiene pulsada mostrara una pequeña ayuda en la cual se explica a 
+	 groso modo las caracteristicas de cada marciano.
+	-Tecla ESCAPE: Sale del editor.
+
+
+
+Los Bonus
+---------
+
+ Cuando acabamos con un marciano, es posible que este deje caer una letra, si la recogemos 
+esta ocupara un lugar en la parte superior derecha de nuestra pantalla, pues bien, cuando
+logremos formar la palabra PAPADA obtendremos un bonus, este puede consistir en tres cosas:
+
+	-Recarga de Vida: Nuestra vida sera recargada completamente adquiriendo de nuevo su nivel
+	 mas alto.
+	-Avance de nivel: Instantaneamente los marcianos que hubiese en pantalla seran destruidos
+	 y seremos transportados al siguiente nivel.
+	-Potencia de disparo: Nuestros diparos se veran incrementados en un nivel de potencia,
+	 esto podremos verlo porque el color del mismo pasara de azul a verde. A partir de ese
+	 momento cada disparo llebara potencia suficiente para acabar con dos marcianos. Este es
+	 un arma muy potente una vez obtenido durara hasta nuestra muerte.
+
+ Si recogemos un letra que ya teniamos, esta se trasformara en puntos.
+
+
+Como ampliar el juego.
+----------------------
+
+ Cuando el programa intenta cargar una fase y no la encuentra considera que se ha llegado al 
+final del juego con lo que el actual juego tiene 40 fases. El juego puede ampliarse realizando 
+mas mundos, cada mundo consta de 10 niveles, dos graficos de transicion, una melodia, un grafico
+de fondo y un fichero de texto con dos lineas separadas por ENTER de un maximo de 45 caracteres 
+cada una.
+
+ Asi si quisieses poner un nuevo mundo al juego, seria el 4, deberiamos de crear lo siguiente:
+
+	-Una melodia cuyo nombre seria mundo4.s3m y que meteriamos en el directorio musica.
+	-Dos graficos en formato .png de dimensiones 110x100. Cuyos nombres serian:
+			
+			-mundo4-1.png
+			-mundo4-2.png
+
+	 ambos ficheros se meterian en el directorio graficos.
+
+	-Un grafico de fondo de dimensiones 320x200 en formato .png que llamariamos fondo4.png
+	 y que meteriamos en el directorio fondos.
+	-Un mundo4.txt con dos lineas separadas por enter cuyo nombre seria: mundo4.txt y que
+	 meteriamos dentro del directorio textos.
+	-Y por ultimo los niveles que van desde el nivel41 hasta el nivel 50 y que deberan de
+	 colocarse en el directorio Niveles.
+
+ Con todo eso ya tendriamos un nuevo mundo y el juego pasaria a tener 50 pantallas.
+
+ Me gustaria mucho que si alguien creo un mundo o simplemente un nivel me lo remita a la
+siguiente direccion de correo electronico: papadasoft@mixmail.com.
+
+
+Agradecimientos y Creditos
+--------------------------
+
+Un juego creado por: Papada Soft.
+
+Papada Soft son:
+
+  ManOwaR, programacion y guion.
+  Dekar, programacion y guion.
+  Onslaugh, graficos.
+  Fernando Navarro, graficos.
+  Dadtrox, musica.
+  Rauko, musica.
+
+Para Daniel Navarro y Jose Luis Cebrian, gracias por todo.
+
+Dedicado a toda esa gente que ha participado en el concurso de DIVnet, desde aqui le deseo 
+suerte y que gane el mejor.
+
+Colaboraciones especiales:
+
+   zwiTTeR, Titonus y Tristan, graficos
+   CicTec, Titonus, Mix, Tropsy, Beorn y Benko betatesters.
+
+Juego programado para el II Concurso de Matamarcianos DIVnet, Http://divnet.divsite.net, 
+utilizando Fenix.
+
+Las melodias han sido tomadas prestadas de un cd de la revista PCMania, los derechos de las 
+mismas pertenecen a sus respectivos autores.
+
+Agradecimientos especiales a todas las personas que dia a dia apoyan nuetros proyectos y nos 
+hacen ver que podemos llegar un poquito mas alla, tambien a toda la gente que invierte su tiempo
+en crear juegos y en alimentar ste mundillo que nos rodea, el mundillo amateur.
+
+Gracias por todo. Y gracias a ti por haber llegado hasta esta linea. Solo decirte que es posible
+que para las navidades del 2001 realice una ampliacion del juego que incluira nuevos marcianos,
+nuevas fases, nuevos bonus y muchas mas cosas :).
+
+
+
+
+Papada Soft 2001.
+Http://pagina.de/PapadaSoft.
+papadasoft@mixmail.com
+
+										

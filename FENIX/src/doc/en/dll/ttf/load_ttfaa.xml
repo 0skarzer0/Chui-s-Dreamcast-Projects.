@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_TTFAA">
+<retval/>
+<param name="archive" type="STRING"> Name of the TTF archive </param>
+<param name="size"> Size (height in pixels) </param>
+<param name="depth"> Depth of colour (it must be 8 or 16) </param>
+<param name="colour"> Colour chosen for the text </param>
+<param name="background"> Colour chosen for the background </param>
+<abstract> It recovers a type of Truetype letter of disk, creating an internal
+    font from the desired size, with antialiasing.
+</abstract>
+<description>
+    <p>
+	This function recovers of disk a type of Truetype letter and creates
+	internally the bitmaps of all characters in the standard game characters
+	(ISO-8859-1). The fuction returns an identifier of font (or type of letter)
+	that can be used in the callings to functions like <a href="WRITE"/> or
+	<a href="WRITE_IN_MAP"/>.
+    </p>
+    <p>
+    The indicated size is an orientative value. There will be
+	characters whose final size will be a little superior to indicated.
+	Too, the final size of character depends of type of letter,
+	although to a same size, a lot of types of letter must have 
+	a comparable aspect.
+    </p>
+    <p>
+	This function creates a font to colour, using the parameter
+	<i>colour</i> to draw the characters. The depth of colour
+	can be of 8 or 16 bits, according to the parameter
+	<i>depth</i>, and affects to the bitmaps of all characters.
+    </p>
+    <p> 
+	As much the parameter "colour" as the parameter "background" indicate
+	colours whose meaning depends of the current graph mode.
+	In graph mode of 8 bits, the two parameters will indicate a
+	colour of the palette (0 to 255). In opposite case, they are
+	colour codes of 0 to 65535 whose meaning is according to the computer.
+	It is recommended to use the function <a href="RGB"/>
+	to obtain both parameters. This mode of working is equivalent to
+	the rest of functions that require colours like parameters,
+	like for example <a href="TEXT_COLOR"/> or <a href="DRAWING_COLOR"/>.
+    </p>
+    <p>
+	In both cases, the edge of the font will be degraded
+	by a technique called "antialiasing", using
+	the colour specified in the parameter <i>background</i>. This
+	technique improves the aspect of the font, when the text is drawn
+	upon a surface where the colour indicated like background prevails.
+	If you want to make other thing, you can use <a href="dll/ttf/LOAD_TTF" name="LOAD_TTF"/> 
+	to create a font without antialiasing, or create a lot of versions of the same font
+	using colours of different backgrounds (with an important cost in memory).
+    </p>
+    <p>
+	If you want, it is possible to save the resulting font with the function
+	SAVE_FNT. A FNT archive is much more fast to load that a TTF font, 
+	but only holds the final font (the bitmaps of each character), 
+	while the archive TTF holds	information to draw text to any resolution and size.
+    </p>
+</description>
+<note>
+    <p>
+	As much LOAD_TTF as LOAD_TTFA save information about last TTF archive
+	recovered in memory, this allows to accelerate the following
+	calls to the function that are made with the same font
+	(always that those calls are consecutive). This can happen
+	usually, for example if you want to use a type of Truetype letter to 
+	several sizes. However, it is recommended to use TTF archives of low size
+	in disk, or to recover last smaller TTF archive at least.
+    </p>
+</note>
+<see href="dll/ttf/LOAD_TTF" name="LOAD_TTF"/>
+<see href="WRITE"/>
+<see href="WRITE_IN_MAP"/>
+<see href="SAVE_FNT"/>
+<see href="TEXT_COLOR"/>
+</function>
+

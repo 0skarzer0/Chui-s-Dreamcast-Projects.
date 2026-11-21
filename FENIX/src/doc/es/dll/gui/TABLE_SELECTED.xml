@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TABLE_SELECTED">
+<retval> Fila actualmente seleccionada en la tabla </retval>
+<param name="tabla"> Identificador devuelto por TABLE </param>
+<abstract> Devuelve el número de fila seleccionado en una tabla </abstract>
+<description>
+    <p>
+	Devuelve el número de fila actualmente seleccionado en una
+	tabla. Este número puede ser -1, si no hay ninguna fila
+	seleccionada.
+    </p>
+</description>
+<see name="TABLE" href="DLL/GUI/TABLE"/>
+</function>

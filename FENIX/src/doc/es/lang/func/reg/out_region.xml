@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="OUT_REGION">
+    <retval/>
+    <param name="id"> Identificador de un proceso </param>
+    <param name="region"> Número de región, de 0 a 31 </param>
+    <abstract> Devuelve 1 si un proceso está fuera de la región indicada </abstract>
+    <description>
+	<p>
+	    Esta función permite comprobar si un proceso ha sido dibujado dentro
+	    o fuera de una región en pantalla. La región puede ser independiente
+	    de cualquier región de scroll o recorte definida para el proceso.
+	    En cualquier caso, la función devuelve 1 si el proceso se encuentra
+	    completamente fuera de los límites de la región, y 0 si alguna parte
+	    o todo el proceso toca dentro de la misma.
+	</p>
+	<p>
+	    Antes de llamar a esta función, es preciso haber establecido los
+	    límites de la región mediante <a name="DEFINE_REGION" href="REG/DEFINE_REGION"/>, a no
+	    ser que se utilice la región 0, que corresponde siempre a toda
+	    la pantalla y ofrece una forma sencilla de comprobar si un proceso
+	    ha salido fuera de pantalla.
+	</p>
+	<p>
+	    Si quieres comprobar si el proceso actual ha salido fuera de una
+	    región, utiliza la instrucción <a href="ID"/> para obtener su
+	    identificador.
+	</p>
+    </description>
+    <see type="var" href="LVARS/REGION" name="REGION"/>
+    <see name="DEFINE_REGION" href="REG/DEFINE_REGION"/>
+</function>

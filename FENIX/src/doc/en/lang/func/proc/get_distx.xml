@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_DISTX">
+    <retval/>
+    <param name="angle"> Angle in thousandth of degree (90000 = 90º) </param>
+    <param name="distance"> Value of distance </param>
+    <abstract> It returns the width of a movement </abstract>
+    <description>
+	<p>
+	    This function returns, in the same unit of the distance,
+	    the width of the rectangle formed by the line which crosses
+	    that distance. Using this function with <a href="GET_DISTY"/> 
+		allows to know that amounts to add to the coordinates <a href="X"/> 
+	    and <a href="Y"/> of an object for move it in the direction
+		that you want.
+	</p>
+    </description>
+    <see href="GET_DIST">
+    <see href="GET_DISTY">
+</function>

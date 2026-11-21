@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="UNTIL">
+	<syntax> 
+		<b>REPEAT</b> 
+		<blockquote>
+			<a href="Sentencias" /> <br/>
+			...
+		</blockquote>
+		<b>UNTIL</b> ( <i>condición</i> ) ;
+	</syntax>
+	<param name="condición" TYPE="expresión">
+		Condición para no seguir ejecutando el bucle
+	</param>
+	<abstract> Sentencia de bucle general </abstract>
+    <description>
+		<p>
+			Esta sentencia permite crear un bucle, es decir, una secuencia
+			de código que se ejecuta repetidamente hasta que una condición
+			de salida se cumple.
+		</p>
+		<p>
+			El bucle siempre se ejecuta al menos una vez. Al acabar la
+			ejecución de las sentencias y llegar a la cláusula UNTIL,
+			la expresión se evalúa. Si fuese falsa, el bucle volvería
+			a ejecutarse. Si fuese cierta, la ejecución continuaría con
+			la primera sentencia tras el UNTIL.
+		</p>
+    </description>
+	<note>
+		En Fenix, cualquier valor entero impar se considera cierto
+		(como por ejemplo, 1) mientras cualquier valor par se
+		considera falso (incluyendo el 0). Los operadores de
+		comparación como == o &gt; devuelven 1 ó 0 siempre,
+		pero no hay razón para no poder usar cualquier otro cálculo.
+	</note>
+	<see href="FOR"/>
+	<see href="FROM"/>
+	<see href="BREAK"/>
+	<see href="WHILE"/>
+	<see href="CONTINUE"/>
+</section>

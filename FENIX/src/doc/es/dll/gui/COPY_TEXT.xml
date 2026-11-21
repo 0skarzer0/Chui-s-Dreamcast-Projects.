@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="COPY_TEXT">
+    <retval/>
+    <param name="texto" type="STRING"> Texto a copiar </param>
+    <abstract> 
+	Copia texto en el portapapeles
+    </abstract>
+    <description>
+	<p>
+	    Guarda un texto en el portapapeles del sistema operativo o,
+	    si no está soportado en esta versión de Fenix, en un
+	    buffer interno del programa.
+	</p>
+	<p>
+	    Es posible recuperar posteriormente este texto haciendo
+	    uso de la función <a href="PASTE_TEXT"/>.
+	</p>
+    </description>
+    <see name="COPY_GRAPH"/>
+    <see name="PASTE_TEXT"/>
+</function>

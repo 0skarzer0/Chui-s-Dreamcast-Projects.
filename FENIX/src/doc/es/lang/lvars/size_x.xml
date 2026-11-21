@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="SIZE_X">
+    <abstract>Escalado horizontal del gráfico</abstract>    
+	<description>
+	<p>
+		Esta variable especifica el escalado horizontal que se va a 
+		realizar sobre el gráfico.  A diferencia de <a href="LVARS/SIZE" name="SIZE" type="var"/> 
+		el escalado solo se aplica al ancho del gráfico, siendo el valor por 
+		defecto 100 (100% del ancho original).
+	</p>
+	<p>
+		Cuando se especifica un valor distinto de 100 en esta variable o en  
+		<a href="LVARS/SIZE_Y" name="SIZE_Y" type="var"/>, se utilizan siempre 
+		los valores de <b>SIZE_X</b> y <b>SIZE_Y</b>, despreciandose el valor de 
+		SIZE.
+	</p>
+	<p>
+		Las variables de control de tamaño no tienen efecto en el MODO7, ya que 
+		el tamaño en ese tipo de representación se calcula automaticamente sobre 
+		el 100% en función de la distancia.
+	</p>	
+	</description>
+    <see type="var" name="SIZE" href="LVARS/SIZE"/>
+    <see type="var" name="SIZE_Y" href="LVARS/SIZE_Y"/>
+</variable>

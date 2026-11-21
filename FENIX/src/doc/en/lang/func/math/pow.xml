@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="POW">
+    <retval/>
+    <param name="number" type="FLOAT"> Floating point number </param>
+    <param name="power" type="FLOAT"> Power to which it is desired to elevate </param>
+    <abstract> It returns the result of elevate a number to a power </abstract>
+    <description>
+	<p>
+	    This function returns the result to elevate a number to a power.
+	    For example, the result of POW(2,3) is 8 (2*2*2).
+	</p>
+    </description>
+</function>

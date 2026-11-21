@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_CLEAR">
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <param name="color"> Número de color </param>
+    <abstract> Borra el contenido de un gráfico </abstract>
+    <description>
+	<p>
+	    Borra el contenido de un gráfico, estableciendo todos los 
+	    pixels al color indicado.
+	</p>
+	<p>
+	    El significado del parámetro color depende de la profundidad de color
+	    del gráfico. Para un gráfico de 8 bits, representa un número de
+	    color de 0 a 255. Para un gráfico de 16 bits, es un número de
+	    0 a 65535 con un código de color que varía en función del modo
+	    gráfico. Puedes utilizar la función <a href="RGB"/> para obtener
+	    la codificación de un color determinado a partir de sus componentes.
+	</p>
+	<p>
+	    En cualquier caso, el color 0 representa un pixel transparente,
+	    tanto en 8 como en 16 bits.
+	</p>
+    </description>
+    <see href="RGB"/>
+    <see href="FIND_NEAREST_COLOR"/>
+</function>

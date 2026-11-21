@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_MODE">
+    <param name="width"> Ancho de la pantalla o ventana</param>
+    <param name="height"> Alto de la pantalla o ventana</param>
+    <param name="depth" optional="YES"> 8 o 16 para indicar la profundidad de color</param>
+    <param name="flags" optional="YES"> Indica parámetros adicionales del modo gráfico </param>
+    <abstract> Establece un modo gráfico o crea la ventana del juego </abstract>
+    <description>
+	<p>
+	    Esta función establece un modo gráfico, cuya resolución viene
+	    indicada por el ancho y alto recibe como parámetros la función,
+	    y con la profundidad de color indicada. Si no se indica una
+	    profundidad de color, el valor por defecto es 8. Para facilitar 
+	    la sintaxis pueden usarse las siguientes constantes para la profundiad 
+	    de color:
+	    <ul>
+	    <li> MODE_8BITS: Crea un modo con profundidad de color de 8 bits </li>
+	    <li> MODE_16BITS: Crea un modo con profundidad de color de 16 bits </li>
+	    </ul>
+	</p>
+	<p>
+	    En el caso de que un modo gráfico no esté soportado, Fenix
+	    tratará de emularlo estableciendo el modo gráfico siguiente de
+	    mayor tamaño y dibujando un borde negro automáticamente alrededor
+	    de la resolución elegida, de manera transparente para el juego.
+	    Esto permite que algunos modos como 640x400 estén siempre
+	    disponibles.
+	</p>
+	<p>
+	    Por defecto, esta función inicializa un modo gráfico en ventana. 
+	    El cuarto parámetro permite especificar un modo gráfico a pantalla completa,
+	    además de otros parámetros adicionales. Si se especifica, puede
+	    ser una combinación (suma) de uno o más de los valores siguientes:
+	    <ul>
+	    
+		<li> MODE_FULLSCREEN: Crea un modo a pantalla completa </li>
+		<li> MODE_WINDOW: Crea un modo en ventana </li>
+		<li> MODE_2XSCALE: En resoluciones inferiores a 400x400 provoca
+		     que el resultado final sea una ventana al doble de la resolución 
+		     original sin necesidad de cambios en el código o los gráficos.
+		     El intérprete usa el filtro 2xSCALE para generar las imágenes 
+		     escaladas a partir del framebuffer final.</li>
+		<li> MODE_HARDWARE: Crea una superficie en buffer de video
+		    para la ventana o pantalla. Normalmente, Fenix dibuja
+		    sobre la memoria RAM del ordenador y copia el resultado
+		    en la memoria de la tarjeta gráfica. Con este parámetro
+		    activado, Fenix dibujará directamente sobre la
+		    memoria de vídeo. Esto acelera algunas operaciones,
+		    pero enlentece otras (como por ejemplo, el dibujo
+		    con transparencias). 
+		</li>
+		<li> MODE_DOUBLEBUFFER: Activa el modo de doble buffer,
+		    que permite unas transiciones entre frame más
+		    suaves a costa de perder la compatibilidad con
+		    el modo <a name="RESTORE_TYPE"/> = PARTIAL_RESTORE. 
+		</li>
+		<li>MODE_MODAL: Hace que la ventana se abra en modo MODAL, 
+			evitando que la ventana pierda el foco y confinando el movimiento 
+			del raton a su superficie. 
+		</li>
+		<li>MODE_FRAMELESS: Crea una ventana sin bordes.</li>
+	    </ul>
+	</p>
+	<p>
+	    Si esta función crea una ventana de juego, utilizará
+	    por título el nombre del fichero DCB y un icono estandar.
+	    Usa las funciones <a name="SET_TITLE"/> y
+	    <a name="SET_ICON"/> para modificar su aspecto,
+	    inmediatamente antes de la llamada a SET_MODE.
+	</p>
+    </description>
+    <note>
+	Se desaconsejan los modos exóticos como 320x400, 320x200, 
+	360x240 y 376x282. Los modos más habituales y compatibles son
+	320x240, 640x480, 800x600, 1024x768 y 1280x1024. Algunos
+	monitores no son compatibles con las resoluciones más altas:
+	se recomienda usar, como máximo, 800x600 para tus juegos.
+    </note>
+    <note>
+	Es válido llamar a esta función aunque ya haya un modo gráfico
+	en funcionamiento, sea para cambiar la resolución de pantalla,
+	o pasar de ventana a pantalla completa, por ejemplo.
+    </note>
+    <note>
+	No es obligatorio llamar a esta función. Cualquier operación
+	gráfica realizada antes de llamar a SET_MODE inicializará
+	un modo gráfico de 320x200 a 8 bits. Esto incluye tratar de
+	recuperar ficheros gráficos de disco. Se recomienda llamar
+	a SET_MODE nada más comenzar el programa, para evitar efectos
+	de parpadeo al iniciar el modo gráfico dos veces.
+    </note>
+    <see name="SET_TITLE"/>
+    <see name="SET_ICON"/>
+</function>

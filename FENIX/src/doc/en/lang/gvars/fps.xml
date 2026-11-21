@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="FPS">
+    <abstract>It indicates the current speed in Framses/Second of the program</abstract>
+    <description>
+	<p>
+	    This variable is updated with the current value of frames per second of the executed program.
+	</p>
+	<p>
+	    The theoretical value of this variable must be equivalent at the value indicated with 
+	    <a href="INIT/SET_FPS" name="SET_FPS"/>.
+	</p>
+    </description>
+    <see href="INIT/SET_MODE" name="SET_FPS"/>
+</variable>

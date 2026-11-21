@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="IS_PLAYING_WAV">
+    <retval/>
+    <param name="canal"> Identificador de canal devuelto por PLAY_WAV </param>
+    <abstract> Devuelve 1 si un efecto de sonido sigue sonando </abstract>
+    <description>
+	<p>
+	    Esta función comprueba si cualquier efecto de sonido reproducido
+	    anteriormente mediante <a href="PLAY_WAV"/> todavía
+	    está sonando. En caso contrario esta función devolverá 0.
+	    Hay que tener en cuenta que el canal puede ser reutilizado
+	    más tarde por otros efectos de sonido, por lo que es
+	    conveniente no seguir haciendo la comprobación una vez
+	    esta función ha devuelto 0.
+	</p>
+    </description>
+    <see href="PLAY_WAV"/>
+    <see href="STOP_WAV"/>
+    <see href="PAUSE_WAV"/>
+</function>

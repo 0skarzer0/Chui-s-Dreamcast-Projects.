@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="ARGC">
+    <abstract>It contains the number of parameters received by the program</abstract>    
+	<description>
+	<p>
+		This variable contains the total parameters received by the program, included the name
+		of the program.
+	</p>	
+    </description>
+    <see type="var" href="GVARS/ARGV" name="ARGV"/>
+</variable>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="BLENDOP_FREE">
+    <retval/>
+    <param name="BLENDOP"> Identificador de una tabla BLENDOP </param>
+    <abstract> Destruye una tabla blendop </abstract>
+    <description>
+	<p>
+	    Esta función libera la memoria ocupada por una tabla blendop.
+	    Es responsabilidad del programador asegurarse de que la
+	    tabla blendop no se encuentre asignada a ningún gráfico
+	    ni a ninguna variable BLENDOP de ningún proceso en el
+	    momento de destruírla. Lo contrario se considera una
+	    condición de error grave y puede dar resultados
+	    impredecibles.
+	</p>
+    </description>
+    <see name="BLENDOP_NEW"/>
+    <see name="BLENDOP_IDENTITY" />
+    <see name="BLENDOP_TRANSLUCENCY" />
+    <see name="BLENDOP_TINT" />
+    <see name="BLENDOP_INTENSITY" />
+    <see name="BLENDOP_GRAYSCALE" />
+    <see name="BLENDOP_SWAP" />
+    <see name="BLENDOP_ASSIGN" />
+    <see name="BLENDOP_APPLY" />
+</function>

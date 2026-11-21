@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_ICON">
+    <param name="librería"> Librería que contiene el gráfico </param>
+    <param name="gráfico"> Código del gráfico </param>
+    <abstract> Usa un gráfico como icono para la ventana del juego </abstract>
+    <description>
+	<p>
+	    Esta función permite escoger el icono de la ventana del juego,
+	    cuando el juego no funciona a pantalla completa. Es necesario llamar
+	    a esta función antes que llamara a <a name="SET_MODE" href="INIT/SET_MODE"/>, ya que
+	    esa es la función que creará y visualizará dicha ventana.
+	    Recuerda que SET_MODE inicializa en un principio el juego a
+	    pantalla completa: para inicializar el modo de ventana, es
+	    preciso cambiar el valor de la variable <a type="var" name="FULL_SCREEN" href="GVARS/FULL_SCREEN"/>
+	    antes de llamar a <a name="SET_MODE" href="INIT/SET_MODE"/>.
+	</p>
+	<p>
+	    Para esta función, debes utilizar un gráfico de 32x32 pixels.
+	    El gráfico puede estar a 8 ó 16 bits de color, y
+	    no debes nunca borrar este gráfico de memoria usando funciones
+	    como <a href="UNLOAD_MAP"/> o <a href="UNLOAD_FPG"/>.
+	</p>
+	<p>
+	    No es posible cambiar el icono de una ventana ya inicializada,
+	    pero puedes volver a llamar a <a name="SET_MODE" href="INIT/SET_MODE"/> para
+	    activar los cambios.
+	</p>
+    </description>
+    <see type="var" name="FULL_SCREEN" href="GVARS/FULL_SCREEN"/>
+    <see name="SET_MODE" href="INIT/SET_MODE"/>
+    <see name="SET_TITLE" href="INIT/SET_TITLE"/>
+</function>

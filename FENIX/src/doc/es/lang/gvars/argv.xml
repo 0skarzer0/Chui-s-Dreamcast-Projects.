@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable type="string" size="32" name="ARGV">
+    <abstract>Contiene los parámetros recibido por el programa</abstract>    
+	<description>
+	<p>
+		Esta variable contiene el valor de los parámetros recibido por el programa, incluido 
+		el propio nombre del programa, que se corresponde a argv[0].
+	</p>
+	<p>
+		Fenix guarda internamente espacio suficiente para 32 parámetros, pero el número real 
+		de parámetros recibidos se obtiene a partir de <a type="var" href="GVARS/ARGC" name="ARGC" />.
+	</p>
+    </description>
+    <see type="var" href="GVARS/ARGC" name="ARGC"/>
+</variable>

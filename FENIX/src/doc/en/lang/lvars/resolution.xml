@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="RESOLUTION">
+    <abstract>Factor of extension for coordinates X and Y</abstract>    
+	<description>
+	<p>
+		It allows to increase the resolution of coordinates X and Y of process, so it 
+		indicates whichever units logics exist by each pixel of screen. 
+		For example to advance 400 units in a process with
+		resolution 100 only moves 4 pixels in the screen.
+	</p>
+	<p>
+		It is recommended to use this variable to slow down the movement of objects that must 
+		be moved slowly or to increase the smoothness in complex movements that depend on the
+		precision in mathematical calculations like parabolic shots, gravity, etc.		
+	</p>
+	<p>
+		By default his value is 0, indicating that equivalence is of 1:1
+	</p>
+    </description>
+    <see type="var" name="X" href="LVARS/X" />
+    <see type="var" name="Y" href="LVARS/Y" />
+</variable>

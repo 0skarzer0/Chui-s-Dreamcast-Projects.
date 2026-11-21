@@ -1,0 +1,117 @@
+TARGET	=	../bin/fsl
+
+TV_FILTER =1
+
+CC =		gcc-3.4
+STRIP=		strip
+
+
+CFLAGS =	-Wall -Wno-switch -mtune=pentium -march=pentium \
+		`sdl-config --cflags` -DFSL -DFSL -DTARGET_LINUX -DTARGET_linux -DTARGET_Linux \
+		-ffast-math -fno-common -ffreestanding -fno-builtin \
+		-fno-exceptions -fstrict-aliasing -O6 \
+		-Isrc/SFont -Isrc/ML_Lib -Isrc/ -I../include -I../fxi/inc -I../fxi/src \
+
+
+CFLAGS+=	-DNO_CONSOLE -DNO_PROFILER
+
+#CFLAGS+=-DDATA_PREFIX=\"example/\"
+CFLAGS+=-DDATA_PREFIX=\"exec/\"
+#CFLAGS+=-DNOSOUND
+#CFLAGS+=-DVERTICAL_SCROLL
+CFLAGS+=-DNO_DESC
+#CFLAGS+=-DFULLSCREEN
+
+LDFLAGS =	`sdl-config --libs` -lSDL_mixer -lSDL_image \
+
+ifndef TV_FILTER
+CFLAGS += -DNO_USE_TV_FILTER
+else
+LDFLAGS += -lGL
+endif
+
+
+.CFILES	=	src/fsl.c \
+		src/stretch.c \
+		src/video.c \
+		src/process.c \
+		src/audio.c \
+		src/parse.c \
+		src/error.c \
+		src/bin.c \
+		src/run.c \
+		src/tvfilter/tvfilter.o \
+		src/SFont/SFont.c \
+		src/ML_Lib/ML_Attribute.c \
+		src/ML_Lib/ML_Comment.c \
+		src/ML_Lib/ML_common_func.c \
+		src/ML_Lib/ML_COM_Sim.c \
+		src/ML_Lib/ML_Document.c \
+		src/ML_Lib/ML_Element.c \
+		src/ML_Lib/ML_leng_process.c \
+		src/ML_Lib/ML_Node.c \
+		src/ML_Lib/ML_Process.c \
+		src/ML_Lib/ML_Text.c \
+		../fxi/src/main.c \
+		../fxi/src/dcbr.c \
+		../fxi/src/f_joystick.c \
+		../fxi/src/f_cd.c \
+		../fxi/src/mmx_main.c \
+		../fxi/src/mmx_scale2x.c \
+		../fxi/src/fpl.c \
+		../fxi/src/fbm.c \
+		../fxi/src/fgc.c \
+		../fxi/src/f_sort.c \
+		../fxi/src/i_copy.c \
+		../fxi/src/f_bgload.c \
+		../fxi/src/instance.c \
+		../fxi/src/strings.c \
+		../fxi/src/i_main.c \
+		../fxi/src/i_debug.c \
+		../fxi/src/i_func.c \
+		../fxi/src/i_saveload.c \
+		../fxi/src/g_main.c \
+		../fxi/src/g_maps.c \
+		../fxi/src/g_blit.c \
+		../fxi/src/g_texts.c \
+		../fxi/src/g_pal.c \
+		../fxi/src/g_draw.c \
+		../fxi/src/g_systexts.c \
+		../fxi/src/g_console.c \
+		../fxi/src/g_scroll.c \
+		../fxi/src/g_flic.c \
+		../fxi/src/g_mode7.c \
+		../fxi/src/img_png.c \
+		../fxi/src/img_pcx.c \
+		../fxi/src/sound.c \
+		../fxi/src/pathfind.c \
+		../fxi/src/fnc_exports.c \
+		../fxi/src/g_conversion.c \
+		../fxi/src/g_font.c \
+		../fxi/src/g_fpg.c \
+		../fxi/src/g_blendop.c \
+		../fxi/src/g_profiler.c \
+		../common/files.c \
+		../common/xctype.c \
+		../common/dirs.c \
+		../common/regex.c \
+
+
+
+all: $(TARGET)
+
+
+OBJS =		$(.CFILES:.c=.o)
+
+
+$(TARGET):	$(OBJS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS) $(LDFLAGS)
+	$(STRIP) $(TARGET)
+
+
+run:		$(TARGET)
+	cd ../bin && ./$(TARGET)
+
+
+clean:
+	rm -f $(OBJS) $(TARGET)

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GUI_DRAGTYPE">
+    <retval type="STRING">
+	Cadena asociada al objeto que se está arrastrando
+    </retval>
+    <abstract> Devuelve qué tipo de objeto se está arrastrando </abstract>
+    <description>
+	<p>
+	    Esta función permite comprobar qué tipo de objeto es el
+	    arrastrado en una operación de drag&amp;drop. Esencialmente,
+	    devuelve la cadena especificada en la llamada a la
+	    función <a href="CONTROL_DRAGGABLE"/> cuando se
+	    activó la opción de drag&amp;drop en el control arrastrado.
+	</p>
+    </description>
+    <see href="CONTROL_DRAGGABLE"/>
+    <see href="GUI_DRAGGING"/>
+    <see href="GUI_ACCEPTDRAG"/>
+</function>

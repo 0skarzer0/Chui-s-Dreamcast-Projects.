@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="STRUCT">
+	<syntax> 
+		<b>STRUCT</b> <i>identificador</i> [ <b>[</b><i>dimensiones</i><b>]</b> ]
+		<blockquote>
+			<a href="Variables"/> <br/>
+			...
+		</blockquote>
+		<b>END</b> [ <b>=</b> <i>valor</i> [ , <i>valor</i> ... ] ] ;
+	</syntax>
+	<abstract> Declara una variable tipo estructura </abstract>
+    <description>
+		<p>
+			Una variable tipo STRUCT es un dato compuesto por otros
+			datos: en lugar de contener un dato simple, contiene
+			múltiples datos de cualquier tipo (incluso otras
+			estructuras). STRUCT viene seguido de un bloque acabado
+			en END, que contiene una declaración de <a href="variables/"/>
+			con la misma sintaxis que una sección de datos normal.
+		</p>
+		<p> 
+			En el programa, es posible acceder al contenido de una estructura
+			usando el operador "." (si la estructura se llama PERSONA y
+			contiene datos como NOMBRE o APELLIDOS, se accedería a su contenido
+			con la sintaxis PERSONA.NOMBRE, por ejemplo).
+		</p>
+		<p>
+			Es posible crear un array de estructuras en lugar de
+			una sóla estructura, añadiendo dimensiones inmediatamente
+			después del nombre. Por ejemplo, el siguiente código:
+			<pre> STRUCT colores[9] <br/>     BYTE r, g, b;<br/> END </pre>
+			crea diez estructuras de nombre "colores", cada una de ellas
+			con tres datos de tipo BYTE en el interior. Para acceder a
+			los datos de cada uno de los miembros del array usaríamos
+			la sintaxis habitual (colores[3].r por ejemplo).
+		</p>
+		<h3> Inicialización </h3>
+		<p>
+			Es posible otorgar valores a los datos en el bloque, usando
+			la sintaxis normal en una sección de datos (= <i>valor</i>
+			inmediatamente después del nombre de la variable. Sin embargo,
+			en el caso de un array esto asignaría el mismo valor a la
+			variable dentro de todos los elementos del array.
+		</p>
+		<p>
+			Alternativamente es posible inicializar la estructura
+			escribiendo "=" justo después del END y seguirlo de
+			los valores a asignar a cada uno de los miembros en
+			el mismo orden en que fueron declarados, separando
+			los valores por comas. Si es un array, se pueden
+			incluir tantos valores como entradas en el array haya,
+			proporcionando valores para todas las variables que contienen.
+		</p>
+    </description>
+	<see href="Tipos de dato"/>
+	<see href="TYPE"/>
+</section>

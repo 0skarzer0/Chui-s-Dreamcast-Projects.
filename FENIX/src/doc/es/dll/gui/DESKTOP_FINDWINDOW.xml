@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DESKTOP_FINDWINDOW">
+<retval type="INT"> Identificador de la ventana encontrada, ó 0 si no hay ninguna </retval>
+<param name="x"> Coordenada horizontal </param>
+<param name="y"> Coordenada vertical </param>
+<abstract> Busca una ventana en una posición de pantalla </abstract>
+<description>
+    <p>
+	Esta función devuelve el identificador de la ventana que ocupe el punto
+	de pantalla especificado por las coordenadas x e y. Si hay varias
+	ventanas en ese punto, el identificador de la que se encuentre más
+	alta (más cerca del usuario) será el devuelto. Si no hubiese ninguna
+	ventana tocando dicha posición, esta función devolverá 0.
+    </p>
+</description>
+</function>

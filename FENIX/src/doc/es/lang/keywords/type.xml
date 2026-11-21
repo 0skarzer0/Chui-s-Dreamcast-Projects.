@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="TYPE">
+	<syntax> 
+		<b>TYPE</b> <i>identificador</i> 
+		<blockquote>
+			<a href="Variables"/>
+			...
+		</blockquote>
+		<b>END</b>
+	</syntax>
+	<abstract> Declara un tipo de dato definido por el usuario </abstract>
+    <description>
+		<p>
+			Un bloque TYPE debe situarse fuera de cualquier sección
+			de datos o proceso. TYPE declara un tipo de dato
+			definido por el usuario y compuesto a su vez por varios
+			datos de otro tipo. TYPE no crea ninguna variable concreta
+			en el momento en el que aparece: simplemente, le otorga
+			un significado al identificador utilizado y permite que
+			sea usado posteriormente en cualquier sección de datos.
+		</p>
+		<p>
+			A partir de la aparición de TYPE, es posible utilizar el
+			identificador indicado para crear estructuras cuyo
+			contenido será exactamente igual al indicado en el
+			interior del bloque TYPE, pero sin tener que declarar
+			de nuevo todas las variables en un nuevo bloque. Si,
+			por ejemplo, al principio del programa aparece este código:
+			<pre> TYPE color <br/>     BYTE r, g, b; <br/> END </pre>
+			Sería posible declarar una o más variables del nuevo
+			tipo "color" en cualquier sección de datos:
+			<pre> GLOBAL <br/>     color p; <br/> END </pre>
+			En este ejemplo, la variable "p" es una estructura con
+			tres componentes de tipo byte (r, g, b).
+		</p>
+		<p>
+			Es posible usar valores por defecto en el TYPE mediante
+			la sintaxis habitual (= valor). Estos valores serán
+			utilizados por todas las variables del nuevo tipo que
+			no sean inicializadas manualmente.
+		</p>
+		<h3> Ventajas de TYPE </h3>
+		<p>
+			Aunque es posible usar <a href="STRUCT"/> para crear
+			una variable de tipo estructura de la misma forma
+			que con TYPE, TYPE es mucho más cómodo si se tienen
+			que crear múltiples variables en lugares diferentes
+			del programa con la misma estructura. Además, TYPE
+			permite crear punteros a estructuras. Siguiendo el
+			ejemplo anterior, podríamos crear una variable como:
+			<pre> color pointer ptr; </pre>
+			y de esta manera acceder a estructuras remotas,
+			pasar la dirección de una estructura como parámetro
+			a un proceso y en general todas las facilidades
+			avanzadas que permite un puntero.
+		</p>
+    </description>
+	<see href="Tipos de dato"/>
+</section>

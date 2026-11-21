@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<section name="CONTINUE">
+	<syntax> 
+		<b>CONTINUE</b> ; 
+	</syntax>
+	<abstract> Pasa a la siguiente iteración del bucle actual </abstract>
+    <description>
+		<p>
+			Esta sentencia sólo es válida en el interior de un bucle
+			(<a href="LOOP"/>, <a href="FOR"/>, <a href="FROM"/>, 
+			 <a href="WHILE"/> o <a href="REPEAT"/>) y sirve para saltar
+			inmediatamente al inicio del bucle.
+		</p>
+		<p>
+			En bucles condicionales, CONTINUE salta a la evaluación de
+			la condición. Si la condición no se cumple, el bucle
+			termina y la ejecución pasa a la siguiente sentencia a
+			continuación del END. En caso contrario, se pasa a la
+			primera línea del interior del bucle.
+		</p>
+		<p>
+			En bucles <a href="FOR"/>, CONTINUE salta hasta la
+			acción de incremento. La expresión de incremento es
+			evaluada, y a continuación la condición, con el mismo
+			resultado que en un bucle condicional.
+		</p>
+		<p>
+			Tanto CONTINUE como <a href="BREAK"/> sólo tienen efecto
+			sobre el bucle más interno. Si se desea repetir un bucle
+			exterior, hay que usar BREAK desde el bucle interno primero.
+		</p>
+    </description>
+	<see href="BREAK"/>
+</section>

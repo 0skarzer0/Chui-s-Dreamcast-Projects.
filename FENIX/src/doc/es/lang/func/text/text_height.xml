@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="TEXT_HEIGHT">
+    <retval> Alto en pixels del texto </retval>
+    <param name="fuente"> Número de fuente </param>
+    <param name="texto" type="STRING"> Cadena de texto </param>
+    <abstract> Devuelve el ancho en pixels de una cadena de texto </abstract>
+    <description>
+	<p>
+	    Esta función calcula el alto en pixels que ocupa un texto
+	    en pantalla (es decir, la altura del carácter más grande
+	    que vaya a dibujarse de toda la cadena),
+	    cuando se dibuja con el tipo de letra especificado como
+	    primera parámetro, y que debe ser un identificador devuelto
+	    por la función <a name="LOAD_FNT"/> o bien 0 para indicar
+	    el tipo de letra del sistema.
+	</p>
+    </description>
+    <see name="TEXT_WIDTH" href="TEXT/TEXT_WIDTH"/>
+    <see name="LOAD_FNT" href="TEXT/LOAD_FNT"/>
+    <see name="WRITE_IN_MAP" href="TEXT/WRITE_IN_MAP"/>
+</function>

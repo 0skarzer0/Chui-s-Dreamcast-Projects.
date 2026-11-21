@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DRAW_RECT">
+    <param name="x1"> Horizontal coordinate of the first point </param>
+    <param name="y1"> Vertical coordinate of the first point </param>
+    <param name="x2"> Horizontal coordinate of the second point </param>
+    <param name="y2"> Vertical coordinate of the second point </param>
+    <abstract> Draw a rectangle </abstract>
+    <description>
+	<p>
+	    It draws a rectangle between two spots, using the chosen 
+	    colour with <a href="PRIM/DRAWING_COLOR" name="DRAWING_COLOR"/>, in the chosen 
+		graph by the last call to <a href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>.
+	    A rectangle has four lines (two verticales and
+	    two horizontals) and it is not filled.
+	    It is valid to specify coordinates out of the limits
+	    of the graph, but the picture will cut off over these.
+	</p>
+    </description>
+	<see href="PRIM/DRAWING_COLOR" name="DRAWING_COLOR"/>
+    <see href="PRIM/DRAW_LINE" name="DRAW_LINE"/>
+    <see href="PRIM/DRAW_BOX" name="DRAW_BOX"/>
+    <see href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>
+    <see href="PRIM/DRAW_CIRCLE" name="DRAW_CIRCLE"/>
+    <see href="PRIM/DRAW_FCIRCLE" name="DRAW_FCIRCLE"/>
+</function>

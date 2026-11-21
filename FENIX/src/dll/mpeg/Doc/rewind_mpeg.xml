@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="REWIND_MPEG">
+    <retval/>
+    <param name="vídeo"> Identificador del vídeo </param>
+    <abstract> Reinicia la reproducción de un vídeo desde el principio </abstract>
+    <description>
+	<p>
+	    Esta función reinicia desde el principio la reproducción de un vídeo MPEG.
+	    Puede usarse para imitar el funcionamiento de un bucle.
+	</p>
+    </description>
+    <see href="LOAD_MPEG"/>
+    <see href="PLAY_MPEG"/>
+    <see href="STOP_MPEG"/>
+    <see href="PAUSE_MPEG"/>
+</function>

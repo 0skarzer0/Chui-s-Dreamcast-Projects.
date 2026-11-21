@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="ALLOC" />
+<fnc href="FREE" />
+<fnc href="MEMSET" />
+<fnc href="MEMSETW" />
+<fnc href="MEMCOPY" />
+<fnc href="MEMORY_TOTAL" />
+<fnc href="MEMORY_FREE" />
+<fnc href="REALLOC" />
+</INDEX>

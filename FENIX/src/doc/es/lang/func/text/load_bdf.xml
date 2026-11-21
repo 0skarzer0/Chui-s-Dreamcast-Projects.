@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_BDF">
+    <retval> Identificador con el nuevo tipo de letra </retval>
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <abstract> Recupera de disco un tipo de letra BDF </abstract>
+    <description>
+	<p>
+	    Esta función recupera un tipo de letra BDF desde disco. El 
+	    BDF es un formato de tipo de letra creado por Adobe
+	    en uso en sistemas operativos Unix. Es un tipo de letra
+	    a dos colores, por lo que es posible usar la función
+	    <a href="SET_TEXT_COLOR"/> para dibujar textos en varios
+	    colores diferentes.
+	</p>
+	<p>
+	    LOAD_BDF devuelve un número entero que identifica al
+	    nuevo tipo de letra. Es posible utilizar a partir de entonces
+	    este valor con cualquier función que admita un
+	    tipo de letra como parámetro, como por ejemplo
+	    <a href="WRITE"/>.
+	</p>
+    </description>
+    <see href="WRITE"/>
+    <see href="WRITE_IN_MAP"/>
+    <see href="UNLOAD_FNT"/>
+</function>

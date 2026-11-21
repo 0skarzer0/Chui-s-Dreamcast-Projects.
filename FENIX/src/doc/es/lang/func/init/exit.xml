@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="EXIT">
+    <param optional="YES" name="texto"> Texto a mostrar al usuario </param>
+    <param optional="YES" name="salto"> Código de retorno de la aplicación </param>
+    <abstract> Sale del juego inmediatamente </abstract>
+    <description>
+	<p>
+	    Esta función abandona la ejecución del programa inmediatamente.
+	    El parámetro <i>texto</i> permite especificar un texto libre
+	    a mostrar al usuario que podría visualizarse en pantalla
+	    dependiendo de la plataforma (no se garantiza). El código de
+	    retorno de la aplicación tiene utilidad en algunos sistemas
+	    operativos, y es un número entero que puede comprobarse por
+	    los programas que ejecutan otros programas.
+	</p>
+	<p>
+	    Ambos parámetros son opcionales. Si no se especifican,
+	    no se mostrará ningún mensaje, y el código de salida del
+	    programa será 0.
+	</p>
+    </description>
+</function>

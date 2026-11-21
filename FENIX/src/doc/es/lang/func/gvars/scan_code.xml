@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="SCAN_CODE">
+    <abstract>Contiene el código de tecla pulsado en el último frame</abstract>
+    <description>
+	<p>
+		Este valor se corresponde con el de las constantes predefinidas para la 
+		función <a href="KEY" />.  Al igual que <a href="GVARS/ASCII" type="var" name="ASCII" /> 
+		si se ha pulsado más de una tecla las pulsaciones adicionales quedan almacenadas 
+		en un pequeño buffer para evitar su pérdida.
+	</p>
+	<p>
+		Es recomendable utilizar <a href="KEY" /> para hacer la comprobación 
+		de qué tecla se ha pulsado, ya que es más rápido que hacer la comprobación 
+		manual a traves de código en nuestro programa.
+	</p>
+    </description>
+    <see type="var" href="GVARS/SCAN_CODE" name="SCAN_CODE"/>
+</variable>

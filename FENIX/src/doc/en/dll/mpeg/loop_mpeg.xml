@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOOP_MPEG">
+    <retval/>
+    <param name="video"> Identifier of video </param>
+    <param name="loop"> 1 to activate looping, 0 to deactivate </param>
+    <abstract> It activates or desactivates the continuous reproduction (loop) of a video </abstract>
+    <description>
+	<p>
+	    It changes an internal variable of each MPEG video that indicates
+	    if, when this finalizes, it must return to begin from the beginning.
+	    By default, this option is disabled, and a video is stopped when it 
+		has arrived in the end.
+	</p>
+    </description>
+    <see href="dll/mpeg/LOAD_MPEG" name="LOAD_MPEG"/>
+    <see href="dll/mpeg/STOP_MPEG" name="STOP_MPEG"/>
+    <see href="dll/mpeg/IS_PLAYING_MPEG" name="IS_PLAYING_MPEG"/>
+</function>

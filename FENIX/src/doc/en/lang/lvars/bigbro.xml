@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="BIGBRO">
+    <abstract>Identifier of the last process created before ours</abstract>    
+	<description>
+	<p>
+	This identifier makes reference to the last process that the creator of the current process created before it. 
+	It will be 0 if any previous process to the current had not been created.		
+	</p>
+    </description>
+    <see type="var" name="FATHER" href="LVARS/FATHER" />
+    <see type="var" name="SON" href="LVARS/SON" />
+    <see type="var" name="SMALLBRO" href="LVARS/SMALLBRO" />
+</variable>

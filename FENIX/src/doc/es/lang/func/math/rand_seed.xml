@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="RAND_SEED">
+    <retval/>
+    <param name="número"> Nuevo número de semilla para RAND </param>
+    <abstract> Cambia la semilla a partir de la cual se generan
+	los números aleatorios devueltos por la función RAND </abstract>
+    <description>
+	<p> 
+	    Al comienzo del programa se selecciona una semilla aleatoria (en
+	    función de la hora del dia). Si se desea generar una semilla
+	    aleatoria de nuevo, es posible usar la función <a href="TIME"/>.
+	</p>
+    </description>
+    <see name="RAND" href="MATH/RAND"/>
+    <see name="TIME" href="TIME"/>
+</function>

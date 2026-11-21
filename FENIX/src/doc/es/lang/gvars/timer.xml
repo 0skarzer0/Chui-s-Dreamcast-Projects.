@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="TIMER" size="9">
+    <abstract>Diez cronómetros programables accesibles en todo momento</abstract>
+    <description>
+    <p>
+    	Fenix dispone de 10 temporizadores accesibles a través del array de variables 
+    	timer (desde timer[0] a timer[9]).  Como ocurre con cualquier array acceder a 
+    	timer como una variable entera es lo mismo que acceder a timer[0].
+    </p>
+    <p>
+    	Estos temporizadores se inicializan automáticamente al comenzar el programa al 
+    	valor 0 y se incrementan automáticamente 100 veces por segundo.
+    </p>
+    <p>
+    	En cualquier momento puede cambiarse el valor de uno de ellos, por ejemplo 
+    	inicializándolo de nuevo a 0, para controlar una cantidad de tiempo concreta. 
+    	Por ejemplo, para realizar un reloj se debería comprobar el timer elegido contra 
+    	un valor mayor a 100 y restarle 100 a ese temporizador.
+    </p>
+	</description>
+	<note>
+		Las variables globales se actualizan cada instrucción FRAME a efectos de lenguaje 
+		por tanto los valores leidos en un temporizador no serán consecutivos a menos que nuestro 
+		programa se esté ejecutando a 100 frames por segundo.
+	</note>
+	<note>
+		Las comprobaciones con los temporizadores deben realizarse siempre con los operadores de 
+		<b>&gt;=</b> o <b>&gt;</b> y nunca con el <b>=</b> ya que no se puede asegurar que tras la 
+		actualización del temporizador el valor sea exactamente igual al deseado.
+	</note>
+</variable>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="SON">
+    <abstract>Identificador del último proceso hijo</abstract>    
+	<description>
+	<p>
+		Este identificador referencia al último proceso que ha creado el proceso actual.
+		Si el proceso no se ha creado ningún proceso su valor será 0.
+	</p>
+    </description>
+    <see type="var" name="FATHER" href="LVARS/FATHER" />
+    <see type="var" name="BIGBRO" href="LVARS/BIGBRO" />
+    <see type="var" name="SMALLBRO" href="LVARS/SMALLBRO" />
+</variable>

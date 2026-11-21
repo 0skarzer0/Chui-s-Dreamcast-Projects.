@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="IS_PLAYING_SONG">
+    <retval/>
+    <abstract> Devuelve 1 si la música sigue sonando </abstract>
+    <description>
+	<p>
+	    Esta función comprueba si cualquier música reproducida
+	    anteriormente mediante <a name="PLAY_SONG" href="MUSIC/PLAY_SONG"/> todavía
+	    está sonando. En caso contrario (la música ya ha
+	    terminado y no se reproduce en modo de repetición,
+	    o bien se ha detenido con funciones como
+	    <a name="STOP_SONG" href="MUSIC/STOP_SONG"/> o <a name="FADE_MUSIC_OFF" href="MUSIC/FADE_MUSIC_OFF"/>),
+	    esta función devolverá 0.
+	</p>
+    </description>
+    <see name="FADE_MUSIC_OFF" href="MUSIC/FADE_MUSIC_OFF"/>
+    <see name="PLAY_SONG" href="MUSIC/PLAY_SONG"/>
+    <see name="STOP_SONG" href="MUSIC/STOP_SONG"/>
+    <see name="LOAD_SONG" href="MUSIC/LOAD_SONG"/>
+</function>

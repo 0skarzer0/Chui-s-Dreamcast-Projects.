@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<subdir HREF="dll/explosion" name="EXPLOSION" />
+<subdir HREF="dll/image" name="IMAGE" />
+<subdir HREF="dll/mpeg" name="MPEG" />
+<subdir HREF="dll/ttf" name="TTF" />
+</INDEX>

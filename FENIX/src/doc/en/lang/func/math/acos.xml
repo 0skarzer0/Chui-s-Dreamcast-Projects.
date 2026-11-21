@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ACOS">
+    <retval/>
+    <param name="number" type="FLOAT"> Value between -1.0 and 1.0 </param>
+    <abstract> It returns the acos of a value </abstract>
+    <description>
+	<p>
+	    It returns an angle in thousandth of degree, between 0 and 180000 
+	    whose cos is equivalent to the value indicated like parameter.
+	</p>
+    </description>
+    <see href="MATH/COS" name="COS"/>
+</function>

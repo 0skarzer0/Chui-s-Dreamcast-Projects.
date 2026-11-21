@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="RESUME_WAV">
+    <param name="canal"> Número de canal devuelto por PLAY_WAV </param>
+    <abstract> Continúa la reproducción de un efecto de sonido </abstract>
+    <description>
+	<p>
+	    Reanuda la reproducción del sonido que estaba
+	    activo a través de un canal determinado en el momento que se
+	    detuvo la reproducción empleando <a href="PAUSE_WAV"/>. Para
+	    saber qué canal corresponde a un efecto de sonido concreto, debes
+	    guardar el valor devuelto por <a href="PLAY_WAV"/>.
+	</p>
+    </description>
+    <see href="PLAY_WAV"/>
+    <see href="STOP_WAV"/>
+    <see href="PAUSE_WAV"/>
+    <see href="IS_PLAYING_WAV"/>
+</function>

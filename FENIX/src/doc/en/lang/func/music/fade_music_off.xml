@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FADE_MUSIC_OFF">
+    <param name="miliseconds"> Time to shutdown the music in miliseconds </param>
+    <abstract> Stop the music lowering the volume gradually </abstract>
+    <description>
+	<p>
+	    This function stops the music that is playing currently
+	    (the music will be initialized for the function <a href="PLAY_SONG"/>)
+	    lowering gradually the volume until the music shutdowns.
+	    The parameter <i>miliseconds</i> indicated the approximatted
+	    time in which the music will stop to be listened.
+	</p>
+	<p>
+	    Obviously after calling to this function, the music
+	    will not have finalized inmediatly. To know when
+	    it is secure to use <a href="UNLOAD_SONG"/> or play
+	    other music, it is necessary to use <a href="IS_PLAYING_SONG"/>
+	    to check if the music has finalized his reproduction.
+	</p>
+    </description>
+    <see href="PLAY_SONG"/>
+    <see href="STOP_SONG"/>
+    <see href="UNLOAD_SONG"/>
+    <see href="IS_PLAYING_SONG"/>
+    <see href="FADE_SONG_IN"/>
+</function>

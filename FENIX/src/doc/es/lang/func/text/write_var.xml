@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WRITE_VAR">
+    <retval> Identificador del nuevo texto </retval>
+    <param name="fuente"> Tipo de letra </param>
+    <param name="x"> Coordenada horizontal </param>
+    <param name="y"> Coordenada vertical </param>
+    <param name="alineación"> Tipo de alineación </param>
+    <param name="variable" type="VAR"> Variable a escribir </param>
+    <abstract> Dibuja un texto en pantalla, con el contenido de una variable </abstract>
+    <description>
+	<p>
+	    Dibuja un texto en pantalla, en la posición indicada y
+	    haciendo uso del tipo de letra especificado (que puede
+	    ser 0 para indicar el tipo de letra del sistema, o bien
+	    un identificador devuelto por una función como <a href="LOAD_FNT"/>).
+	    El texto contendrá el valor que haya en todo momento en el
+	    interior de la variable local, privada o global especificada
+	    como último parámetro, y será redibujado cada frame, por lo
+	    que siempre contendrá una descripción exacta del valor.
+	    Es importante que la variable siga existiendo mientras lo
+	    haga el texto (por ejemplo, no es correcto usar una variable
+	    privada o local de un proceso que pueda ser destruído mientras
+	    el texto aún siga dibujándose).
+	</p>
+	<p>
+	    El parámetro de alineación indica el significado de las
+	    coordenadas, ya que en función de su valor, el texto
+	    será alineado respecto a este punto como sigue:
+	    <ul>
+		<li> 0: el punto ocupará la esquina superior izquierda
+		    del texto, una vez escrito </li>
+		<li> 1: el texto estará centrado horizontalmente sobre
+		    el punto, que ocupará la fila superior del mismo </li>
+		<li> 2: el punto ocupará la esquina superior derecha </li>
+		<li> 3: el texto estará centrado verticalmente sobre
+		    el punto, que ocupará la columna izquierda del mismo </li>
+		<li> 4: el texto estará centrado horizontal y verticalmente 
+		    alrededor del punto </li>
+		<li> 5: el texto estará centrado verticalmente del punto,
+		    que ocupará la fila derecha del mismo </li>
+		<li> 6: el punto ocupará la esquina inferior izquierda </li>
+		<li> 7: el texto será centrado horizontalmente. El punto
+		    ocupará la fila inferior del mismo.</li>
+		<li> 8: el punto ocupará la esquina inferior derecha </li>
+	    </ul>
+	</p>
+	<p>
+	    Este texto será dibujado a cada frame, en el momento de
+	    profundidad indicado por la variable global <a href="TEXT_Z"/>.
+	    Es importante entender que una nueva llamada a esta función
+	    incluso con los mismos parámetros crearía un segundo texto
+	    adicional a dibujar. Es preciso llamar a la función
+	    <a href="DELETE_TEXT"/> cuando se desea que un texto ya
+	    no sea visible por más tiempo, teniendo cuidado con usar
+	    esta función dentro de un bucle.
+	</p>
+	<p>
+	    Los tipos de letra de 1 bit por pixel pueden ser dibujados
+	    a cualquier color, escogiéndolo con la función
+	    <a href="SET_TEXT_COLOR"/>. Los textos escritos con esta función
+	    recuerdan el color escogido en el momento que se llamaron,
+	    así que es válido dibujar varios textos a diferente color.
+	    El tipo de letra del sistema es un tipo de letra de 1 bit por pixel.
+	</p>
+	<p>
+	    Esta función tiene una utilidad limitada, ya que es preciso
+	    utilizar una variable para contener el texto.
+	    Si se desea mostrar en pantalla un texto fijo y estático,
+	    es más práctico usar en su lugar la función <a href="WRITE"/>.
+	</p>
+    </description>
+    <see name="GET_TEXT_COLOR" href="TEXT/GET_TEXT_COLOR"/>
+    <see name="SET_TEXT_COLOR" href="TEXT/SET_TEXT_COLOR"/>
+    <see name="WRITE" href="TEXT/WRITE"/>
+    <see name="WRITE_VAR" href="TEXT/WRITE_VAR"/>
+    <see name="WRITE_IN_MAP" href="TEXT/WRITE_IN_MAP"/>
+    <see name="DELETE_TEXT" href="TEXT/DELETE_TEXT"/>
+    <see name="MOVE_TEXT" href="TEXT/MOVE_TEXT"/>
+</function>

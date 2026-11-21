@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MAP_SET_NAME">
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <param name="nombre" type="STRING"> Nuevo nombre del gráfico </param>
+    <abstract> Cambia el nombre de un gráfico </abstract>
+    <description>
+	<p>
+	    Todo gráfico tiene un nombre de hasta 32 caracteres, que
+	    puede cambiarse mediante esta función, o recuperarse
+	    mediante <a href="MAP_NAME"/>. Este nombre es
+	    especialmente útil cuando el gráfico forma parte de
+	    una librería FPG, ya que de otra manera no habría otro
+	    sistema aparte del número del gráfico para distinguir uno de otro.
+	</p>
+    </description>
+    <see href="MAP_NAME"/>
+</function>

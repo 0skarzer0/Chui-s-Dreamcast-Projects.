@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FIND_COLOR">
+    <retval type="BYTE"> Número de color de la paleta </retval>
+    <param name="r" type="BYTE"> Valor deseado de componente rojo </param>
+    <param name="g" type="BYTE"> Valor deseado de componente verde </param>
+    <param name="b" type="BYTE"> Valor deseado de componente azul </param>
+    <abstract> Busca un color en la paleta que se aproxime al deseado </abstract>
+    <description>
+	<p>
+	    Realiza una búsqueda en la paleta actual de colores, en busca del color
+	    más parecido a las componentes especificadas como parámetros. No se
+	    garantiza que el color devuelto sea exactamente igual al especificado.
+	    De hecho, puede ser muy diferente si en la paleta no hay ningún
+	    color aproximado. Sin embargo, esta función busca el resultado
+	    "menos malo" de los posibles si no hay ninguno exacto.
+	</p>
+	<p>
+	    Dado que la búsqueda de colores aproximados es una operación habitual
+	    dentro del motor gráfico, esta función utiliza diversas tablas y
+	    técnicas para acelerar la búsqueda, por lo que habitualmente es
+	    bastante rápida. Los cambios frecuentes a la paleta de colores
+	    realizados mediante forzarán al motor a actualizar estas tablas
+	    a menudo y perjudicarán el rendimiento de cualquier programa que
+	    utilice a menudo esta función.
+	</p>
+    </description>
+    <note>
+        Incluso en modo de 16 bits, esta función devuelve siempre un valor
+        de tipo byte, representando un color dentro de la paleta (recordemos
+        que la paleta sigue existiendo en modo de 8 bits, y es utilizada por
+        el motor para dibujar gráficos de 8 bits si desean usarse en ese modo).
+        Si se desea obtener la representación de pixel de un color en modo de
+        16 bits, debe usarse la función <a name="RGB" href="PAL/RGB"/> en lugar de esta.
+    </note>
+    <see name="RGB" href="PAL/RGB"/>
+    <see name="SET_COLORS" href="PAL/SET_COLORS"/>
+</function>

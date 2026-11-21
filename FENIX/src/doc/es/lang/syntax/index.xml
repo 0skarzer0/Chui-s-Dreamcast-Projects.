@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+
+<index name="lang/syntax">
+	<abstract> Sintaxis del lenguaje </abstract>
+    <description>
+	<p>
+		Esta sección describe la sintaxis de un programa y describe
+		los bloques principales que lo componen.
+	</p>
+    </description>
+</index>
+
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW_FILE">
+    <retval type="STRING"> Nuevo (o antiguo) nombre de fichero asociado a la ventana </retval>
+    <param name="ventana"> Identificador de la ventana </param>
+    <param name="type" optional="YES" type="STRING"> Nuevo nombre de fichero asociado </param>
+    <abstract> Permite obtener o cambiar el nombre de un fichero asociado a una ventana </abstract>
+    <description>
+	<p>
+	    Esta función permite asignar una cadena con un nombre de fichero a
+	    una ventana. El propósito de esta información es mantener algún
+	    tipo de control de ventanas de documento por parte del programa.
+	    La librería GUI.DLL no realizará ningún tipo de comprobación
+	    ni acceso al fichero: se considera una simple cadena informativa,
+	    equivalente a <a name="WINDOW_DATA"/>.
+	</p>
+	<p>
+	    Si no se especifica el segundo parámetro, la función simplemente
+	    devuelve el fichero asociado a la ventana, sin cambiar nada.
+	    Si en cambio se especificase un nombre, éste sustituiría al valor
+	    actual asociado a la ventana.
+	</p>
+    </description>
+    <see name="WINDOW_TYPE"/>
+    <see name="WINDOW_DATA"/>
+</function>

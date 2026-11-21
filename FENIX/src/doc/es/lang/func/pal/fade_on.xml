@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FADE_ON">
+    <retval/>
+    <abstract> Restaura una transición de color </abstract>
+    <description>
+	<p>
+	    Esta función equivale exactamente a ejecutar un FADE(100,100,100,16).
+	    Se usa para restaurar la pantalla después de una transición de color
+	    como bien puede ser un fundido al negro. La pantalla se restaurará,
+	    tras llamar a esta función, en unos 4 frames.
+	</p>
+    </description>
+    <see name="FADE" href="PAL/FADE"/>
+    <see name="FADE_OFF" href="PAL/FADE_OFF"/>
+</function>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FPG_EXISTS">
+    <retval/>
+    <param name="librería"> Número de librería FPG </param>
+    <abstract> Devuelve 1 si una librería FPG existe </abstract>
+    <description>
+	<p>
+	    Esta función devuelve 1 si una librería FPG existe
+	    con el código indicado. Puede haber hasta 1000 librerías
+	    FPG en el programa, con códigos de 0 a 999. 
+	    Es posible usar esta función dentro de
+	    un bucle para ennumerar todos los gráficos que
+	    existan en memoria, con la ayuda de <a href="MAP_EXISTS"/>.
+	</p>
+    </description>
+    <see href="LOAD_FPG"/>
+    <see href="NEW_FPG"/>
+</function>

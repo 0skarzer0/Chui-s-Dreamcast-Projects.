@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="UNLOAD_MAP">
+    <param name="librería"> Número de librería FPG </param>
+    <param name="gráfico"> Número de gráfico dentro de la librería </param>
+    <abstract> Libera la memoria ocupada por un gráfico </abstract>
+    <description>
+	<p>
+	    Libera la memoria ocupada por un gráfico que puede formar
+	    parte de una librería FPG, haber sido creado
+	    independientemente por <a href="NEW_MAP"/>, o
+	    recuperado de disco por una función como <a href="LOAD_MAP"/>.
+	    Los posteriores accesos al gráfico liberado son considerados
+	    un error (por ejemplo, no es válido asignar el gráfico a la
+	    variable <a href="GRAPH"/> de un proceso).
+	</p>
+	<p>
+	    Es posible utilizar esta función para quitar gráficos de un
+	    fichero FPG. Los cambios realizados por esta función sólo
+	    afectan al FPG en memoria: para actualizar el fichero FPG
+	    con ellos es preciso usar la función <a href="SAVE_FPG"/>.
+	</p>
+    </description>
+    <see href="UNLOAD_FPG"/>
+</function>

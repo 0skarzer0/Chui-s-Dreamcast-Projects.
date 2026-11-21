@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="GET_ID">
+    <retval/>
+    <param name="type"> A type of process, obtained with the
+    	instruction <a href="TYPE"/>.</param>
+    <abstract> It allows to cross the list of active processes, or
+	find any active process of a given type </abstract>
+    <description>
+	<p>
+	    This function returns the identifier of the first process
+	    that it finds corresponds to the specified type, and it
+	    returns his identifier (<a href="ID"/>). If it does not
+	    find any, this function returns 0.
+	</p>
+	<p>
+	    In the following calls to this function that we make 
+	    using the same parameter, GET_ID returns the identifiers
+	    of the following processes of that type that are on memory,
+		until there are not any, in which case it returns 0.
+	</p>
+	<p>
+	    The state of GET_ID reboots each frame, and it is local to
+	    each process, then a GET_ID made by one process it does not
+	    affect to other GET_ID made by other process, even with the 
+		same parameters, nor to the same GET_ID if it is called again
+		to the next frame.
+	</p>
+	<p>
+	    It is possible to call GET_ID with the parameter of the type of 
+		process 0. In that case, GET_ID will return the identifiers
+	    of all processes on memory, of any type.
+	</p>
+	<p>
+	    GET_ID will never return identifier of killed or marked
+		processes to kill the next frame by the function <a href="SIGNAL"/>.
+	</p>
+    </description>
+    <see href="SIGNAL"/>
+</function>

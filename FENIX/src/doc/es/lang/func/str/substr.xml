@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SUBSTR">
+    <retval type="STRING"> Nueva cadena obtenida a partir de la original </retval>
+    <param name="cadena" type="STRING"> Cadena original </param>
+    <param name="inicio"> Caracter inicial (empezando en el 0) </param>
+    <param name="número" optional="YES"> Número de caracteres </param>
+    <abstract> Devuelve un trozo de una cadena </abstract>
+    <description>
+	<p>
+	    Esta función devuelve una sección de una cadena, a partir de
+	    un caracter inicial y un número de caracteres.
+	    La posición de inicio puede ser mayor o igual a 0 para indicar
+	    un caracter desde la izquierda de la cadena (0 para el primero,
+	    1 para el segundo, y así sucesivamente), o bien un número
+	    negativo para especificar una posición desde el final.
+	    -1 se refiere al último caracter de la cadena, -2 al anterior,
+	    y así sucesivamente. 
+	</p>
+	<p>
+	    El número de caracteres puede omitirse, con lo cual la
+	    función tomará todos los caracteres que haya desde la
+	    posición especificada hasta el final de la cadena.
+	</p>
+    </description>
+<see href="STR/SPLIT" name="SPLIT"/>
+</function>

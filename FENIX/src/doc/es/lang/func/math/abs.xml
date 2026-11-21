@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ABS">
+    <retval/>
+    <param name="número" type="FLOAT"> Número en coma flotante </param>
+    <abstract> Devuelve el valor absoluto de un número </abstract>
+    <description>
+	<p>
+	    Esta función devuelve el valor absoluto de un número
+	    dado, es decir, convierte cualquier número negativo 
+	    en positivo y deja números positivos o el 0 inalterados.
+	</p>
+    </description>
+</function>

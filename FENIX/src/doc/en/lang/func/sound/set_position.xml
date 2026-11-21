@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="SET_POSITION">
+    <param name="channel"> Number of channel returned by PLAY_WAV </param>
+    <param name="angle"> Angle with respect to the player, in degrees (0-360) </param>
+    <param name="distance"> Distance of the player (0-255) </param>
+    <abstract> It changes the 3D positioning of a channel </abstract>
+    <description>
+	<p>
+	    This function allows to alter the sound of a certain channel simulating
+		a positioning in 3D of the same one, from an angle of position and a 
+		distance to the player. The parameters (0,0) leave the sound as it were 
+		in the beginning, while a distance of 255 makes the sound inaudible.
+	</p>
+	<p>
+	    This function leaks the sound of a channel
+		of a somewhat slow form, without making use
+		of the advanced characteristics of some audio cards. 
+		If you want a simple emulation, is faster to call
+	    to <a href="SET_DISTANCE"/>.
+	</p>
+    </description>
+    <see href="PLAY_WAV"/>
+    <see href="IS_PLAYING_WAV"/>
+    <see href="SET_DISTANCE"/>
+</function>

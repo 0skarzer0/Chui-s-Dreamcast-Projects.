@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="FADE_MUSIC_IN">
+    <param name="música"> Identificador de la música </param>
+    <param name="repeticiones"> Número de repeticiones </param>
+    <param name="milisegundos"> Tiempo para iniciar la música en milisegundos</param>
+    <abstract> Reproduce música subiendo gradualmente el volumen desde cero </abstract>
+    <description>
+	<p>
+	    Esta función equivale a <a name="PLAY_SONG" href="MUSIC/PLAY_SONG"/>, excepto que
+	    la música no empieza a reproducirse a máximo volumen sino
+	    desde el silencio, y va subiendo de volumen gradualmente
+	    hasta que, pasado el tiempo indicado en el parámetro
+	    <i>milisegundos</i>, el volumen es completo.
+	</p>
+	<p>
+	    El segundo parámetro indica el número de veces
+	    que debe repetirse la reproducción. Puede usarse
+	    0 para no repetirla, o -1 para repetirla contínuamente
+	    hasta que se detenga con <a name="STOP_SONG" href="MUSIC/STOP_SONG"/>.
+	    Esta función es especialmente útil para reproducir efectos
+	    de sonido contínuos de este tipo (como por ejemplo, 
+	    sonidos ambientales) en lugar de música.
+	</p>
+    </description>
+    <see href="MUSIC/PLAY_SONG" name="PLAY_SONG"/>
+    <see href="MUSIC/STOP_SONG" name="STOP_SONG"/>
+    <see href="MUSIC/LOAD_SONG" name="LOAD_SONG"/>
+    <see href="MUSIC/UNLOAD_SONG" name="UNLOAD_SONG"/>
+    <see href="MUSIC/IS_PLAYING_SONG" name="IS_PLAYING_SONG"/>
+    <see href="MUSIC/FADE_MUSIC_OFF" name="FADE_MUSIC_OFF"/>
+</function>

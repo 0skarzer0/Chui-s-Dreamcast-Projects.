@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="MENU_ENABLE">
+<retval/>
+<param name="menu"> Identificador del menú </param>
+<param name="texto">Texto o índice de la opción</param>
+<abstract> Habilita una opción de un menú </abstract>
+<description>
+    <p>
+	Habilita una opción de un menú. Por defecto, todas
+	las opciones están habilitades. Sin embargo, es
+	posible desactivar una opción mediante
+	<a href="DLL/GUI/MENU_DISABLE" name="MENU_DISABLE" />.
+	En ese caso, es posible volver a activarla
+	llamando a esta opción. El 
+	menú debe previamente haber sido creado mediante la opción
+	<a href="DLL/GUI/MENU" name="MENU"/>.
+    </p>
+    <p>
+	El segundo parámetro debe contener el nombre exacto
+	de la opción, aunque también se permite especificar
+	en su lugar el número de la misma (0 es la primera).
+    </p>
+</description>
+<see href="DLL/GUI/MENU_ACTION" name="MENU_ACTION" />
+<see href="DLL/GUI/MENU_DISABLE" name="MENU_DISABLE" />
+</function>

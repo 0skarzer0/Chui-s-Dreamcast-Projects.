@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<variable name="GRAPH">
+    <abstract>Identificador del gráfico del proceso</abstract>    
+	<description>
+	<p>
+		Este identificador referencia un gráfico dentro del fichero FPG indicado 
+		por la variable local <a href="LVARS/FILE" name="FILE"/>.
+	</p>
+	<p>
+		En caso de tratarse de un gráfico de la librería FPG de sistema, identificada 
+		con el número 0, puede contener el identificador devuelto por cualqier función 
+		de carga de gráficos, como por ejemplo <a href="MAP/LOAD_MAP" name="LOAD_MAP"/> O 
+		<a href="MAP/LOAD_PNG" name="LOAD_PNG"/>, o de creación de nuevos gráficos, como 
+		por ejemplo <a href="MAP/NEW_MAP" name="NEW_MAP"/> o <a href="MAP/MAP_CLONE" name="MAP/CLONE"/>.
+	</p>
+    </description>
+    <see type="var" name="XGRAPH" href="LVARS/XGRAPH"/>
+    <see type="var" name="FILE" href="LVARS/FILE" />
+</variable>

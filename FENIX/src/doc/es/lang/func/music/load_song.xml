@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="LOAD_SONG">
+    <retval/>
+    <param name="fichero" type="STRING"> Nombre del fichero </param>
+    <abstract> Recupera de disco un fichero de música </abstract>
+    <description>
+	<p>
+	    Abre un fichero de música desde el disco, para
+	    reproducir posteriormente con <a name="PLAY_SONG" href="MUSIC/PLAY_SONG"/>.
+	    Actualmente se soportan los siguientes formatos:
+	    <br/><br/>
+		<b>OGG Vorbis (.ogg)</b>: Recomendado por su excelente
+		    calidad. Un fichero .ogg contiene una grabación digital de
+		    sonido, comprimido al máximo.  Si quieres usar
+		    música grabada en tu juego, es el formato adecuado.
+		<br/><br/>
+		<b>MIDI (.mid)</b>: Recomendado por el poco espacio que
+		    ocupan. Un fichero .mid sólo contiene una representación de
+		    las notas que componen la música, y la tarjeta de sonido se
+		    encarga de reproducir los instrumentos. Si quieres crear
+		    juegos que ocupen el mínimo posible, es el formato a
+		    elegir.
+		<br/><br/>
+		<b>Módulos (.xm, .it, .s3m, .mod)</b>: Contienen una
+		    representación de las notas que componen la música y,
+		    además, una digitalización de cada uno de los instrumentos
+		    usados. Es un formato intermedio a ambos, tanto en
+		    calidad como en tamaño.
+		<br/><br/>
+		<b>WAV (.wav)</b>: Contiene una grabación digital sin
+		    comprimir del audio, por lo que ocupan mucho. Úsalo
+		    sólo si en lugar de música quieres usar un efecto
+		    de sonido contínuo como fondo.
+	</p>
+	<p>
+	    Esta función devuelve un número entero que identifica la
+	    música, o -1 si el fichero no está en un formato reconocido.
+	    Puedes usar el número devuelto para reproducir la música
+	    mediante la función <a name="PLAY_SONG" href="MUSIC/PLAY_SONG"/>.
+	</p>
+    </description>
+    <see name="PLAY_SONG" href="MUSIC/PLAY_SONG"/>
+    <see name="STOP_SONG" href="MUSIC/STOP_SONG"/>
+    <see name="UNLOAD_SONG" href="MUSIC/UNLOAD_SONG"/>
+</function>

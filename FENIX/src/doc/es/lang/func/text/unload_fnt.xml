@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="UNLOAD_FNT">
+    <param name="fuente"> Número de tipo de letra </param>
+    <abstract> Libera la memoria ocupada por un tipo de letra </abstract>
+    <description>
+	<p>
+	    Libera la memoria ocupada por un tipo de letra recuperado
+	    de disco por la función <a href="LOAD_FNT"/>.
+	    Se considera un error utilizar a partir de ese momento
+	    el identificador en cualquier llamada a función, así como
+	    mantener en pantalla textos de esta fuente escritos con la función
+	    <a href="WRITE"/> u otra equivalente.
+	</p>
+    </description>
+    <see href="LOAD_FNT"/>
+</function>

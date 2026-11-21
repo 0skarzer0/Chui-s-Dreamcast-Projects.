@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "index.dtd">
+<INDEX>
+<parent HREF="/" name="FENIX"/>
+<fnc href="ADVANCE" />
+<fnc href="COLLISION" />
+<fnc href="EXISTS" />
+<fnc href="FGET_ANGLE" />
+<fnc href="FGET_DIST" />
+<fnc href="GET_ANGLE" />
+<fnc href="GET_DISTX" />
+<fnc href="GET_DISTY" />
+<fnc href="GET_ID" />
+<fnc href="GET_REAL_POINT" />
+<fnc href="LET_ME_ALONE" />
+<fnc href="SIGNAL" />
+<fnc href="XADVANCE" />
+</INDEX>

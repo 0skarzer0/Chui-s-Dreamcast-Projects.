@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ALLOC">
+    <retval type="POINTER" />
+    <param name="bytes" type="INT"> Tamaño en bytes de la zona de memoria a reservar </param>
+    <abstract> Reserva de memoria dinámica </abstract>
+    <description>
+	<p>
+	  Reserva una zona de memoria y devuelve un puntero a la misma.  Esta es una función 
+	  avanzada que requiere dominio del concepto de PUNTERO.  Dicha zona de 
+	  memoria puede contener restos de un uso anterior o datos aleatorios y es 
+	  responsabildiad del programdor inicializarla.	
+	</p>
+	<p>
+	  El puntero devuelto por ALLOC puede asignarse a cualquier variable de tipo 
+	  POINTER, p.e. byte pointer o int pointer.  Se aconseja guardar el puntero en 
+	  una variable global i acceder a la memoria usando el operador [] a lo largo 
+	  del programa.
+	</p>
+	<p>
+	  En caso de no poder reservar la memoria solicitada, alloc genera un error en
+	  tiempo de ejecución, sin embargo no es un caso frecuente, ya que el sistema 
+	  operativo puede emplear el espacio de disco libre para crear memória de intercambio 
+	  para solucionarlo.
+	</p>
+	<p>
+	  El número de elementos que cabran en la nueva zona de memoria reservada será igual 
+	  al tamaño total dividido por el tamaño de cada elemento para el tipo de puntero utilizado.  
+	  Para reservar espacio para 1000 bytes hay que reservar 1000 bytes, pero para reservar 
+	  espacio para 1000 ints hay que reservar 4000 bytes, 1000 * 4 bytes, que es el valor 
+	  que devuelve sizeof(int).  
+	</p>
+	<p>
+	  El puntero devuelto por alloc no debe descartarse ya que es preciso utilizarlo 
+	  con la función <a name="FREE" href="MEM/FREE" />, para liberar la memoria utilizada.
+	</p>
+    </description>
+    <see name="FREE" href="MEM/FREE"/>
+    <see name="REALLOC" href="MEM/REALLOC"/>
+</function>

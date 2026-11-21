@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="DELETE_DRAW">
+    <param name="objeto"> Identificador del objeto a eliminar </param>
+    <abstract> Borra un objeto gráfico dibujado con una de
+    las funciones de primitivas gráficas </abstract>
+    <description>
+	<p>
+		Destruye un objeto creado con una de las funciones de
+		primitivas (utilizan todas el prefijo DRAW_) cuando se
+		crearon después de una llamada a <a href="PRIM/DRAWING_Z" name="DRAWING_Z"/>.
+		El objeto no será dibujado en posteriores frames, y la
+		memoria utilizada para almacenarlo es liberada.
+	</p>
+	<p>
+		El parámetro que identifica al objeto es el valor devuelto
+		por la función de primitiva gráfica llamada para crearlo.
+		Alternativamente, puede especificarse 0 como objeto, con lo
+		que esta función destruirá todos los objetos creados con
+		funciones de primitivas gráficas.
+	</p>
+    </description>
+    <see href="PRIM/DRAWING_MAP" name="DRAWING_MAP"/>
+    <see href="PRIM/DRAWING_Z" name="DRAWING_Z"/>
+    <see href="PRIM/DRAW_BOX" name="DRAW_BOX"/>
+    <see href="PRIM/DRAW_CIRCLE" name="DRAW_CIRCLE"/>
+    <see href="PRIM/DRAW_FCIRCLE" name="DRAW_FCIRCLE"/>
+    <see href="PRIM/DRAW_LINE" name="DRAW_LINE"/>
+    <see href="PRIM/DRAW_CURVE" name="DRAW_CURVE"/>
+    <see href="PRIM/DRAW_RECT" name="DRAW_RECT"/>
+</function>

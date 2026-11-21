@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="ATAN">
+    <retval/>
+    <param name="number" type="FLOAT"> Floating point value </param>
+    <abstract> It returns the atan of a value </abstract>
+    <description>
+	<p>
+	    It returns an angle in thousandth of degree, between 0 and 360000,
+	    whose tan is equivalent to the value indicated like parameter.
+	</p>
+    </description>
+    <see href="MATH/TAN" name="TAN"/>
+</function>

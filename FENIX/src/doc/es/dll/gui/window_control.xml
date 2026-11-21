@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE fenixdoc SYSTEM "fenixdoc.dtd">
+
+<function name="WINDOW_CONTROL">
+    <retval>
+	Identificador del control
+    </retval>
+    <param name="ventana"> Identificador de la ventana </param>
+    <param name="número"> Número de índice del control (0 para el primero) </param>
+    <abstract> 
+	Devuelve alguno de los controles contenidos por la ventana
+    </abstract>
+    <description>
+	<p>
+	    Esta función permite obtener los identificadores de los
+	    controles contenidos en una ventana existente, que
+	    hayan sido añadidos a la misma empleando la función
+	    <a href="WINDOW_ADDCONTROL"/>. El número de índice
+	    del control debe estar entre 0 y el número total de
+	    controles (puede obtenerse con <a href="WINDOW_CONTROLS"/> menos 1.
+	</p>
+	<p>
+	    Los controles se añaden en orden. El primer control en
+	    añadir a una ventana siempre tendrá el índice 0, y así
+	    sucesivamente.
+	</p>
+    </description>
+    <see name="WINDOW" href="DLL/GUI/WINDOW"/>
+    <see name="WINDOW_ADDCONTROL"/>
+    <see name="WINDOW_CONTROLS"/>
+</function>
