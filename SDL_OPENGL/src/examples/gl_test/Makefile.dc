@@ -1,0 +1,27 @@
+TARGET = gl_test
+
+OPTFLAGS=-O2 -fomit-frame-pointer -DDREAMCAST
+
+KOS_CFLAGS+= -I$(KOS_BASE)/addons/include/SDL $(OPTFLAGS) 
+
+all: $(TARGET).bin
+
+include $(KOS_BASE)/Makefile.rules
+
+.SRCS	=	gl_test.c \
+
+OBJS = $(.SRCS:.c=.o)
+
+clean:
+	rm -f $(OBJS) $(TARGET).elf $(TARGET).bin
+
+$(TARGET).elf: $(OBJS)
+	$(KOS_CC) $(KOS_CFLAGS) $(KOS_LDFLAGS) -o $(TARGET).elf $(KOS_START) \
+		$(OBJS) -lSDL_gl_129 -lgl -lm $(OBJEXTRA) $(KOS_LIBS)
+
+$(TARGET).bin: $(TARGET).elf
+	$(KOS_OBJCOPY) -R .stack -O binary $(TARGET).elf $(TARGET).bin
+
+run: $(TARGET).bin
+	$(KOS_LOADER) $(TARGET).bin
+

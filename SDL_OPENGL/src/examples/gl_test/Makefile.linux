@@ -1,0 +1,14 @@
+TARGET=gl_test
+
+CFLAGS=`sdl-config --cflags`
+LDFLAGS=`sdl-config --libs`  -lglut -lGL -lGLU
+
+OBJS= $(TARGET).o
+
+$(TARGET): $(OBJS)
+
+run: $(TARGET)
+	./$(TARGET)
+
+clean:
+	rm -f $(TARGET) *.o

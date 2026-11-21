@@ -1,0 +1,72 @@
+
+CC = arm-elf-gcc
+AS = arm-elf-as
+LD = 	arm-elf-ld
+OBJCOPY = arm-elf-objcopy
+
+DEPENDFILE	=	Makedepend
+MAPFILE		=	oldsega.map
+TARGET_ELF	=	oldsega.elf
+TARGET_BIN	=	oldsega.gxb
+TARGET_FXE	=	oldsega.fxe
+LDSCRIPT	=	lnkscript
+X_LDSCRIPT	= 	arm-gp32bin.x
+
+
+
+.SFILES =	crt0x_gp32.s 
+
+.CFILES	=	oldsega.c
+
+.OFILES	=	$(.SFILES:.s=.o) $(.CFILES:.c=.o)
+
+
+OPTFLAGS =	-mtune=arm920 -march=armv4t -marm -mno-thumb-interwork \
+		-msoft-float -ffast-math -nostdlib -fno-common \
+		-ffreestanding -fno-builtin -fno-exceptions \
+		-mstructure-size-boundary=8 -fomit-frame-pointer \
+		-fstrict-aliasing -O6 \
+
+
+CFLAGS	=	-I$(GP32PATH)/include/SDL -I. \
+		$(OPTFLAGS) -DGP32 -Wall -Wno-switch \
+
+LDFLAGS	=	-Map $(MAPFILE) -nostartfiles --script $(X_LDSCRIPT) \
+		-L$(GP32PATH)/arm-elf/lib
+		
+SYSTEMLIBS =	-lSDLx_image -lSDLx_mixer -lSDLx \
+		-lpng_x -ljpeg_x -lz_x -lx_gp32 -lm -lgcc
+
+DOLINK =	$(LD) $(LDFLAGS) $(.OFILES) $(SYSTEMLIBS) -o $(TARGET_ELF)
+
+
+$(TARGET_FXE): $(TARGET_BIN)
+	b2fxec $< $@
+
+$(TARGET_BIN): $(TARGET_ELF)
+	$(OBJCOPY) -O binary $< $@
+
+$(TARGET_ELF): $(.OFILES) $(DEPENDFILE)
+	$(DOLINK)
+
+
+.PHONY: all clean depend
+
+all:    clean depend $(TARGET_BIN)
+
+tags:	$(DEPENDFILE)
+	ctags -e *.c *.s *.h *.S
+
+clean:
+	-rm -f $(.OFILES) $(DEPENDFILE) $(MAPFILE) $(TARGET_ELF) $(TARGET_BIN) TAGS
+
+send: $(TARGET_FXE)
+	gplink -c -x put $(TARGET_FXE) /GPMM
+
+depend:
+	$(CC) $(CFLAGS) -M $(.CFILES) > $(DEPENDFILE)
+
+$(DEPENDFILE):
+	$(CC) $(CFLAGS) -M $(.CFILES) > $(DEPENDFILE)
+
+include $(DEPENDFILE)

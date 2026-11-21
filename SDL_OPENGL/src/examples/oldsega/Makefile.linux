@@ -1,0 +1,18 @@
+TARGET=oldsega
+
+CC=gcc
+
+CFLAGS=-O6
+
+all: $(TARGET)
+
+OBJS=$(TARGET).o
+
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $@ $(OBJS) -lSDL -lSDL_mixer -lSDL_image
+
+run: $(TARGET)
+	./$(TARGET)
+
+clean:
+	rm -f $(OBJS) $(TARGET)
