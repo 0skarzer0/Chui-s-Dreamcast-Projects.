@@ -42,7 +42,12 @@ original, su SHA-256 y la fecha de su fichero más reciente.
 | ZX4ALL | `ZX4ALL/src` | beta 2 |
 | PCSX4ALL | `pcsx4all/src` | 2 |
 
-AES4ALL no tiene `src`: la web original solo ofrecía binarios y datos de ese proyecto.
+AES4ALL no tiene `src` propio porque **comparte código con NEO4ALL**: es el mismo programa compilado en
+modo AES (AES/MVS en lugar de NEO·GEO CD). Su página lo dice («Download source code from main NEO4ALL
+project») y solo ofrecía binarios y datos. El código del modo AES está en `NEO4ALL/src/neo4all/src/aes/`
+desde la versión RC1 (con `NEO4ALL/src/convertneo/src/neoaes.c`, el conversor de ROMs a `.aes`); en
+`NEO4ALL/src/neo4all/config.mk` se activa con la variable `AES` (línea `#AES=1` comentada), que da el
+ejecutable `aes4all`. No se ha compilado para comprobarlo.
 Tampoco hay fuentes de las versiones para Windows, Dingoo ni de los binarios (`1st_read.bin`).
 
 Para ver la historia de un proyecto: `git log --stat -- NEO4ALL/src`, y para comparar dos

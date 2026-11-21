@@ -21,7 +21,7 @@ Copia de preservación de la antigua web de emuladores de Dreamcast de Chui. Una
 
 ## Decisiones
 - Los paquetes originales se conservan en `archivos/` porque las páginas enlazan a ellos.
-- AES4ALL no tiene `src`: sus `.rar` son binarios y datos, sin código. Tampoco se extrajeron las versiones Windows/Dingoo ni los binarios (`1st_read.bin`).
+- AES4ALL no tiene `src` propio: sus `.rar` son binarios y datos, sin código, y su código fuente es el de NEO4ALL compilado con `AES` activado (`src/aes/` y `convertneo/src/neoaes.c` desde RC1; `config.mk`: `NAME = aes4all`). No se sabe de qué versión exacta de NEO4ALL salió cada binario de AES4ALL (alpha, beta 1, 2, 4) y no se ha compilado el modo AES. Tampoco se extrajeron las versiones Windows/Dingoo ni los binarios (`1st_read.bin`).
 - No se crea ninguna release de GitHub.
 - No se añade licencia: se respetan las que traen los paquetes.
 
