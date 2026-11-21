@@ -1,0 +1,60 @@
+# Noiz2sa makefile(MinGW 2.0.0)
+# $Id: Makefile,v 1.4 2003/08/10 09:00:05 kenta Exp $
+
+NAME   = noiz2sa
+O      = o
+RM     = rm -f
+CC     = gcc
+CXX    = g++
+STRIP  = strip
+
+PROG   = $(NAME)
+
+DEFAULT_CFLAGS = `sdl-config --cflags`
+LDFLAGS        = `sdl-config --libs` -lSDL_mixer -lstdc++
+
+MORE_CFLAGS = -O3 -DDATA_PREFIX=\"data/\" -DFILE_SEPARATOR=\"/\" -DSCREEN_DIVISOR=2
+
+CFLAGS  = $(DEFAULT_CFLAGS) $(MORE_CFLAGS)
+CPPFLAGS  = $(DEFAULT_CFLAGS) $(MORE_CFLAGS) -I./src/bulletml -I./src
+
+OBJS =	src/$(NAME).o \
+	src/ship.o \
+	src/shot.o \
+	src/frag.o \
+	src/bonus.o \
+	src/foe.o \
+	src/foecommand.o \
+	src/barragemanager.o \
+	src/attractmanager.o \
+	src/background.o \
+	src/letterrender.o \
+	src/screen.o \
+	src/clrtbl.o \
+	src/vector.o \
+	src/degutil.o \
+	src/rand.o \
+	src/soundmanager.o \
+	src/bulletml/bulletmlparser.o \
+	src/bulletml/bulletmlparser-tinyxml.o \
+	src/bulletml/bulletmlrunner.o \
+	src/bulletml/bulletmlrunnerimpl.o \
+	src/bulletml/bulletmltree.o \
+	src/bulletml/calc.o \
+	src/bulletml/formula-variables.o \
+	src/bulletml/tinyxml/tinyxml.o \
+	src/bulletml/tinyxml/tinyxmlerror.o \
+	src/bulletml/tinyxml/tinyxmlparser.o \
+
+
+
+$(PROG): $(OBJS) 
+	$(CC) $(CFLAGS) -o $(PROG) $(OBJS) $(LDFLAGS)
+	$(STRIP) $(PROG)
+
+
+run: $(PROG)
+	./$(PROG) -window
+
+clean:
+	$(RM) $(PROG) $(OBJS)
