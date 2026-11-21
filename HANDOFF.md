@@ -26,6 +26,6 @@ Copia de preservación de la antigua web de emuladores de Dreamcast de Chui. Una
 - No se añade licencia: se respetan las que traen los paquetes.
 
 ## Pendiente / ideas
-- Si se quiere trabajar un emulador por separado, se puede sacar a su propio repositorio conservando la historia, p. ej. con `git filter-repo --subdirectory-filter NEO4ALL/src`.
+- Hecho (2026-11-21): NEO4ALL, MAME4ALL y SNES4ALL tienen repositorio propio (`git filter-repo --subdirectory-filter <PROYECTO>/src`). Las etiquetas de versión existen en local pero el proxy de la sesión rechazó subirlas (HTTP 403); si se quieren, crearlas desde la tabla de versiones de cada README.
 - `NEO4ALL/src/neo4all` y `MAME4ALL/src` son la base para `mame4all-naomi` y otros ports a NAOMI; conviene citar a Chui en esos README.
 - Hay 4 referencias `./archivos/blank` (sin extensión) en `UAE4ALL`, un fallo de la web original (espaciador de 2 px).

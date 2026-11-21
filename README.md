@@ -59,6 +59,16 @@ editor (`.swp`, en DCASTAWAY, MAME4ALL, SNES4ALL beta 1 y kos-ports) y **git no 
 vacías**: no están las 85 de FENIX, las 4 de `nehe` y `kos-ports/SDL_gfx/lib`. Si un `make` las
 necesita, hay que crearlas (`mkdir -p`).
 
+## Repositorios independientes
+
+NEO4ALL, MAME4ALL y SNES4ALL también tienen su propio repositorio, con la misma historia de versiones (extraída de aquí con `git filter-repo`) y su README y HANDOFF:
+
+- [NEO4ALL](https://github.com/0skarzer0/NEO4ALL) (incluye el modo AES4ALL)
+- [MAME4ALL](https://github.com/0skarzer0/MAME4ALL)
+- [SNES4ALL](https://github.com/0skarzer0/SNES4ALL)
+
+Este repositorio sigue intacto como archivo de la web completa.
+
 ## Créditos y licencias
 
 - **Chui**: autor de todos estos proyectos y de la web original (`chui.dcemu.co.uk`).
