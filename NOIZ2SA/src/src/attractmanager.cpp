@@ -71,7 +71,7 @@ void dcwrite_score(void)
 
 	fd=fs_open(SAVE_PREF_FILE,O_RDONLY);
 	file_size=fs_total(fd);
-	data=malloc(file_size);
+	data=(uint8 *)malloc(file_size);
 	fs_read(fd,data,file_size);
 	fs_close(fd);
 			

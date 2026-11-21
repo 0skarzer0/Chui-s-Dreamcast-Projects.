@@ -9,11 +9,20 @@
  *
  * @version $Revision: 1.3 $
  */
-#include <math.h>
+
+#ifdef DREAMCAST
+#include <kos.h>
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "SDL.h"
+#include <math.h>
+#include <SDL.h>
+
+#ifdef DREAMCAST
+#include <SDL_dreamcast.h>
+#endif
 
 #include "noiz2sa.h"
 #include "screen.h"
@@ -23,10 +32,11 @@
 #include "letterrender.h"
 #include "attractmanager.h"
 
+static int initted = 0;
 int windowMode = 0;
 int brightness = DEFAULT_BRIGHTNESS;
 
-static SDL_Surface *video, *layer, *lpanel, *rpanel;
+static SDL_Surface *video, *real_video, *layer, *lpanel, *rpanel;
 static LayerBit **smokeBuf;
 static LayerBit *pbuf;
 LayerBit *l1buf, *l2buf;
@@ -36,6 +46,8 @@ static SDL_Rect screenRect, layerRect, layerClearRect;
 static SDL_Rect lpanelRect, rpanelRect, panelClearRect;
 static int pitch, ppitch;
 
+static short pal16[256];
+
 // Handle BMP images.
 #define SPRITE_NUM 7
 
@@ -44,6 +56,9 @@ static char *spriteFile[SPRITE_NUM] = {
   "title_n.bmp", "title_o.bmp", "title_i.bmp", "title_z.bmp", "title_2.bmp", 
   "title_s.bmp", "title_a.bmp",
 };
+
+static char *chuiLogo_filename= DATA_PREFIX "images" FILE_SEPARATOR "chui.bmp";
+static SDL_Surface *chuiLogo=NULL;
 
 Uint8 *keys;
 SDL_Joystick *stick = NULL;
@@ -67,9 +82,22 @@ static void loadSprites() {
 				   video->format, 
 				   SDL_HWSURFACE | SDL_SRCCOLORKEY);
     SDL_SetColorKey(sprite[i], SDL_SRCCOLORKEY | SDL_RLEACCEL, 0);
+    SDL_FreeSurface(img);
   }
   color[0].r = color[0].g = color[0].b = 255;
   SDL_SetColors(video, color, 0, 1);
+  img = SDL_LoadBMP(chuiLogo_filename);
+  if (img)
+  {
+	  chuiLogo=SDL_DisplayFormat(img);
+	  SDL_FreeSurface(img);
+  }
+  else
+  {
+      fprintf(stderr, "Unable to load: %s\n", chuiLogo_filename);
+      SDL_Quit();
+      exit(1);
+  }
 }
 
 void drawSprite(int n, int x, int y) {
@@ -121,26 +149,64 @@ static void makeSmokeBuf() {
   }
 }
 
+static void showIntro_RGB(int n, int max, int rgb);
+
 void initSDL(int window) {
   Uint8 videoBpp;
   Uint32 videoFlags;
   SDL_PixelFormat *pfrm;
+  int i;
 
-  if ( SDL_Init(SDL_INIT_VIDEO | SDL_INIT_JOYSTICK) < 0 ) {
+  if (initted) return;
+
+  if ( SDL_Init(SDL_INIT_VIDEO|SDL_INIT_CDROM|SDL_INIT_AUDIO|SDL_INIT_JOYSTICK) < 0 ) {
     fprintf(stderr, "Unable to initialize SDL: %s\n", SDL_GetError());
     exit(1);
   }
   atexit(SDL_Quit);
 
+#ifdef USE_VIDEO16
+  videoBpp = 16;
+  videoFlags = 0;
+#else
   videoBpp = BPP;
-  videoFlags = SDL_DOUBLEBUF | SDL_HWSURFACE | SDL_HWPALETTE;
-  if ( !window ) videoFlags |= SDL_FULLSCREEN;
+  videoFlags = SDL_DOUBLEBUF;
+#endif
+
+  videoFlags |= SDL_HWSURFACE | SDL_HWPALETTE;
+
+#ifndef WIN32
+#ifdef DREAMCAST
+#ifdef USE_VIDEO16
+  SDL_DC_SetVideoDriver(SDL_DC_DIRECT_VIDEO);
+#else
+  SDL_DC_SetVideoDriver(SDL_DC_DMA_VIDEO);
+#endif
+#else
+  if ( !window )
+#endif
+	  videoFlags |= SDL_FULLSCREEN;
+#endif
 
   if ( (video = SDL_SetVideoMode(SCREEN_WIDTH, SCREEN_HEIGHT, videoBpp, videoFlags)) == NULL ) {
     fprintf(stderr, "Unable to create SDL screen: %s\n", SDL_GetError());
     SDL_Quit();
     exit(1);
   }
+#ifdef USE_VIDEO16
+  real_video=video;
+  video= SDL_CreateRGBSurface(SDL_SWSURFACE, SCREEN_WIDTH, SCREEN_HEIGHT, BPP, 0, 0, 0, 0);
+  videoBpp = BPP;
+#else
+  real_video = video;
+#endif
+
+#ifndef DREAMCAST
+  SDL_WM_SetCaption(CAPTION, NULL);
+#endif
+  SDL_ShowCursor(SDL_DISABLE);
+  //SDL_WM_GrabInput(SDL_GRAB_ON);
+
   screenRect.x = screenRect.y = 0;
   screenRect.w = SCREEN_WIDTH; screenRect.h = SCREEN_HEIGHT;
   pfrm = video->format;
@@ -186,13 +252,30 @@ void initSDL(int window) {
 
   loadSprites();
 
+#ifdef USE_VIDEO16
+  for(i=0;i<256;i++)
+  {
+	Uint8 r,g,b;
+	SDL_GetRGB(i,video->format,&r,&g,&b);
+	pal16[i]=SDL_MapRGB(real_video->format,r,g,b);
+  }
+#endif
+
   SDL_JoystickEventState(SDL_ENABLE);
 //SDL_JoystickOpen(0); stick=NULL;
   stick = SDL_JoystickOpen(0);
 
-  SDL_WM_SetCaption(CAPTION, NULL);
-  SDL_ShowCursor(SDL_DISABLE);
-  //SDL_WM_GrabInput(SDL_GRAB_ON);
+  for (i=0;i<128;i+=2)
+  {
+	SDL_FillRect(real_video,NULL,SDL_MapRGB(real_video->format,i,i,i));
+	SDL_Flip(real_video);
+#ifndef DREAMCAST
+	SDL_Delay(50);
+#endif
+  }
+  for (i=128;i<256;i+=2)
+	showIntro_RGB(0, 100, i);
+  initted=1;
 }
 
 void closeSDL() {
@@ -206,6 +289,79 @@ void blendScreen() {
   }
 }
 
+#ifdef USE_VIDEO16
+static void real_flip(void)
+{
+#ifndef DREAMCAST
+	SDL_LockSurface(real_video);
+	register Uint8 *src=(Uint8 *)video->pixels;
+	register Uint16 *dst=(Uint16 *)real_video->pixels;
+	unsigned offs=(real_video->pitch>>1)-real_video->w;
+	int i,j;
+	for(j=0;j<SCREEN_HEIGHT;j++)
+	{
+		for(i=0;i<SCREEN_WIDTH;i++)
+			*dst++ = pal16[*src++];
+		dst+=offs;
+	}
+	SDL_UnlockSurface(real_video);
+	SDL_Flip(real_video);
+#else
+	register Uint8 *s=(Uint8 *)video->pixels;
+	register Uint32 *d=(Uint32 *)(void *)
+		(0xe0000000 | (((unsigned long)vram_l) & 0x03ffffe0));
+	QACR0 = ((((unsigned int)real_video->pixels)>>26)<<2)&0x1c;
+	QACR1 = ((((unsigned int)real_video->pixels)>>26)<<2)&0x1c;
+
+	register int n=(SCREEN_WIDTH*SCREEN_HEIGHT)>>4;
+	while(n--) {
+		asm("pref @%0" : : "r" (s + 8));
+
+		register Uint32 o;
+
+		o=((Uint32)pal16[*s++])&0x0000ffff;
+		o|=(((Uint32)pal16[*s++])<<16);
+		d[0]=o;
+
+		o=((Uint32)pal16[*s++])&0x0000ffff;
+		o|=(((Uint32)pal16[*s++])<<16);
+		d[1]=o;
+
+		o=((Uint32)pal16[*s++])&0x0000ffff;
+		o|=(((Uint32)pal16[*s++])<<16);
+		d[2]=o;
+
+		o=((Uint32)pal16[*s++])&0x0000ffff;
+		o|=(((Uint32)pal16[*s++])<<16);
+		d[3]=o;
+
+		o=((Uint32)pal16[*s++])&0x0000ffff;
+		o|=(((Uint32)pal16[*s++])<<16);
+		d[4]=o;
+
+		o=((Uint32)pal16[*s++])&0x0000ffff;
+		o|=(((Uint32)pal16[*s++])<<16);
+		d[5]=o;
+
+		o=((Uint32)pal16[*s++])&0x0000ffff;
+		o|=(((Uint32)pal16[*s++])<<16);
+		d[6]=o;
+
+		o=((Uint32)pal16[*s++])&0x0000ffff;
+		o|=(((Uint32)pal16[*s++])<<16);
+		d[7]=o;
+
+		asm("pref @%0" : : "r" (d));
+		d += 8;
+	}
+	d = (Uint32 *)0xe0000000;
+	d[0] = d[8] = 0;
+#endif
+}
+#else
+#define real_flip() SDL_Flip(video);
+#endif
+
 void flipScreen() {
   SDL_BlitSurface(layer, NULL, video, &layerRect);
   SDL_BlitSurface(lpanel, NULL, video, &lpanelRect);
@@ -213,7 +369,7 @@ void flipScreen() {
   if ( status == TITLE ) {
     drawTitle();
   }
-  SDL_Flip(video);
+  real_flip();
 }
 
 void clearScreen() {
@@ -485,7 +641,7 @@ void drawBoxPanel(int x, int y, int width, int height,
 int drawNum(int n, int x ,int y, int s, int c1, int c2) {
   for ( ; ; ) {
     drawLetter(n%10, x, y, s, 1, c1, c2, lpbuf);
-    y += (s*1.7f) / (float)SCREEN_DIVISOR;
+    y += (int)((((float)s)*1.7f) / (float)SCREEN_DIVISOR);
     n /= 10;
     if ( n <= 0 ) break;
   }
@@ -499,13 +655,13 @@ int drawNumRight(int n, int x ,int y, int s, int c1, int c2) {
     if ( nd > 0 || drawn ) {
       n -= d*nd;
       drawLetter(nd%10, x, y, s, 3, c1, c2, rpbuf);
-      y += (s*1.7f) / (float)SCREEN_DIVISOR;
+      y += (int)((((float)s)*1.7f) / (float)SCREEN_DIVISOR);
       drawn = 1;
     }
   }
   if ( !drawn ) {
     drawLetter(0, x, y, s, 3, c1, c2, rpbuf);
-    y += (s*1.7f) / (float)SCREEN_DIVISOR;
+    y += (int)((((float)s)*1.7f) / (float)SCREEN_DIVISOR);
   }
   return y;
 }
@@ -513,7 +669,7 @@ int drawNumRight(int n, int x ,int y, int s, int c1, int c2) {
 int drawNumCenter(int n, int x ,int y, int s, int c1, int c2) {
   for ( ; ; ) {
     drawLetterBuf(n%10, x, y, s, 2, c1, c2, buf, 0);
-    x -= (s*1.7f) / (float)SCREEN_DIVISOR;
+    x -= (int)((((float)s)*1.7f) / (float)SCREEN_DIVISOR);
     n /= 10;
     if ( n <= 0 ) break;
   }
@@ -577,4 +733,53 @@ int getButtonState() {
     }
   }
   return btn;
+}
+
+static void showIntro_RGB(int n, int max, int rgb)
+{
+	int wid=0,i;
+	SDL_Rect r;
+
+	for(i=0;i<SPRITE_NUM;i++)
+		wid+=4+sprite[i]->w;
+	wid=(video->w-wid)/2;
+
+	SDL_FillRect(video,NULL,SDL_MapRGB(video->format,rgb,rgb,rgb));
+	
+	for(i=0;i<SPRITE_NUM;i++)
+	{
+		r.x=wid;
+		r.y=48;
+		r.h=sprite[i]->h;
+		r.w=sprite[i]->w;
+		wid+=r.w+4;
+  		SDL_BlitSurface(sprite[i], NULL, video, &r);
+	}
+	r.x=(video->w-chuiLogo->w)/2;
+	r.y=48+sprite[0]->h+48;
+	r.h=chuiLogo->h;
+	r.w=chuiLogo->w;
+  	SDL_BlitSurface(chuiLogo, NULL, video, &r);
+
+	r.x=16-2;
+	r.w=video->w-32+4;
+	r.y=48+sprite[0]->h+48+chuiLogo->h+48-2;
+	r.h=16+4;
+	SDL_FillRect(video,&r,SDL_MapRGB(video->format,0x82,0x82,0x82));
+
+	r.x=16;
+	r.w=(n*(video->w-32))/max;
+	r.y=48+sprite[0]->h+48+chuiLogo->h+48;
+	r.h=16;
+	SDL_FillRect(video,&r,SDL_MapRGB(video->format,0xC8,0xC8,0xC8));
+
+	real_flip();
+#ifndef DREAMCAST
+	SDL_Delay(50);
+#endif
+}
+
+void showIntro(int n, int max)
+{
+	showIntro_RGB(n, max, 0xFF);
 }

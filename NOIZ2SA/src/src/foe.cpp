@@ -9,15 +9,14 @@
  *
  * @version $Revision: 1.5 $
  */
-#include "barragemanager.h"
-#include "foe.h"
 
-extern "C" {
-#include "SDL.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <SDL.h>
 
 #include "noiz2sa.h"
+#include "barragemanager.h"
+#include "foe.h"
 #include "screen.h"
 #include "vector.h"
 #include "degutil.h"
@@ -28,7 +27,6 @@ extern "C" {
 #include "soundmanager.h"
 #include "attractmanager.h"
 #include "brgmng_mtd.h"
-}
 
 #define FOE_MAX 1024
 #define FOE_TYPE_MAX 4

@@ -25,8 +25,8 @@
 #define SCAN_WIDTH_8 (SCAN_WIDTH<<8)
 #define SCAN_HEIGHT_8 (SCAN_HEIGHT<<8)
 
-#define BPP 8
 #define LayerBit Uint8
+#define BPP 8
 
 #define PAD_UP 1
 #define PAD_DOWN 2
@@ -67,3 +67,4 @@ void drawSprite(int n, int x, int y);
 
 int getPadState();
 int getButtonState();
+void showIntro(int n, int max);

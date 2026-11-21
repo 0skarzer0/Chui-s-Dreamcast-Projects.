@@ -9,13 +9,18 @@
  *
  * @version $Revision: 1.4 $
  */
-#ifdef __cplusplus
-extern "C" {
-#endif
-#include "SDL.h"
+#include <stdio.h>
+#include <stdlib.h>
 #include <sys/types.h>
 #include <dirent.h>
+#include <SDL.h>
+
 #include "noiz2sa.h"
+#include "bulletml/bulletmlparser.h"
+#include "bulletml/bulletmlparser-tinyxml.h"
+#include "bulletml/bulletmlrunner.h"
+#include "foe.h"
+
 #include "degutil.h"
 #include "vector.h"
 #include "screen.h"
@@ -23,9 +28,6 @@ extern "C" {
 #include "brgmng_mtd.h"
 #include "soundmanager.h"
 #include "attractmanager.h"
-#ifdef __cplusplus
-}
-#endif
 
 #include "barragemanager.h"
 #include "foe.h"
@@ -67,12 +69,15 @@ static int readBulletMLFiles(const char *dirPath, Barrage brg[]) {
 static unsigned int rnd;
 
 void initBarragemanager() {
+  showIntro(0,BARRAGE_TYPE_NUM*16);
   for ( int i=0 ; i<BARRAGE_TYPE_NUM ; i++ ) {
     barragePatternNum[i] = readBulletMLFiles(BARRAGE_DIR_NAME[i], barragePattern[i]);
-//    printf("--------\n");
     for ( int j=0 ; j<barragePatternNum[i] ; j++ ) {
       barragePattern[i][j].type = i;
+      if (!(j&1))
+      showIntro((i*16)+((j*16)/barragePatternNum[i]),BARRAGE_TYPE_NUM*16);
     }
+    showIntro((i+1)*16,BARRAGE_TYPE_NUM*16);
   }
 }
 

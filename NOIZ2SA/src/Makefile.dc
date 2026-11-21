@@ -1,0 +1,57 @@
+TARGET = noiz2sa
+
+KOS_CFLAGS+= -I$(KOS_BASE)/addons/include/SDL -I$(KOS_BASE)/addons/include -Isrc -Isrc/bulletml -DDREAMCAST -DDATA_PREFIX="/cd/"  -DFILE_SEPARATOR="/" -DBOOST_NO_EXCEPTIONS -DSCREEN_DIVISOR=2
+
+KOS_CFLAGS+=-DUSE_VIDEO16
+
+KOS_CPPFLAGS=-fno-operator-names -fno-exceptions $(KOS_CFLAGS)
+
+all: $(TARGET).bin
+
+include $(KOS_BASE)/Makefile.rules
+
+OBJS =	\
+	src/noiz2sa.o \
+	src/ship.o \
+	src/shot.o \
+	src/frag.o \
+	src/bonus.o \
+	src/foe.o \
+	src/foecommand.o \
+	src/barragemanager.o \
+	src/attractmanager.o \
+	src/background.o \
+	src/letterrender.o \
+	src/screen.o \
+	src/clrtbl.o \
+	src/vector.o \
+	src/degutil.o \
+	src/rand.o \
+	src/soundmanager.o \
+	src/bulletml/bulletmlparser.o \
+	src/bulletml/bulletmlparser-tinyxml.o \
+	src/bulletml/bulletmlrunner.o \
+	src/bulletml/bulletmlrunnerimpl.o \
+	src/bulletml/bulletmltree.o \
+	src/bulletml/calc.o \
+	src/bulletml/formula-variables.o \
+	src/bulletml/tinyxml/tinyxml.o \
+	src/bulletml/tinyxml/tinyxmlerror.o \
+	src/bulletml/tinyxml/tinyxmlparser.o \
+
+clean:
+	rm -f $(OBJS) $(TARGET).elf $(TARGET).bin data.iso
+
+$(TARGET).elf: $(OBJS) 
+	$(KOS_CC) $(KOS_CFLAGS) $(KOS_LDFLAGS) -o $(TARGET).elf $(KOS_START) \
+	$(OBJS) -lSDL_mixer_126 -lSDL_129 $(OBJEXTRA) -lm -lstdc++ $(KOS_LIBS)
+
+$(TARGET).bin: $(TARGET).elf
+	$(KOS_OBJCOPY) -R .stack -O binary $(TARGET).elf $(TARGET).bin
+
+data.iso: data
+	mkisofs -joliet-long -l -o data.iso -graft-points /=data/
+
+run: $(TARGET).bin data.iso
+	$(KOS_LOADER) $(TARGET).bin -i data.iso
+

@@ -1,0 +1,63 @@
+NAME   = noiz2sa
+O      = o
+RM     = rm -f
+CC     = gcc
+CXX    = g++
+STRIP  = strip
+
+PROG   = $(NAME)
+
+all: $(PROG)
+
+
+DEFAULT_CFLAGS = `sdl-config --cflags` -DWIN32
+LDFLAGS        = `sdl-config --libs` -lz
+
+MORE_CFLAGS = -Di386 -DWINDOWS -O3 -DDATA_PREFIX=\"data/\" -ffast-math -fno-common -fno-builtin -fno-exceptions -fstrict-aliasing -O3 -march=i686 -DNOARGS -DROM_PATH_PREFIX=\"./\" -DFILE_SEPARATOR=\"/\" -DSAVE_PREFIX=\"./\" -DSAVE_MEM_PREFIX=\"./\" -DBOOST_NO_EXCEPTIONS -DSCREEN_DIVISOR=2
+
+MORE_CFLAGS += -DUSE_VIDEO16
+
+CFLAGS  = $(DEFAULT_CFLAGS) $(MORE_CFLAGS) 
+CPPFLAGS  = $(DEFAULT_CFLAGS) $(MORE_CFLAGS) -Isrc -Isrc/bulletml
+
+OBJS =	\
+	src/$(NAME).o \
+	src/ship.o \
+	src/shot.o \
+	src/frag.o \
+	src/bonus.o \
+	src/foe.o \
+	src/foecommand.o \
+	src/barragemanager.o \
+	src/attractmanager.o \
+	src/background.o \
+	src/letterrender.o \
+	src/screen.o \
+	src/clrtbl.o \
+	src/vector.o \
+	src/degutil.o \
+	src/rand.o \
+	src/soundmanager.o \
+	src/bulletml/bulletmlparser.o \
+	src/bulletml/bulletmlparser-tinyxml.o \
+	src/bulletml/bulletmlrunner.o \
+	src/bulletml/bulletmlrunnerimpl.o \
+	src/bulletml/bulletmltree.o \
+	src/bulletml/calc.o \
+	src/bulletml/formula-variables.o \
+	src/bulletml/tinyxml/tinyxml.o \
+	src/bulletml/tinyxml/tinyxmlerror.o \
+	src/bulletml/tinyxml/tinyxmlparser.o \
+
+
+
+$(PROG): $(OBJS)
+	$(CC) -L/usr/local/lib -o $(PROG) -lmingw32 $(OBJS)  -lstdc++ -lSDL_static_129 -mwindows -mno-cygwin -luser32 -lgdi32 -lwinmm -ldxguid
+	$(STRIP) $(PROG).exe
+
+
+run: $(PROG)
+	./$(PROG).exe
+
+clean:
+	$(RM) $(PROG).exe $(OBJS) std*.txt

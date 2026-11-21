@@ -9,13 +9,13 @@
  *
  * @version $Revision: 1.4 $
  */
-#include "SDL.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <signal.h>
 #include <string.h>
 
-#include "SDL_mixer.h"
+#include "SDL.h"
+#include <SDL_mixer.h>
 #include "soundmanager.h"
 
 static int useAudio = 0;
@@ -26,6 +26,7 @@ static int useAudio = 0;
 //static Mix_Music *music[MUSIC_NUM];
 
 static Mix_Music *music=NULL;
+static SDL_CD *cdrom=NULL;
 
 #define CHUNK_NUM 7
 
@@ -38,6 +39,13 @@ static int chunkFlag[CHUNK_NUM];
 void closeSound() {
   int i;
   if ( !useAudio ) return;
+  if (cdrom)
+  {
+	  SDL_CDStop(cdrom);
+	  SDL_CDClose(cdrom);
+	  cdrom=NULL;
+  }
+  else
   if ( Mix_PlayingMusic() ) {
     Mix_HaltMusic();
   }
@@ -92,10 +100,12 @@ void initSound() {
   int audio_buffers;
   int interactive = 0;
 
+/*
   if ( SDL_InitSubSystem(SDL_INIT_AUDIO) < 0 ) {
     fprintf(stderr, "Unable to initialize SDL_AUDIO: %s\n", SDL_GetError());
     return;
   }
+*/
 
   audio_rate = 44100;
   audio_format = AUDIO_S16;
@@ -111,34 +121,68 @@ void initSound() {
 
   useAudio = 1;
   loadSounds();
+
+  cdrom=SDL_CDOpen(0);
+  if (cdrom)
+  {
+	  if (!( CD_INDRIVE(SDL_CDStatus(cdrom)) )) 
+	  {
+		SDL_CDStop(cdrom);
+		cdrom=NULL;
+	  }
+	  else
+		  if (cdrom->numtracks<4)
+		  {
+			SDL_CDStop(cdrom);
+			cdrom=NULL;
+		  }
+  }
 }
 
 // Play/Stop the music/chunk.
 
 void playMusic(int idx) {
   char name[64];
-
   if ( !useAudio ) return;
-  Mix_HaltMusic();
-  if (music)
-      Mix_FreeMusic(music);
-  sprintf((char*)name, DATA_PREFIX "sounds" FILE_SEPARATOR "stg%d.mod", idx);
+  if (idx>CHUNK_NUM)
+	idx=CHUNK_NUM;
+  if ( !cdrom )
+  {
+  	Mix_HaltMusic();
+ 	 if (music)
+ 	     Mix_FreeMusic(music);
+ 	 sprintf((char*)name, DATA_PREFIX "musics" FILE_SEPARATOR "stg%d.mod", idx);
 
-  music=Mix_LoadMUS(name);
-//  Mix_PlayMusic(music[idx], -1);
-  Mix_PlayMusic(music, -1);
+ 	 music=Mix_LoadMUS(name);
+	 Mix_PlayMusic(music, -1);
+   }
+   else
+   {
+	idx+=1;
+#ifdef DREAMCAST
+	idx+=2;
+#endif
+	if( CD_INDRIVE(SDL_CDStatus(cdrom)) ) {
+		SDL_CDPlayTracks(cdrom, idx, 0, 1, 0);
+	}
+   }
 }
 
 void fadeMusic() {
   if ( !useAudio ) return;
-  Mix_FadeOutMusic(1280);
+  if (!cdrom)
+  	Mix_FadeOutMusic(1280);
+  else
+	  SDL_CDStop(cdrom);
 }
 
 void stopMusic() {
   if ( !useAudio ) return;
-  if ( Mix_PlayingMusic() ) {
+  if (cdrom)
+	  SDL_CDStop(cdrom);
+  else
+  if ( Mix_PlayingMusic() ) 
     Mix_HaltMusic();
-  }
 }
 
 void playChunk(int idx) {

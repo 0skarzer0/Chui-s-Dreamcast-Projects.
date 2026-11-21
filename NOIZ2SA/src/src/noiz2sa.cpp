@@ -1,9 +1,9 @@
 
 #ifdef DREAMCAST
 #include <kos.h>
-extern uint8 romdisk[];
+// extern uint8 romdisk[];
 KOS_INIT_FLAGS(INIT_DEFAULT);
-KOS_INIT_ROMDISK(romdisk);
+// KOS_INIT_ROMDISK(romdisk);
 #endif
 
 
@@ -237,6 +237,7 @@ static void draw() {
 
 static int accframe = 0;
 
+#ifndef DREAMCAST
 static void usage(char *argv0) {
   fprintf(stderr, "Usage: %s [-nosound] [-window] [-reverse] [-brightness n] [-nowait] [-accframe]\n", argv0);
 }
@@ -266,6 +267,7 @@ static void parseArgs(int argc, char *argv[]) {
     }
   }
 }
+#endif
 
 int interval = INTERVAL_BASE;
 int tick = 0;
@@ -280,7 +282,11 @@ int main(int argc, char *argv[]) {
   long nowTick;
   int frame;
 
+#ifndef DREAMCAST
   parseArgs(argc, argv);
+#else
+  puts("\n\nWellcome to NOIZ2SA!!");
+#endif
 
   initDegutil();
   initSDL(windowMode);
@@ -307,12 +313,13 @@ int main(int argc, char *argv[]) {
       pPrsd = 0;
     }
 
-
     nowTick = SDL_GetTicks();
     frame = (int)(nowTick-prvTickCount) / interval;
     if ( frame <= 0 ) {
+      Uint32 espera=prvTickCount+interval-nowTick;
       frame = 1;
-      SDL_Delay(prvTickCount+interval-nowTick);
+      if (espera>5)
+      SDL_Delay(espera);
       if ( accframe ) {
 	prvTickCount = SDL_GetTicks();
       } else {
