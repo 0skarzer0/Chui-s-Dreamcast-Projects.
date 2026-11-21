@@ -2,6 +2,7 @@
 Chui's Dreamcast Projects.
 
 Chui's Projects for Dreamcast and handhelds.
+https://htmlpreview.github.io/?https://github.com/0skarzer0/Chui-s-Dreamcast-Projects./blob/main/index.html
 
 
 
