@@ -1,0 +1,16 @@
+PROG=nehe07
+
+CC = gcc -Wall -O2
+
+SRCS = main.c
+
+all: $(PROG)
+
+$(PROG): $(SRCS)
+	$(CC) $(SRCS) -o $(PROG) -lGL -lGLU `sdl-config --cflags --libs`
+
+run: $(PROG)
+	./$(PROG)
+
+clean:
+	rm -f $(PROG)

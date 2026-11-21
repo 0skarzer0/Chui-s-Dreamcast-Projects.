@@ -1,0 +1,35 @@
+NAME   = nehe02
+O      = o
+RM     = rm -f
+CC     = gcc
+CXX    = g++
+STRIP  = strip
+
+PROG   = $(NAME)
+
+DEFAULT_CFLAGS = `sdl-config --cflags` -I/usr/local/include 
+LDFLAGS        = `sdl-config --libs` -lSDL_mixer -lSDL_image 
+
+MORE_CFLAGS = -Di686 -O3 -ffast-math -fno-common -fno-builtin -fno-exceptions -fstrict-aliasing -O3 -march=i686 -DDATA_PREFIX=\"./data/\"
+
+
+CFLAGS  = $(DEFAULT_CFLAGS) $(MORE_CFLAGS) -I.
+CPPFLAGS  = $(CFLAGS)
+
+all: $(PROG)
+
+
+
+OBJS =	main.o
+
+
+$(PROG): $(OBJS)
+	$(CC) -L/usr/local/lib -L/usr/lib/w32api/ -L/usr/X11R6/lib -lglu32  -lopengl32 -o $(PROG) -lmingw32 $(OBJS) -lglu32  -lopengl32 -lSDL_static_129 -lGL -lpthread -mwindows -mno-cygwin -luser32 -lgdi32 -lwinmm -ldxguid
+	$(STRIP) $(PROG).exe
+
+run: $(PROG)
+	./$(PROG)
+
+clean:
+	$(RM) $(PROG).exe $(OBJS) stdout.txt stderr.txt
+
